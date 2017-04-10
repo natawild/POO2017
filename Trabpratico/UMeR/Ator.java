@@ -20,7 +20,6 @@ public class Ator{
         this.email="";
         this.nome="";
         this.password="";
-        this.morada="";
         //this.dataNascimento =  (1900-01-01); 
     }
     

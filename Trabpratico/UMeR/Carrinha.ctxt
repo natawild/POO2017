@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Carrinha()
+comment0.text=\n\ Construtor\ vazio.\ Como\ se\ trata\ de\ uma\ subclasse\ de\ Veiculo,\ utilizamos\ o\ construtor\ super\ \n\ para\ a\ reaproveita\u00E7\u00E3o\ de\ c\u00F3digo\ e\ para\ utilizarmos\ heran\u00E7a.\n
+comment1.params=matricula\ vm\ preco\ fiabilidade\ coord
+comment1.target=Carrinha(java.lang.String,\ double,\ double,\ int,\ Coordenadas)
+comment1.text=\n\ Construtor\ parametrizado,\ ou\ seja,\ recebe\ a\ matricula,\ as\ coordenadas,\ a\ velocidade\ m\u00E9dia,\ o\ preco\ base\ por\ km\n\ e\ o\ fator\ de\ fiabilidade\n\ @param\ matricula\n\ @param\ vm\n\ @param\ preco\n\ @param\ fiabilidade\ De\ 1-5,\ descreve\ a\ fiabilidade\ do\ Veiculo\n\ @param\ coord\n
+numComments=2
