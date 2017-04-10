@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Veiculo()
+comment0.text=\n\ construtor\ vazio\n
+comment1.params=matricula
+comment1.target=Veiculo(java.lang.String)
+comment2.params=v
+comment2.target=Veiculo(Veiculo)
+comment3.params=
+comment3.target=java.lang.String\ getMatricula()
+comment4.params=matr
+comment4.target=void\ setMatricula(java.lang.String)
+comment5.params=
+comment5.target=Veiculo\ clone()
+comment6.params=o
+comment6.target=boolean\ equals(java.lang.Object)
+numComments=7

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  9 APR 2017 00:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  10 APR 2017 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1456,13 +1456,13 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
 
-<celia.jpg, id=6, 642.4pt x 801.99625pt>
+<celia.jpg, id=6, 770.88pt x 1027.84pt>
 File: celia.jpg Graphic file (type jpg)
  <use celia.jpg>
 Package pdftex.def Info: celia.jpg used on input line 35.
-(pdftex.def)             Requested size: 115.627pt x 144.35309pt.
+(pdftex.def)             Requested size: 138.75241pt x 185.00322pt.
 
-Overfull \hbox (24.57957pt too wide) in paragraph at lines 35--37
+Overfull \hbox (47.70499pt too wide) in paragraph at lines 35--37
 [][]
  []
 
@@ -1471,13 +1471,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--37
 \T1/ptm/m/n/10.95 Cé-lia Fi-guei-redo
  []
 
-<luis.jpg, id=7, 481.04718pt x 401.24907pt>
-File: luis.jpg Graphic file (type jpg)
- <use luis.jpg>
-Package pdftex.def Info: luis.jpg used on input line 40.
-(pdftex.def)             Requested size: 144.31526pt x 120.37564pt.
+<carlos.jpg, id=7, 949.5475pt x 1215.54124pt>
+File: carlos.jpg Graphic file (type jpg)
+ <use carlos.jpg>
+Package pdftex.def Info: carlos.jpg used on input line 40.
+(pdftex.def)             Requested size: 145.28029pt x 185.9772pt.
 
-Overfull \hbox (53.26784pt too wide) in paragraph at lines 40--42
+Overfull \hbox (54.23286pt too wide) in paragraph at lines 40--42
 [][]
  []
 
@@ -1486,13 +1486,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--42
 \T1/ptm/m/n/10.95 José Car-los Fa-ria
  []
 
-<nelson.png, id=8, 158.5925pt x 218.8175pt>
-File: nelson.png Graphic file (type png)
- <use nelson.png>
-Package pdftex.def Info: nelson.png used on input line 45.
-(pdftex.def)             Requested size: 99.91379pt x 137.85574pt.
+<marcia.jpg, id=8, 678.535pt x 945.5325pt>
+File: marcia.jpg Graphic file (type jpg)
+ <use marcia.jpg>
+Package pdftex.def Info: marcia.jpg used on input line 45.
+(pdftex.def)             Requested size: 135.77707pt x 189.20415pt.
 
-Overfull \hbox (8.86636pt too wide) in paragraph at lines 45--47
+Overfull \hbox (44.72964pt too wide) in paragraph at lines 45--47
 [][]
  []
 
@@ -1504,53 +1504,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--47
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.
-png> <./celia.jpg> <./luis.jpg> <./nelson.png>]) (./relatorio.toc)
-\tf@toc=\write6
-\openout6 = `relatorio.toc'.
-
-
-(./chapters/resumo.tex [1
-
-] [1]) (./chapters/introducao.tex
-Cap\'{\i }tulo 1.
-) (./chapters/parte1.tex [1
-
-]
-Cap\'{\i }tulo 2.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 8.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 25.
- [2
-
-] [3])
-(./chapters/conclusao.tex [4]
-Cap\'{\i }tulo 3.
-) [5
-
-] (./relatorio.aux) ) 
+png> <./celia.jpg> <./carlos.jpg> <./marcia.jpg>]) (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 33569 strings out of 493014
- 785692 string characters out of 6133352
- 912529 words of memory out of 5000000
- 36568 multiletter control sequences out of 15000+600000
- 47799 words of font info for 54 fonts, out of 8000000 for 9000
+ 33506 strings out of 493014
+ 784726 string characters out of 6133352
+ 909522 words of memory out of 5000000
+ 36529 multiletter control sequences out of 15000+600000
+ 36704 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,7n,83p,10415b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8
-r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (8 pages, 382578 bytes).
+{/usr/loc
+al/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
+ype1/urw/times/utmr8a.pfb>
+Output written on relatorio.pdf (1 page, 427641 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 30 PDF objects out of 1000 (max. 8388607)
+ 18 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
