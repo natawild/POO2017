@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  10 APR 2017 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  12 APR 2017 09:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1504,24 +1504,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--47
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.
-png> <./celia.jpg> <./carlos.jpg> <./marcia.jpg>]) (./relatorio.aux) ) 
+png> <./celia.jpg> <./carlos.jpg> <./marcia.jpg>]) (./relatorio.toc)
+\tf@toc=\write6
+\openout6 = `relatorio.toc'.
+
+
+(./chapters/resumo.tex [1
+
+] [1]) (./chapters/introducao.tex
+Cap\'{\i }tulo 1.
+) (./chapters/parte1.tex [1
+
+]
+Cap\'{\i }tulo 2.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 8.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 25.
+ [2
+
+] [3])
+(./chapters/conclusao.tex [4]
+Cap\'{\i }tulo 3.
+) [5
+
+] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 33506 strings out of 493014
- 784726 string characters out of 6133352
- 909522 words of memory out of 5000000
- 36529 multiletter control sequences out of 15000+600000
- 36704 words of font info for 46 fonts, out of 8000000 for 9000
+ 33569 strings out of 493014
+ 785702 string characters out of 6133352
+ 912530 words of memory out of 5000000
+ 36568 multiletter control sequences out of 15000+600000
+ 47799 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,7n,83p,10415b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/loc
-al/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016
-/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb>
-Output written on relatorio.pdf (1 page, 427641 bytes).
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (8 pages, 454117 bytes).
 PDF statistics:
- 30 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
