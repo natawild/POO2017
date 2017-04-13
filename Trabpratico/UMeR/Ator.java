@@ -20,7 +20,7 @@ public class Ator{
         this.email="";
         this.nome="";
         this.password="";
-        //this.dataNascimento =  (1900-01-01); 
+        LocalDate dataNascimento = null;  
     }
     
     /**
@@ -120,7 +120,6 @@ public class Ator{
     public Ator clone() {
         return new Ator(this);
     }
-    
     
     
     /**

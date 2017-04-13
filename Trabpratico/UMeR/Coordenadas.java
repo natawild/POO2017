@@ -1,6 +1,6 @@
 /**
- *  * A classe Coordenadas tem o objetivo de guardar a localização de um Veiculo,
- *  * utilizando coordenadas (latitude (x) e longitude (y)).
+ * A classe Coordenadas tem o objetivo de guardar a localização de um Veiculo,
+ * utilizando coordenadas (latitude (x) e longitude (y)).
  * 
  * @celia 1.0
  */
@@ -21,8 +21,8 @@ public class Coordenadas{
     /**
      * Construtor parametrizado, ou seja, recebe a latitude (x) e a longitude (y) e cria uma coordenada
      * com esses valores.
-     * @param   lat     Latitude da cache.
-     * @param   lon     Longitude da cache.
+     * @param   lat     Latitude do veiculo.
+     * @param   lon     Longitude do veiculo.
      */
     public Coordenadas(double lat, double lon){
         this.latitude=lat;

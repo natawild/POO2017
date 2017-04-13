@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=TempMes()
+comment0.text=\n\ construtor\ vazio\n
+comment1.params=
+comment1.target=java.util.ArrayList\ getTemperaturas()
+comment2.params=lista
+comment2.target=void\ setTemperaturas(java.util.ArrayList)
+comment3.params=dia
+comment3.target=void\ addTempDia(TemperaturaDia)
+comment4.params=
+comment4.target=float[]\ mediaPorDia()
+comment5.params=
+comment5.target=int\ getMaiorVariacao()
+comment6.params=i
+comment6.target=float\ variacao(int)
+numComments=7
