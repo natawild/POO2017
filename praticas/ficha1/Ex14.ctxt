@@ -1,2 +1,6 @@
 #BlueJ class context
-numComments=0
+comment0.params=x
+comment0.target=boolean\ primo(int)
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2

@@ -9,7 +9,6 @@ public class Ex3
 {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-       
         int maq5=0;
         int n;
         System.out.println("Escreva 10 inteiros: ");
@@ -19,8 +18,6 @@ public class Ex3
                 maq5++; 
         }
         System.out.println("Li "+maq5+" números maiores do 5." );
-        
-       
 
    } 
 }

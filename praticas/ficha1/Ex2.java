@@ -3,7 +3,7 @@ import java.util.Scanner;
  * Escreva a descrição da classe Media aqui.
  * 
  * @celia
- * @version (número de versão ou data)
+ * @version 1.0
  */
 public class Ex2{
 
@@ -13,7 +13,7 @@ public class Ex2{
           return " A média é " +media;
         }
         
-      public static float decrescente (float a, float b){
+     public static float decrescente (float a, float b){
             float r=0;
         if(a>b){
             return r=a;
@@ -30,11 +30,11 @@ public class Ex2{
          y=input.nextInt(); 
          input.close(); 
          if(x>y){
-         System.out.println("Os números introduzidos foram " +x+ " e " +y+ Ex2.geraMedia(x,y));
+             System.out.println("Os números introduzidos foram " +x+ " e " +y+ Ex2.geraMedia(x,y));
             }
             
          else {
-           System.out.println("Os números introduzidos foram "+y+ " e " +x+ Ex2.geraMedia(x,y));
+             System.out.println("Os números introduzidos foram "+y+ " e " +x+ Ex2.geraMedia(x,y));
             
             }
      

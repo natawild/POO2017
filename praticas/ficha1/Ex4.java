@@ -18,6 +18,5 @@ public class Ex4{
           res=Math.sqrt(n); 
           System.out.println("A raiz quadrada de " +n+ " é " +res);
         }
-        
       }
     }

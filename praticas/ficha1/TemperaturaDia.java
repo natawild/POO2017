@@ -7,18 +7,27 @@ import java.util.ArrayList;
  * @version (número de versão ou data)
  */
 public class TemperaturaDia{
-    
+    //variaveis de instância 
     private Integer diaDoMes; 
     private ArrayList<Integer> temperaturas; 
     
+    //construtor vazio 
     public TemperaturaDia(){
         this.diaDoMes=null; 
         this.temperaturas= new ArrayList<Integer> (); 
     }
     
+    
+    //construtor parametrizado
     public TemperaturaDia(Integer diaDoMes2, ArrayList<Integer> temperaturas ){
         diaDoMes=diaDoMes2; 
         this.temperaturas= temperaturas; 
+    }
+    
+    //construtor de cópia 
+    public TemperaturaDia( TemperaturaDia temDia){
+        this.diaDoMes = temDia.getDiaDoMes();
+        this.temperaturas = temDia.getTemperaturas(); 
     }
     
     public Integer getDiaDoMes (){
@@ -47,8 +56,6 @@ public class TemperaturaDia{
     
     public void addTemp (Integer temp){
         this.temperaturas.add(temp);
-        
-    
     }
     
 }
