@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Escreva a descrição da classe Ex3 aqui.
  * 
- * @natawild
+ * @celia
  * @version (número de versão ou data)
  */
 public class Ex3 {
@@ -13,12 +13,9 @@ public class Ex3 {
            if(i!=p){
                System.arraycopy(a,i,a,i+1,p-i);
            } 
-            
             a[i]=v; 
         
         }
-        
-    
     }
     
      public static int[] lerArray(int n){

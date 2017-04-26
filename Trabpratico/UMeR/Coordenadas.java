@@ -1,32 +1,32 @@
 /**
  * A classe Coordenadas tem o objetivo de guardar a localização de um Veiculo,
- * utilizando coordenadas (latitude (x) e longitude (y)).
+ * utilizando coordenadas (x (x) e y (y)).
  * 
  * @celia 1.0
  */
 
 public class Coordenadas{
     
-    private double latitude;
-    private double longitude;
+    private double x;
+    private double y;
     
     /**
      * Construtor vazio, ou seja, inicia as coordenadas a 0.
      */
     public Coordenadas(){
-        this.latitude=0;
-        this.longitude=0;
+        this.x=0;
+        this.y=0;
     }
     
     /**
-     * Construtor parametrizado, ou seja, recebe a latitude (x) e a longitude (y) e cria uma coordenada
+     * Construtor parametrizado, ou seja, recebe a x (x) e a y (y) e cria uma coordenada
      * com esses valores.
-     * @param   lat     Latitude do veiculo.
-     * @param   lon     Longitude do veiculo.
+     * @param   x    x do veiculo.
+     * @param   y    y do veiculo.
      */
-    public Coordenadas(double lat, double lon){
-        this.latitude=lat;
-        this.longitude=lon;
+    public Coordenadas(double x, double y){
+        this.x=x;
+        this.y=y;
     }
     
     /**
@@ -35,8 +35,8 @@ public class Coordenadas{
      */
    
     public Coordenadas(Coordenadas c){
-        this.latitude = c.getLatitude();
-        this.longitude = c.getLongitude();
+        this.x = c.getX();
+        this.y = c.getY();
     }
     
     /*
@@ -44,17 +44,17 @@ public class Coordenadas{
      */
     
     /**
-     * A função getLatitude devolve a latitude de uma Coordenada.
+     * A função getX devolve a x de uma Coordenada.
      */
-    public double getLatitude(){ 
-        return latitude; 
+    public double getX(){ 
+        return x; 
     }
     
     /**
-     * A função getLongitude devolve a longitude de uma Coordenada.
+     * A função getY devolve a y de uma Coordenada.
      */
-    public double getLongitude(){ 
-        return longitude; 
+    public double getY(){ 
+        return y; 
     }
     
     /*
@@ -62,19 +62,19 @@ public class Coordenadas{
      */
     
     /**
-     * A função setLatitude altera a latitude de uma Coordenada.
-     * @param lat Valor da latitude que irá substituir a latitude.
+     * A função setx altera a x de uma Coordenada.
+     * @param x Valor da x que irá substituir a x.
      */
-    public void setLatitude(double lat){ 
-        this.latitude=lat; 
+    public void setX(double x){ 
+        this.x=x; 
     }
     
     /**
-     * A função setLongitude altera a longitude de uma Coordenada.
-     * @param lon Valor da latitude que irá substituir a longitude.
+     * A função sety altera a y de uma Coordenada.
+     * @param y Valor da x que irá substituir a y.
      */
-    public void setLongitude(double lon){ 
-        this.longitude=lon; 
+    public void setY(double y){ 
+        this.y=y; 
     }
     
     /*
@@ -82,14 +82,14 @@ public class Coordenadas{
      */
     
     /**
-     * A função toString imprime uma Coordenada, ou seja, imprime a latitude e longitude da mesma.
+     * A função toString imprime uma Coordenada, ou seja, imprime a x e y da mesma.
      * @param c A coordenada que irá ser impressa.
      */
-    public StringBuilder toString (Coordenadas c){
+    public String toString (){
        StringBuilder str = new StringBuilder();
-       str.append( "Latitude "  + c.getLatitude());
-       str.append(",Longitude " + c.getLongitude());         
-       return str;
+       str.append( "x: "  + this.x);
+       str.append(" y: " + this.y);         
+       return str.toString();
     }
         
     /**
@@ -102,7 +102,7 @@ public class Coordenadas{
         
         Coordenadas c = (Coordenadas) obj;
         
-        return(this.latitude==c.getLatitude() && this.longitude==c.getLongitude());
+        return(this.x==c.getX() && this.y==c.getY());
     }
     
     /**
@@ -112,8 +112,21 @@ public class Coordenadas{
         return new Coordenadas(this);
     }
     
-    /*
-     * Fazer a função que Calcula distancias 
+    /**
+     * Fazer a função que Calcula distancias (distância euclidiana)
+     * 
+     * distancia = Math.sqrt( Math.pow( (x1 - x2),2 ) +
+                               Math.pow( (y1 - y2),2 ) );
      */
+    
+    public double getDistancia (Coordenadas c){
+        double distancia=0; 
+        distancia = Math.sqrt( Math.pow( (this.x - c.getX()),2 ) +
+                               Math.pow( (this.y - c.getY()),2 ) );
+        return distancia; 
+    
+    }
+    
+    
   
 }

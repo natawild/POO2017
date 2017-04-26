@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=a\ p\ v
+comment0.target=void\ inserOrd(int[],\ int,\ int)
+comment1.params=n
+comment1.target=int[]\ lerArray(int)
+comment2.params=arr
+comment2.target=int\ minPos(int[])
+comment3.params=arr\ i\ f
+comment3.target=int[]\ subArray(int[],\ int,\ int)
+comment3.text=\n\ Dado\ um\ array\ e\ dois\ indices\ v\u00E1lidos\ do\ array,\ retorna\ um\ novo\ array\ apenas\ com\ os\ elementos\ entre\ esses\n\ dois\ indices\n
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

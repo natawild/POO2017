@@ -1,12 +1,11 @@
 import java.time.LocalDate; 
 /**
- * A classe Ator conterá a seguinte informação: email que identifica cada ator, nome, password, morada 
- * data de nascimento
+ * Classe abstrata Ator - escreva a descrição da classe aqui
  * 
- * @celia 
+ * @celia
  * @version 1.0
  */
-public class Ator{
+public abstract class Ator{
     private String email; 
     private String nome; 
     private String password; 
@@ -20,11 +19,12 @@ public class Ator{
         this.email="";
         this.nome="";
         this.password="";
+        this.morada = ""; 
         LocalDate dataNascimento = null;  
     }
     
     /**
-     * Construtor with arguments
+     * Construtor parametrizado
      * @param mail  Ator e-mail
      * @param nome  Ator nome
      * @param password  Ator password
@@ -40,7 +40,9 @@ public class Ator{
         this.dataNascimento= dataNascimento; 
     }
     
-    
+    /**
+     * Construtor cópia
+     */
     
     public Ator (Ator a){
         this.email = a.getEmail();
@@ -53,7 +55,7 @@ public class Ator{
     
      // Getters
     /**
-     * Gets the Ator's e-mail.
+     * Gets e-mail do Ator
      * @return Ator mail
      */
     public String getEmail () {
@@ -61,31 +63,31 @@ public class Ator{
     }
 
     /**
-     * Gets the User's name.
-     * @return Ator name
+     * Get nome do Ator.
+     * @return  nome do Ator 
      */
     public String getNome () {
         return this.nome;
     }
 
     /**
-     * Get the encrypted password of an Ator.
-     * @return Ator encrypted password
+     * Get password de um Ator.
+     * @return password do Ator 
      */
     public String getPassword () {
         return this.password;
     }
     
      /**
-     * Get adress of an Ator.
-     * @return Ator adress
+     * Get morada de um Ator.
+     * @return Ator morada
      */
     public String getMorada () {
         return this.morada;
     }
     
     /**
-     * Get dataNascimento of Ator
+     * Get dataNascimento do Ator
      * @return dataNascimento
      */
     public LocalDate getDataNascimento (){
@@ -109,18 +111,11 @@ public class Ator{
     public void setMorada(String m) {
         this.morada=m;
     }
-    
+      
     public void setDataNascimento( LocalDate d) {
         this.dataNascimento = d;
     }
-    
-    /**
-     * Método clone
-     */
-    public Ator clone() {
-        return new Ator(this);
-    }
-    
+ 
     
     /**
      * método equals 
@@ -137,5 +132,18 @@ public class Ator{
     
                 }      
     }
-   
+    
+    public String toString (){
+        StringBuilder sb = new StringBuilder(); 
+        sb.append("Email: " +this.getEmail() + "\n");
+        sb.append("Nome: " + this.getNome() + "\n");
+        sb.append("Password: " +this.getPassword() + "\n");
+        sb.append("Morada: " +this.getMorada() + "\n");
+        sb.append("Data de Nascimento: " +this.getDataNascimento() + "\n");  
+        return sb.toString(); 
+        
+    }
+    
+
 }
+

@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Escreva a descrição da classe Ex2 aqui.
  * 
- * @author (seu nome) 
+ * @celia
  * @version (número de versão ou data)
  */
 public class Ex2{
@@ -11,7 +11,7 @@ public class Ex2{
         int [] res = new int[n]; 
         Scanner in = new Scanner(System.in);
         for(int i=0; i<n; i++){
-         System.out.println("Valor [" + i + "/" +n+ "]");
+         System.out.println("Valor [" +i+ "/" +n+ "]");
          res[i]=in.nextInt(); 
         }
         in.close(); 

@@ -5,7 +5,9 @@
  * @celia
  * @version 1.0
  */
-public class Moto extends Veiculo{
+public class Moto extends Veiculo implements VeiculoInterface{
+    //variável da classe
+    private static final int lugaresLivres = 1;
     
      /**
      * Construtor vazio. Como se trata de uma subclasse de Veiculo, utilizamos o construtor super 
@@ -25,8 +27,54 @@ public class Moto extends Veiculo{
      * @param coord
      */
     
-    public Moto(String matricula, double vm, double preco,  int fiabilidade, Coordenadas coord){
+    public Moto(String matricula, double vm, double preco, int fiabilidade, Coordenadas coord){
         super(matricula,vm,preco,fiabilidade, coord);
     }
     
+    public Moto (Moto m){
+        super(m); 
+    }
+    
+    public int getLugaresLivres (){
+        return this.lugaresLivres; 
+    }
+    
+    
+    
+    /**
+     * equals recebe um Object m e verifica se é igual a uma Moto
+     */
+        public boolean equals(Object m){
+        
+        if(m==this) return true; //se o objeto for igual ao meu objeto retorna verdade
+        
+        if((m==null) || (this.getClass()!=m.getClass()))
+        return false;
+        
+        Moto moto = (Moto) m; 
+        return super.equals(moto) && this.lugaresLivres== moto.getLugaresLivres();  
+    
+    }
+    
+    /**
+     * método toString
+     * 
+     */
+    public String toString (){
+        StringBuilder sb = new StringBuilder("Motociclo: \n"); 
+        sb.append("Dados do Veiculo: " + super.toString());
+        sb.append("Lugares disponiveis" +this.getLugaresLivres() + "\n");  
+        return sb.toString(); 
+    }
+    
+ 
+    /**
+     * método clone
+     */
+    
+    public Moto clone(){
+        return new Moto (this); 
+    
+    } 
+     
 }

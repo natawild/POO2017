@@ -1,19 +1,17 @@
 
 /**
- * A classe Veiculo contem matricula, velocidade média por km, preço base por km, factor de fiabilidade
- * 
- * Um veiculo sabe sempre as coordenadas onde está (x,y)
+ * Classe abstrata Veiculo 
  * 
  * @celia
  * @version 1.0
  */
-public class Veiculo{
+public abstract class Veiculo {
     
     private String matricula; 
     private double vm; 
     private double preco; 
-    private int fiabilidade;
-    private Coordenadas coord;
+    private float fiabilidade;//0 a 2
+    private Coordenadas loc;
     
     /**
      * construtor vazio
@@ -23,8 +21,8 @@ public class Veiculo{
         this.matricula=""; 
         this.vm=0.0;
         this.preco=0.0;
-        this.fiabilidade=0;
-        this.coord=new Coordenadas();
+        this.fiabilidade=0f;
+        this.loc=new Coordenadas();
     }
     
     /**
@@ -35,20 +33,23 @@ public class Veiculo{
      * @param fiabilidade
      */
     
-    public Veiculo (String matricula, double vm, double preco, int fiabilidade, Coordenadas coord){
+    public Veiculo (String matricula, double vm, double preco, float fiabilidade, Coordenadas coord){
         this.matricula=matricula;
         this.vm=vm;
         this.preco=preco;
         this.fiabilidade=fiabilidade;
-        this.coord=coord;
+        this.loc=coord;
     }
    
+    /**
+     * contrutor por cópia
+     */
     public Veiculo (Veiculo v){
         this.matricula=v.getMatricula();
         this.vm=v.getVm();
         this.preco=v.getPreco();
         this.fiabilidade=v.getFiabilidade();
-        this.coord=v.getCoordenadas();
+        this.loc=v.getLoc();
     
     }
     
@@ -78,18 +79,19 @@ public class Veiculo{
     
     }
     
+    
     /**
-     * return fiabilidade do veiculo (determina a capacidade da viatura cumprir o tempo acordado
+     * @return fiabilidade do veiculo (determina a capacidade da viatura cumprir o tempo acordado
      * com o cliente)
      */
     
-    public int getFiabilidade(){
+    public float getFiabilidade(){
         return this.fiabilidade;
     
     }
     
-    public Coordenadas getCoordenadas(){
-        return coord.clone();
+    public Coordenadas getLoc(){
+        return loc.clone();
     }
     
     //setters
@@ -98,12 +100,14 @@ public class Veiculo{
         this.matricula=matr;   
     }
     
-    public void setCoordenadas(Coordenadas coord){
-        this.coord=coord.clone(); 
+    public void setLoc(Coordenadas coord){
+        this.loc=coord.clone(); 
     }
+    
+   
 
     /**
-     * equals recebe um obj veic e verifica se é igual a um Veiculo 
+     * equals recebe um objet veic e verifica se é igual a um Veiculo 
      */
     
     public boolean equals(Object veic){
@@ -114,16 +118,23 @@ public class Veiculo{
         return false;
         
         Veiculo v = (Veiculo) veic; 
-        return this.matricula.equals(v.getMatricula()) && 
-        this.coord.equals(v.getCoordenadas()) ; //está incompleto 
+        return this.matricula.equals(v.getMatricula()) && this.vm == v.getVm() &&
+        this.preco == v.getPreco() && this.fiabilidade == v.getFiabilidade() &&
+        this.loc.equals(v.getLoc()); 
     
+    }
+    
+    public String toString (){
+        StringBuilder sb = new StringBuilder(); 
+        sb.append("Matricula: " +this.getMatricula() + "\n"); 
+        sb.append("Velocidade Média: " +this.getVm() + "\n"); 
+        sb.append("Preço por Km: " +this.getPreco() + "\n"); 
+        sb.append("Fiabilidade do veiculo: " +this.getFiabilidade() + "\n");
+        sb.append("Localização do veiculo: " +this.getLoc().toString()); 
+        return sb.toString(); 
     }
 
-    
-        
-    public Veiculo clone(){ // de-me um novo objeto igual a mim 
-        return new Veiculo(this); 
-    }
 
     
 }
+
