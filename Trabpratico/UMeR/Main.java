@@ -71,7 +71,7 @@ public class Main
         //é o mesmo que as 3 linhas a cima.
         //baseDados.setClientes(baseDados.getClientes().remove(cliente2));
         
-        //outra opção. A mais interessante porque não tens de estar a fazer o set depois de adicionar
+        //outra opção. A mais interessante porque não se tem de estar a fazer o set depois de adicionar
         //baseDados.removeCliente(cliente2);
         //baseDados.removeMotorista(motorista1); 
         
@@ -98,7 +98,7 @@ public class Main
         baseDados.addVeiculo(v3); 
         List<String> listMatriculas = baseDados.matriculasReg();
         
-        System.out.println("As matriculas armezanadas na db são: \n");
+        System.out.println("As matriculas armezanadas na base de dados são: \n");
         for(String matricula: listMatriculas){
             System.out.println("Matricula: " + matricula);
         }

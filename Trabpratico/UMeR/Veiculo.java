@@ -10,7 +10,7 @@ public abstract class Veiculo {
     private String matricula; 
     private double vm; 
     private double preco; 
-    private float fiabilidade;//0 a 2
+    private float fiabilidade;//0 a 2 randon()
     private Coordenadas loc;
     
     /**
@@ -129,8 +129,8 @@ public abstract class Veiculo {
         sb.append("Matricula: " +this.getMatricula() + "\n"); 
         sb.append("Velocidade Média: " +this.getVm() + "\n"); 
         sb.append("Preço por Km: " +this.getPreco() + "\n"); 
-        sb.append("Fiabilidade do veiculo: " +this.getFiabilidade() + "\n");
-        sb.append("Localização do veiculo: " +this.getLoc().toString()); 
+        sb.append("Fiabilidade do veiculo: " +this.getFiabilidade() +"\n");
+        sb.append("Localização do veiculo: " +this.getLoc().toString() +"\n"); 
         return sb.toString(); 
     }
 

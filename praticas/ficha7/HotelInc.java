@@ -122,7 +122,9 @@ public class HotelInc{
     
     
     public Map<String, Hotel> getHoteisMap(){
-        return this.hoteis.values().stream().collect(toMap(h->h.getCodigo(), h->h.clone())); 
+        return this.hoteis.values()
+                          .stream()
+                          .collect(toMap(h->h.getCodigo(), h->h.clone())); 
     }
     
 }

@@ -8,6 +8,7 @@ import java.time.LocalDate;
  */
 public class Cliente extends Ator implements AtorInterface{
     private Coordenadas loc;
+    private HistoricoCliente histClie; 
     /**
      * Construtor vazio
      */
@@ -19,7 +20,13 @@ public class Cliente extends Ator implements AtorInterface{
     
     /**
      * Construtor parametrizado 
-     * @param 
+     * @param email
+     * @param nome
+     * @param password
+     * @param morada
+     * @param dataNascimento
+     * @param loc
+     * 
      */
     
     public Cliente (String email,String nome, String password, String morada, LocalDate dataNascimento, 

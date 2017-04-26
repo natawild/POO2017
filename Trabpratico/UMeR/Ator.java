@@ -131,7 +131,6 @@ public abstract class Ator{
             return (this.email.equals(a.getEmail()) && this.nome.equals(a.getNome()) &&
                     this.password.equals(a.getPassword()) && this.morada.equals(a.getMorada()) &&
                     this.dataNascimento.equals(a.getDataNascimento())); 
-    
                 }      
     }
     

@@ -63,7 +63,7 @@ public class Carrinha extends Veiculo implements VeiculoInterface{
     public String toString (){
         StringBuilder sb = new StringBuilder("Carrinha: \n"); 
         sb.append("Dados do Veiculo: " + super.toString());
-        sb.append("Lugares disponiveis" +this.getLugaresLivres() + "\n");  
+        sb.append("Lugares disponiveis: " +this.getLugaresLivres() + "\n");  
         return sb.toString(); 
     }
     
