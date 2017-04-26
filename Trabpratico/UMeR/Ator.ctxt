@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Ator()
-comment0.text=\n\ construtor\ vazio\n
+comment0.text=\n\ Construtor\ vazio\n
 comment1.params=email\ nome\ password\ morada\ dataNascimento
 comment1.target=Ator(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.time.LocalDate)
-comment1.text=\n\ Construtor\ parametrizado\n\ @param\ mail\ \ Ator\ e-mail\n\ @param\ nome\ \ Ator\ nome\n\ @param\ password\ \ Ator\ password\n\ @param\ morada\ \ Ator\ morada\n\ @param\ dataNascimento\ Ator\ dataNascimento\ \n
+comment1.text=\n\ Construtor\ parametrizado\n\ @param\ email\ \ Ator\ e-mail\n\ @param\ nome\ \ Ator\ nome\n\ @param\ password\ \ Ator\ password\n\ @param\ morada\ \ Ator\ morada\n\ @param\ dataNascimento\ Ator\ dataNascimento\ \n
 comment10.params=p
 comment10.target=void\ setPassword(java.lang.String)
 comment11.params=m

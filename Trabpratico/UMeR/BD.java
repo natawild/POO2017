@@ -15,7 +15,7 @@ public class BD{
     private List<VeiculoInterface> veiculos; 
     
     /**
-     * construtor vazio
+     * Construtor vazio
      */
     
     public BD (){
@@ -26,7 +26,7 @@ public class BD{
     }
     
     /**
-     * contrutor parametrizado
+     * Construtor parametrizado
      */
     
     public BD (List<AtorInterface> c,List<AtorInterface> m,List<VeiculoInterface> v ){
@@ -36,7 +36,7 @@ public class BD{
     }
     
     /**
-     * construtor por cópia 
+     * Construtor por cópia 
      */
     public BD (BD bd){
         clientes = bd.getClientes(); 
@@ -46,7 +46,8 @@ public class BD{
     
     //gets
     /**
-     * Devolve uma lista contendo todos os clientes 
+     * getClientes() - Devolve uma lista contendo todos os clientes 
+     * 
      */
     public List<AtorInterface> getClientes(){
        List <AtorInterface> listaClientes = new ArrayList<AtorInterface>(); 
@@ -61,7 +62,7 @@ public class BD{
     }
     
     /**
-     * Devolve uma lista contendo todos os motoristas 
+     * getMotoristas() - Devolve uma lista contendo todos os motoristas 
      */
     
     public List<AtorInterface> getMotoristas(){
@@ -76,7 +77,7 @@ public class BD{
         return listaMotoristas; 
     }
     /**
-     * getVeiculos devolve uma lista contendo todos os Veiculos 
+     * getVeiculos()- devolve uma lista contendo todos os Veiculos 
      * (Iterador Interno) 
      */
     
@@ -87,17 +88,32 @@ public class BD{
     }
     
     //sets
+    /**
+     * setClientes(List<AtorInterface> c) - Modifica a lista de clientes
+     * @param c : List<AtorInterface>
+     */
     public void setClientes(List<AtorInterface> c){
         this.clientes=c.stream()
                        .map(AtorInterface::clone)
                        .collect(toList()); 
     }
     
+    /**
+     * setMotoristas(List<AtorInterface> m) - Modifica a lista de Motoristas
+     * @param m : List<AtorInterface>
+     */
+    
     public void setMotoristas(List<AtorInterface> m){
         this.motoristas = m.stream()
                            .map(AtorInterface::clone)
                            .collect(toList()) ;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
     }
+    
+    /**
+     * setVeiculos(List<VeiculoInterface> v - Modifica a lista de Veiculos
+     * @param v : List<VeiculoInterface> v
+     * 
+     */
     
     public void setVeiculos(List<VeiculoInterface> v){
         this.veiculos=v.stream()
@@ -106,10 +122,10 @@ public class BD{
     }
     
      /**
-     * A função equals recebe um Objeto genérico e verifica se é exatamente igual a uma Coordenada.
+     * A função equals recebe um Objeto genérico e verifica se é exatamente igual a uma BD.
      * @param obj Objecto a comparar.
      */
-    public boolean equals(Object obj){
+    public boolean equals (Object obj){
         if(this == obj) return true;
         if((obj == null) || (this.getClass() != obj.getClass())) return false;
         
@@ -119,6 +135,10 @@ public class BD{
         // return(this.equalsCLientes(c.getClientes()) fazer o mesmo para motoristas e veiculos);
     }
     
+    
+    /**
+     * Método que faz o equals dos Clientes 
+     */
     private boolean equalsClientes(List<Cliente> clientes){
         for(AtorInterface ator: this.clientes){
             if(ator instanceof Cliente){
@@ -130,6 +150,10 @@ public class BD{
          }
          return true;
     }
+    
+    /**
+     * Método que faz o equals de uma lista de Atores, diferenciando se são Cliente ou Motorista
+     */
     
     public static boolean equalsListAtores(List<AtorInterface> atores1, List<AtorInterface> atores2){
         for(AtorInterface ator: atores1){
@@ -151,20 +175,25 @@ public class BD{
         return true;
     }
     
+    /**
+     * Método auxiliar para fazer o equals da lista de Veiculos
+     */
+    
     public static boolean equalsVeiculos(List<VeiculoInterface> veiculos1, List<VeiculoInterface> veiculos2){
         for(VeiculoInterface veiculo: veiculos1){
             if(veiculo instanceof VeiculoInterface){
                 Veiculo c = (Veiculo) veiculo;
                 if(veiculos2.contains(c)==false){
                     return false;
-                }
-                
+                }  
             }
         } 
         return true;
     }
     
-    
+    /**
+     * toString
+     */
     public String toString(){
        StringBuilder sb = new StringBuilder();
        sb.append( "Lista de Clientes: \n" +clientes );
@@ -174,17 +203,36 @@ public class BD{
     
     }
     
+    /**
+     * Método addCliente - Adiciona um cliente 
+     * @param cliente
+     */
     public void addCliente(Cliente cliente){
         this.clientes.add(cliente.clone());
     }
+    
+     /**
+     * Método addMotorista - Adiciona um motorista
+     * @param motorista
+     */
     
     public void addMotorista(Motorista motorista){
         this.motoristas.add(motorista.clone());
     }
     
+     /**
+     * Método addVeiculo - Adiciona um veiculo 
+     * @param veiculo
+     */
+    
     public void addVeiculo(VeiculoInterface veiculo){
         this.veiculos.add(veiculo.clone());
     }
+    
+    /**
+     * removeCliente(Cliente cliente) - Método para remover um cliente da lista
+     * @param cliente
+     */
     
     public void removeCliente(Cliente cliente){
         for(AtorInterface atorInterface: this.clientes){
@@ -198,11 +246,21 @@ public class BD{
         }
     }
     
+    /**
+     * removeVeiculo(Veiculo veiculo) - Método para remover um veiculo da lista
+     * @param veiculo
+     */
+    
     public void removeVeiculo(Veiculo veiculo){
         if(this.veiculos.contains(veiculo)){
               this.veiculos.remove(veiculo);
         }
     }
+    
+     /**
+     * removeMotorista(Motorista motorista) - Método para remover um motorista da lista
+     * @param motorista
+     */
     
     public void removeMotorista(Motorista motorista){
         if(this.motoristas.contains(motorista)){
@@ -210,6 +268,10 @@ public class BD{
         }
   
     }
+    /**
+     * Devolve a lista de Clientes com determinado nome, quer esteja com maiúsculas ou minúsculas 
+     * @param nome
+     */
     
     public AtorInterface findClientePeloNome(String nome){
         for(AtorInterface cliente : this.clientes){

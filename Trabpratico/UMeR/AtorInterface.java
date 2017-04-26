@@ -1,9 +1,9 @@
 import java.time.LocalDate; 
 /**
- * A AtorInterface 
+ * A AtorInterface tem a declaração de todos os métodos necessários para a criação de um Ator 
  * 
  * @celia
- * @version (número da versão ou data)
+ * @version 1.0
  */
 
 public interface AtorInterface{

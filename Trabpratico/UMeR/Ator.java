@@ -1,11 +1,13 @@
 import java.time.LocalDate; 
 /**
- * Classe abstrata Ator - escreva a descrição da classe aqui
+ * Classe abstrata Ator - Apenas estarão declaradas as variáveis comuns a qualquer Ator do sistema: email
+ * (que identifica o Ator), nome, password, morada, data de Nascimento
  * 
  * @celia
  * @version 1.0
  */
 public abstract class Ator{
+    
     private String email; 
     private String nome; 
     private String password; 
@@ -13,7 +15,7 @@ public abstract class Ator{
     private LocalDate dataNascimento; 
     
     /**
-     * construtor vazio
+     * Construtor vazio
      */
     public Ator(){
         this.email="";
@@ -25,7 +27,7 @@ public abstract class Ator{
     
     /**
      * Construtor parametrizado
-     * @param mail  Ator e-mail
+     * @param email  Ator e-mail
      * @param nome  Ator nome
      * @param password  Ator password
      * @param morada  Ator morada

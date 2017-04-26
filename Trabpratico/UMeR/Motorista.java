@@ -1,6 +1,12 @@
 import java.time.LocalDate; 
 /**
- * Escreva a descrição da classe Motorista aqui.
+ * A classe Motorista terá todas as informações relativas a um motorista, este que é um colaborador 
+ * da UMeR. Tem todos os dados presentes na classe Ator, e ainda a acrescentar os seus próprios dado: 
+ * .Grau de cumprimento de horário estabelecido com o cliente (0-100);
+ * .Classificação do Motorista, calculado com base na classificação do cliente (0-100); 
+ * .Histórico das Viagens realizadas; 
+ * .Número de kms já realizados na UMeR;
+ * .Informação se está disponivel ou não em determinado momento
  * 
  * @celia  
  * @version 1.0
