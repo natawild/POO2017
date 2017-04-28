@@ -5,8 +5,9 @@ import java.util.Set;
 import java.util.ArrayList; 
 import static java.util.stream.Collectors.toMap;
 import static java.util.stream.Collectors.toList;
+
 /**
- * Escreva a descrição da classe HotelInc aqui.
+ * A classe HotelInc
  * 
  * @celia 
  * @version 1.0
@@ -14,7 +15,7 @@ import static java.util.stream.Collectors.toList;
 public class HotelInc{
     //varivais de instância 
     private String nome; 
-    private Map<String,Hotel> hoteis; //codigo hotel -> hotel 
+    private Map <String,Hotel> hoteis; //codigo hotel -> hotel 
      /**
       * construtor vazio
       */
@@ -30,11 +31,14 @@ public class HotelInc{
     
     }
     
-    public HotelInc(HotelInc hi){
+    public HotelInc (HotelInc hi){
         this.nome=hi.getNome();
         //this.hoteis=hi.getHoteisMap();
     }
     
+    /**nao entendi este 
+     * 
+     */
     public HotelInc(String nome, Map<String,Hotel> hoteis){
         this.nome= nome; 
         this.hoteis = hoteis.entrySet().stream()
@@ -126,5 +130,10 @@ public class HotelInc{
                           .stream()
                           .collect(toMap(h->h.getCodigo(), h->h.clone())); 
     }
+    
+    /**   
+     *     
+     *  
+     */
     
 }

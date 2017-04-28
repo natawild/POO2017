@@ -17,7 +17,7 @@ public class HotelStandard extends Hotel implements Comparable<Hotel> {
     
     }
     
-    public HotelStandard(HotelStandard hs ){
+    public HotelStandard (HotelStandard hs ){
         super(hs);
         this.epocaAlta = hs.getEpocaAlta(); 
     
@@ -32,8 +32,7 @@ public class HotelStandard extends Hotel implements Comparable<Hotel> {
         return this.epocaAlta; 
     }
     
-    public HotelStandard(String codigo, String nome, 
-                            String localidade, double precoBaseQuarto, 
+    public HotelStandard(String codigo, String nome, String localidade, double precoBaseQuarto, 
                             int numQuartos, int estrelas, boolean epocaAlta){
                                 super(codigo,nome,localidade, precoBaseQuarto, numQuartos, estrelas);
                                 this.epocaAlta = epocaAlta; 
@@ -68,6 +67,25 @@ public class HotelStandard extends Hotel implements Comparable<Hotel> {
         sb.append("Epoca Alta '").append(epocaAlta).append("'\n");
         return sb.toString(); 
     }
+    
+    public int compareTo (HotelStandard hs){
+       int r= super.compareTo(hs); 
+         if(r==0 && this.epocaAlta!=hs.getEpocaAlta()){
+             r=this.epocaAlta ? +1 : -1; 
+             
+            }
+         return r; 
+      }
+      
+      /**
+       * obter o preço por quarto por noite 
+       * (fazer este método direito)
+       */
+      
+      public double precoQuartoNoite(){
+          return 10; 
+        
+        }
     
     public HotelStandard clone(){
         return new HotelStandard(this);

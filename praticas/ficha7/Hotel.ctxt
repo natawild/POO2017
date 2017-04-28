@@ -25,7 +25,6 @@ comment15.target=java.lang.String\ toString()
 comment15.text=\n\ Devolve\ uma\ representa\u00E7\u00E3o\ no\ formato\ textual\n\ @return\ \n
 comment16.params=
 comment16.target=Hotel\ clone()
-comment16.text=\n\ Implementa\u00E7\u00E3o\ de\ clone.\n\n
 comment17.params=
 comment17.target=int\ hashCode()
 comment17.text=\n\ C\u00F3digo\ de\ hash\n\ @return\ o\ hashcode.\ Por\ simplifica\u00E7\u00E3o,\ utiliza-se\ apenas\ o\ hashcode\ de\ String\ (na\ vari\u00E1vel\ de\ inst\u00E2ncia\ c\u00F3digo).\n\ \u00C9\ importante\ alterar\ este\ m\u00E9todo\!\!\n

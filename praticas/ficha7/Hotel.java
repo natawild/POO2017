@@ -10,7 +10,7 @@
  * @author jfc
  * @version 2.1
  */
-public class Hotel implements Comparable<Hotel> {
+public abstract class Hotel implements Comparable<Hotel> {
     /** O código do hotel */
     private String codigo;
     /** O nome do hotel */
@@ -23,7 +23,6 @@ public class Hotel implements Comparable<Hotel> {
     private int numeroQuartos;
     /** Estrelas **/
     private int estrelas;
-    
     
     /**
     * outras variáveis.
@@ -196,13 +195,10 @@ public class Hotel implements Comparable<Hotel> {
     }
 
 
-    /**
-    * Implementação de clone.
-    *
-    */
-    public Hotel clone() {
-    	return new Hotel(this);
-    }
+   
+    
+    public abstract Hotel clone(); 
+    
 
     /**
      * Código de hash
