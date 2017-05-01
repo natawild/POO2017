@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
  * @celia 
  * @version 1.0
  */
-public class HistoricoMotorista extends HistoricoAtor{
-    // variáveis de instância 
+public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterface{
+    // variáveis de instância  
     
     
     /**
@@ -23,8 +23,8 @@ public class HistoricoMotorista extends HistoricoAtor{
      * @param valorCobrado
      */
     
-    public HistoricoMotorista (LocalDateTime dataDeInicioDeServico, float tempo, float valorCobrado){
-        super(dataDeInicioDeServico,tempo, valorCobrado); 
+    public HistoricoMotorista (LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado){
+        super(dataDeInicioDeServico,tempoEstimado, tempoReal, valorCobrado); 
     }
     
       

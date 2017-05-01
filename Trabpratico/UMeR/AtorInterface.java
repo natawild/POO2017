@@ -10,15 +10,15 @@ public interface AtorInterface{
     
     public String getEmail (); 
     
+    public String getPassword(); 
+    
     public String getNome (); 
     
     public String getMorada ();
     
     public LocalDate getDataNascimento (); 
     
-    
     public void setEmail(String e); 
-
     
     public void setNome(String n) ;
     

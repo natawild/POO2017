@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
  * @carlos
  * @version 1.0
  */
-public class HistoricoCliente extends HistoricoAtor {
+public class HistoricoCliente extends HistoricoAtor implements HistoricoInterface{
     // variáveis de instância 
     /**
      * Construtor vazio
@@ -23,8 +23,8 @@ public class HistoricoCliente extends HistoricoAtor {
      * @param valorCobrado
      */
     
-    public HistoricoCliente (LocalDateTime dataDeInicioDeServico, float tempo, float valorCobrado){
-        super(dataDeInicioDeServico,tempo, valorCobrado); 
+    public HistoricoCliente (LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado){
+        super(dataDeInicioDeServico,tempoEstimado, tempoReal, valorCobrado); 
     }
     
       

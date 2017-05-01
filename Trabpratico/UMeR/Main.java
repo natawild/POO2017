@@ -9,7 +9,7 @@ import java.util.List;
 public class Main
 {
     public static void main(String[] args){
-        BD baseDados = new BD (); 
+        BDInterface baseDados = new BD (); 
         
         Cliente cliente1 = new Cliente(); 
         cliente1.setNome("Batata"); 
@@ -29,9 +29,9 @@ public class Main
         //System.out.println(cliente2.toString());
         
          
-        List<AtorInterface> list = baseDados.getClientes();
+        List<AtorInterface> list = ((BD)baseDados).getClientes();
         list.add(cliente2); 
-        baseDados.setClientes(list);
+        ((BD)baseDados).setClientes(list);
         
         Coordenadas localizacaoCarr1 = new Coordenadas(10d, 4d); 
         VeiculoInterface v1 = new CarroLig("qt-76-22", 60.5d, 3.5d, 3f, localizacaoCarr1); 
@@ -62,28 +62,31 @@ public class Main
         baseDados.addMotorista(motorista2); 
         baseDados.addVeiculo(v2);
         
+        /*
         System.out.println(baseDados.toString());
         System.out.println("/////////");
+        */
         
-        //List<AtorInterface> list2 = baseDados.getClientes(); 
+        //List<AtorInterface> list2 = ((BD)baseDados).getClientes(); 
         //list2.remove(cliente2); 
-        //baseDados.setClientes(list2);
+        //((BD)baseDados).setClientes(list2);
         //é o mesmo que as 3 linhas a cima.
-        //baseDados.setClientes(baseDados.getClientes().remove(cliente2));
+        //((BD)baseDados).setClientes(((BD)baseDados).getClientes().remove(cliente2));
         
         //outra opção. A mais interessante porque não se tem de estar a fazer o set depois de adicionar
         //baseDados.removeCliente(cliente2);
         //baseDados.removeMotorista(motorista1); 
         
         /*
-        List<AtorInterface> listm = baseDados.getMotoristas(); 
+        List<AtorInterface> listm = ((BD)baseDados).getMotoristas(); 
         listm.remove(motorista1);
-        baseDados.setMotoristas(listm); 
+        ((BD)baseDados).setMotoristas(listm); 
         */
         
         System.out.println(baseDados.toString());
 
         
+        /*
         AtorInterface clientEnc = baseDados.findClientePeloNome("celia"); 
         if(clientEnc!=null){
             System.out.println("O cliente com o nome"+ clientEnc.getNome()+" tem os seguintes dados: \n"); 
@@ -102,12 +105,19 @@ public class Main
         for(String matricula: listMatriculas){
             System.out.println("Matricula: " + matricula);
         }
-       System.out.println("Fim das matriculas encontradas \n");
+        System.out.println("Fim das matriculas encontradas \n");
         
-  
-    
+        */
+       
+       UMeR programa = new UMeR(baseDados);
+       Cliente clientePesquisado = programa.pesquisaCliente("ola@ola.com");
+       Motorista motoristaMaisPerto = programa.getMotoristaMaisPerto(clientePesquisado);
+       
+       System.out.println("\n---Teste:Pesquisa de motorista mais perto---\n");
+       System.out.println("Cliente: \n" + clientePesquisado);
+       System.out.println("Motorista: \n" + motoristaMaisPerto);
+       
         
-
         
     }
     

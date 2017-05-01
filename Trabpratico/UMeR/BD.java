@@ -1,18 +1,22 @@
 import java.util.List; 
+import java.util.Set;
 import java.util.ArrayList; 
+import java.util.List; 
+import java.util.TreeSet;
 import static java.util.stream.Collectors.toList;
-
+import java.lang.Math;
 /**
  * A classe BD tem a lista de clientes, motoristas e veiculos existentes na empresa
  * 
  * @celia
  * @version 1.0
  */
-public class BD{
+public class BD implements BDInterface {
     
     private List<AtorInterface> clientes;
     private List<AtorInterface> motoristas; 
     private List<VeiculoInterface> veiculos; 
+    private Set<Historico> historico;
     
     /**
      * Construtor vazio
@@ -22,19 +26,19 @@ public class BD{
         this.clientes = new ArrayList<AtorInterface>();
         this.motoristas = new ArrayList<AtorInterface>(); 
         this.veiculos = new ArrayList<VeiculoInterface>(); 
-    
+        this.historico = new TreeSet<Historico>();
     }
     
     /**
      * Construtor parametrizado
      */
     
-    public BD (List<AtorInterface> c,List<AtorInterface> m,List<VeiculoInterface> v ){
+    public BD (List<AtorInterface> c,List<AtorInterface> m,List<VeiculoInterface> v , Set<Historico> h){
         clientes = c; 
         motoristas = m; 
         veiculos = v; 
+        historico = h;
     }
-    
     /**
      * Construtor por cópia 
      */
@@ -42,6 +46,7 @@ public class BD{
         clientes = bd.getClientes(); 
         motoristas = bd.getMotoristas();
         veiculos = bd.getVeiculos(); 
+        historico = bd.getHistorico();
     }
     
     //gets
@@ -87,6 +92,21 @@ public class BD{
                        .collect(toList()); 
     }
     
+    public Set<Historico> getHistorico(){
+        TreeSet<Historico> historicoCopia = new TreeSet<Historico>();
+        for(Historico h: historico){
+            historicoCopia.add(h.clone());
+        }
+        
+        return historicoCopia;
+        
+        /** Isto nao funciona.Pesquisar como se faz
+        return historico.stream()
+                       .map(Historico::clone)
+                       .collect(toSet());               
+        */
+    }
+    
     //sets
     /**
      * setClientes(List<AtorInterface> c) - Modifica a lista de clientes
@@ -121,6 +141,32 @@ public class BD{
                        .collect(toList()); 
     }
     
+        /**
+     * setHistorico(Set<Historico> v - Modifica a lista de historico
+     * @param v : Set<Historico> v
+     * 
+     */
+    
+    public void setHistorico(Set<Historico> h){
+        TreeSet<Historico> historicoCopia = new TreeSet<Historico>();
+        for(Historico historico: h){
+            historicoCopia.add(historico.clone());
+        }
+        
+        this.historico=historicoCopia;
+        
+        /** Isto nao funciona.Pesquisar como se faz
+            this.historico=h.stream()
+                       .map(VeiculoInterface::clone)
+                       .collect(toSet());
+        */
+    }
+    
+    
+    public BDInterface clone(){
+        return new BD(this);
+    }
+
      /**
      * A função equals recebe um Objeto genérico e verifica se é exatamente igual a uma BD.
      * @param obj Objecto a comparar.
@@ -198,7 +244,8 @@ public class BD{
        StringBuilder sb = new StringBuilder();
        sb.append( "Lista de Clientes: \n" +clientes );
        sb.append(" LIsta de Motoristas: \n" +motoristas);  
-       sb.append(" LIsta de Veiculos: \n" +veiculos);         
+       sb.append(" Lista de Veiculos: \n" +veiculos);
+       sb.append(" Historico: \n" + historico);   
        return sb.toString();
     
     }
@@ -228,6 +275,17 @@ public class BD{
     public void addVeiculo(VeiculoInterface veiculo){
         this.veiculos.add(veiculo.clone());
     }
+    
+    
+         /**
+     * Método addHistorico - Adiciona um historico 
+     * @param historico
+     */
+    
+    public void addHistorico(Historico historico){
+        this.historico.add(historico.clone());
+    }
+    
     
     /**
      * removeCliente(Cliente cliente) - Método para remover um cliente da lista
@@ -309,7 +367,55 @@ public class BD{
         return res;
     }
     
+    public boolean loginValido (String email, String password){
+        AtorInterface cliente = getClienteComEmail(email);
+        if(cliente!=null && cliente.getPassword().equals(codificar(password))){
+            return true;
+        }
+        return false;
+    }
     
     
+    public AtorInterface getClienteComEmail(String email){
+         for(AtorInterface ator: this.clientes){
+             if(ator.getEmail().equals(email)){
+                return ator.clone();
+             }
+         }
+         return null;
+    }
+    
+    public AtorInterface getMotoristaComEmail(String email){
+         for(AtorInterface ator: this.motoristas){
+             if(ator.getEmail().equals(email)){
+                return ator.clone();
+             }
+         }
+         return null;
+    }
+    
+    
+    public Motorista getMotoristaMaisPerto(AtorInterface cliente){
+        for(AtorInterface ator: this.motoristas){
+            
+        }
+        
+        return null;
+    }
+    
+    /*
+     * TODO: implementar funçao para codificar a password
+     */
+    private String codificar(String password){
+        return password;
+    }
+    
+    private float getDistancia(Cliente c, Motorista m){
+        float distancia = 0;
+        
+        
+        
+        return distancia;
+    }
 
 }
