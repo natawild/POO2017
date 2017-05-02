@@ -242,12 +242,20 @@ public class BD implements BDInterface {
      */
     public String toString(){
        StringBuilder sb = new StringBuilder();
-       sb.append( "Lista de Clientes: \n" +clientes );
-       sb.append(" LIsta de Motoristas: \n" +motoristas);  
-       sb.append(" Lista de Veiculos: \n" +veiculos);
-       sb.append(" Historico: \n" + historico);   
+       sb.append("Lista de Clientes: \n" +clientes );
+       sb.append("LIsta de Motoristas: \n" +motoristas);  
+       sb.append("Lista de Veiculos: \n" +veiculos);
+       sb.append("Historico: \n" + historico);   
        return sb.toString();
     
+    }
+    
+     /**
+     * Método getListaDeMotoristas - devolve uma lista com todos os motoristas
+     */
+    
+    public List<AtorInterface> getListaDeMotoristas(){
+        return getMotoristas();
     }
     
     /**
