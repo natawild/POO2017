@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterface{
     // variáveis de instância  
     
+    
     /**
      * Construtor vazio
      */
@@ -64,6 +65,7 @@ public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterf
     public HistoricoMotorista clone (){
         return new HistoricoMotorista(this);    
     }
-
+    
+    
     
 }

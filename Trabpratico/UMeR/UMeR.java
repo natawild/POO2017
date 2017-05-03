@@ -1,14 +1,10 @@
 
 /**
- * Classe UMeR aqui terá a implementação das funções necessárias ao funcionamento da aplicação UMeR. 
- * Terá a capacidade de realizar uma viagem, visualizar o histório 
- * 
- * 
+ * Classe UMeR aqui será a implementação das funções necessárias
  * @celia
  * @version 1.0
  */
 public class UMeR{
-    
     private BDInterface baseDeDados;
     
     public UMeR(){
@@ -60,20 +56,15 @@ public class UMeR{
         return new UMeR(this);    
     }
     
-    public Motorista pesquisaMotorista (String email){
+    public Motorista pesquisaMotorista(String email){
         return (Motorista) this.baseDeDados.getMotoristaComEmail(email);
     }
     
-    public Cliente pesquisaCliente (String email){
+    public Cliente pesquisaCliente(String email){
         return (Cliente) this.baseDeDados.getClienteComEmail(email);
     }
     
-    /**
-     * Método getMotoristaMaisPerto() - recebe um cliente e verifica qual o motorista que se apresenta mais perto
-     * do cliente; 
-     * 
-     */
-    public Motorista getMotoristaMaisPerto (Cliente cliente){
+    public Motorista getMotoristaMaisPerto(Cliente cliente){
         double distancia= Double.MAX_VALUE;
         Motorista motoristaMaisPerto = null;
         for(AtorInterface motorista: baseDeDados.getMotoristas()){
