@@ -67,7 +67,7 @@ public class UMeR{
     public Motorista getMotoristaMaisPerto(Cliente cliente){
         double distancia= Double.MAX_VALUE;
         Motorista motoristaMaisPerto = null;
-        for(AtorInterface motorista: baseDeDados.getMotoristas()){
+        for(AtorInterface motorista: baseDeDados.getListaDeMotoristas()){
             Motorista m = (Motorista) motorista;
             VeiculoInterface v = m.getVeiculo();
             Veiculo veiculoMotorista = (Veiculo) v;

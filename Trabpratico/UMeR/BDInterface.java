@@ -13,7 +13,7 @@ public interface BDInterface
     
     public String toString();
     
-    public List<AtorInterface> getMotoristas();
+    public List<AtorInterface> getListaDeMotoristas();
     
     public void addCliente(Cliente cliente);
     
