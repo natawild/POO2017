@@ -6,7 +6,9 @@
  * @version 1.0
  */
 public class MotoFilaEspera extends Moto implements FilaEsperaInterface{
-    private boolean filaEspera; 
+    private List<CLiente> filaClientes;
+    //TODO: implements gets e sets. IMplementar metodo da interface.
+    // FAzer o mesmo para Carro/CarrLig con filas
     
     /**
      * Construtor vazio 
@@ -14,7 +16,6 @@ public class MotoFilaEspera extends Moto implements FilaEsperaInterface{
     
     public MotoFilaEspera (){
         super(); 
-        this.filaEspera= false; 
     }
     
     /**
@@ -91,6 +92,7 @@ public class MotoFilaEspera extends Moto implements FilaEsperaInterface{
     public MotoFilaEspera clone (){
         return new MotoFilaEspera(this);    
     }
+    
     
     
     

@@ -1,5 +1,6 @@
 import java.time.LocalDate; 
 import java.util.List;
+import java.util.ArrayList;
 /**
  * Escreva a descrição da classe Main aqui.
  * 
@@ -124,8 +125,25 @@ public class Main
        System.out.println("Cliente: \n" + clientePesquisado);
        System.out.println("Motorista: \n" + motoristaMaisPerto);
        
+       
+       //Teste: adicionar a msm lista veiculos con file e sem fila
+       /*
+       MotoFilaEspera motaFila = new MotoFilaEspera();
+       Moto motaSemFila = new Moto();
+       
+       boolean eVeiculoInterface = motaFila instanceof VeiculoInterface;
+       
+       System.out.println("motaFila instanceof VeiculoInterface: " + eVeiculoInterface );
+       
+       List<VeiculoInterface> veiculosComESemFiles = new ArrayList<VeiculoInterface>();
+       veiculosComESemFiles.add(motaFila);
+       veiculosComESemFiles.add(motaSemFila);
+       
+       System.out.println("\nLista de veiculos com e sem file de espera \n" + veiculosComESemFiles );
+       
+       System.out.println("\n motaSemFila instanceof FilaEsperaInterface: " + (motaSemFila instanceof FilaEsperaInterface) );
         
-        
+       */
     }
     
 }

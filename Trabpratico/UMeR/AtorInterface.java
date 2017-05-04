@@ -30,5 +30,4 @@ public interface AtorInterface{
     
     public AtorInterface clone(); 
     
-   
 }

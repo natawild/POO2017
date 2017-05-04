@@ -16,9 +16,9 @@ public interface BDInterface{
     
     public String toString();
     
-    public List<AtorInterface> getListaDeMotoristas();
+    public List<AtorInterface> listaDeMotoristas();
     
-    public List<AtorInterface> getListaClientes(); 
+    public List<AtorInterface> listaClientes(); 
     
     public void addCliente(Cliente cliente);
     
