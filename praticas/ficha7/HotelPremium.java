@@ -47,7 +47,7 @@ public class HotelPremium extends Hotel implements Comparable<Hotel>{
      * Devolver a quantidade de hoteis existentes na cadeia
      */
     public int quantos(){
-    
+    return 0; 
     }
     
     /**
@@ -55,7 +55,7 @@ public class HotelPremium extends Hotel implements Comparable<Hotel>{
      */
     
     public int quantos (String loc){
-    
+    return 0; 
     }
     
     /**
@@ -63,7 +63,7 @@ public class HotelPremium extends Hotel implements Comparable<Hotel>{
      */
     
     public int quantosT(String tipo){
-        
+       return 0;  
     
     }
     
@@ -72,7 +72,7 @@ public class HotelPremium extends Hotel implements Comparable<Hotel>{
      */
     
     public Hotel getHotel (String cod){
-    
+    return null; 
     }
     
     /**
@@ -88,6 +88,7 @@ public class HotelPremium extends Hotel implements Comparable<Hotel>{
      */
     
     public List<Hotel> getHoteis (){
+        return null; 
     
     }
     /**
@@ -101,7 +102,9 @@ public class HotelPremium extends Hotel implements Comparable<Hotel>{
      * Alterar o estado da época de todos os HotelStandard
      */
     
-    public void mudaPara (String epoca){}
+    public void mudaPara (String epoca){
+    
+    }
     
     public HotelPremium clone(){
         return new HotelPremium (this);

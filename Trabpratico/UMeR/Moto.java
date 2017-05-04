@@ -21,16 +21,21 @@ public class Moto extends Veiculo implements VeiculoInterface{
      * Construtor parametrizado, ou seja, recebe a matricula, as coordenadas, a velocidade média, o preco base por km
      * e o fator de fiabilidade
      * @param matricula
+     * @param marca
      * @param vm
      * @param preco
      * @param fiabilidade De 1-5, descreve a fiabilidade do Veiculo
      * @param coord
      */
     
-    public Moto(String matricula, double vm, double preco, int fiabilidade, Coordenadas coord){
-        super(matricula,vm,preco,fiabilidade, coord);
+    public Moto(String matricula,String marca, double vm, double preco, int fiabilidade, Coordenadas coord){
+        super(matricula,marca, vm,preco,fiabilidade, coord);
     }
     
+    /**
+     * Construtor de cópia 
+     * @param m Moto
+     */
     public Moto (Moto m){
         super(m); 
     }

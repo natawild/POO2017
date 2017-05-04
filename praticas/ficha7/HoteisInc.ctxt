@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.params=
-comment0.target=HotelInc()
+comment0.target=HoteisInc()
 comment0.text=\n\ construtor\ vazio\n
 comment1.params=nome
-comment1.target=HotelInc(java.lang.String)
+comment1.target=HoteisInc(java.lang.String)
 comment10.params=
 comment10.target=java.util.List\ getHoteis()
 comment10.text=\n\ \u00A9\n\ (deve\ devolver\ uma\ lista\ dos\ hoteis)\n
@@ -15,9 +15,10 @@ comment12.text=\n\ Adicionar\ a\ informa\u00E7\u00E3o\ de\ um\ conjunto\ de\ hot
 comment13.params=
 comment13.target=java.util.Map\ getHoteisMap()
 comment2.params=hi
-comment2.target=HotelInc(HotelInc)
+comment2.target=HoteisInc(HoteisInc)
 comment3.params=nome\ hoteis
-comment3.target=HotelInc(java.lang.String,\ java.util.Map)
+comment3.target=HoteisInc(java.lang.String,\ java.util.Map)
+comment3.text=nao\ entendi\ este\ \n\ \n
 comment4.params=
 comment4.target=java.lang.String\ getNome()
 comment5.params=cod

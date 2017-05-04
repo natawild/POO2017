@@ -8,6 +8,7 @@
 public abstract class Veiculo {
     
     private String matricula; 
+    private String marca; //Adicionei a variável de instância marca, para um cliente poder escolher um carro com base na marca do veiculo
     private double vm; 
     private double preco; 
     private float fiabilidade;//0 a 2 randon()
@@ -19,6 +20,7 @@ public abstract class Veiculo {
     
     public Veiculo(){
         this.matricula=""; 
+        this.marca=""; 
         this.vm=0.0;
         this.preco=0.0;
         this.fiabilidade=0f;
@@ -28,13 +30,15 @@ public abstract class Veiculo {
     /**
      * construtor com argumentos
      * @param matricula
+     * @param marca
      * @param vm
      * @param preco
      * @param fiabilidade
      */
     
-    public Veiculo (String matricula, double vm, double preco, float fiabilidade, Coordenadas coord){
+    public Veiculo (String matricula,String marca, double vm, double preco, float fiabilidade, Coordenadas coord){
         this.matricula=matricula;
+        this.marca=marca; 
         this.vm=vm;
         this.preco=preco;
         this.fiabilidade=fiabilidade;
@@ -46,6 +50,7 @@ public abstract class Veiculo {
      */
     public Veiculo (Veiculo v){
         this.matricula=v.getMatricula();
+        this.marca=v.getMarca(); 
         this.vm=v.getVm();
         this.preco=v.getPreco();
         this.fiabilidade=v.getFiabilidade();
@@ -60,6 +65,15 @@ public abstract class Veiculo {
     
     public String getMatricula (){
         return this.matricula; 
+    
+    }
+    
+    /**
+     * @return marca do veiculo
+     */
+    
+    public String getMarca (){
+        return this.marca; 
     
     }
     
@@ -100,6 +114,10 @@ public abstract class Veiculo {
         this.matricula=matr;   
     }
     
+     public void setMarca (String marc){
+        this.marca=marc;   
+    }
+    
     public void setLoc(Coordenadas coord){
         this.loc=coord.clone(); 
     }
@@ -118,7 +136,7 @@ public abstract class Veiculo {
         return false;
         
         Veiculo v = (Veiculo) veic; 
-        return this.matricula.equals(v.getMatricula()) && this.vm == v.getVm() &&
+        return this.matricula.equals(v.getMatricula()) && this.marca.equals(v.getMarca()) && this.vm == v.getVm() &&
         this.preco == v.getPreco() && this.fiabilidade == v.getFiabilidade() &&
         this.loc.equals(v.getLoc()); 
     
@@ -127,6 +145,7 @@ public abstract class Veiculo {
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
         sb.append("Matricula: " +this.getMatricula() + "\n"); 
+        sb.append("Marca: " +this.getMarca() + "\n"); 
         sb.append("Velocidade Média: " +this.getVm() + "\n"); 
         sb.append("Preço por Km: " +this.getPreco() + "\n"); 
         sb.append("Fiabilidade do veiculo: " +this.getFiabilidade() +"\n");

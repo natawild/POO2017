@@ -30,11 +30,11 @@ public class Main
         
          
         List<AtorInterface> list = ((BD)baseDados).getClientes();
-        list.add(cliente2); 
+        list.add(cliente2.clone()); 
         ((BD)baseDados).setClientes(list);
         
         Coordenadas localizacaoCarr1 = new Coordenadas(10d, 4d); 
-        VeiculoInterface v1 = new CarroLig("qt-76-22", 60.5d, 3.5d, 3f, localizacaoCarr1); 
+        VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 60.5d, 3.5d, 3f, localizacaoCarr1); 
        
         Motorista motorista1= new Motorista(); 
         motorista1.setNome("luis"); 
@@ -55,10 +55,10 @@ public class Main
         
         baseDados.addVeiculo(v1);
         Coordenadas localizacaoCarr2 = new Coordenadas(20d, 45d); 
-        VeiculoInterface v2 = new CarroLig("25-99-PZ", 70d, 3.6d, 4f, localizacaoCarr2); 
+        VeiculoInterface v2 = new CarroLig("25-99-PZ","Renault", 70d, 3.6d, 4f, localizacaoCarr2); 
         LocalDate dataNasM2 = LocalDate.of (1989,12,24);
         Motorista motorista2 = new Motorista("acores@gmail.com","João César", "Gostarias?", "Rua Fábrica do pelo", 
-        dataNasM2, 2, 76, 320d, true, 1.3f,v2); 
+        dataNasM2, 2, 76, 320d, true,true, 1.3f,v2); 
         baseDados.addMotorista(motorista2); 
         baseDados.addVeiculo(v2);
         
@@ -108,6 +108,13 @@ public class Main
         System.out.println("Fim das matriculas encontradas \n");
         
         */
+       
+     
+        
+       List <AtorInterface> listaClientes = baseDados.getListaClientes();
+       for(AtorInterface clientes: listaClientes){
+            System.out.println("Clientes:++++++++++++++++++++ " + clientes);
+        }
        
        UMeR programa = new UMeR(baseDados);
        Cliente clientePesquisado = programa.pesquisaCliente("ola@ola.com");

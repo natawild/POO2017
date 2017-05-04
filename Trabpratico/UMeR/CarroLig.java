@@ -29,15 +29,15 @@ public class CarroLig extends Veiculo implements VeiculoInterface{
      * @param coord
      */
     
-    public CarroLig(String matricula, double vm, double preco, float fiabilidade, Coordenadas coord){
-        super(matricula,vm,preco,fiabilidade, coord);
+    public CarroLig(String matricula,String marca, double vm, double preco, float fiabilidade, Coordenadas coord){
+        super(matricula,marca,vm,preco,fiabilidade, coord);
     }
     
     /**
      * construtor de cópia 
      */
     public CarroLig(CarroLig c){
-        super(c.getMatricula(), c.getVm(), c.getPreco(), c.getFiabilidade(), c.getLoc()); 
+        super(c.getMatricula(),c.getMarca(), c.getVm(), c.getPreco(), c.getFiabilidade(), c.getLoc()); 
     }
     
     public int getLugaresLivres (){

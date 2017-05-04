@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  12 APR 2017 09:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  4 MAY 2017 11:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1528,14 +1528,18 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
  [2
 
 ] [3])
-(./chapters/conclusao.tex [4]
+(./chapters/parte2.tex [4]
 Cap\'{\i }tulo 3.
-) [5
+) (./chapters/conclusao.tex [5
+
+]
+Cap\'{\i }tulo 4.
+) [6
 
 ] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 33569 strings out of 493014
- 785702 string characters out of 6133352
+ 33572 strings out of 493014
+ 785748 string characters out of 6133352
  912530 words of memory out of 5000000
  36568 multiletter control sequences out of 15000+600000
  47799 words of font info for 54 fonts, out of 8000000 for 9000
@@ -1547,10 +1551,10 @@ r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
 /local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016
 /texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (8 pages, 454117 bytes).
+Output written on relatorio.pdf (9 pages, 454343 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 64 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

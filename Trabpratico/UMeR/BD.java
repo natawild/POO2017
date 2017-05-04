@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.List; 
 import java.util.TreeSet;
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
+import java.util.stream.Collectors; 
 import java.lang.Math;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.MessageDigest; 
 /**
  * A classe BD tem a lista de clientes, motoristas e veiculos existentes na empresa
  * 
@@ -31,9 +37,13 @@ public class BD implements BDInterface {
     
     /**
      * Construtor parametrizado
+     * @param c List<AtorInterface>
+     * @param m List<AtorInterface>
+     * @param v List<VeiculoInterface>
+     * @param h Set<Historico>
      */
     
-    public BD (List<AtorInterface> c,List<AtorInterface> m,List<VeiculoInterface> v , Set<Historico> h){
+    public BD (List<AtorInterface> c,List<AtorInterface> m, List<VeiculoInterface> v , Set<Historico> h){
         clientes = c; 
         motoristas = m; 
         veiculos = v; 
@@ -93,13 +103,19 @@ public class BD implements BDInterface {
     }
     
     public Set<Historico> getHistorico(){
+        return historico.stream()
+                        .map(Historico::clone)
+                        .collect(Collectors.toCollection(TreeSet::new)); 
+        
+        /*
         TreeSet<Historico> historicoCopia = new TreeSet<Historico>();
         for(Historico h: historico){
             historicoCopia.add(h.clone());
         }
         
         return historicoCopia;
-        
+        */
+     
         /** Isto nao funciona.Pesquisar como se faz
         return historico.stream()
                        .map(Historico::clone)
@@ -141,19 +157,25 @@ public class BD implements BDInterface {
                        .collect(toList()); 
     }
     
-        /**
+     /**
      * setHistorico(Set<Historico> v - Modifica a lista de historico
      * @param v : Set<Historico> v
      * 
      */
     
     public void setHistorico(Set<Historico> h){
+        this.historico=h.stream()
+                        .map(Historico::clone)
+                        .collect(Collectors.toCollection(TreeSet::new));
+        
+        /*
         TreeSet<Historico> historicoCopia = new TreeSet<Historico>();
         for(Historico historico: h){
             historicoCopia.add(historico.clone());
         }
         
         this.historico=historicoCopia;
+        *
         
         /** Isto nao funciona.Pesquisar como se faz
             this.historico=h.stream()
@@ -256,6 +278,15 @@ public class BD implements BDInterface {
     
     public List<AtorInterface> getListaDeMotoristas(){
         return getMotoristas();
+    }
+    
+    
+    /**
+     * Método que devolve a lista de todos os Clientes 
+     */
+    
+    public List <AtorInterface> getListaClientes(){
+        return getClientes(); 
     }
     
     /**
@@ -375,7 +406,7 @@ public class BD implements BDInterface {
         return res;
     }
     
-    public boolean loginValido (String email, String password){
+    public boolean loginValido (String email, String password) {
         AtorInterface cliente = getClienteComEmail(email);
         if(cliente!=null && cliente.getPassword().equals(codificar(password))){
             return true;
@@ -411,19 +442,61 @@ public class BD implements BDInterface {
         return null;
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
      * TODO: implementar funçao para codificar a password
      */
-    private String codificar(String password){
-        return password;
+    
+    
+    
+
+    /** Encontrei este 
+     * 
+     * 
+     * try    {
+             MessageDigest digest = MessageDigest.getInstance("MD5");
+             digest.update(pass.getBytes());
+             BASE64Encoder encoder = new BASE64Encoder (); 
+             return encoder.encode(digest.digest()); 
+         }catch (NoSuchAlgorithmException ns) {
+             ns.printStackTrace ();
+             return senha;
+            
+            }
+     * 
+     
+    public static String encripta (String senha) {
+
+        */
+       
+       private String codificar ( String pass ){
+           return null; 
+        
+        }
+    /*
+     throws NoSuchAlgorithmException{
+        MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
+            byte messageDigest[] = algorithm.digest(pass.getBytes("UTF-8"));
+ 
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : messageDigest) {
+                hexString.append(String.format("%02X", 0xFF & b));
+            }
+        
+            return hexString.toString();
+        
+        }  
+        
+        */
+            
     }
     
-    private float getDistancia(Cliente c, Motorista m){
-        float distancia = 0;
-        
-        
-        
-        return distancia;
-    }
-
-}
+ 

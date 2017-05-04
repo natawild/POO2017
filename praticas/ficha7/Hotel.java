@@ -194,9 +194,6 @@ public abstract class Hotel implements Comparable<Hotel> {
         return sb.toString();
     }
 
-
-   
-    
     public abstract Hotel clone(); 
     
 
@@ -208,6 +205,8 @@ public abstract class Hotel implements Comparable<Hotel> {
     public int hashCode() {
         return codigo.hashCode();
     }
+    
+    
     
     
     /**

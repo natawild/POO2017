@@ -8,12 +8,13 @@ import java.time.LocalDateTime;
 public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterface{
     // variáveis de instância  
     
-    
+    private Cliente cliente; 
     /**
      * Construtor vazio
      */
     public HistoricoMotorista (){
         super(); 
+        this.cliente = null; 
     }
     
     /**
@@ -21,10 +22,13 @@ public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterf
      * @param dataDeInicioDeServico 
      * @param tempo
      * @param valorCobrado
+     * @param cliente
      */
     
-    public HistoricoMotorista (LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado){
+    public HistoricoMotorista (LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, 
+    float valorCobrado, Cliente cliente){
         super(dataDeInicioDeServico,tempoEstimado, tempoReal, valorCobrado); 
+        this.cliente= cliente; 
     }
     
       
@@ -35,8 +39,28 @@ public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterf
     
     public HistoricoMotorista (HistoricoMotorista c){
         super(c);
+        this.cliente = c.getCliente(); 
     }
     
+    
+    /**
+     * getMotorista
+     */
+    
+    public Cliente getCliente(){
+        return this.cliente.clone(); 
+    }
+    
+    
+    /**
+     * setMotorista
+     */
+    
+    public void setCliente (Cliente cliente){
+        this.cliente = cliente.clone(); 
+    }
+    
+  
     /**
      * Métdo equals 
      */
@@ -48,7 +72,7 @@ public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterf
         return false; 
         
         HistoricoMotorista historicoMotorista = (HistoricoMotorista) cli; 
-        return super.equals(historicoMotorista); 
+        return super.equals(historicoMotorista) && this.cliente.equals(historicoMotorista.getCliente()); 
     }
     
     /**
@@ -58,6 +82,7 @@ public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterf
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
         sb.append("Histórico Motorista: " + super.toString());
+        sb.append("Cliente: " + this.getCliente() +"\n"); 
         return sb.toString();  
     }
     

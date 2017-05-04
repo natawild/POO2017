@@ -1,22 +1,32 @@
 Falar sobre:
 - porque 3 classes Historico;
-- login -> é preciso encriptar a password. É preciso pesquisar uma função de hash para fazer isto. A passworde deve ser guardado encripada.
+- login -> é preciso encriptar a password. É preciso pesquisar uma função de hash para fazer isto. A password deve ser guardado encripada.
 - O porque da DBInterface
 
+_adicionar no toString ***** ; muito melhor ahahaha 
 
-Duvidas a perguntar ao professor
-- Nao faz sentido ter uma variavel a mais no mototista para saber se ele esta ocupado ou nao? Assim um motorista esta livre para receber um cliente se estiver no horario de trabalho e nao estiver ocupado com um cliente.
-- Ha veicuos que podem ter filas de espera. Que veiculos? os da empresas só? Quem é que diz que o veiculo tem filas de espera ou nao? é o motorista/empresa ao registar o veiculo
+
+as motas não são tão afetadas pelo transito como os carros (A formula deve variar). 
+inicia a viagem e sabe o tempo que vai durar a viagem e calcula no novo tempo para o fim; 
+
+Duvidas a perguntar ao professor: 
+
+- Não faz sentido ter uma variável a mais no motorista para saber se ele esta ocupado ou nao? Assim um motorista esta livre para receber um cliente se estiver no horário de trabalho e não estiver ocupado com um cliente. sim faz sentido ter uma nova variável 
+- Ha veículos que podem ter filas de espera. Que veículos? os da empresas só? Quem é que diz que o veiculo tem filas de espera ou não? é o motorista/empresa ao registar o veiculo ::: 
+criar nova class do veículo com fila de espera: 
+
+
 - Se ha empresas então tem de haver outro ator, certo? 
 - Em que momento é apresentado ao cliente o valor final a cobrar (valor real é diferente do valor estimado)
+- como calcular o valor real a cobrar pelo motorista; 
 - Quem é que pode ver estes dados (admin? mais um ator?):
 	1 indicar o total facturado por uma viatura, ou empresa de táxis, num determinado período
-	2 determinar a listagens dos 10 clientes que mais gastam;
-	3 determinar a listagem dos 5 motoristas que apresentam mais desvios entre o valores previstos para as viagens e o valor  nal facturado;
+	2 determinar a listagens dos 10 clientes que mais gastam :: top 10 da app e/ou motorista?;
+	3 determinar a listagem dos 5 motoristas que apresentam mais desvios entre o valores previstos para as viagens e o valor final facturado;
 
 
 Futuro:
 - BD
-	- Acho que faz sentido ter um HashMap<String, Cliente> de cliente e não uma lista. Porque? Porque nenhuma das funcionalidades implica percorrer todos os clientes ( 2 - menos as do admin mas isto nao deve ser executado mts vezes) e vamos ter que fazer algumas pesquisas.  Alias logo que o cliente fizer login, temos de ir pesquisar que o cliente com dados introduzidos existe. A chave a usar é o email. (Agora que disse isto começa a faer sentido ter os motoristas num HashMap também )
-	- Mais ? Ideias celinha :D Se calhar o Historico deve estar ordenado por data. Neste momento teos um TreeSet<> mas não temos os dados ordenados pela data. Pesquisa como se faz isso. Pesquisa por "order TreeSet java". DICA: "implements Comparable" 
-- Acrescentar a classe UMeR toas as funcionalidades do programa (para motoristas simples, por agora esquecer empresas). POr agora ja temos um metodo na classe UMeR para is buscar o motorista mais perto de um determinado cliente
+	- Acho que faz sentido ter um HashMap<String, Cliente> de clientes e não uma lista. Porque? Porque nenhuma das funcionalidades implica percorrer todos os clientes ( 2 - menos as do admin mas isto nao deve ser executado mts vezes) e vamos ter que fazer algumas pesquisas.  Alias logo que o cliente fizer login, temos de ir pesquisar que o cliente com dados introduzidos existe. A chave a usar é o email. (Agora que disse isto começa a fazer sentido ter os motoristas num HashMap/TreeSet. Se usarmos um TreeSet temos de ordenar os motoristas por email)
+	- Mais ? Ideias -Se calhar o Historico deve estar ordenado por data. Neste momento temos um TreeSet<> mas não temos os dados ordenados pela data. Pesquisa como se faz isso. Pesquisa por "order TreeSet java". DICA: "implements Comparable" 
+- Acrescentar a classe UMeR todas as funcionalidades do programa (para motoristas simples, por agora esquecer empresas). Por agora ja temos um metodo na classe UMeR para is buscar o motorista mais perto de um determinado cliente

@@ -5,7 +5,7 @@
  * @celia
  * @version 1.0
  */
-public class HotelDiscount extends HotelStandard implements Comparable<Hotel>{
+public class HotelDiscount extends HotelEpoca implements Comparable<Hotel>{
     
     private int ocupacao; 
     

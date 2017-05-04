@@ -7,6 +7,7 @@ import java.time.LocalDate;
  * .Histórico das Viagens realizadas; 
  * .Número de kms já realizados na UMeR;
  * .Informação se está disponivel ou não em determinado momento;
+ * .Informação se está a trabalhar ou não (horarioTrabalho)
  * 
  * @celia  
  * @version 1.0
@@ -17,7 +18,8 @@ public class Motorista extends Ator implements AtorInterface{
     private int classificacao; //0-100
     //Histórico das viagens realizadas
     private double totalKms; 
-    private boolean disponivel;
+    private boolean disponivel;//verifica se está a trabalhar ou não 
+    private boolean horarioTrabalho;
     private float destreza; //0 e 2 
     private VeiculoInterface veiculo; 
     private HistoricoMotorista histMoto; 
@@ -31,6 +33,7 @@ public class Motorista extends Ator implements AtorInterface{
         this.classificacao = 0;
         this.totalKms=0;
         this.disponivel = false; 
+        this.horarioTrabalho = false; 
         this.destreza = 0f; 
         this.veiculo = null;   
     }
@@ -39,13 +42,14 @@ public class Motorista extends Ator implements AtorInterface{
      * Construtor parametrizado 
      */
     public Motorista(String email,String nome, String password, String morada, LocalDate dataNascimento
-    , int grauCumprimentoHorario, int classificacao, double totalKms, boolean disponivel, float destreza,
-    VeiculoInterface veiculo){
+    , int grauCumprimentoHorario, int classificacao, double totalKms, boolean disponivel,boolean horarioTrabalho,
+    float destreza, VeiculoInterface veiculo){
         super(email, nome, password, morada, dataNascimento);
         this.grauCumprimentoHorario = grauCumprimentoHorario;
         this.classificacao = classificacao; 
         this.totalKms= totalKms; 
         this.disponivel = disponivel; 
+        this.horarioTrabalho=horarioTrabalho; 
         this.destreza = destreza; 
         this.veiculo = veiculo; 
     }
@@ -62,6 +66,7 @@ public class Motorista extends Ator implements AtorInterface{
         this.classificacao = mt.getClassificacao(); 
         this.totalKms=mt.getTotalKms(); 
         this.disponivel= mt.getDisponivel(); 
+        this.horarioTrabalho = mt.getHorarioTrabalho(); 
         this.destreza=mt.getDestreza();
         this.veiculo= mt.getVeiculo(); 
     }
@@ -80,7 +85,11 @@ public class Motorista extends Ator implements AtorInterface{
     }
     
     public boolean getDisponivel(){
-    return this.disponivel; 
+        return this.disponivel; 
+    }
+    
+    public boolean getHorarioTrabalho(){
+        return this.horarioTrabalho; 
     }
     
     public float getDestreza(){
@@ -111,7 +120,11 @@ public class Motorista extends Ator implements AtorInterface{
         this.disponivel = disp; 
     }
     
-    public void setDestreza(float destr){
+    public void setHorarioTrabalho(boolean hTrab){
+        this.horarioTrabalho = hTrab; 
+    }
+    
+    public void setDestreza (float destr){
         this.destreza = destr; 
     }
     
@@ -134,7 +147,7 @@ public class Motorista extends Ator implements AtorInterface{
        Motorista m = (Motorista) moto; 
        return super.equals(m) &&  this.grauCumprimentoHorario== m.getGrauCumprimentoHorario() &&
               this.classificacao == m.getClassificacao() && this.totalKms == m.getTotalKms() && 
-              this.disponivel == m.getDisponivel() && this.destreza == m.getDestreza() &&
+              this.disponivel == m.getDisponivel() && this.horarioTrabalho == m.getHorarioTrabalho()&& this.destreza == m.getDestreza() &&
               this.veiculo.equals(m.getVeiculo());       
     }
     
@@ -147,7 +160,8 @@ public class Motorista extends Ator implements AtorInterface{
         sb.append("Motorista dados: " + super.toString());
         sb.append("Classificação: " +this.getClassificacao() + "\n"); 
         sb.append("Total Kms efetuados: " +this.getTotalKms() + "\n"); 
-        sb.append("Disponibilidade: " +this.getDisponivel() + "\n"); 
+        sb.append("Disponibilidade: " +this.getDisponivel() + "\n");
+        sb.append("Horário de Trabalho: " +this.getHorarioTrabalho() + "\n"); 
         sb.append("Destreza: " +this.getDestreza() + "\n"); 
         sb.append("Veiculo conduzido: " +this.getVeiculo() + "\n"); 
         return sb.toString(); 

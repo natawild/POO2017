@@ -25,15 +25,15 @@ public class Carrinha extends Veiculo implements VeiculoInterface{
      * @param fiabilidade De 1-5, descreve a fiabilidade do Veiculo
      * @param coord
      */
-    public Carrinha(String matricula, double vm, double preco, float fiabilidade, Coordenadas coord){
-        super(matricula,vm,preco,fiabilidade, coord);
+    public Carrinha(String matricula,String marca, double vm, double preco, float fiabilidade, Coordenadas coord){
+        super(matricula,marca,vm,preco,fiabilidade, coord);
     }
     
       /**
      * construtor de cópia 
      */
     public Carrinha(Carrinha c){
-        super(c.getMatricula(), c.getVm(), c.getPreco(), c.getFiabilidade(), c.getLoc()); 
+        super(c.getMatricula(), c.getMarca(), c.getVm(), c.getPreco(), c.getFiabilidade(), c.getLoc()); 
     }
     
     public int getLugaresLivres (){

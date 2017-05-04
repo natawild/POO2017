@@ -46,7 +46,7 @@ public class UMeR{
      * 
      */
     public String toString (){
-        StringBuilder sb = new StringBuilder("Motorista: \n"); 
+        StringBuilder sb = new StringBuilder(); 
         sb.append("Base de dados: " + this.baseDeDados);
         return sb.toString(); 
     }
@@ -56,16 +56,30 @@ public class UMeR{
         return new UMeR(this);    
     }
     
+    /**
+     * Método que pesquisa motorista por email
+     * @param email
+     */
     public Motorista pesquisaMotorista(String email){
         return (Motorista) this.baseDeDados.getMotoristaComEmail(email);
     }
     
+    
+    /**
+     * Método que pesquisa cliente por email
+     * @param email
+     */
     public Cliente pesquisaCliente(String email){
         return (Cliente) this.baseDeDados.getClienteComEmail(email);
     }
     
+    
+    /**
+     * Método que procura o motorista mais perto do Cliente
+     * @param cliente
+     */
     public Motorista getMotoristaMaisPerto(Cliente cliente){
-        double distancia= Double.MAX_VALUE;
+        double distancia = Double.MAX_VALUE;
         Motorista motoristaMaisPerto = null;
         for(AtorInterface motorista: baseDeDados.getListaDeMotoristas()){
             Motorista m = (Motorista) motorista;

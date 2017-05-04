@@ -12,26 +12,26 @@ import static java.util.stream.Collectors.toList;
  * @celia 
  * @version 1.0
  */
-public class HotelInc{
+public class HoteisInc{
     //varivais de instância 
     private String nome; 
     private Map <String,Hotel> hoteis; //codigo hotel -> hotel 
      /**
       * construtor vazio
       */
-    public HotelInc(){
+    public HoteisInc(){
         this.nome = "n/a";
         this.hoteis = new HashMap<>(); 
         
     }
     
-    public HotelInc (String nome){
+    public HoteisInc (String nome){
         this.nome = nome; 
         this.hoteis = new HashMap<>(); 
     
     }
     
-    public HotelInc (HotelInc hi){
+    public HoteisInc (HoteisInc hi){
         this.nome=hi.getNome();
         //this.hoteis=hi.getHoteisMap();
     }
@@ -39,7 +39,7 @@ public class HotelInc{
     /**nao entendi este 
      * 
      */
-    public HotelInc(String nome, Map<String,Hotel> hoteis){
+    public HoteisInc(String nome, Map<String,Hotel> hoteis){
         this.nome= nome; 
         this.hoteis = hoteis.entrySet().stream()
                                        .collect(toMap(e -> e.getKey(), 

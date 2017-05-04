@@ -138,7 +138,7 @@ public abstract class Ator{
         StringBuilder sb = new StringBuilder(); 
         sb.append("Email: " +this.getEmail() + "\n");
         sb.append("Nome: " + this.getNome() + "\n");
-        sb.append("Password: " +this.getPassword() + "\n");
+        sb.append("Password: ********\n" ); //+this.getPassword() + "\n");
         sb.append("Morada: " +this.getMorada() + "\n");
         sb.append("Data de Nascimento: " +this.getDataNascimento() + "\n");  
         return sb.toString(); 

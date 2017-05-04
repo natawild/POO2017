@@ -9,11 +9,13 @@ import java.time.LocalDateTime;
  */
 public class HistoricoCliente extends HistoricoAtor implements HistoricoInterface{
     // variáveis de instância 
+    private Motorista motorista; 
     /**
      * Construtor vazio
      */
     public HistoricoCliente (){
         super(); 
+        this.motorista=null; 
     }
     
     /**
@@ -21,10 +23,12 @@ public class HistoricoCliente extends HistoricoAtor implements HistoricoInterfac
      * @param dataDeInicioDeServico 
      * @param tempo
      * @param valorCobrado
+     * @param motorista
      */
     
-    public HistoricoCliente (LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado){
-        super(dataDeInicioDeServico,tempoEstimado, tempoReal, valorCobrado); 
+    public HistoricoCliente (LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado, Motorista motorista){
+        super(dataDeInicioDeServico,tempoEstimado, tempoReal, valorCobrado);
+        this.motorista=motorista; 
     }
     
       
@@ -35,6 +39,24 @@ public class HistoricoCliente extends HistoricoAtor implements HistoricoInterfac
     
     public HistoricoCliente (HistoricoCliente c){
         super(c);
+        this.motorista= c.getMotorista(); 
+    }
+    
+    /**
+     * getMotorista
+     */
+    
+    public Motorista getMotorista(){
+        return this.motorista.clone(); 
+    }
+    
+    
+    /**
+     * setMotorista
+     */
+    
+    public void setMotorista(Motorista motorista){
+        this.motorista = motorista.clone(); 
     }
     
     /**
@@ -48,7 +70,7 @@ public class HistoricoCliente extends HistoricoAtor implements HistoricoInterfac
         return false; 
         
         HistoricoCliente historicoCliente = (HistoricoCliente) cli; 
-        return super.equals(historicoCliente); 
+        return super.equals(historicoCliente) && this.motorista.equals(historicoCliente.getMotorista()); 
     }
     
     /**
@@ -58,6 +80,7 @@ public class HistoricoCliente extends HistoricoAtor implements HistoricoInterfac
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
         sb.append("Histórico Cliente: " + super.toString());
+        sb.append("Motorista: " +this.getMotorista() +"\n"); 
         return sb.toString();  
     }
     
@@ -66,8 +89,6 @@ public class HistoricoCliente extends HistoricoAtor implements HistoricoInterfac
         return new HistoricoCliente(this);    
     }
     
-    
-    
-    
+
 }
 

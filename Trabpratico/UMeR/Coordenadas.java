@@ -113,10 +113,12 @@ public class Coordenadas{
     }
     
     /**
-     * Fazer a função que Calcula distancias (distância euclidiana)
-     * 
+     * O método getDistancia() calcula distancias, neste caso a distância euclidiana 
+     * que é obtida pela seguinte fórmula: 
      * distancia = Math.sqrt( Math.pow( (x1 - x2),2 ) +
                                Math.pow( (y1 - y2),2 ) );
+                               
+      @param c Coordenadas                         
      */
     
     public double getDistancia (Coordenadas c){

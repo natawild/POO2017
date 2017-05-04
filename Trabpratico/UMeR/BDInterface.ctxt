@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=BDInterface
-comment0.text=\n\ Escreva\ a\ descri\u00E7\u00E3o\ da\ interface\ BDInterface\ aqui.\n\ \n\ @author\ (seu\ nome)\ \n\ @version\ (n\u00FAmero\ da\ vers\u00E3o\ ou\ data)\n
+comment0.params=
+comment0.target=BDInterface\ clone()
 comment1.params=
-comment1.target=BDInterface\ clone()
+comment1.target=java.lang.String\ toString()
 comment10.params=motorista
 comment10.target=void\ removeMotorista(Motorista)
 comment11.params=nome
@@ -18,9 +18,9 @@ comment15.target=Motorista\ getMotoristaMaisPerto(AtorInterface)
 comment16.params=
 comment16.target=java.util.List\ matriculasReg()
 comment2.params=
-comment2.target=java.lang.String\ toString()
+comment2.target=java.util.List\ getListaDeMotoristas()
 comment3.params=
-comment3.target=java.util.List\ getListaDeMotoristas()
+comment3.target=java.util.List\ getListaClientes()
 comment4.params=cliente
 comment4.target=void\ addCliente(Cliente)
 comment5.params=motorista

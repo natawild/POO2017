@@ -9,6 +9,8 @@
 
 public interface VeiculoInterface {
     
+    public String getMarca ();
+    
     public double getVm(); 
 
     public double getPreco(); 

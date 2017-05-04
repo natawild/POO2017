@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.target=VeiculoInterface
-comment0.text=\n\ A\ interface\ VeiculoIntereface\ tem\ os\ m\u00E9todos\ a\ implementar\ em\ cada\ subclasse,\ assim\ ser\u00E1\ mais\ f\u00E1cil\ quando\ for\ necess\u00E1rio\n\ acrescentar\ um\ novo\ tipo\ de\ veiculo\ \n\ \n\ @celia\ \n\ @version\ 1.0\n
+comment0.params=
+comment0.target=java.lang.String\ getMarca()
 comment1.params=
 comment1.target=double\ getVm()
 comment2.params=
