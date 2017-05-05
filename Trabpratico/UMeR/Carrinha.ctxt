@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Carrinha
+comment0.text=\n\ A\ classe\ Carrinha\ \u00E9\ uma\ especializa\u00E7\u00E3o\ da\ classe\ Veiculo\ \n\ \n\ @celia\n\ @version\ (n\u00FAmero\ de\ vers\u00E3o\ ou\ data)\n
+comment1.params=
+comment1.target=Carrinha()
+comment1.text=\n\ Construtor\ vazio.\ Como\ se\ trata\ de\ uma\ subclasse\ de\ Veiculo,\ utilizamos\ o\ construtor\ super\ \n\ para\ a\ reaproveita\u00E7\u00E3o\ de\ c\u00F3digo\ e\ para\ utilizarmos\ heran\u00E7a.\n
+comment2.params=matricula\ marca\ vm\ preco\ fiabilidade\ coord
+comment2.target=Carrinha(java.lang.String,\ java.lang.String,\ double,\ double,\ float,\ Coordenadas)
+comment2.text=\n\ Construtor\ parametrizado,\ ou\ seja,\ recebe\ a\ matricula,\ as\ coordenadas,\ a\ velocidade\ m\u00E9dia,\ o\ preco\ base\ por\ km\n\ e\ o\ fator\ de\ fiabilidade\n\ @param\ matricula\n\ @param\ vm\n\ @param\ preco\n\ @param\ fiabilidade\ De\ 1-5,\ descreve\ a\ fiabilidade\ do\ Veiculo\n\ @param\ coord\n
+comment3.params=c
+comment3.target=Carrinha(Carrinha)
+comment3.text=\n\ construtor\ de\ c\u00F3pia\ \n
+comment4.params=
+comment4.target=int\ getLugaresLivres()
+comment5.params=o
+comment5.target=boolean\ equals(java.lang.Object)
+comment5.text=\n\ equals\ recebe\ um\ Object\ o\ e\ verifica\ se\ \u00E9\ igual\ a\ um\ Carrinha\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\n\ m\u00E9todo\ toString\n\ \n
+comment7.params=
+comment7.target=Carrinha\ clone()
+numComments=8

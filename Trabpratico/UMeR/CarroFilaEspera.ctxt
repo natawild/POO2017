@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=CarroFilaEspera
+comment0.text=\n\ classe\ CarroFilaEspera\ \n\ \n\ @celia\n\ @version\ (n\u00FAmero\ de\ vers\u00E3o\ ou\ data)\n
+comment1.params=
+comment1.target=CarroFilaEspera()
+comment1.text=\n\ Construtor\ vazio\ \n
+comment2.params=matricula\ marca\ vm\ preco\ fiabilidade\ coord\ filaEspera
+comment2.target=CarroFilaEspera(java.lang.String,\ java.lang.String,\ double,\ double,\ int,\ Coordenadas,\ boolean)
+comment2.text=\n\ Construtor\ parametrizado\ \n\ @param\ matricula\n\ @param\ marca\n\ @param\ vm\n\ @param\ preco\n\ @param\ fiabilidade\n\ @param\ coord\n\ @param\ filaEspera\n\ \n
+comment3.params=mfe
+comment3.target=CarroFilaEspera(CarroFilaEspera)
+comment3.text=\n\ Construtor\ de\ c\u00F3pia\ \n\ @param\ mfe\n
+comment4.params=
+comment4.target=boolean\ getFilaEspera()
+comment4.text=\n\ get\ \n
+comment5.params=filaEspera
+comment5.target=void\ setFilaEspera(boolean)
+comment5.text=\n\ set\n
+comment6.params=carroFilaEsp
+comment6.target=boolean\ equals(java.lang.Object)
+comment7.params=
+comment7.target=java.lang.String\ toString()
+comment7.text=\n\ m\u00E9todo\ toString\ \n
+comment8.params=
+comment8.target=CarroFilaEspera\ clone()
+numComments=9
