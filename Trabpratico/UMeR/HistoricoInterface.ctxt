@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HistoricoAtor\ clone()
+comment1.params=
+comment1.target=java.time.LocalDateTime\ getDataDeInicioDeServico()
+comment2.params=
+comment2.target=float\ getTempoReal()
+comment3.params=
+comment3.target=float\ getValorCobrado()
+comment4.params=dataDeInicioDeServico
+comment4.target=void\ setDataDeInicioDeServico(java.time.LocalDateTime)
+comment5.params=tempoEstimado
+comment5.target=void\ setTempoEstimado(float)
+comment6.params=tempoReal
+comment6.target=void\ setTempoReal(float)
+comment7.params=valorCobrado
+comment7.target=void\ setValorCobrado(float)
+comment8.params=o
+comment8.target=boolean\ equals(java.lang.Object)
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

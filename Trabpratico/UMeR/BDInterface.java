@@ -16,9 +16,9 @@ public interface BDInterface{
     
     public String toString();
     
-    public List<AtorInterface> listaDeMotoristas();
+    public List<Motorista> listaDeMotoristas();
     
-    public List<AtorInterface> listaClientes(); 
+    public List<Cliente> listaClientes(); 
     
     public void addCliente(Cliente cliente);
     
@@ -34,7 +34,7 @@ public interface BDInterface{
     
     public void removeMotorista(Motorista motorista);
     
-    public AtorInterface findClientePeloNome(String nome);
+    public Cliente findClientePeloNome(String nome);
     
     public boolean loginValido(String email, String password);
     

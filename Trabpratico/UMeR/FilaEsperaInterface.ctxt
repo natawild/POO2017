@@ -1,6 +1,4 @@
 #BlueJ class context
-comment0.target=FilaEsperaInterface
-comment0.text=\n\ A\ interface\ FilaEsperaInterface\ \n\ \n\ @celia\n\ @version\ 1.0\n
-comment1.params=
-comment1.target=Cliente\ proximoCliente()
-numComments=2
+comment0.params=
+comment0.target=Cliente\ proximoCliente()
+numComments=1

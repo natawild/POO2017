@@ -1,6 +1,7 @@
 import java.time.LocalDate; 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
 /**
  * Escreva a descrição da classe Main aqui.
  * 
@@ -30,13 +31,15 @@ public class Main
         //System.out.println(cliente2.toString());
         
          
-        List<AtorInterface> list = ((BD)baseDados).getClientes();
-        list.add(cliente2.clone()); 
+        Map<String,Cliente> list = ((BD)baseDados).getClientes();
+        list.put(cliente2.getEmail(),cliente2.clone()); 
         ((BD)baseDados).setClientes(list);
         
         Coordenadas localizacaoCarr1 = new Coordenadas(10d, 4d); 
         VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 60.5d, 3.5d, 3f, localizacaoCarr1); 
        
+        
+        
         Motorista motorista1= new Motorista(); 
         motorista1.setNome("luis"); 
         motorista1.setEmail("olaluis@ola.com"); 
@@ -84,7 +87,7 @@ public class Main
         ((BD)baseDados).setMotoristas(listm); 
         */
         
-        System.out.println(baseDados.toString());
+        System.out.println("333333333333"+baseDados.toString());
 
         
         /*
@@ -112,8 +115,8 @@ public class Main
        
      
         
-       List <AtorInterface> listaClientes = baseDados.getListaClientes();
-       for(AtorInterface clientes: listaClientes){
+       List <Cliente> listaClientes = baseDados.listaClientes();
+       for(Cliente clientes: listaClientes){
             System.out.println("Clientes:++++++++++++++++++++ " + clientes);
         }
        

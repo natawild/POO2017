@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=AtorInterface
+comment0.text=\n\ A\ AtorInterface\ tem\ a\ declara\u00E7\u00E3o\ de\ todos\ os\ m\u00E9todos\ necess\u00E1rios\ para\ a\ cria\u00E7\u00E3o\ de\ um\ Ator\ \n\ \n\ @celia\n\ @version\ 1.0\n
+comment1.params=
+comment1.target=java.lang.String\ getEmail()
+comment10.params=d
+comment10.target=void\ setDataNascimento(java.time.LocalDate)
+comment11.params=
+comment11.target=AtorInterface\ clone()
+comment2.params=
+comment2.target=java.lang.String\ getPassword()
+comment3.params=
+comment3.target=java.lang.String\ getNome()
+comment4.params=
+comment4.target=java.lang.String\ getMorada()
+comment5.params=
+comment5.target=java.time.LocalDate\ getDataNascimento()
+comment6.params=e
+comment6.target=void\ setEmail(java.lang.String)
+comment7.params=n
+comment7.target=void\ setNome(java.lang.String)
+comment8.params=p
+comment8.target=void\ setPassword(java.lang.String)
+comment9.params=m
+comment9.target=void\ setMorada(java.lang.String)
+numComments=12
