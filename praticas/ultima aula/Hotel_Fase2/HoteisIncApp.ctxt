@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\n\ O\ m\u00E9todo\ main\ cria\ a\ aplica\u00E7\u00E3o\ e\ invoca\ o\ m\u00E9todo\ run()\n
+comment1.params=
+comment1.target=HoteisIncApp()
+comment1.text=\n\ Construtor.\n\ \n\ Cria\ os\ menus\ e\ a\ camada\ de\ neg\u00F3cio.\n
+comment2.params=
+comment2.target=void\ run()
+comment2.text=\n\ Executa\ o\ menu\ principal\ e\ invoca\ o\ m\u00E9todo\ correspondente\ \u00E0\ op\u00E7\u00E3o\ seleccionada.\n
+comment3.params=
+comment3.target=void\ trataConsultaHotel()
+comment3.text=\n\ Exemplo\ de\ m\u00E9todo\ com\ output\n\ \ \ \ \ \n\ \ \ \ private\ void\ trataConsultarUltValor()\ {\n\ \ \ \ \ \ \ \ System.out.println("\u00DAltimo\ valor\:\ "+logNegocio.getUltValor());\n\ \ \ \ }\n\ \ \ \ \n\ \ \ \ \n\ \ \ \ private\ void\ trataListarLog()\ {\n\ \ \ \ \ \ \ \ System.out.println(logNegocio.getValores());\n\ \ \ \ }\n
+numComments=4

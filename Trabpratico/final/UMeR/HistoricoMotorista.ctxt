@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HistoricoMotorista()
+comment0.text=\n\ Construtor\ vazio\n
+comment1.params=dataDeInicioDeServico\ tempoEstimado\ tempoReal\ valorCobrado\ cliente
+comment1.target=HistoricoMotorista(java.time.LocalDateTime,\ float,\ float,\ float,\ Cliente)
+comment1.text=\n\ Construtor\ parametrizado\ \n\ @param\ dataDeInicioDeServico\ \n\ @param\ tempo\n\ @param\ valorCobrado\n\ @param\ cliente\n
+comment2.params=c
+comment2.target=HistoricoMotorista(HistoricoMotorista)
+comment2.text=\n\ Construtor\ de\ c\u00F3pia\ \n\ @param\ c\ (HistoricoCliente)\n
+comment3.params=
+comment3.target=Cliente\ getCliente()
+comment3.text=\n\ getMotorista\n
+comment4.params=cliente
+comment4.target=void\ setCliente(Cliente)
+comment4.text=\n\ setMotorista\n
+comment5.params=cli
+comment5.target=boolean\ equals(java.lang.Object)
+comment5.text=\n\ M\u00E9tdo\ equals\ \n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\n\ m\u00E9todo\ toString\ \n
+comment7.params=
+comment7.target=HistoricoMotorista\ clone()
+numComments=8

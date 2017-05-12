@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.lang.String\ getEmail()
+comment1.params=
+comment1.target=java.lang.String\ getPassword()
+comment10.params=
+comment10.target=AtorInterface\ clone()
+comment2.params=
+comment2.target=java.lang.String\ getNome()
+comment3.params=
+comment3.target=java.lang.String\ getMorada()
+comment4.params=
+comment4.target=java.time.LocalDate\ getDataNascimento()
+comment5.params=e
+comment5.target=void\ setEmail(java.lang.String)
+comment6.params=n
+comment6.target=void\ setNome(java.lang.String)
+comment7.params=p
+comment7.target=void\ setPassword(java.lang.String)
+comment8.params=m
+comment8.target=void\ setMorada(java.lang.String)
+comment9.params=d
+comment9.target=void\ setDataNascimento(java.time.LocalDate)
+numComments=11

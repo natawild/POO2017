@@ -1,0 +1,3 @@
+------- HotéisInc --------
+HoteisIncNome da cadeia de hotéis: HoteisInc
+Hotéis: (, {})
