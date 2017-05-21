@@ -11,9 +11,11 @@ import java.util.Scanner;
 public class UMeRMenu {
     
     // variáveis de instância 
+    private String titulo;
     private List<String> opcoes;
     private int op;
 
+    
     /**
      * Construtor para objetos da classe Menu
      */
@@ -22,6 +24,19 @@ public class UMeRMenu {
         for(String op: opcoes)
             this.opcoes.add(op);
         this.op = 0;
+        this.titulo="Menu";
+    }
+
+    
+    /**
+     * Construtor para objetos da classe Menu
+     */
+    public UMeRMenu(String titulo, String[] opcoes){
+        this.opcoes = new ArrayList<String>();
+        for(String op: opcoes)
+            this.opcoes.add(op);
+        this.op = 0;
+        this.titulo=titulo;
     }
 
     /**
@@ -39,14 +54,14 @@ public class UMeRMenu {
      * Função para mostrar o menu.
      */
     private void showMenu() {
-        System.out.println("\n******************* Menu *******************");
+        System.out.println("\n****************" + this.titulo + "**********************");
         for (int i=0; i<this.opcoes.size(); i++) {
             System.out.print("   "+(i+1));
             System.out.print(" - ");
             System.out.println(this.opcoes.get(i));
         }
         System.out.println("   0 - Sair");
-        System.out.println("*********************************************");
+        System.out.println("**************************************************");
     }
     
     /**

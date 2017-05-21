@@ -23,8 +23,8 @@ public class UMeRApp{
 
     
     private static UMeR umer;
-    private static UMeRMenu menu_principal,menu_registo,menu_motorista,
-                   menu_cliente, menu_logado, menu_cliente_efetuarViagem, menu_admin;
+    private static UMeRMenu menu_principal,menu_registar_atores,menu_motorista,
+                   menu_cliente, menu_cliente_efetuarViagem, menu_admin;
                    
     private UMeRApp() {}
     
@@ -46,33 +46,27 @@ public class UMeRApp{
     private static void apresentarMenu(){
         int running = 1;
 
-        do {
-            if(umer.getBaseDeDados() != null){
-                menu_logado.executa();
-                switch(menu_logado.getOpcao()){
-                    case 1: menu();
-                            break;
-                    case 2: fecharSessao();
-                            break;
-                    case 0: running = 0;
-                }
-
-            }
-            //TODO: apagar este else
-            else{
-                menu_principal.executa();
-                switch (menu_principal.getOpcao()) {
-                    case 1: registo();
-                            break;
-                    case 2: iniciarSessao();
-                            break;
-                    case 3: menu();
-                            break;
-                    case 0: running = 0;
-                }
-            }
-        } while (running!=0);
-
+        menu_principal.executa();
+        switch(menu_principal.getOpcao()){
+            case 1: menuRegistarAtor();
+                    break;
+            case 2: menuIniciarSeccao();
+                    break;
+            default: break;
+        }
+    }
+   
+    
+    private static void menuRegistarAtor(){
+        menu_registar_atores.executa();
+        int opcao = menu_registar_atores.getOpcao();
+        
+        if(opcao != 0){
+            menuRegistar(opcao);
+        }
+        else {
+           apresentarMenu();
+        }  
     }
 
     /**
@@ -80,24 +74,20 @@ public class UMeRApp{
      */
     private static void menu(){
         /*
-
         if(umer.getBaseDeDados() == null)
             running_menu_cliente();
-       
             */
-        }
+    }
     
     
     /**
      * Carrega todos os menus para apresentar.
      */
     private static void carregarMenus() {
-        String[] menu0 = {"Menu",
-                        "Fechar sessão"};
         String[] menu1 = {"Registar Utilizador",
                         "Iniciar sessão"};
-        String [] menu2 = {"Motorista",
-                           "Cliente"};
+        String [] menu2 = {"Cliente",
+                           "Motorista"};
         String [] menu3 = {"Solicitar Viagem",
                            "Consultar listagem de viagems efetuadas"};
         String [] menu4 = {"Lista dos clientes que mais gastam",
@@ -108,14 +98,11 @@ public class UMeRApp{
                             "Ver 10 clientes que mais gastam"};
         String[] menu7 = {"Efetuar viagem"};
 
-        menu_logado = new UMeRMenu(menu0);
-        menu_registo = new UMeRMenu(menu1);
-        menu_cliente = new UMeRMenu(menu3);
-        menu_principal = new UMeRMenu(menu1);
-        
-        menu_motorista = new UMeRMenu(menu4);
+        menu_principal = new UMeRMenu("Menu Inicial", menu1);
+        menu_registar_atores = new UMeRMenu("Escolha o tipo de utilizador a registar", menu2);
+        menu_cliente = new UMeRMenu("Menu - cliente", menu3);
+        menu_motorista = new UMeRMenu("Menu - Motoristas", menu4);
         menu_cliente_efetuarViagem = new UMeRMenu(menu5);
-
     }
 
     /**
@@ -158,31 +145,32 @@ public class UMeRApp{
     /**
      * Registo na UMeRApp.
      */
-    private static void registo(){
+    private static void menuRegistar(int opcao){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
-        Ator ator;
+        AtorInterface ator;
         Scanner is = new Scanner(System.in);
-        String input = is.nextLine();
 
-        menu_registo.executa();
-        if(menu_registo.getOpcao() !=0){
-            String nome,email,password,morada;  LocalDate dataNascimento;
-            int grauCumprimentoHorario, classificacao; 
-            double totalKms;
-            boolean disponivel, horarioTrabalho;
-            float destreza;
-            VeiculoInterface veiculo; 
-            
-            System.out.print("Nome: ");
-            nome = is.nextLine();
-            System.out.print("Email: ");
-            email = is.nextLine();
-            System.out.print("Password: ");
-            password = is.nextLine();
-            System.out.print("Morada: ");
-            morada = is.nextLine();
-            System.out.print("Data de nascimento: ");
-            dataNascimento = LocalDate.parse(input,formatter);
+        String nome,email,password,morada;  LocalDate dataNascimento;
+        int grauCumprimentoHorario, classificacao; 
+        double totalKms;
+        boolean disponivel, horarioTrabalho;
+        float destreza;
+        VeiculoInterface veiculo; 
+        
+        System.out.print("Nome: ");
+        nome = is.nextLine();
+        System.out.print("Email: ");
+        email = is.nextLine();
+        System.out.print("Password: ");
+        password = is.nextLine();
+        System.out.print("Morada: ");
+        morada = is.nextLine();
+        System.out.print("Data de nascimento: ");
+        dataNascimento = LocalDate.parse(is.nextLine(),formatter);
+        
+        
+        /* Estes dados sao inseridos depois de fazer loggin e outros sao inseridos com base das viagens feitas
+        if(opcao == 2){
             System.out.print("Grau de cumprimento de horário de motorista: ");
             grauCumprimentoHorario = is.nextInt();
             System.out.print("Classificação de motorista: ");
@@ -195,49 +183,64 @@ public class UMeRApp{
             horarioTrabalho = false;
             System.out.print("Destreza: ");
             destreza = is.nextInt();
-            
-            
-            
-      
-            switch(menu_registo.getOpcao()){
-                case 1: ator = new Cliente(email,nome,password,morada,dataNascimento,null);
-                        break;
-                case 2: ator = new Motorista(email, nome, password, morada, dataNascimento, grauCumprimentoHorario,
-                classificacao, totalKms, disponivel, horarioTrabalho, destreza, null);
-                        break;
-                default: ator = new Cliente();
-            }
-            /*
-            try{
-                umer.registarUtilizador(ator);
-            }
-            catch(UtilizadorExistenteException e){
-                System.out.println("Este utizador já existe!");
-            }*/
         }
-        else System.out.println("Registo cancelado!");
+        */
+        
         is.close();
+        
+        switch(opcao){
+            case 1: ator = new Cliente(email, nome, password, morada, dataNascimento, new Coordenadas());
+                    break;
+            case 2: ator = new Motorista(email, nome, password, morada, dataNascimento);
+                    break;
+            case 3: ator = new Admin(email, nome, password, morada, dataNascimento, new Coordenadas());
+                    break;
+            default: ator = new Cliente();
+        }
+        
+        
+        try{
+            umer.registarUtilizador(ator);
+            //antes de apresentar o menu apresentar mensagem de sucesso.
+            apresentarMenu();     
+        }
+        catch(AtorExistenteException e){
+            System.out.println("Este utizador já existe!");
+            //TODO: Apresentar mensagem de erro e depois esperar por um entrar e voltar para o menu principal (inicial);   
+        }
+        
     }
 
     /**
      * Inicio de sessão na UMeRApp.
      */
-    private static void iniciarSessao(){
+    private static void menuIniciarSeccao(){
         Scanner is = new Scanner(System.in);
         String email,password;
         System.out.print("E-mail: ");
         email = is.nextLine();
         System.out.print("Password: ");
         password = is.nextLine();
+        is.close();
 
         try{
             umer.iniciaSessao(email,password);
+            menuOpcoesAtores();
         }
         catch(SemAutorizacaoException e){
             System.out.println(e.getMessage());
+            //TODO: Se falhar deve apresentar uma mensagem para voltar a tentar ou sair.
+            //menuVoltarA tentarLogin();
         }
+    }
+    
+    
+    
+    /**
+     * Menu por tipo de utilizador.
+     */
+    private static void menuOpcoesAtores(){
 
-        is.close();
     }
 
     /**
@@ -273,9 +276,9 @@ public class UMeRApp{
         do{
             menu_admin.executa();
             switch(menu_admin.getOpcao()){
-                case 1: System.out.println("AdicionavEICULO"); //adicionaVeiculo();
+                case 1: System.out.println("Adiciona Veiculo"); //adicionaVeiculo();
                         break;
-                case 2: System.out.println("Adiciona MOTORISTA");//adicionaMotorista();
+                case 2: System.out.println("Adiciona Motorista");//adicionaMotorista();
                         break;
             }
         }while(menu_admin.getOpcao()!=0);

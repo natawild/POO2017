@@ -57,6 +57,20 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.veiculo = veiculo; 
     }
     
+        /**
+     * Construtor parametrizado 
+     */
+    public Motorista(String email,String nome, String password, String morada, LocalDate dataNascimento){
+        super(email, nome, password, morada, dataNascimento);
+        this.grauCumprimentoHorario = 0;
+        this.classificacao = 0; 
+        this.totalKms= 0; 
+        this.disponivel = false; 
+        this.horarioTrabalho=false; 
+        this.destreza = 0; 
+        this.veiculo = null; 
+    }
+    
     
     /**
      * Construtor por cópia 
