@@ -24,7 +24,7 @@ public class UMeRApp{
     
     private static UMeR umer;
     private static UMeRMenu menu_principal,menu_registar_atores,menu_motorista,
-                   menu_cliente, menu_cliente_efetuarViagem, menu_admin;
+                   menu_cliente, menu_dados_pessoais, menu_cliente_efetuarViagem, menu_admin;
                    
     private UMeRApp() {}
     
@@ -49,10 +49,13 @@ public class UMeRApp{
         menu_principal.executa();
         switch(menu_principal.getOpcao()){
             case 1: menuRegistarAtor();
-                    break;
+                break;
             case 2: menuIniciarSeccao();
-                    break;
-            default: break;
+                break;
+            case 0: break;
+            default: menuErro();
+                apresentarMenu();
+                break;
         }
     }
    
@@ -89,20 +92,28 @@ public class UMeRApp{
         String [] menu2 = {"Cliente",
                            "Motorista"};
         String [] menu3 = {"Solicitar Viagem",
-                           "Consultar listagem de viagems efetuadas"};
-        String [] menu4 = {"Lista dos clientes que mais gastam",
+                           "Consultar listagem de viagems efetuadas", 
+                           "Ver Dados Pessoais"};
+        String [] menu4 = {"XXXX",
                            };
-        String [] menu5 = {"Lista de Carros de um dado tipo",
+        String [] menu5 = {"Lista dos clientes que mais gastam",
                            };
-        String[] menu6 = {"Viagens Efetuadas (entre datas)",
+        String [] menu6 = {"Lista de Carros de um dado tipo",
+                           };
+        String[] menu7 = {"Viagens Efetuadas (entre datas)",
                             "Ver 10 clientes que mais gastam"};
-        String[] menu7 = {"Efetuar viagem"};
+        String[] menu8 = {"Efetuar viagem"};
+        
+        String[] menu9 = {"Editar Dados"};
+
 
         menu_principal = new UMeRMenu("Menu Inicial", menu1);
         menu_registar_atores = new UMeRMenu("Escolha o tipo de utilizador a registar", menu2);
         menu_cliente = new UMeRMenu("Menu - cliente", menu3);
         menu_motorista = new UMeRMenu("Menu - Motoristas", menu4);
+        menu_admin = new UMeRMenu("Menu - Motoristas", menu5);
         menu_cliente_efetuarViagem = new UMeRMenu(menu5);
+        menu_dados_pessoais = new UMeRMenu("Opçoes Dados Pessoais", menu9);
     }
 
     /**
@@ -165,7 +176,7 @@ public class UMeRApp{
         password = is.nextLine();
         System.out.print("Morada: ");
         morada = is.nextLine();
-        System.out.print("Data de nascimento: ");
+        System.out.print("Data de nascimento (YYYY-MM-DD): ");
         dataNascimento = LocalDate.parse(is.nextLine(),formatter);
         
         
@@ -207,6 +218,7 @@ public class UMeRApp{
         catch(AtorExistenteException e){
             System.out.println("Este utizador já existe!");
             //TODO: Apresentar mensagem de erro e depois esperar por um entrar e voltar para o menu principal (inicial);   
+            apresentarMenu();
         }
         
     }
@@ -216,7 +228,7 @@ public class UMeRApp{
      */
     private static void menuIniciarSeccao(){
         Scanner is = new Scanner(System.in);
-        String email,password;
+        String email, password;
         System.out.print("E-mail: ");
         email = is.nextLine();
         System.out.print("Password: ");
@@ -230,7 +242,7 @@ public class UMeRApp{
         catch(SemAutorizacaoException e){
             System.out.println(e.getMessage());
             //TODO: Se falhar deve apresentar uma mensagem para voltar a tentar ou sair.
-            //menuVoltarA tentarLogin();
+            menuIniciarSeccao();
         }
     }
     
@@ -240,7 +252,68 @@ public class UMeRApp{
      * Menu por tipo de utilizador.
      */
     private static void menuOpcoesAtores(){
-
+        AtorInterface ator = umer.getAtorLoggado();
+        if(ator instanceof Cliente ){
+            menuCliente();
+        }
+        
+        if(ator instanceof Motorista){
+             //menu_motorista.executa();
+        }
+        
+        if(ator instanceof Admin){
+            // menu_admin.executa();
+        }
+       
+    }
+    
+    private static void menuCliente(){
+        menu_cliente.executa();
+        switch(menu_cliente.getOpcao()){
+            case 1: solicitarViagem();
+                break;
+            case 2: verHistoricoViagens();
+                break;
+            case 3: verDadosPessoais();
+                break;
+            case 0: fecharSessao();
+                break;
+            default: menuErro();
+                menuCliente();
+                break;
+        }
+    }
+    
+    private static void solicitarViagem(){
+    
+    }
+    
+    private static void verHistoricoViagens(){
+    
+    }
+    
+    private static void verDadosPessoais(){
+        System.out.print("*********** Dados Pessoais ***************");
+        System.out.print(umer.getAtorLoggado().toString());
+        System.out.print("*********** Dados Pessoais ***************");
+        menuEditarDadosPessoais();
+    }
+    
+    private static void menuEditarDadosPessoais(){
+        menu_dados_pessoais.executa();
+        switch(menu_dados_pessoais.getOpcao()){
+            case 1: editarDadosPessoais();
+                break;
+            case 0: menuCliente();
+                break;
+            default: menuErro();
+                menuEditarDadosPessoais();
+                break;
+        }
+    }
+    
+    private static void editarDadosPessoais(){
+        
     }
 
     /**
@@ -248,26 +321,8 @@ public class UMeRApp{
      */
     private static void fecharSessao(){
         umer.fechaSessao();
+        apresentarMenu();
     }
-    
-    /**
-     * Executar o menu para utilizadores não registados na UMeRApp.
-     */
-    /*
-     private static void running_menu_cliente(){
-        do{
-            menu_cliente.executa();
-            switch(menu_cliente.getOpcao()){
-                case 1: solicitarViagem();
-                        break;
-                case 2: habitaveisPreco();
-                        break;
-                case 3: imoveisVendedores();
-                        break;
-            }
-        }while(menu_cliente.getOpcao()!=0);
-    }
-    */
 
     /**
      * Executar menu para vendedores.
@@ -282,6 +337,10 @@ public class UMeRApp{
                         break;
             }
         }while(menu_admin.getOpcao()!=0);
+    }
+    
+    private static void menuErro(){
+        System.out.println("Opçao invalida! Volta a tentar");
     }
     
     

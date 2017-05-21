@@ -1,11 +1,12 @@
 import java.util.Comparator; 
+import java.io.Serializable;
 /**
  * Classe abstrata Veiculo 
  * 
  * @celia
  * @version 1.0
  */
-public abstract class Veiculo {
+public abstract class Veiculo implements Serializable{
     
     /*implements Comparator<Motorista>*/
     

@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import Exceptions.*;
+import java.io.IOException;
 /**
  * Escreva a descrição da classe Main aqui.
  * 
@@ -209,5 +210,30 @@ public class Main
     System.out.println("\n---Teste:Pesquisa de motorista mais perto da celia---\n");
        System.out.println("Cliente: \n" + clientePesquisado2);
        System.out.println("Motorista: \n" + motoristaMaisPert);
+       
+     
+    String file_name = "UMeR_estado.obj";
+    UMeR umer = null;
+    
+    try {
+            BDInterface bd = UMeR.leObj(file_name);
+            umer = new UMeR (bd);
+            System.out.println("DADOS DA BD");
+            System.out.println(umer.toString());
+        }
+        catch (IOException e) {
+            umer = new UMeR();
+            System.out.println("Não consegui ler os dados!\nErro de leitura.");
+        }
+        catch (ClassNotFoundException e) {
+            umer = new UMeR();
+            System.out.println("Não consegui ler os dados!\nFicheiro com formato desconhecido.");
+        }
+        catch (ClassCastException e) {
+            umer = new UMeR();
+            System.out.println("Não consegui ler os dados!\nErro de formato.");
+        }
   }
+  
+
 }

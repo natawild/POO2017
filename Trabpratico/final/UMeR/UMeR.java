@@ -46,6 +46,14 @@ public class UMeR{
         this.baseDeDados = bd.clone();
     }
     
+    public AtorInterface getAtorLoggado(){
+        return this.atorLoggado.clone();
+    }
+    
+      public AtorInterface setAtorLoggado(AtorInterface ator){
+        return this.atorLoggado = ator;
+    }
+    
      /**
      * método equals 
      */
@@ -192,33 +200,33 @@ public class UMeR{
      * 
      */
     public void registarUtilizador(AtorInterface ator) throws AtorExistenteException {
-		if(ator instanceof Cliente){
-		    Cliente novo = (Cliente) ator; 
-		    
-		    if (((BD) this.baseDeDados).getClientes().containsKey(novo.getEmail())){
-		        throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
+        if(ator instanceof Cliente){
+            Cliente novo = (Cliente) ator; 
+            
+            if (((BD) this.baseDeDados).getClientes().containsKey(novo.getEmail())){
+                throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
             }
             else {
                 this.baseDeDados.addCliente(novo);
             } 
-		}
+        }
         
         if(ator instanceof Motorista){
-		    Motorista novo = (Motorista) ator; 
-		    
-		    if (((BD) this.baseDeDados).getMotoristas().containsKey(novo.getEmail())){
-		        throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
+            Motorista novo = (Motorista) ator; 
+            
+            if (((BD) this.baseDeDados).getMotoristas().containsKey(novo.getEmail())){
+                throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
             }
             else {
                 this.baseDeDados.addMotorista(novo);
             } 
-		}
-		
-		if(ator instanceof Admin){
-		    Admin novo= (Admin) ator; 
-		    
-		    if (((BD) this.baseDeDados).getAdmins().containsKey(novo.getEmail())){
-		        throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
+        }
+        
+        if(ator instanceof Admin){
+            Admin novo= (Admin) ator; 
+            
+            if (((BD) this.baseDeDados).getAdmins().containsKey(novo.getEmail())){
+                throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
             }
             else {
                 this.baseDeDados.addAdmin(novo);
@@ -226,11 +234,11 @@ public class UMeR{
                 //mapAdmins.put(novo2.getEmail(), novo2.clone());
                 //((BD) this.baseDeDados).setAdmins(mapAdmins); 
             } 
-		}
-	}
+        }
+    }
     
-	
-	/**
+    
+    /**
      * Iniciar sessão na aplicação.
      * @param email
      * @param password
@@ -277,9 +285,9 @@ public class UMeR{
     }
     
     public void registarViatura(VeiculoInterface veiculo) throws ViaturaExistenteException {
-		    
+            
         if (this.baseDeDados.carroEstaRegistado(veiculo.getMatricula())){
-		     throw new ViaturaExistenteException("Veiculo "+veiculo.getMatricula() +" já existe");
+             throw new ViaturaExistenteException("Veiculo "+veiculo.getMatricula() +" já existe");
          }
         else {
               this.baseDeDados.addVeiculo(veiculo);
@@ -344,29 +352,29 @@ public class UMeR{
     
     
     /**
-	 * Obter mapeamento para cada motorista, respetivo veiculo 
-	 * @return Mapeamento veiculo, motorista
-	 */
-	/*
-	public Map<AtorInterface, VeiculoInterface> obterMapMotoVei() {
-		Map<AtorInterface, VeiculoInterface> map = new TreeMap<>();
+     * Obter mapeamento para cada motorista, respetivo veiculo 
+     * @return Mapeamento veiculo, motorista
+     */
+    /*
+    public Map<AtorInterface, VeiculoInterface> obterMapMotoVei() {
+        Map<AtorInterface, VeiculoInterface> map = new TreeMap<>();
 
-		for(AtorInterface u: this.baseDeDados.listaDeMotoristas()) {
-			if (u instanceof Motorista) {
-				Motorista m = (Motorista) u;
+        for(AtorInterface u: this.baseDeDados.listaDeMotoristas()) {
+            if (u instanceof Motorista) {
+                Motorista m = (Motorista) u;
 
-				for(VeiculoInterface vi: this.baseDeDados.listaVeiculos()){
-				    if(vi instanceof VeiculoInterface){
-				        VeiculoInterface v = (VeiculoInterface) vi; 
-				    }
-					map.put(m, vi);
-				}
-			}
-		}
+                for(VeiculoInterface vi: this.baseDeDados.listaVeiculos()){
+                    if(vi instanceof VeiculoInterface){
+                        VeiculoInterface v = (VeiculoInterface) vi; 
+                    }
+                    map.put(m, vi);
+                }
+            }
+        }
 
-		return map;
-	}
-	*/
+        return map;
+    }
+    */
     
     
     /**

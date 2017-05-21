@@ -125,7 +125,10 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
     }
     
     public VeiculoInterface getVeiculo(){
-        return this.veiculo.clone(); 
+        if(veiculo != null) {
+            return this.veiculo.clone(); 
+        }
+        return null;
     }
     
     //setters

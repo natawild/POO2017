@@ -1,5 +1,6 @@
 import java.time.LocalDate; 
 import java.util.Arrays; 
+import java.io.Serializable;
 /**
  * Classe abstrata Ator - Apenas estarão declaradas as variáveis comuns a qualquer Ator do sistema: email
  * (que identifica o Ator), nome, password, morada, data de Nascimento
@@ -7,7 +8,7 @@ import java.util.Arrays;
  * @celia
  * @version 1.0
  */
-public abstract class Ator{
+public abstract class Ator implements Serializable{
     
     private String email; 
     private String nome; 
