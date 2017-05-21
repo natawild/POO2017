@@ -410,8 +410,7 @@ public class UMeR{
      */
     public void gravaObj(String fich) throws IOException {
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fich));
-        oos.writeObject(this);
-
+        oos.writeObject(this.baseDeDados);
         oos.flush();
         oos.close();
     }
@@ -421,13 +420,11 @@ public class UMeR{
      * @param fich
      * @return
      */
-    public static UMeR leObj(String fich) throws IOException, ClassNotFoundException {
+    public static BDInterface leObj(String fich) throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fich));
-
-        UMeR te = (UMeR) ois.readObject();
-
+        BDInterface bd = (BDInterface) ois.readObject();
         ois.close();
-        return te;
+        return bd;
     }
 
     /**

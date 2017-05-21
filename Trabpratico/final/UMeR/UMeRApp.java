@@ -36,13 +36,7 @@ public class UMeRApp{
         carregarMenus();
         initApp(file_name);
         apresentarMenu();
-        try {
-            umer.gravaObj(file_name);
-            umer.log("log.txt", true);
-        }
-        catch (IOException e) {
-            System.out.println("Não consegui gravar os dados!");
-        }
+        atualizarApp(file_name);
         System.out.println("Volte sempre!");
     }
 
@@ -64,6 +58,7 @@ public class UMeRApp{
                 }
 
             }
+            //TODO: apagar este else
             else{
                 menu_principal.executa();
                 switch (menu_principal.getOpcao()) {
@@ -129,7 +124,8 @@ public class UMeRApp{
      */
     private static void initApp(String fich){
         try {
-            umer = UMeR.leObj(fich);
+            BDInterface bd = UMeR.leObj(fich);
+            umer = new UMeR (bd);
         }
         catch (IOException e) {
             umer = new UMeR();
@@ -142,6 +138,20 @@ public class UMeRApp{
         catch (ClassCastException e) {
             umer = new UMeR();
             System.out.println("Não consegui ler os dados!\nErro de formato.");
+        }
+    }
+    
+    /**
+     * Atualiza o estado da aplicação.
+     * @param fich
+     */
+    private static void atualizarApp(String fich){
+        try {
+            umer.gravaObj(fich);
+            umer.log("log.txt", true);
+        }
+        catch (IOException e) {
+            System.out.println("Não consegui gravar os dados!");
         }
     }
 

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * @celia
  * @version 1.0
  */
-public class BD implements BDInterface {
+public class BD implements BDInterface, Serializable {
     
     private Map<String, AtorInterface> clientes;
     private Map<String, AtorInterface> motoristas; 
