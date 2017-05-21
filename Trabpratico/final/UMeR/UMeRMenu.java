@@ -73,7 +73,9 @@ public class UMeRMenu {
         
         System.out.print("Opção: ");
         try {
-            op = is.nextInt();
+            op = is.nextInt();  
+            //Para limpar a consola;
+            System.out.print ('\f');
         }
         catch (InputMismatchException e) { // Não foi inscrito um int
             op = -1;

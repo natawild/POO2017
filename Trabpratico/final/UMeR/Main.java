@@ -204,7 +204,6 @@ public class Main
         
     System.out.println(programa.getBaseDeDados());
     
-    
     Cliente clientePesquisado2 = programa.pesquisaCliente("celia2@gmail.com");
     Motorista motoristaMaisPert = programa.motoristaMaisPertoCliente(clientePesquisado);
     System.out.println("\n---Teste:Pesquisa de motorista mais perto da celia---\n");
@@ -212,6 +211,7 @@ public class Main
        System.out.println("Motorista: \n" + motoristaMaisPert);
        
      
+    /* Teste da leitura do ficheiro
     String file_name = "UMeR_estado.obj";
     UMeR umer = null;
     
@@ -233,6 +233,7 @@ public class Main
         umer = new UMeR();
         System.out.println("Não consegui ler os dados!\nErro de formato.");
     }
+    */
         
     System.out.println("password: '"+ Utils.encriptar("admin") +"'");
         
