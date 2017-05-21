@@ -57,6 +57,7 @@ public class UMeRApp{
                 apresentarMenu();
                 break;
         }
+        umer.setTentativasDeLoginFalhadas(0) ;
     }
    
     
@@ -96,7 +97,8 @@ public class UMeRApp{
                            "Ver Dados Pessoais"};
         String [] menu4 = {"XXXX",
                            };
-        String [] menu5 = {"Lista dos clientes que mais gastam",
+        String [] menu5 = {"Lista dos utilizadores registados",
+                            "Lista dos clientes que mais gastam"
                            };
         String [] menu6 = {"Lista de Carros de um dado tipo",
                            };
@@ -111,7 +113,7 @@ public class UMeRApp{
         menu_registar_atores = new UMeRMenu("Escolha o tipo de utilizador a registar", menu2);
         menu_cliente = new UMeRMenu("Menu - cliente", menu3);
         menu_motorista = new UMeRMenu("Menu - Motoristas", menu4);
-        menu_admin = new UMeRMenu("Menu - Motoristas", menu5);
+        menu_admin = new UMeRMenu("Menu - Admin", menu5);
         menu_cliente_efetuarViagem = new UMeRMenu(menu5);
         menu_dados_pessoais = new UMeRMenu("Opçoes Dados Pessoais", menu9);
     }
@@ -124,6 +126,15 @@ public class UMeRApp{
         try {
             BDInterface bd = UMeR.leObj(fich);
             umer = new UMeR (bd);
+            if(!umer.temAdminsRegistados()){
+                AtorInterface admin = new Admin("admin@admin.com", "admin", "admin", null, null, new Coordenadas());
+                try {
+                    umer.registarUtilizador(admin);
+                }
+                catch(AtorExistenteException e){
+                    System.out.println("Nao e possivel registar admin default: " + e.getMessage());
+                }
+            }
         }
         catch (IOException e) {
             umer = new UMeR();
@@ -217,8 +228,7 @@ public class UMeRApp{
         }
         catch(AtorExistenteException e){
             System.out.println("Este utizador já existe!");
-            //TODO: Apresentar mensagem de erro e depois esperar por um entrar e voltar para o menu principal (inicial);   
-            apresentarMenu();
+            //TODO: Apresentar mensagem de erro e depois esperar por um entrar e voltar para o menu principal (inicial);
         }
         
     }
@@ -242,7 +252,16 @@ public class UMeRApp{
         catch(SemAutorizacaoException e){
             System.out.println(e.getMessage());
             //TODO: Se falhar deve apresentar uma mensagem para voltar a tentar ou sair.
-            menuIniciarSeccao();
+            
+            if(umer.getTentativasDeLoginFalhadas() < 3){
+                umer.adicionarTentativaDeLoginFalhadas();
+                menuIniciarSeccao();
+            }
+            else {
+                System.out.println("Falhou o login 3 vezes. Por favor tente mais tarde"); 
+                apresentarMenu();
+                umer.setTentativasDeLoginFalhadas(0);
+            }
         }
     }
     
@@ -262,7 +281,7 @@ public class UMeRApp{
         }
         
         if(ator instanceof Admin){
-            // menu_admin.executa();
+           menuAdmin();
         }
        
     }
@@ -293,9 +312,9 @@ public class UMeRApp{
     }
     
     private static void verDadosPessoais(){
-        System.out.print("*********** Dados Pessoais ***************");
+        System.out.print("\n*********** Dados Pessoais ***************\n");
         System.out.print(umer.getAtorLoggado().toString());
-        System.out.print("*********** Dados Pessoais ***************");
+        System.out.print("\n*********** Dados Pessoais ***************\n");
         menuEditarDadosPessoais();
     }
     
@@ -315,12 +334,49 @@ public class UMeRApp{
     private static void editarDadosPessoais(){
         
     }
+    
+    
+    private static void menuAdmin(){
+        menu_admin.executa();
+        switch(menu_admin.getOpcao()){
+            case 1: listaUtilizadores();
+                break;
+            /* TODO: adicionar menus das outras funcionaldiade do admin
+            case 2: verHistoricoViagens();
+                break;
+            case 3: verDadosPessoais();
+                break;
+            */
+            case 0: fecharSessao();
+                break;
+            default: menuErro();
+                menuAdmin();
+                break;
+        }
+    }
+    private static void listaUtilizadores(){
+        System.out.println("\n*********** Lista de Clientes ***************");
+        List<AtorInterface> clientes = umer.listaClientes();
+        for(AtorInterface cliente: clientes){
+             System.out.println("Nome: " + cliente.getNome() + " | Email: " + cliente.getEmail());
+        }
+        
+        System.out.println("\n*********** Lista de Motoristas ***************");
+        List<AtorInterface> motoristas = umer.listaMotoristas();
+        for(AtorInterface motorista: motoristas){
+             System.out.println("Nome: " + motorista.getNome() + " | Email: " + motorista.getEmail());
+        }
+        
+
+        menuAdmin();
+    }
 
     /**
      * Fechar sessão na UMeRApp.
      */
     private static void fecharSessao(){
         umer.fechaSessao();
+        umer.setTentativasDeLoginFalhadas(0);
         apresentarMenu();
     }
 

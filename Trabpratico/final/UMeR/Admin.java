@@ -50,8 +50,7 @@ public class Admin extends Ator implements AtorInterface, Serializable{
      */
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
-        sb.append("Administrador\n");
-        sb.append("Administrador dados: " + super.toString());
+        sb.append(super.toString());
         return sb.toString();  
     }
     

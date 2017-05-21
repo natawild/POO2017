@@ -79,8 +79,7 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
     
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
-        sb.append("Cliente\n");
-        sb.append("Clientes dados: " + super.toString());
+        sb.append(super.toString());
         sb.append("Cliente localização: " + loc.toString());
         return sb.toString();  
     }

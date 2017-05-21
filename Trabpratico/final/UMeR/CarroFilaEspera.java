@@ -127,9 +127,8 @@ public class CarroFilaEspera extends CarroLig implements FilaEsperaInterface,Ser
      */
     
     public String toString (){
-        StringBuilder sb = new StringBuilder(); 
-        sb.append("Carro com fila de espera\n");
-        sb.append("Carro dados: " + super.toString());
+        StringBuilder sb = new StringBuilder("Carro com fila de espera\n"); 
+        sb.append(super.toString());
         sb.append("Clientes em Espera: " + this.getFilaClientes());
         return sb.toString();  
     }

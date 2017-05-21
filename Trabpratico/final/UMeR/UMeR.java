@@ -23,19 +23,28 @@ import Exceptions.*;
  */
 public class UMeR{
     private BDInterface baseDeDados;
-    private AtorInterface atorLoggado; 
+    private AtorInterface atorLoggado;
+    private int tentativasDeLoginFalhadas;
     private Map<String, AtorInterface> atores;
     
     public UMeR(){
         this.baseDeDados= new BD();  
+        this.tentativasDeLoginFalhadas = 0;
     }
     
-    public UMeR(BDInterface baseDeDados){
+    public UMeR(BDInterface baseDeDados, int tentativasDeLoginFalhadas){
         this.baseDeDados= baseDeDados.clone(); 
+        this.tentativasDeLoginFalhadas = tentativasDeLoginFalhadas;
+    }
+    
+     public UMeR(BDInterface baseDeDados){
+        this.baseDeDados= baseDeDados.clone(); 
+        this.tentativasDeLoginFalhadas = 0;
     }
 
     public UMeR(UMeR u){
         this.baseDeDados = u.getBaseDeDados(); 
+        this.tentativasDeLoginFalhadas = u.getTentativasDeLoginFalhadas();
     }
    
     public BDInterface getBaseDeDados(){
@@ -50,8 +59,16 @@ public class UMeR{
         return this.atorLoggado.clone();
     }
     
-      public AtorInterface setAtorLoggado(AtorInterface ator){
+    public AtorInterface setAtorLoggado(AtorInterface ator){
         return this.atorLoggado = ator;
+    }
+    
+    public int getTentativasDeLoginFalhadas(){
+           return this.tentativasDeLoginFalhadas;
+    }
+    
+    public void setTentativasDeLoginFalhadas(int tentativasDeLoginFalhadas){
+        this.tentativasDeLoginFalhadas= tentativasDeLoginFalhadas;
     }
     
      /**
@@ -83,6 +100,9 @@ public class UMeR{
         return new UMeR(this);    
     }
     
+    public void adicionarTentativaDeLoginFalhadas(){
+        this.tentativasDeLoginFalhadas =  this.tentativasDeLoginFalhadas+1;
+    }
     
     
     /**
@@ -110,7 +130,7 @@ public class UMeR{
     public Motorista getMotoristaMaisPerto(Cliente cliente){
         double distancia = Double.MAX_VALUE;
         Motorista motoristaMaisPerto = null;
-        for(AtorInterface motorista: baseDeDados.listaDeMotoristas()){
+        for(AtorInterface motorista: baseDeDados.listaMotoristas()){
             Motorista m = (Motorista) motorista;
             VeiculoInterface v = m.getVeiculo();
             Veiculo veiculoMotorista = (Veiculo) v;
@@ -130,6 +150,10 @@ public class UMeR{
     
     public List<AtorInterface> listaClientes(){
         return this.baseDeDados.listaClientes(); 
+    }
+    
+     public List<AtorInterface> listaMotoristas(){
+        return this.baseDeDados.listaMotoristas(); 
     }
     
     public List<AtorInterface> findClientePeloNome (String nome){
@@ -447,6 +471,11 @@ public class UMeR{
         fw.write("\n-------------------------- LOG --------------------------\n");
         fw.flush();
         fw.close();
+    }
+    
+    
+    public boolean temAdminsRegistados(){
+        return this.baseDeDados.temAdminsRegistados();
     }
 
 }

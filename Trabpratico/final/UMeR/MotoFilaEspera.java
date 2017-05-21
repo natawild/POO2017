@@ -127,9 +127,8 @@ public class MotoFilaEspera extends Moto implements FilaEsperaInterface,Serializ
      */
     
     public String toString (){
-        StringBuilder sb = new StringBuilder(); 
-        sb.append("Moto com fila de espera\n");
-        sb.append("Moto dados: " + super.toString());
+        StringBuilder sb = new StringBuilder("Moto com fila de espera\n"); 
+        sb.append(super.toString());
         sb.append("Clientes em Espera: " + this.getFilaClientes());
         return sb.toString();  
     }

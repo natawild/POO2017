@@ -92,7 +92,7 @@ public class CarroLig extends Veiculo implements VeiculoInterface,Serializable{
      */
     public String toString (){
         StringBuilder sb = new StringBuilder("Carro Ligeiro: \n"); 
-        sb.append("Dados do Veiculo: " + super.toString());
+        sb.append(super.toString());
         sb.append("Lugares disponiveis: " +this.getLugaresLivres() + "\n");  
         sb.append("Velocidade média:" +this.getVm() +"\n"); 
         sb.append("Preço por Km: " +this.getPrecoPorKm() + "\n"); 

@@ -92,7 +92,7 @@ public class Moto extends Veiculo implements VeiculoInterface,Serializable{
      */
     public String toString (){
         StringBuilder sb = new StringBuilder("Motociclo: \n"); 
-        sb.append("Dados do Veiculo: " + super.toString());
+        sb.append(super.toString());
         sb.append("Lugares disponiveis: " +this.getLugaresLivres() + "\n");  
         sb.append("Velocidade Média: " +this.getVm() + "\n");
         sb.append("Preço por Km: " +this.getPrecoPorKm() + "\n"); 

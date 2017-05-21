@@ -437,7 +437,7 @@ public class BD implements BDInterface, Serializable {
      * Método listaDeMotoristas - devolve uma lista com todos os motoristas
      */
     
-    public List<AtorInterface> listaDeMotoristas(){
+    public List<AtorInterface> listaMotoristas(){
         List<AtorInterface> listaMotoristas = new ArrayList<>();
         
         for(Map.Entry<String,AtorInterface> entry: this.motoristas.entrySet()){
@@ -645,11 +645,15 @@ public class BD implements BDInterface, Serializable {
         
     }
     
-    
+    //TODO: falta atualizar a bd
     public void carroAdicionadoMotorista(Motorista motorista){
         this.motoristas.put(motorista.getEmail(),motorista); 
     }
+
     
+    public boolean temAdminsRegistados(){
+        return this.admins.size() >0;
     }
+}
     
  

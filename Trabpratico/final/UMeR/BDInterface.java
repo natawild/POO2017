@@ -16,7 +16,7 @@ public interface BDInterface{
     
     public String toString();
     
-    public List<AtorInterface> listaDeMotoristas();
+    public List<AtorInterface> listaMotoristas();
     
     public List<AtorInterface> listaClientes(); 
     
@@ -53,4 +53,6 @@ public interface BDInterface{
     public boolean carroEstaRegistado(String matricula); 
     
     public void carroAdicionadoMotorista(Motorista motorista);
+    
+    public boolean temAdminsRegistados();
 }

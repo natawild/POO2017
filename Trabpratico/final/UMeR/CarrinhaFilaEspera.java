@@ -128,9 +128,8 @@ public class CarrinhaFilaEspera extends Carrinha implements FilaEsperaInterface,
      */
     
     public String toString (){
-        StringBuilder sb = new StringBuilder(); 
-        sb.append("Carrinha com fila de espera\n");
-        sb.append("Carrinha dados: " + super.toString());
+        StringBuilder sb = new StringBuilder("Carrinha com fila de espera\n"); 
+        sb.append(super.toString());
         sb.append("Clientes em Espera: " + this.getFilaClientes());
         return sb.toString();  
     }

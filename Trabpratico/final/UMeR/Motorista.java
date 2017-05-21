@@ -187,8 +187,8 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
      * 
      */
     public String toString (){
-        StringBuilder sb = new StringBuilder("Motorista: \n"); 
-        sb.append("Motorista dados: " + super.toString());
+        StringBuilder sb = new StringBuilder(); 
+        sb.append(super.toString());
         sb.append("Classificação: " +this.getClassificacao() + "\n"); 
         sb.append("Total Kms efetuados: " +this.getTotalKms() + "\n"); 
         sb.append("Disponibilidade: " +this.getDisponivel() + "\n");
