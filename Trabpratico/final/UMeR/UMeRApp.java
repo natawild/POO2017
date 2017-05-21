@@ -126,15 +126,7 @@ public class UMeRApp{
         try {
             BDInterface bd = UMeR.leObj(fich);
             umer = new UMeR (bd);
-            if(!umer.temAdminsRegistados()){
-                AtorInterface admin = new Admin("admin@admin.com", "admin", "admin", null, null, new Coordenadas());
-                try {
-                    umer.registarUtilizador(admin);
-                }
-                catch(AtorExistenteException e){
-                    System.out.println("Nao e possivel registar admin default: " + e.getMessage());
-                }
-            }
+            adicionarAdminPorDefeito();     
         }
         catch (IOException e) {
             umer = new UMeR();
@@ -148,6 +140,18 @@ public class UMeRApp{
             umer = new UMeR();
             System.out.println("Não consegui ler os dados!\nErro de formato.");
         }
+    }
+    
+    private static void adicionarAdminPorDefeito(){
+        if(!umer.temAdminsRegistados()){
+                AtorInterface admin = new Admin("admin@admin.com", Utils.encriptar("admin"), "admin", null, null, new Coordenadas());
+                try {
+                    umer.registarUtilizador(admin);
+                }
+                catch(AtorExistenteException e){
+                    System.out.println("Nao e possivel registar admin default: " + e.getMessage());
+                }
+            }
     }
     
     /**

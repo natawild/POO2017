@@ -1,4 +1,5 @@
 import java.util.Random; 
+import java.security.MessageDigest;
 /**
  * A classe Utils deverá simular as condições atmosféricas e as condicionantes de trânsito para cada viagem efetuada.
  * A classe Meteorolgia receberá os possiveis estados de tempo 
@@ -13,7 +14,29 @@ public class  Utils{
         Random rand = new Random();
         return (rand.nextInt((int)((max-min)*10+1))+min*10)/10.0;
         
-      }
+    }
+      
+    public static String encriptar(String mensagem){
+        String mensagemEncriptada = mensagem;
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(mensagem.getBytes());
+            
+            byte byteData[] = md.digest();
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < byteData.length; i++) {
+                sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            
+            mensagemEncriptada = sb.toString();
+        }
+        catch (Exception e){
+            System.out.println("Nao consege encriptar a mensagem: " +e );
+        }
+        
+        return mensagemEncriptada;
+        
+    }
     
     
     public static class Meteorologia {

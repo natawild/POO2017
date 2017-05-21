@@ -216,24 +216,27 @@ public class Main
     UMeR umer = null;
     
     try {
-            BDInterface bd = UMeR.leObj(file_name);
-            umer = new UMeR (bd);
-            System.out.println("DADOS DA BD");
-            System.out.println(umer.toString());
+        BDInterface bd = UMeR.leObj(file_name);
+        umer = new UMeR (bd);
+        System.out.println("DADOS DA BD");
+        System.out.println(umer.toString());
         }
-        catch (IOException e) {
-            umer = new UMeR();
-            System.out.println("Não consegui ler os dados!\nErro de leitura.");
-        }
-        catch (ClassNotFoundException e) {
-            umer = new UMeR();
-            System.out.println("Não consegui ler os dados!\nFicheiro com formato desconhecido.");
-        }
-        catch (ClassCastException e) {
-            umer = new UMeR();
-            System.out.println("Não consegui ler os dados!\nErro de formato.");
-        }
+    catch (IOException e) {
+        umer = new UMeR();
+        System.out.println("Não consegui ler os dados!\nErro de leitura.");
+    }
+    catch (ClassNotFoundException e) {
+        umer = new UMeR();
+        System.out.println("Não consegui ler os dados!\nFicheiro com formato desconhecido.");
+    }
+    catch (ClassCastException e) {
+        umer = new UMeR();
+        System.out.println("Não consegui ler os dados!\nErro de formato.");
+    }
+        
+    System.out.println("password: '"+ Utils.encriptar("admin") +"'");
+        
   }
   
-
+  
 }

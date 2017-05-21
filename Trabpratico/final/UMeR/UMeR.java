@@ -231,6 +231,7 @@ public class UMeR{
                 throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
             }
             else {
+                novo.setPassword(Utils.encriptar(novo.getPassword()));
                 this.baseDeDados.addCliente(novo);
             } 
         }
@@ -242,6 +243,7 @@ public class UMeR{
                 throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
             }
             else {
+                novo.setPassword(Utils.encriptar(novo.getPassword()));
                 this.baseDeDados.addMotorista(novo);
             } 
         }
@@ -253,6 +255,7 @@ public class UMeR{
                 throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
             }
             else {
+                novo.setPassword(Utils.encriptar(novo.getPassword()));
                 this.baseDeDados.addAdmin(novo);
                 //Map<String, AtorInterface> mapAdmins = ((BD) this.baseDeDados).getAdmins();
                 //mapAdmins.put(novo2.getEmail(), novo2.clone());
@@ -272,7 +275,7 @@ public class UMeR{
             
             if( ((BD) this.baseDeDados).getClientes().containsKey(email)){
                 AtorInterface clienteGuardado =  ((BD) this.baseDeDados).getClientes().get(email);
-                if(clienteGuardado.getPassword().equals(password)){
+                if(clienteGuardado.getPassword().equals(Utils.encriptar(password))){
                     this.atorLoggado = clienteGuardado;
                 }
                 else {
@@ -283,7 +286,7 @@ public class UMeR{
             
            else if( ((BD) this.baseDeDados).getMotoristas().containsKey(email)){
                 AtorInterface motoristaGuardado =  ((BD) this.baseDeDados).getMotoristas().get(email);
-                if(motoristaGuardado.getPassword().equals(password)){
+                if(motoristaGuardado.getPassword().equals(Utils.encriptar(password))){
                     this.atorLoggado = motoristaGuardado;
                 }
                 else {
@@ -293,7 +296,7 @@ public class UMeR{
             }
            else if( ((BD) this.baseDeDados).getAdmins().containsKey(email)){
                 AtorInterface adminGuardado =  ((BD) this.baseDeDados).getAdmins().get(email);
-                if(adminGuardado.getPassword().equals(password)){
+                if(adminGuardado.getPassword().equals(Utils.encriptar(password))){
                     this.atorLoggado = adminGuardado;
                 }
                 else {
@@ -367,13 +370,6 @@ public class UMeR{
     public void fechaSessao(){
         this.atorLoggado = null;
     }
-
-
-    
-    
-  
-    
-    
     
     /**
      * Obter mapeamento para cada motorista, respetivo veiculo 
@@ -435,7 +431,6 @@ public class UMeR{
     }
     */
     
-    // GRAVAR
     /**
      * Gravar o estado da aplicação num determinado ficheiro.
      * @param fich
