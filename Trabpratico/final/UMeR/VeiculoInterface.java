@@ -9,13 +9,19 @@
 
 public interface VeiculoInterface {
     
+    public String getMatricula (); 
+    
     public String getMarca ();
     
     public double getVm(); 
 
-    public double getPreco(); 
+    public double getPrecoPorKm(); 
     
     public float getFiabilidade(); 
     
     public VeiculoInterface clone(); 
+    
+    public boolean equals(Object o); 
+    
+    public Coordenadas getLoc(); 
 }

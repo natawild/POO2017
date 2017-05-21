@@ -1,12 +1,18 @@
 #BlueJ class context
 comment0.params=
-comment0.target=java.lang.String\ getMarca()
+comment0.target=java.lang.String\ getMatricula()
 comment1.params=
-comment1.target=double\ getVm()
+comment1.target=java.lang.String\ getMarca()
 comment2.params=
-comment2.target=double\ getPreco()
+comment2.target=double\ getVm()
 comment3.params=
-comment3.target=float\ getFiabilidade()
+comment3.target=double\ getPrecoPorKm()
 comment4.params=
-comment4.target=VeiculoInterface\ clone()
-numComments=5
+comment4.target=float\ getFiabilidade()
+comment5.params=
+comment5.target=VeiculoInterface\ clone()
+comment6.params=o
+comment6.target=boolean\ equals(java.lang.Object)
+comment7.params=
+comment7.target=Coordenadas\ getLoc()
+numComments=8

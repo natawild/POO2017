@@ -6,7 +6,7 @@ import java.io.Serializable;
  * @celia
  * @version 1.0
  */
-public class Admin extends Ator implements AtorInterface,Serializable{
+public class Admin extends Ator implements AtorInterface, Serializable{
     
     public  Admin (){
         super(); 

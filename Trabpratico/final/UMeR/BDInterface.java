@@ -28,6 +28,8 @@ public interface BDInterface{
     
     public void addVeiculo(VeiculoInterface veiculo);
     
+    public void addAdmin(Admin admin);
+    
     public void addHistorico(Historico historico);
     
     public void removeCliente(Cliente cliente);
@@ -47,4 +49,8 @@ public interface BDInterface{
     public Motorista getMotoristaMaisPerto(AtorInterface cliente);
     
     public List<String> matriculasReg();
+    
+    public boolean carroEstaRegistado(String matricula); 
+    
+    public void carroAdicionadoMotorista(Motorista motorista);
 }

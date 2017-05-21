@@ -31,9 +31,9 @@ public class CarroFilaEspera extends CarroLig implements FilaEsperaInterface,Ser
      * 
      */
     
-    public CarroFilaEspera(String matricula,String marca, double vm, double preco, int fiabilidade, 
+    public CarroFilaEspera(String matricula,String marca, int fiabilidade, 
     Coordenadas coord, List<Cliente> filaClientes){
-        super(matricula,marca,vm,preco,fiabilidade, coord);
+        super(matricula,marca,fiabilidade, coord);
         this.filaClientes= filaClientes; 
     }
     

@@ -43,6 +43,7 @@ comment7.params=
 comment7.target=boolean\ getHorarioTrabalho()
 comment8.params=
 comment8.target=float\ getDestreza()
+comment8.text=\n\ getDestreza()\ avalia\ aleat\u00F3reamente\ a\ destreza\ de\ um\ condutor\ este\ valor\ poder\u00E1\ ter\ valores\ entre\ 0.5\ muito\ mau\ \n\ e\ 1.9\ muito\ bom\ \n\ @return\ destreza\ do\ condutor\ \n\ \n
 comment9.params=
 comment9.target=VeiculoInterface\ getVeiculo()
 numComments=20

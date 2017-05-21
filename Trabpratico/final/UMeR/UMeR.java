@@ -11,11 +11,11 @@ import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.FileWriter;
-
 import java.util.Map; 
 import java.util.TreeMap; 
 import java.io.Serializable;
 import Exceptions.*;
+
 /**
  * Classe UMeR terá a implementação das funções necessárias ao funcionamento da aplicaçao 
  * @celia
@@ -23,7 +23,7 @@ import Exceptions.*;
  */
 public class UMeR{
     private BDInterface baseDeDados;
-    private AtorInterface ator; 
+    private AtorInterface atorLoggado; 
     private Map<String, AtorInterface> atores;
     
     public UMeR(){
@@ -134,16 +134,99 @@ public class UMeR{
     }
     
     /**
+     * duracaoEstimadaViagem é calculada com base na formula tempo=distancia(km)/velocidade(km/h)
+     * @return tempoEstimadoViagem em minutos 
+     */
+    public double duracaoEstimadaViagem (double distancia, double velocidade){
+        double tempoEstimadoViagem=0; 
+        tempoEstimadoViagem= (distancia/velocidade)*60.0; 
+
+        return tempoEstimadoViagem; 
+    }
+    
+    /**
+     * custoEstimadoViagem será calculado com o preço por km * distancia
+     */
+    public double custoEstimadoViagem(double distancia, double preco){
+        double custoEstimadoViagem=0.0d; 
+        custoEstimadoViagem= distancia*preco; 
+        return custoEstimadoViagem; 
+    
+    }
+    
+    /**
+     * Tempo real da viagem é influenciado pela fiabilidade (0.9 a 1.2) do veiculo cumprir o tempo, pela destreza (0.5 e 1.9) do condutor,
+     * pelo transito(0.9, 1.0, 1.1) e pela meteorologia(0.9 a 1.3)
+     */
+    
+    public double duracaoRealViagem(double duracaoEstimadoDaViagem,float fiabilidade, float destreza,float transito, float meteorologia ){
+
+        double tempoRealViagem= 0; 
+        
+        tempoRealViagem = duracaoEstimadoDaViagem*fiabilidade*destreza*transito*meteorologia; 
+        
+        return tempoRealViagem; 
+    
+    }
+    
+    /**
+     * custoRealViagem 
+     */
+    
+    public double custoRealViagem(double duracaoRealDaViagem, double distancia, double precoUnitario, double duracaoEstimaDaViagem){
+
+        if((duracaoEstimaDaViagem/duracaoRealDaViagem) >= 1 && duracaoRealDaViagem < duracaoEstimaDaViagem * 0.75){
+             return (custoEstimadoViagem(distancia, precoUnitario) * duracaoRealDaViagem / duracaoEstimaDaViagem);
+        }
+
+        else {
+            return custoEstimadoViagem(distancia, precoUnitario) ;
+        }
+        
+    }
+    
+    
+    
+    /**
      * Registar Ator 
      * 
      */
-    public void registarUtilizador(Cliente cliente) throws AtorExistenteException {
-		String id = cliente.getEmail();
-
-		if (cliente.getEmail().contains(id))
-			throw new AtorExistenteException("Utilizador "+id+" já existe");
-
-		this.baseDeDados.listaClientes().add(cliente.clone());
+    public void registarUtilizador(AtorInterface ator) throws AtorExistenteException {
+		if(ator instanceof Cliente){
+		    Cliente novo = (Cliente) ator; 
+		    
+		    if (((BD) this.baseDeDados).getClientes().containsKey(novo.getEmail())){
+		        throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
+            }
+            else {
+                this.baseDeDados.addCliente(novo);
+            } 
+		}
+        
+        if(ator instanceof Motorista){
+		    Motorista novo = (Motorista) ator; 
+		    
+		    if (((BD) this.baseDeDados).getMotoristas().containsKey(novo.getEmail())){
+		        throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
+            }
+            else {
+                this.baseDeDados.addMotorista(novo);
+            } 
+		}
+		
+		if(ator instanceof Admin){
+		    Admin novo= (Admin) ator; 
+		    
+		    if (((BD) this.baseDeDados).getAdmins().containsKey(novo.getEmail())){
+		        throw new AtorExistenteException("Utilizador "+novo.getEmail() +" já existe");
+            }
+            else {
+                this.baseDeDados.addAdmin(novo);
+                //Map<String, AtorInterface> mapAdmins = ((BD) this.baseDeDados).getAdmins();
+                //mapAdmins.put(novo2.getEmail(), novo2.clone());
+                //((BD) this.baseDeDados).setAdmins(mapAdmins); 
+            } 
+		}
 	}
     
 	
@@ -153,39 +236,118 @@ public class UMeR{
      * @param password
      */
      public void iniciaSessao(String email, String password) throws SemAutorizacaoException {
-
-        if (this.ator == null) {
-
-            if(atores.containsKey(email)){
-                 AtorInterface user = atores.get(email);
-                 if (password.equals(ator.getPassword())) {
-                        ator = user;
-                 }
-                 else {
-                        throw new SemAutorizacaoException("Dados Errados");
-                 }
+        if (this.atorLoggado == null) {
+            
+            if( ((BD) this.baseDeDados).getClientes().containsKey(email)){
+                AtorInterface clienteGuardado =  ((BD) this.baseDeDados).getClientes().get(email);
+                if(clienteGuardado.getPassword().equals(password)){
+                    this.atorLoggado = clienteGuardado;
+                }
+                else {
+                    throw new SemAutorizacaoException("Username ou password Errados");
+                }
+                
             }
-            else throw new SemAutorizacaoException("Dados Errados");
+            
+           else if( ((BD) this.baseDeDados).getMotoristas().containsKey(email)){
+                AtorInterface motoristaGuardado =  ((BD) this.baseDeDados).getMotoristas().get(email);
+                if(motoristaGuardado.getPassword().equals(password)){
+                    this.atorLoggado = motoristaGuardado;
+                }
+                else {
+                    throw new SemAutorizacaoException("Username ou password Errados");
+                }
+                
+            }
+           else if( ((BD) this.baseDeDados).getAdmins().containsKey(email)){
+                AtorInterface adminGuardado =  ((BD) this.baseDeDados).getAdmins().get(email);
+                if(adminGuardado.getPassword().equals(password)){
+                    this.atorLoggado = adminGuardado;
+                }
+                else {
+                    throw new SemAutorizacaoException("Username ou password Errados");
+                }
+                
+            }
+            else throw new SemAutorizacaoException("O utilizador nao esta registado");
         }
         else {
-            throw new SemAutorizacaoException("Ja tem uma sessão iniciada");
+            throw new SemAutorizacaoException("Já tem uma sessão iniciada");
         }
+    }
+    
+    public void registarViatura(VeiculoInterface veiculo) throws ViaturaExistenteException {
+		    
+        if (this.baseDeDados.carroEstaRegistado(veiculo.getMatricula())){
+		     throw new ViaturaExistenteException("Veiculo "+veiculo.getMatricula() +" já existe");
+         }
+        else {
+              this.baseDeDados.addVeiculo(veiculo);
+            } 
+    }
+    
+    public void associaMotoristaAVeiculo(Motorista m, VeiculoInterface v){
+        
+        m.setVeiculo(v);
+        this.baseDeDados.carroAdicionadoMotorista(m); 
+        /* estas duas linhas fazem o memso que a linha em cima. Temos que fazer set à variavel  motoristas da classe BD
+         * porque o método getMotoristas() devolve um cópia da variaval motoristas e portanto tem um endereço diferente
+        Map <Motorista,VeiculoInterface> assoc = this.baseDeDados.getMotoristas().put(m.getEmail(), m);
+        this.baseDeDados.setMotoristas(assoc); 
+        */
+    }
+    
+    public void atualizaDadosCliente (AtorInterface cliente){
+        
+        //this.baseDeDados.getClientes().put(cliente.getEmail(), cliente);
+        Map <String,AtorInterface> dadosClientes = ((BD) this.baseDeDados).getClientes(); 
+        dadosClientes.put(cliente.getEmail(), cliente);
+        ((BD)this.baseDeDados).setClientes(dadosClientes);
 
     }
+    
+    
+    public Motorista motoristaMaisPertoCliente (Cliente cliente){
+       double novaDistancia = Double.MAX_VALUE; 
+        Motorista maisPerto = null; 
+        
+       for(AtorInterface m : ((BD)this.baseDeDados).getMotoristas().values()){
+            if(m instanceof Motorista){
+                Motorista m1 = (Motorista) m; 
+                Coordenadas coordVeic = m1.getVeiculo().getLoc(); //localizacao do motorista 
+                double distancia= coordVeic.getDistancia(cliente.getLoc());
+                if(m1.getDisponivel() && m1.getHorarioTrabalho() && distancia < novaDistancia){
+                    novaDistancia= distancia; 
+                    maisPerto = m1;  
+                }
+            }
+       }
+       return maisPerto;
+    }
+    
+    
+    
+    
     
     /**
      * Fechar sessão na aplicação.
      */
     public void fechaSessao(){
-        this.ator = null;
+        this.atorLoggado = null;
     }
 
 
+    
+    
+  
+    
+    
     
     /**
 	 * Obter mapeamento para cada motorista, respetivo veiculo 
 	 * @return Mapeamento veiculo, motorista
 	 */
+	/*
 	public Map<AtorInterface, VeiculoInterface> obterMapMotoVei() {
 		Map<AtorInterface, VeiculoInterface> map = new TreeMap<>();
 
@@ -194,7 +356,9 @@ public class UMeR{
 				Motorista m = (Motorista) u;
 
 				for(VeiculoInterface vi: this.baseDeDados.listaVeiculos()){
-				    
+				    if(vi instanceof VeiculoInterface){
+				        VeiculoInterface v = (VeiculoInterface) vi; 
+				    }
 					map.put(m, vi);
 				}
 			}
@@ -202,6 +366,7 @@ public class UMeR{
 
 		return map;
 	}
+	*/
     
     
     /**

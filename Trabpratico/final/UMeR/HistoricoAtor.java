@@ -10,6 +10,8 @@ public abstract class HistoricoAtor {
     private float tempoEstimado; 
     private float tempoReal; 
     private float valorCobrado; 
+    private String estadoTempo; 
+    
     //private AtorInterface cliente; 
     //private AtorInterface motorista; 
     
@@ -22,6 +24,7 @@ public abstract class HistoricoAtor {
         tempoEstimado= 0.0f;
         tempoReal= -1.0f;
         valorCobrado=0.0f;
+        estadoTempo=""; 
     }
     
     /**
@@ -31,11 +34,12 @@ public abstract class HistoricoAtor {
      * @param valorCobrado
      */
     
-    public HistoricoAtor(LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado){
+    public HistoricoAtor(LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado, String estadoTempo){
         this.dataDeInicioDeServico= dataDeInicioDeServico; 
         this.tempoEstimado= tempoEstimado;
         this.tempoReal = tempoReal;
-        this.valorCobrado= valorCobrado;    
+        this.valorCobrado= valorCobrado;  
+        this.estadoTempo= estadoTempo; 
     }
     
     /**
@@ -47,6 +51,7 @@ public abstract class HistoricoAtor {
        this.tempoEstimado= h.getTempoEstimado();
        this.tempoReal = h.getTempoEstimado();
        this.valorCobrado= h.getValorCobrado();
+       this.estadoTempo= h.getEstadoTempo();
     }
     
     /**
@@ -67,6 +72,10 @@ public abstract class HistoricoAtor {
     
     public float getValorCobrado(){
         return this.valorCobrado;
+    }
+    
+    public String getEstadoTempo(){
+        return this.estadoTempo; 
     }
     
     
@@ -90,6 +99,11 @@ public abstract class HistoricoAtor {
         this.valorCobrado= valorCobrado; 
     }
     
+    public void setEstadoTempo(String estadoTempo){
+        this.estadoTempo= estadoTempo; 
+    
+    }
+    
     
     /**
      * Equals 
@@ -102,24 +116,21 @@ public abstract class HistoricoAtor {
             
        HistoricoAtor h = (HistoricoAtor) o; 
        return (this.dataDeInicioDeServico.equals(h.getDataDeInicioDeServico()) && this.tempoEstimado==h.getTempoEstimado() &&
-       this.valorCobrado==h.getValorCobrado() && this.tempoReal == h.getTempoReal()); 
+       this.valorCobrado==h.getValorCobrado() && this.tempoReal == h.getTempoReal() && this.estadoTempo.equals(h.getEstadoTempo())); 
 
     }
     
     /**
      * toString
      */
-      public String toString (){
+    public String toString (){
         StringBuilder sb = new StringBuilder(); 
         sb.append("Data da viagem " +this.getDataDeInicioDeServico() + "\n"); 
         sb.append("Tempo da Vigem estimado: " +this.getTempoEstimado() + "\n");
         sb.append("Tempo da Vigem real: " +this.getTempoReal() + "\n");
         sb.append("Valor Cobrado: " +this.getValorCobrado() + "\n");
+         sb.append("Estado do tempo: " +this.getEstadoTempo() + "\n");
         return sb.toString(); 
     }
-    
-
-    
-    
     
 }

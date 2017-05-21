@@ -1,5 +1,6 @@
 import java.time.LocalDate; 
 import java.io.Serializable;
+import java.util.Random;
 /**
  * A classe Motorista terá todas as informações relativas a um motorista, este que é um colaborador 
  * da UMeR. Tem todos os dados presentes na classe Ator, e ainda a acrescentar os seus próprios dados: 
@@ -94,8 +95,19 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         return this.horarioTrabalho; 
     }
     
+    /**
+     * getDestreza() avalia aleatóreamente a destreza de um condutor este valor poderá ter valores entre 0.5 muito mau 
+     * e 1.9 muito bom 
+     * @return destreza do condutor 
+     * 
+     */
     public float getDestreza(){
-        return this.destreza; 
+        float minX = 0.5f;
+        float maxX = 1.9f;
+        Random rand = new Random();
+        float destreza = rand.nextFloat() * (maxX - minX) + minX;
+        return destreza; 
+        
     }
     
     public VeiculoInterface getVeiculo(){

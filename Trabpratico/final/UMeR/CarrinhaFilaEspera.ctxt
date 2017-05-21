@@ -2,8 +2,8 @@
 comment0.params=
 comment0.target=CarrinhaFilaEspera()
 comment0.text=\n\ Construtor\ vazio\ \n
-comment1.params=matricula\ marca\ vm\ preco\ fiabilidade\ coord\ filaClientes
-comment1.target=CarrinhaFilaEspera(java.lang.String,\ java.lang.String,\ double,\ double,\ int,\ Coordenadas,\ java.util.List)
+comment1.params=matricula\ marca\ fiabilidade\ coord\ filaClientes
+comment1.target=CarrinhaFilaEspera(java.lang.String,\ java.lang.String,\ int,\ Coordenadas,\ java.util.List)
 comment1.text=\n\ Construtor\ parametrizado\ \n\ @param\ matricula\n\ @param\ marca\n\ @param\ vm\n\ @param\ preco\n\ @param\ fiabilidade\n\ @param\ coord\n\ @param\ filaClientes\n\ \n
 comment2.params=mfe
 comment2.target=CarrinhaFilaEspera(CarrinhaFilaEspera)

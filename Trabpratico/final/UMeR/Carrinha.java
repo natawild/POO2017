@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Random;
 /**
  * A classe Carrinha é uma especialização da classe Veiculo 
  * 
@@ -8,6 +9,8 @@ import java.io.Serializable;
 public class Carrinha extends Veiculo implements VeiculoInterface,Serializable{
     //variável da classe
     private static int lugaresLivres = 8;
+    private static final double vm = 55;
+    private static final double precoPorKm = 5.1;
      /**
      * Construtor vazio. Como se trata de uma subclasse de Veiculo, utilizamos o construtor super 
      * para a reaproveitação de código e para utilizarmos herança.
@@ -25,19 +28,42 @@ public class Carrinha extends Veiculo implements VeiculoInterface,Serializable{
      * @param fiabilidade De 1-5, descreve a fiabilidade do Veiculo
      * @param coord
      */
-    public Carrinha(String matricula,String marca, double vm, double preco, float fiabilidade, Coordenadas coord){
-        super(matricula,marca,vm,preco,fiabilidade, coord);
+    public Carrinha(String matricula,String marca, float fiabilidade, Coordenadas coord){
+        super(matricula,marca,fiabilidade, coord);
     }
     
       /**
      * construtor de cópia 
      */
     public Carrinha(Carrinha c){
-        super(c.getMatricula(), c.getMarca(), c.getVm(), c.getPreco(), c.getFiabilidade(), c.getLoc()); 
+        super(c.getMatricula(), c.getMarca(), c.getFiabilidade(), c.getLoc()); 
     }
     
     public int getLugaresLivres (){
         return this.lugaresLivres; 
+    }
+    
+    public double getVm(){
+        return this.vm; 
+    }
+    
+    public double getPrecoPorKm(){
+        return this.precoPorKm; 
+    }
+    
+    /**
+     * Determina a capacidade de a viatura cumprir o tempo acordado com o cliente 
+     * varia de 0.9 a 1.8, pois se fizer 1 cumpre o tempo mais do que isso não cumpre e menos é mais rápido 
+     * 
+     * @return finalX valor da fiabilidade do veiculo 
+     */
+    public float getFiabilidade(){
+        float minX = 0.9f;
+        float maxX = 1.8f;
+        Random rand = new Random();
+        float finalX = rand.nextFloat() * (maxX - minX) + minX;
+
+        return finalX;  
     }
     
     
@@ -63,7 +89,9 @@ public class Carrinha extends Veiculo implements VeiculoInterface,Serializable{
     public String toString (){
         StringBuilder sb = new StringBuilder("Carrinha: \n"); 
         sb.append("Dados do Veiculo: " + super.toString());
-        sb.append("Lugares disponiveis: " +this.getLugaresLivres() + "\n");  
+        sb.append("Lugares disponiveis: " +this.getLugaresLivres() + "\n"); 
+        sb.append("Velocidade Média: " +this.getVm() + "\n"); 
+        sb.append("Preço por Km: " +this.getPrecoPorKm() + "\n"); 
         return sb.toString(); 
     }
     

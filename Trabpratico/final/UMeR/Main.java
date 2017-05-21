@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
+import Exceptions.*;
 /**
  * Escreva a descrição da classe Main aqui.
  * 
@@ -36,7 +37,7 @@ public class Main
         ((BD)baseDados).setClientes(list);
         
         Coordenadas localizacaoCarr1 = new Coordenadas(10d, 4d); 
-        VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 60.5d, 3.5d, 3f, localizacaoCarr1); 
+        VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 3f, localizacaoCarr1); 
        
         
         
@@ -59,7 +60,7 @@ public class Main
         
         baseDados.addVeiculo(v1);
         Coordenadas localizacaoCarr2 = new Coordenadas(20d, 45d); 
-        VeiculoInterface v2 = new CarroLig("25-99-PZ","Renault", 70d, 3.6d, 4f, localizacaoCarr2); 
+        VeiculoInterface v2 = new CarroLig("25-99-PZ","Renault", 4f, localizacaoCarr2); 
         LocalDate dataNasM2 = LocalDate.of (1989,12,24);
         Motorista motorista2 = new Motorista("acores@gmail.com","João César", "Gostarias?", "Rua Fábrica do pelo", 
         dataNasM2, 2, 76, 320d, true,true, 1.3f,v2); 
@@ -151,14 +152,62 @@ public class Main
        System.out.println("\n motaSemFila instanceof FilaEsperaInterface: " + (motaSemFila instanceof FilaEsperaInterface) );
         
        */
-      
+      /*
       List<AtorInterface> lista3 = programa.findClientePeloNome ("ba");
       System.out.println("Os clientes com o nome ba são " +lista3); 
       
       Map<AtorInterface, VeiculoInterface> lista4 = programa.obterMapMotoVei();
       System.out.println("Os motoristas com os veiculos são os seguintes.......:  " +lista4); 
+      */
       
+      Utils.Meteorologia.getEstadoTempo(); 
+      System.out.println(Utils.Meteorologia.getEstadoTempo()); 
       
+      Utils.Transito.getEstadoTransito(); 
+      System.out.println(Utils.Transito.getEstadoTransito()); 
+      
+      /*
+      
+      System.out.println(programa.duracaoRealViagem(30d, 0.9f, 0.9f,0.9f,0.9f));
+      
+      System.out.println(programa.custoRealViagem(19.68d, 20, 2, 30));
+      */
+     System.out.println( programa.custoRealViagem(29.69d, 50, 2, 46.15d));
+     
+     Cliente clienteN = new Cliente("celia2@gmail.com","Celia2", "batatas2", "Rua do cão", dataNas2, localizacao2);
+     
+     VeiculoInterface v3 = new CarroLig("25-99-PZZZZZZZ","Renault", 4f, localizacaoCarr2);
+     
+     try{
+         programa.registarUtilizador(clienteN);
+    }
+    catch (AtorExistenteException e){
+        System.out.println(e.getMessage());
+    }
+    System.out.println("----BD---");
+    System.out.println(programa.getBaseDeDados());
+    
+     try{
+         programa.iniciaSessao("olaluis@ola.com", "tolinho1");
+    }
+    catch (SemAutorizacaoException e){
+        System.out.println(e.getMessage());
     }
     
+    try{
+        programa.registarViatura( v3);
+    }
+    catch(ViaturaExistenteException e) {
+         System.out.println(e.getMessage());
+        }
+        
+    System.out.println(programa.getBaseDeDados());
+    
+    
+    Cliente clientePesquisado2 = programa.pesquisaCliente("celia2@gmail.com");
+    Motorista motoristaMaisPert = programa.motoristaMaisPertoCliente(clientePesquisado);
+    System.out.println("\n---Teste:Pesquisa de motorista mais perto da celia---\n");
+       System.out.println("Cliente: \n" + clientePesquisado2);
+       System.out.println("Motorista: \n" + motoristaMaisPert);
+  }
 }

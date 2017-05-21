@@ -109,14 +109,15 @@ public class UMeRApp{
                            };
         String [] menu5 = {"Lista de Carros de um dado tipo",
                            };
-        String[] menu6 = {"Loja","Loja Habitável","Apartamento","Moradia",
-                          "Terreno"};
-        String[] menu7 = {"Iniciar leilão"};
+        String[] menu6 = {"Viagens Efetuadas (entre datas)",
+                            "Ver 10 clientes que mais gastam"};
+        String[] menu7 = {"Efetuar viagem"};
 
         menu_logado = new UMeRMenu(menu0);
-        menu_principal = new UMeRMenu(menu1);
-        menu_registo = new UMeRMenu(menu2);
+        menu_registo = new UMeRMenu(menu1);
         menu_cliente = new UMeRMenu(menu3);
+        menu_principal = new UMeRMenu(menu1);
+        
         menu_motorista = new UMeRMenu(menu4);
         menu_cliente_efetuarViagem = new UMeRMenu(menu5);
 

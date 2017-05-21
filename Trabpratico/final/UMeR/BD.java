@@ -25,7 +25,7 @@ public class BD implements BDInterface {
     private Map<String, AtorInterface> clientes;
     private Map<String, AtorInterface> motoristas; 
     private Map<String, AtorInterface> admins; 
-    private List<VeiculoInterface> veiculos; 
+    private Map<String,VeiculoInterface> veiculos; 
     private Set<Historico> historico;
     
     /**
@@ -36,7 +36,7 @@ public class BD implements BDInterface {
         this.clientes = new HashMap<>();
         this.motoristas = new HashMap<>(); 
         this.admins = new HashMap<>();
-        this.veiculos = new ArrayList<VeiculoInterface>(); 
+        this.veiculos = new HashMap<>();
         this.historico = new TreeSet<Historico>();
     }
     
@@ -49,7 +49,7 @@ public class BD implements BDInterface {
      */
     
     public BD (HashMap<String, AtorInterface> c, Map<String, AtorInterface> m,Map<String, AtorInterface> a, 
-                List<VeiculoInterface> v , Set<Historico> h){
+                Map<String,VeiculoInterface> v , Set<Historico> h){
         clientes = c; 
         motoristas = m; 
         admins = a; 
@@ -83,7 +83,7 @@ public class BD implements BDInterface {
            mapClientes.put(key, c.clone());
        }
        
-        return mapClientes; 
+       return mapClientes; 
     }
     
     /**
@@ -105,7 +105,7 @@ public class BD implements BDInterface {
     }
     
     /**
-     * getAdmins() - Devolve uma lista contendo todos os admins da aplicação 
+     * getAdmins() - Devolve um Map contendo todos os admins da aplicação 
      */
     
     public Map<String, AtorInterface> getAdmins(){
@@ -126,10 +126,14 @@ public class BD implements BDInterface {
      * (Iterador Interno) 
      */
     
-    public List<VeiculoInterface> getVeiculos(){
-        return veiculos.stream()
-                       .map(VeiculoInterface::clone)
-                       .collect(toList()); 
+    public Map<String,VeiculoInterface> getVeiculos(){
+        Map<String,VeiculoInterface>  mapVeiculos = new HashMap<>(); 
+        for(String key: this.veiculos.keySet()){
+            VeiculoInterface v = this.veiculos.get(key);
+            mapVeiculos.put(key,v.clone()); 
+        }
+        return mapVeiculos; 
+        
     }
     
     public Set<Historico> getHistorico(){
@@ -212,10 +216,12 @@ public class BD implements BDInterface {
      * 
      */
     
-    public void setVeiculos(List<VeiculoInterface> v){
-        this.veiculos=v.stream()
-                       .map(VeiculoInterface::clone)
-                       .collect(toList()); 
+    public void setVeiculos(Map<String,VeiculoInterface> v){
+        this.veiculos=v.entrySet()
+                        .stream()
+                        .collect(Collectors.toMap((e)->e.getKey(),
+                                                  (e)->e.getValue().clone()));
+                                                
     }
     
      /**
@@ -368,9 +374,27 @@ public class BD implements BDInterface {
     }
     
     /**
-     * Metodo auxiliar para fazer o equals da lista de Veiculos
+     * Metodo auxiliar para fazer o equals do map de Veiculos
      */
     
+    private boolean equalsVeiculos(Map<String,VeiculoInterface> vi) {
+        
+        if(this.veiculos.size() != vi.size() ){
+            return false;
+        }
+        for(String matricula: this.veiculos.keySet()){
+            VeiculoInterface a = this.veiculos.get(matricula);
+            VeiculoInterface b = vi.get(matricula);
+            
+            if(a.equals(b) == false){
+                return false; 
+            }  
+        }
+        return true;
+    }
+    
+    
+    /*
     public static boolean equalsVeiculos(List <VeiculoInterface> veiculos1, List<VeiculoInterface> veiculos2){
         for(VeiculoInterface veiculo: veiculos1){
             if(veiculo instanceof VeiculoInterface){
@@ -394,6 +418,7 @@ public class BD implements BDInterface {
         }
         return true; 
     }
+    */
     
     /**
      * toString
@@ -439,10 +464,21 @@ public class BD implements BDInterface {
         return listaClientes; 
     }
     
+    
     /**
      * Método que devolve a lista de todos os Veiculos 
      */
     
+    public List <VeiculoInterface> listaVeiculos(){
+          List<VeiculoInterface> listaVeiculos = new ArrayList<>();
+          for (Map.Entry<String, VeiculoInterface> entry : this.veiculos.entrySet()) {
+            //String key = entry.getKey();
+            VeiculoInterface veiculo = entry.getValue();
+            listaVeiculos.add(veiculo.clone());
+        }
+        return listaVeiculos;
+    }
+    /*
     public List <VeiculoInterface> listaVeiculos(){
         List<VeiculoInterface> listaVeiculos = new ArrayList<>();
         
@@ -453,6 +489,7 @@ public class BD implements BDInterface {
         
         return listaVeiculos; 
     }
+    */
     
     /**
      * Método addCliente - Adiciona um cliente 
@@ -471,13 +508,22 @@ public class BD implements BDInterface {
         this.motoristas.put(motorista.getEmail(),motorista.clone());
     }
     
+    
+     /**
+     * Método addAdmin - Adiciona um admin
+     * @param admin
+     */
+    public void addAdmin(Admin admin){
+        this.admins.put(admin.getEmail(), admin.clone());
+    }
+    
      /**
      * Método addVeiculo - Adiciona um veiculo 
      * @param veiculo
      */
     
     public void addVeiculo(VeiculoInterface veiculo){
-        this.veiculos.add(veiculo.clone());
+        this.veiculos.put(veiculo.getMatricula(),veiculo.clone());
     }
     
     
@@ -506,9 +552,8 @@ public class BD implements BDInterface {
      */
     
     public void removeVeiculo(Veiculo veiculo){
-        if(this.veiculos.contains(veiculo)){
-              this.veiculos.remove(veiculo);
-        }
+         this.veiculos.remove(veiculo.getMatricula());
+        
     }
     
      /**
@@ -543,22 +588,10 @@ public class BD implements BDInterface {
     public List<String> matriculasReg(){
         List<String> res = new ArrayList<>();
         
-        for(VeiculoInterface veiculoInterface: this.veiculos){
-            if(veiculoInterface instanceof Moto){
-                Moto m = (Moto) veiculoInterface; 
-                res.add(m.getMatricula());
+        for(String key : this.veiculos.keySet()){
+                res.add(key);
             }
-            if(veiculoInterface instanceof Carrinha){
-                Carrinha c = (Carrinha) veiculoInterface; 
-                res.add(c.getMatricula());
-            }
-             if(veiculoInterface instanceof CarroLig){
-                CarroLig c = (CarroLig) veiculoInterface; 
-                res.add(c.getMatricula());
-            }
-            
-        }
-        
+
         return res;
     }
     
@@ -602,7 +635,21 @@ public class BD implements BDInterface {
         return null;
     }
     
-            
+    
+    public boolean carroEstaRegistado(String matricula){
+        
+        if(this.veiculos.containsKey(matricula)){
+            return true; 
+        }
+        return false; 
+        
+    }
+    
+    
+    public void carroAdicionadoMotorista(Motorista motorista){
+        this.motoristas.put(motorista.getEmail(),motorista); 
+    }
+    
     }
     
  

@@ -27,8 +27,9 @@ public class HistoricoCliente extends HistoricoAtor implements HistoricoInterfac
      * @param motorista
      */
     
-    public HistoricoCliente (LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado, Motorista motorista){
-        super(dataDeInicioDeServico,tempoEstimado, tempoReal, valorCobrado);
+    public HistoricoCliente (LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado, 
+    Motorista motorista, String estadoTempo){
+        super(dataDeInicioDeServico,tempoEstimado, tempoReal, valorCobrado, estadoTempo);
         this.motorista=motorista; 
     }
     

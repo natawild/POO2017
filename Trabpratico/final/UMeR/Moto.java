@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Random;
 /**
  * Moto será uma sublclasse de Veiculo 
  * 
@@ -8,6 +9,8 @@ import java.io.Serializable;
 public class Moto extends Veiculo implements VeiculoInterface,Serializable{
     //variável da classe
     private static final int lugaresLivres = 1;
+    private static final double vm = 40.5; 
+    private static final double precoPorKm = 3.1;
     
      /**
      * Construtor vazio. Como se trata de uma subclasse de Veiculo, utilizamos o construtor super 
@@ -24,12 +27,12 @@ public class Moto extends Veiculo implements VeiculoInterface,Serializable{
      * @param marca
      * @param vm
      * @param preco
-     * @param fiabilidade De 1-5, descreve a fiabilidade do Veiculo
+     * @param fiabilidade, descreve a fiabilidade do Veiculo cumprir horário estimado com o cliente
      * @param coord
      */
     
-    public Moto(String matricula,String marca, double vm, double preco, int fiabilidade, Coordenadas coord){
-        super(matricula,marca, vm,preco,fiabilidade, coord);
+    public Moto(String matricula,String marca, int fiabilidade, Coordenadas coord){
+        super(matricula, marca, fiabilidade, coord);
     }
     
     /**
@@ -42,6 +45,27 @@ public class Moto extends Veiculo implements VeiculoInterface,Serializable{
     
     public int getLugaresLivres (){
         return this.lugaresLivres; 
+    }
+    
+    public double getVm(){
+        return this.vm; 
+    }
+    
+    public double getPrecoPorKm(){
+        return this.precoPorKm; 
+    }
+    
+    /**
+     * Determina a capacidade de a viatura cumprir o tempo acordado com o cliente 
+     * varia de 0.9 a 1.2, pois se fizer 1 cumpre o tempo mais do que isso não cumpre e menos é mais rápido 
+     */
+    public float getFiabilidade(){
+        float minX = 0.9f;
+        float maxX = 1.2f;
+        Random rand = new Random();
+        float finalX = rand.nextFloat() * (maxX - minX) + minX;
+
+        return finalX;  
     }
     
     
@@ -57,7 +81,8 @@ public class Moto extends Veiculo implements VeiculoInterface,Serializable{
         return false;
         
         Moto moto = (Moto) m; 
-        return super.equals(moto) && this.lugaresLivres== moto.getLugaresLivres();  
+        return super.equals(moto) && this.lugaresLivres== moto.getLugaresLivres() && this.vm==moto.getVm()
+        && this.precoPorKm==moto.getPrecoPorKm();  
     
     }
     
@@ -69,6 +94,8 @@ public class Moto extends Veiculo implements VeiculoInterface,Serializable{
         StringBuilder sb = new StringBuilder("Motociclo: \n"); 
         sb.append("Dados do Veiculo: " + super.toString());
         sb.append("Lugares disponiveis: " +this.getLugaresLivres() + "\n");  
+        sb.append("Velocidade Média: " +this.getVm() + "\n");
+        sb.append("Preço por Km: " +this.getPrecoPorKm() + "\n"); 
         return sb.toString(); 
     }
     
