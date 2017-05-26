@@ -15,8 +15,8 @@ public class Coordenadas implements Serializable{
      * Construtor vazio, ou seja, inicia as coordenadas a 0.
      */
     public Coordenadas(){
-        this.x=0;
-        this.y=0;
+        this.x=Utils.generateRandom(0f, 80f);
+        this.y=Utils.generateRandom(0f, 80f);;
     }
     
     /**

@@ -19,7 +19,7 @@ import Exceptions.*;
 /**
  * Classe UMeR terá a implementação das funções necessárias ao funcionamento da aplicaçao 
  * @celia
- * @version 1.0
+ * @version 1.1
  */
 public class UMeR{
     private BDInterface baseDeDados;
@@ -156,6 +156,11 @@ public class UMeR{
         return this.baseDeDados.listaMotoristas(); 
     }
     
+    public List<VeiculoInterface> listaVeiculos(){
+        return this.baseDeDados.listaVeiculos(); 
+        
+    }
+    
     public List<AtorInterface> findClientePeloNome (String nome){
         return this.baseDeDados.findClientePeloNome(nome); 
     
@@ -261,6 +266,45 @@ public class UMeR{
                 //mapAdmins.put(novo2.getEmail(), novo2.clone());
                 //((BD) this.baseDeDados).setAdmins(mapAdmins); 
             } 
+        }
+    }
+    
+    
+     /**
+     * Atualizar Ator 
+     * 
+     */
+    public void atualizarUtilizador(AtorInterface ator) {
+        if(ator instanceof Cliente){
+            Cliente novo = (Cliente) ator; 
+            
+            if (((BD) this.baseDeDados).getClientes().containsKey(novo.getEmail())){
+                novo.setPassword(Utils.encriptar(novo.getPassword()));
+                Map<String, AtorInterface> clientesCopia = ((BD)this.baseDeDados).getClientes();
+                clientesCopia.put(novo.getEmail(), novo);
+                ((BD)this.baseDeDados).setClientes(clientesCopia);
+            }
+            
+        }
+        
+        //TODO: o mototista nao deve poder atualizar os dados da sua classificacao, desteza...
+        if(ator instanceof Motorista){
+            Motorista novo = (Motorista) ator; 
+            
+            if (((BD) this.baseDeDados).getMotoristas().containsKey(novo.getEmail())){
+                novo.setPassword(Utils.encriptar(novo.getPassword()));
+                this.baseDeDados.atualizaAtor(novo);
+            }
+           
+        }
+        
+        if(ator instanceof Admin){
+            Admin novo= (Admin) ator; 
+            
+            if (((BD) this.baseDeDados).getAdmins().containsKey(novo.getEmail())){
+                novo.setPassword(Utils.encriptar(novo.getPassword()));
+                this.baseDeDados.atualizaAtor(novo);
+            }
         }
     }
     
@@ -455,7 +499,7 @@ public class UMeR{
     }
 
     /**
-     * Fazer um ficheiro de texto log com toda a informação na Imobiliária no momento em que é fechada.
+     * Fazer um ficheiro de texto log com toda a informação na UMeR no momento em que é fechada.
      * @param f
      * @param ap
      */
@@ -471,6 +515,24 @@ public class UMeR{
     
     public boolean temAdminsRegistados(){
         return this.baseDeDados.temAdminsRegistados();
+    }
+    
+    public void atualizaVeiculoAtorLogado (VeiculoInterface veiculo){
+        ((Motorista) this.atorLoggado).setVeiculo(veiculo); 
+    }
+    
+    public void adicionaVeiculoAMotorista(VeiculoInterface v){
+        /*
+       Map <String, AtorInterface> motoristasCopia = ((BD) this.baseDeDados).getMotoristas();
+       AtorInterface motoristaCopia = motoristasCopia.get(this.atorLoggado.getEmail()); 
+       ((Motorista) motoristaCopia).setVeiculo(v); 
+        
+       ((BD) this.baseDeDados).setMotoristas(motoristasCopia); 
+       */
+      this.baseDeDados.adicionaVeiculoAMotorista(this.atorLoggado, v);
+        
+        
+    
     }
 
 }

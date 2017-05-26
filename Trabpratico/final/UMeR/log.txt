@@ -1,0 +1,2319 @@
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia.fig118@gmail.com=Email: celia.fig118@gmail.com
+Nome: Célia Natália Lemos Figueiredo
+Password: ********************************
+Morada: Rua da Costa nr 1527
+Data de Nascimento: 1993-12-24
+Cliente localização: x: 0.0 y: 0.0, luis@gmail.com=Email: luis@gmail.com
+Nome: luis
+Password: ********************************
+Morada: rua santo agostinho
+Data de Nascimento: 1989-12-12
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua nova santa cruz
+Data de Nascimento: 1993-12-24
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.6151117
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia.fig118@gmail.com=Email: celia.fig118@gmail.com
+Nome: Célia Natália Lemos Figueiredo
+Password: ********************************
+Morada: Rua da Costa nr 1527
+Data de Nascimento: 1993-12-24
+Cliente localização: x: 0.0 y: 0.0, luis@gmail.com=Email: luis@gmail.com
+Nome: luis
+Password: ********************************
+Morada: rua santo agostinho
+Data de Nascimento: 1989-12-12
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua nova santa cruz
+Data de Nascimento: 1993-12-24
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.4865268
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia.fig118@gmail.com=Email: celia.fig118@gmail.com
+Nome: Célia Natália Lemos Figueiredo
+Password: ********************************
+Morada: Rua da Costa nr 1527
+Data de Nascimento: 1993-12-24
+Cliente localização: x: 0.0 y: 0.0, luis@gmail.com=Email: luis@gmail.com
+Nome: luis
+Password: ********************************
+Morada: rua santo agostinho
+Data de Nascimento: 1989-12-12
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{luis@gmail.com=Email: luis@gmail.com
+Nome: Luis Carlos Serra Roque Oliveira 
+Password: ********************************
+Morada: Rua Fábrica do pelo nr 43
+Data de Nascimento: 1989-06-23
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.7515115
+Veiculo conduzido: null
+, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua nova santa cruz
+Data de Nascimento: 1993-12-24
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.79502887
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia.fig118@gmail.com=Email: celia.fig118@gmail.com
+Nome: Célia Natália Lemos Figueiredo
+Password: ********************************
+Morada: Rua da Costa nr 1527
+Data de Nascimento: 1993-12-24
+Cliente localização: x: 0.0 y: 0.0, luis@gmail.com=Email: luis@gmail.com
+Nome: luis
+Password: ********************************
+Morada: rua santo agostinho
+Data de Nascimento: 1989-12-12
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{gil@gil.com=Email: gil@gil.com
+Nome: Gil Gonçalves 
+Password: ********************************
+Morada: Rua dos tolos Fafe
+Data de Nascimento: 1994-11-23
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.0624287
+Veiculo conduzido: null
+, luis@gmail.com=Email: luis@gmail.com
+Nome: Luis Carlos Serra Roque Oliveira 
+Password: ********************************
+Morada: Rua Fábrica do pelo nr 43
+Data de Nascimento: 1989-06-23
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.0394311
+Veiculo conduzido: null
+, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua nova santa cruz
+Data de Nascimento: 1993-12-24
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.24104
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia.fig118@gmail.com=Email: celia.fig118@gmail.com
+Nome: Célia Natália Lemos Figueiredo
+Password: ********************************
+Morada: Rua da Costa nr 1527
+Data de Nascimento: 1993-12-24
+Cliente localização: x: 0.0 y: 0.0, luis@gmail.com=Email: luis@gmail.com
+Nome: luis
+Password: ********************************
+Morada: rua santo agostinho
+Data de Nascimento: 1989-12-12
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{gil@gil.com=Email: gil@gil.com
+Nome: Gil Gonçalves 
+Password: ********************************
+Morada: Rua dos tolos Fafe
+Data de Nascimento: 1994-11-23
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.86894715
+Veiculo conduzido: null
+, luis@gmail.com=Email: luis@gmail.com
+Nome: Luis Carlos Serra Roque Oliveira 
+Password: ********************************
+Morada: Rua Fábrica do pelo nr 43
+Data de Nascimento: 1989-06-23
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.3614042
+Veiculo conduzido: null
+, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua nova santa cruz
+Data de Nascimento: 1993-12-24
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.7496235
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia.fig118@gmail.com=Email: celia.fig118@gmail.com
+Nome: Célia Natália Lemos Figueiredo
+Password: ********************************
+Morada: Rua da Costa nr 1527
+Data de Nascimento: 1993-12-24
+Cliente localização: x: 0.0 y: 0.0, barbara@barbara.com=Email: barbara@barbara.com
+Nome: Bárbara Ferreira 
+Password: ********************************
+Morada: Rua padre costa Joane
+Data de Nascimento: 1998-05-16
+Cliente localização: x: 0.0 y: 0.0, luis@gmail.com=Email: luis@gmail.com
+Nome: luis
+Password: ********************************
+Morada: rua santo agostinho
+Data de Nascimento: 1989-12-12
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{gil@gil.com=Email: gil@gil.com
+Nome: Gil Gonçalves 
+Password: ********************************
+Morada: Rua dos tolos Fafe
+Data de Nascimento: 1994-11-23
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.5909877
+Veiculo conduzido: null
+, luis@gmail.com=Email: luis@gmail.com
+Nome: Luis Carlos Serra Roque Oliveira 
+Password: ********************************
+Morada: Rua Fábrica do pelo nr 43
+Data de Nascimento: 1989-06-23
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.5796274
+Veiculo conduzido: null
+, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua nova santa cruz
+Data de Nascimento: 1993-12-24
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.0972853
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia.fig118@gmail.com=Email: celia.fig118@gmail.com
+Nome: Célia Natália Lemos Figueiredo
+Password: ********************************
+Morada: Rua da Costa nr 1527
+Data de Nascimento: 1993-12-24
+Cliente localização: x: 0.0 y: 0.0, barbara@barbara.com=Email: barbara@barbara.com
+Nome: Bárbara Ferreira 
+Password: ********************************
+Morada: Rua padre costa Joane
+Data de Nascimento: 1998-05-16
+Cliente localização: x: 0.0 y: 0.0, luis@gmail.com=Email: luis@gmail.com
+Nome: luis
+Password: ********************************
+Morada: rua santo agostinho
+Data de Nascimento: 1989-12-12
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{gil@gil.com=Email: gil@gil.com
+Nome: Gil Gonçalves 
+Password: ********************************
+Morada: Rua dos tolos Fafe
+Data de Nascimento: 1994-11-23
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.82365876
+Veiculo conduzido: null
+, luis@gmail.com=Email: luis@gmail.com
+Nome: Luis Carlos Serra Roque Oliveira 
+Password: ********************************
+Morada: Rua Fábrica do pelo nr 43
+Data de Nascimento: 1989-06-23
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.5862377
+Veiculo conduzido: null
+, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua nova santa cruz
+Data de Nascimento: 1993-12-24
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.6933159
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{diana@diana.com=Email: diana@diana.com
+Nome: Diana Filipa Oliveira
+Password: ********************************
+Morada: Ponte da Barca
+Data de Nascimento: 1994-06-18
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{diana@diana.com=Email: diana@diana.com
+Nome: Diana Filipa Oliveira
+Password: ********************************
+Morada: Ponte da Barca
+Data de Nascimento: 1994-06-18
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}LIsta de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.0767162
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.2583873
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.1999538
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.5541524
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.4970002
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.0854387
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.7199784
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.3429971
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.2739482
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}LIsta de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.4870474
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.61411774
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.97785556
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.2082496
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.7031551
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.1011558
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.7034074
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8963418
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.4951713
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.1652111
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.1978904
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.1511889
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.5056278
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.5974001
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8960967
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.075139
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.6074398
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.4543756
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.8741921
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.5130339
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.0285854
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.5157831
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.7595808
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.1782843
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.425892
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.6726332
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.6173755
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8959675
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.0798386
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 0.68778026
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{d@ce=Email: d@ce
+Nome: ze
+Password: ********************************
+Morada: rua da costa 
+Data de Nascimento: 1993-09-01
+Cliente localização: x: 0.0 y: 0.0, celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: cidade dacelia 
+Data de Nascimento: 1993-12-25
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{carlos@carlos.com=Email: carlos@carlos.com
+Nome: carlos
+Password: ********************************
+Morada: rua do carlos
+Data de Nascimento: 1993-09-09
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8859802
+Veiculo conduzido: null
+, celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: null
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.840484
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-12-18
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-12-18
+Cliente localização: x: 0.0 y: 0.0}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.399282
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.1472899
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.3783255
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.0590632
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.3299129
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 0.99648756
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.7489021
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.167417
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.2982576
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.3749088
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.4656444
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.4033244
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.7113671
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.2660272
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 0.9966211
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.1799475
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.1146437
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.3609309
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.233341
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.1175582
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 0.9396312
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.2466115
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.4788418
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.0744655
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.7837148
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 0.93148226
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.2850645
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.6272578
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 0.9770723
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 0.9145212
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.5069797
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.1188192
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 0.9321668
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 0.9262547
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{rui@rui.com=Email: rui@rui.com
+Nome: rui 
+Password: ********************************
+Morada: rua do rui 
+Data de Nascimento: 1989-06-03
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.3217237
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.1348575
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.3787051
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{rui@rui.com=Email: rui@rui.com
+Nome: rui 
+Password: ********************************
+Morada: rua do rui 
+Data de Nascimento: 1989-06-03
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.225806
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.0861143
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.0827445
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{rui@rui.com=Email: rui@rui.com
+Nome: rui 
+Password: ********************************
+Morada: rua do rui 
+Data de Nascimento: 1989-06-03
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 0.9909915
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.1519259
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.41111
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{rui@rui.com=Email: rui@rui.com
+Nome: rui 
+Password: ********************************
+Morada: rua do rui 
+Data de Nascimento: 1989-06-03
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.0937082
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 25-99-PZ=Carro Ligeiro: 
+Matricula: 25-99-PZ
+Marca: Seat
+Fiabilidade do veiculo: 1.2528124
+Localização do veiculo: x: 59.3 y: 55.1
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 0.9787872
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.3700905
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{rui@rui.com=Email: rui@rui.com
+Nome: rui 
+Password: ********************************
+Morada: rua do rui 
+Data de Nascimento: 1989-06-03
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.25601
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 25-99-PZ=Carro Ligeiro: 
+Matricula: 25-99-PZ
+Marca: Seat
+Fiabilidade do veiculo: 0.98314416
+Localização do veiculo: x: 59.3 y: 55.1
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.1994765
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 0.9811151
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, 25-99-34=Motociclo: 
+Matricula: 25-99-34
+Marca: seat
+Fiabilidade do veiculo: 1.0914642
+Localização do veiculo: x: 16.3 y: 37.3
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 3.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{rui@rui.com=Email: rui@rui.com
+Nome: rui 
+Password: ********************************
+Morada: rua do rui 
+Data de Nascimento: 1989-06-03
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 0.90796447
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 25-99-PZ=Carro Ligeiro: 
+Matricula: 25-99-PZ
+Marca: Seat
+Fiabilidade do veiculo: 1.0739301
+Localização do veiculo: x: 59.3 y: 55.1
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 23-89-tg=Carro Ligeiro: 
+Matricula: 23-89-tg
+Marca: nissan 
+Fiabilidade do veiculo: 1.3033462
+Localização do veiculo: x: 36.8 y: 17.6
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.2143523
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.1291438
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, 25-99-34=Motociclo: 
+Matricula: 25-99-34
+Marca: seat
+Fiabilidade do veiculo: 0.98980135
+Localização do veiculo: x: 16.3 y: 37.3
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 3.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1993-03-24
+Cliente localização: x: 75.2 y: 71.2, celia@gmail.com=Email: celia@gmail.com
+Nome: celia
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1994-03-04
+Cliente localização: x: 50.5 y: 39.6}Lista de Motoristas: 
+{rui@rui.com=Email: rui@rui.com
+Nome: rui 
+Password: ********************************
+Morada: rua do rui 
+Data de Nascimento: 1989-06-03
+Classificação: 0
+Total Kms efetuados: 0.0
+Disponibilidade: false
+Horário de Trabalho: false
+Destreza: 1.8
+Veiculo conduzido: null
+}Lista de Veiculos: 
+{=Carro Ligeiro: 
+Matricula: 
+Marca: 
+Fiabilidade do veiculo: 1.4651155
+Localização do veiculo: x: 7.3 y: 8.5
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 25-99-PZ=Carro Ligeiro: 
+Matricula: 25-99-PZ
+Marca: Seat
+Fiabilidade do veiculo: 1.1904981
+Localização do veiculo: x: 59.3 y: 55.1
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 23-89-tg=Carro Ligeiro: 
+Matricula: 23-89-tg
+Marca: nissan 
+Fiabilidade do veiculo: 1.0475348
+Localização do veiculo: x: 36.8 y: 17.6
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: toyota
+Fiabilidade do veiculo: 1.1013399
+Localização do veiculo: x: 64.7 y: 29.9
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, 30-90-fr=Carrinha: 
+Matricula: 30-90-fr
+Marca: jaguar 
+Fiabilidade do veiculo: 1.146273
+Localização do veiculo: x: 32.5 y: 49.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, 25-99-34=Motociclo: 
+Matricula: 25-99-34
+Marca: seat
+Fiabilidade do veiculo: 1.0817105
+Localização do veiculo: x: 16.3 y: 37.3
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 3.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1992-12-13
+Cliente localização: x: 45.5 y: 73.1}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: celia@celia.com
+Password: ********************************
+Morada: rua da celia
+Data de Nascimento: 1992-12-13
+Cliente localização: x: 45.5 y: 73.1}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------

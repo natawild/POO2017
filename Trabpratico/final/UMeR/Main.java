@@ -126,7 +126,7 @@ public class Main
        Cliente clientePesquisado = programa.pesquisaCliente("ola@ola.com");
        Motorista motoristaMaisPerto = programa.getMotoristaMaisPerto(clientePesquisado);
        
-       System.out.println("\n---Teste:Pesquisa de motorista mais perto---\n");
+       System.out.println("\n-------------------------Teste:Pesquisa de motorista mais perto---\n");
        System.out.println("Cliente: \n" + clientePesquisado);
        System.out.println("Motorista: \n" + motoristaMaisPerto);
        
@@ -167,12 +167,13 @@ public class Main
       Utils.Transito.getEstadoTransito(); 
       System.out.println(Utils.Transito.getEstadoTransito()); 
       
+      
       /*
       
       System.out.println(programa.duracaoRealViagem(30d, 0.9f, 0.9f,0.9f,0.9f));
       
       System.out.println(programa.custoRealViagem(19.68d, 20, 2, 30));
-      */
+      
      System.out.println( programa.custoRealViagem(29.69d, 50, 2, 46.15d));
      
      Cliente clienteN = new Cliente("celia2@gmail.com","Celia2", "batatas2", "Rua do cão", dataNas2, localizacao2);

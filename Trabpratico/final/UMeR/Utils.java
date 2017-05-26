@@ -49,7 +49,7 @@ public class  Utils{
     
     public static String getEstadoTempo (){
         Random rand = new Random();
-        double estadoTempo = generateRandom(0.89f,1.3f); 
+        double estadoTempo = generateRandom(0.9f,1.3f); 
         switch (String.valueOf(estadoTempo)){
             case "0.9" :
                 return sol; 

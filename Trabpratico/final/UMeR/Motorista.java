@@ -22,7 +22,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
     private double totalKms; 
     private boolean disponivel;//verifica se está a trabalhar ou não 
     private boolean horarioTrabalho;
-    private float destreza; //0 e 2 
+    private double destreza; //0 e 2 
     private VeiculoInterface veiculo; 
     private HistoricoMotorista histMoto; 
     
@@ -37,7 +37,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.totalKms=0;
         this.disponivel = false; 
         this.horarioTrabalho = false; 
-        this.destreza = 0f; 
+        this.destreza = Utils.generateRandom(0.5f, 1.9f); 
         this.veiculo = null;   
     }
     
@@ -67,7 +67,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.totalKms= 0; 
         this.disponivel = false; 
         this.horarioTrabalho=false; 
-        this.destreza = 0; 
+        this.destreza = Utils.generateRandom(0.5f, 1.9f); 
         this.veiculo = null; 
     }
     
@@ -115,13 +115,8 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
      * @return destreza do condutor 
      * 
      */
-    public float getDestreza(){
-        float minX = 0.5f;
-        float maxX = 1.9f;
-        Random rand = new Random();
-        float destreza = rand.nextFloat() * (maxX - minX) + minX;
-        return destreza; 
-        
+    public double getDestreza(){
+        return destreza;
     }
     
     public VeiculoInterface getVeiculo(){
@@ -129,6 +124,11 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
             return this.veiculo.clone(); 
         }
         return null;
+    }
+    
+    
+    public HistoricoMotorista getHistMoto(){
+         return this.histMoto.clone();  
     }
     
     //setters

@@ -33,7 +33,7 @@ public class CarrinhaFilaEspera extends Carrinha implements FilaEsperaInterface,
      * 
      */
     
-    public CarrinhaFilaEspera(String matricula,String marca, int fiabilidade, 
+    public CarrinhaFilaEspera(String matricula,String marca, float fiabilidade, 
     Coordenadas coord, List<Cliente> filaClientes){
         super(matricula,marca,fiabilidade, coord);
         this.filaClientes= filaClientes; 

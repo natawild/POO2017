@@ -263,7 +263,6 @@ public class BD implements BDInterface, Serializable {
         return equalsClientes(c.getClientes()) && equalsMotoristas(c.getMotoristas()) && equalsAdmins(c.getAdmins()) && 
         equalsVeiculos(c.getVeiculos()); 
         // return(this.equalsCLientes(c.getClientes()) fazer o mesmo para motoristas e veiculos);
-        //return true;
     }
     
     
@@ -426,7 +425,7 @@ public class BD implements BDInterface, Serializable {
     public String toString(){
        StringBuilder sb = new StringBuilder();
        sb.append("Lista de Clientes: \n" +clientes );
-       sb.append("LIsta de Motoristas: \n" +motoristas);  
+       sb.append("Lista de Motoristas: \n" +motoristas);  
        sb.append("Lista de Veiculos: \n" +veiculos);
        sb.append("Historico: \n" + historico);   
        return sb.toString();
@@ -478,6 +477,7 @@ public class BD implements BDInterface, Serializable {
         }
         return listaVeiculos;
     }
+    
     /*
     public List <VeiculoInterface> listaVeiculos(){
         List<VeiculoInterface> listaVeiculos = new ArrayList<>();
@@ -627,14 +627,7 @@ public class BD implements BDInterface, Serializable {
     }
     
     
-    public Motorista getMotoristaMaisPerto(AtorInterface cliente){
-        for(AtorInterface ator: this.motoristas.values()){
-            
-        }
-        
-        return null;
-    }
-    
+  
     
     public boolean carroEstaRegistado(String matricula){
         
@@ -653,6 +646,32 @@ public class BD implements BDInterface, Serializable {
     
     public boolean temAdminsRegistados(){
         return this.admins.size() >0;
+    }
+    
+    public void atualizaAtor(AtorInterface ator){
+        if(ator instanceof Cliente){
+            this.clientes.put(ator.getEmail(), ator);
+        }
+        if(ator instanceof Motorista){
+            Motorista novo = (Motorista) ator;
+            Motorista motoristaGuardado = (Motorista) this.motoristas.get(ator.getEmail());
+            novo.setClassificacao(((Motorista)motoristaGuardado).getClassificacao());
+            novo.setGrauCumprimentoHorario(motoristaGuardado.getGrauCumprimentoHorario());
+            novo.setTotalKms(motoristaGuardado.getTotalKms());
+            novo.setDisponivel(motoristaGuardado.getDisponivel());
+            novo.setHorarioTrabalho(motoristaGuardado.getHorarioTrabalho());
+            novo.setDisponivel(motoristaGuardado.getDisponivel());
+            novo.setDisponivel(motoristaGuardado.getDisponivel());
+            this.motoristas.put(ator.getEmail(), novo);
+        }
+        if(ator instanceof Admin){
+            this.admins.put(ator.getEmail(), ator);
+        }
+    }
+    
+    public void adicionaVeiculoAMotorista(AtorInterface atorLogado,VeiculoInterface v){
+        Motorista novo =  (Motorista)this.motoristas.get(atorLogado.getEmail()); 
+        novo.setVeiculo(v); 
     }
 }
     

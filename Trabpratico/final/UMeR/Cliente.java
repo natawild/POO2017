@@ -53,6 +53,10 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
     
     }
     
+    public HistoricoCliente getHistClie(){
+         return this.histClie.clone();  
+    }
+    
     //setters
     
     public void setLoc(Coordenadas localizacao){

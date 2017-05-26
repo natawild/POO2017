@@ -46,8 +46,6 @@ public interface BDInterface{
     
     public AtorInterface getMotoristaComEmail(String email);
     
-    public Motorista getMotoristaMaisPerto(AtorInterface cliente);
-    
     public List<String> matriculasReg();
     
     public boolean carroEstaRegistado(String matricula); 
@@ -55,4 +53,8 @@ public interface BDInterface{
     public void carroAdicionadoMotorista(Motorista motorista);
     
     public boolean temAdminsRegistados();
+    
+    public void atualizaAtor(AtorInterface ator);
+    
+    public void adicionaVeiculoAMotorista(AtorInterface atorLogado,VeiculoInterface v);
 }

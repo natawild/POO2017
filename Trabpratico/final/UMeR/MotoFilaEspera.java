@@ -31,7 +31,7 @@ public class MotoFilaEspera extends Moto implements FilaEsperaInterface,Serializ
      * 
      */
     
-    public MotoFilaEspera(String matricula,String marca, int fiabilidade, 
+    public MotoFilaEspera(String matricula,String marca, float fiabilidade, 
     Coordenadas coord, List<Cliente> filaClientes){
         super(matricula,marca,fiabilidade, coord);
         this.filaClientes= filaClientes; 

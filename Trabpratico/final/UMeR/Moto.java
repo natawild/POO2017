@@ -31,7 +31,7 @@ public class Moto extends Veiculo implements VeiculoInterface,Serializable{
      * @param coord
      */
     
-    public Moto(String matricula,String marca, int fiabilidade, Coordenadas coord){
+    public Moto(String matricula,String marca, float fiabilidade, Coordenadas coord){
         super(matricula, marca, fiabilidade, coord);
     }
     
