@@ -35,7 +35,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.grauCumprimentoHorario = 0; 
         this.classificacao = 0;
         this.totalKms=0;
-        this.disponivel = false; 
+        this.disponivel = true; 
         this.horarioTrabalho = false; 
         this.destreza = Utils.generateRandom(0.5f, 1.9f); 
         this.veiculo = null;   
@@ -65,7 +65,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.grauCumprimentoHorario = 0;
         this.classificacao = 0; 
         this.totalKms= 0; 
-        this.disponivel = false; 
+        this.disponivel = true; 
         this.horarioTrabalho=false; 
         this.destreza = Utils.generateRandom(0.5f, 1.9f); 
         this.veiculo = null; 

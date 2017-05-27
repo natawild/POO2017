@@ -30,6 +30,10 @@ public class UMeRApp
     private static UMeRMenu menu_registar_veiculos;
     private static UMeRMenu menu_solicitarViagem; 
     private static UMeRMenu menu_inserir_coord_destino;
+    private static UMeRMenu menu_terminar_viagem; 
+    private static UMeRMenu menu_terminar_horario_trabalho;
+    private static UMeRMenu menu_iniciar_horario_trabalho;
+    private static UMeRMenu menu_proposta_viagem;
     /**
      * 
      */
@@ -67,6 +71,7 @@ public class UMeRApp
                 break;
             }
             case 0 : {
+                //TODO: verificar porque não termina corretamente. Iniciar como motorista-> ver dados pessoais -> sair -> sair
                 break;
             }
             default : {
@@ -75,7 +80,6 @@ public class UMeRApp
                 break;
             }
         }
-        umer.setTentativasDeLoginFalhadas(0);
     }
 
     /**
@@ -109,7 +113,7 @@ public class UMeRApp
         String[] menu1 = {"Registar Utilizador", "Iniciar sessão"};
         String[] menu2 = {"Cliente", "Motorista"};
         String[] menu3 = {"Solicitar Viagem", "Consultar listagem de viagems efetuadas", "Ver Dados Pessoais"};
-        String[] menu4 = {"Iniciar Viagem", "Visualizar Histórico de viagens (entre datas)", 
+        String[] menu4 = {"Gerir Viagens","Gerir Horário de trabalho", "Visualizar Histórico de viagens (entre datas)", 
                             "Visualizar 10 melhores clientes", "Registar Veiculo", "Ver Dados Pessoais"};
         String[] menu5 = {"Registar Veiculo","Remover Veiculo ", "Ver Lista dos utilizadores registados",
                             "Ver Lista dos Veiculos Registados", "Ver Lista dos clientes que mais gastam", 
@@ -121,6 +125,10 @@ public class UMeRApp
         String[] menu9 = {"Escolher táxi mais Próximo", "Escolher táxi especifico com fila de Espera"};
         String[] menu10 = {"Editar Dados"};
         String[] menu11 = {"Inserir Coordenadas"}; 
+        String[] menu12 = {"Alterar para livre"}; 
+        String[] menu13 = {"Terminar horario de trabalho "};
+        String[] menu14 = {"Iniciar horário de trabalho "}; 
+        String[] menu15= {"Aceito", "Não Aceito"}; 
         
         menu_principal =  new  UMeRMenu("Menu Inicial", menu1);
         menu_registar_atores =  new  UMeRMenu("Escolha o tipo de utilizador a registar", menu2);
@@ -132,6 +140,10 @@ public class UMeRApp
         menu_cliente_efetuarViagem =  new  UMeRMenu(menu8);
         menu_dados_pessoais =  new  UMeRMenu("Opçoes Dados Pessoais", menu10);
         menu_inserir_coord_destino = new UMeRMenu ("Inserir Coordenadas de destino", menu11); 
+        menu_terminar_viagem = new  UMeRMenu ("Gestão de Viagem", menu12);
+        menu_terminar_horario_trabalho = new UMeRMenu ("Horário de trabalho ",menu13);
+        menu_iniciar_horario_trabalho = new UMeRMenu ("Horário de trabalho ",menu14);
+        menu_proposta_viagem = new UMeRMenu("Dados Estimados da viagem ", menu15); 
     }
 
     /**
@@ -404,7 +416,7 @@ public class UMeRApp
         Coordenadas localizacao = new Coordenadas(x,y);
         System.out.println("Introduziu as coordenadas " +localizacao+ " com sucesso! ");
         
-        solicitarViagem(); 
+        solicitarViagem(localizacao); 
         
     }
     
@@ -416,8 +428,13 @@ public class UMeRApp
                 break; 
             }
             
+            case 0 : {
+                menuCliente(); 
+                break; 
+            }
+            
             default : {
-                menuErro();
+                inserirCoordenadas();
                 break;
             }
         }
@@ -426,23 +443,24 @@ public class UMeRApp
     /**
      * 
      */
-    static  private  void solicitarViagem(){
+    static  private  void solicitarViagem(Coordenadas destino){
         menu_solicitarViagem.executa(); 
         switch (menu_solicitarViagem.getOpcao()) {
             case 1 : {
-                requisitarTaxiMaisProx();
+                requisitarTaxiMaisProx(destino);
                 break;
             }
             case 2 : {
-                requisitarTaxiEspecifico();
+                requisitarTaxiEspecifico(destino);
                 break;
             }
             
             case 0:{
-                menuCliente(); 
+                inserirCoordenadas();
+                break;
             }
             default : {
-                menuErro();
+                solicitarViagem(destino);
                 break;
             }
         }
@@ -452,14 +470,68 @@ public class UMeRApp
     /**
      * Requisitar taxi mais próximo de um cliente logado 
      */
-    static private void requisitarTaxiMaisProx(){
+    static private void requisitarTaxiMaisProx(Coordenadas destino){
        System.out.println("\n*********** Taxi mais próximo:  ***************");
        AtorInterface ator = umer.getAtorLoggado();
+       Motorista motoristaMaisPerto =null;
        if (ator instanceof Cliente) {
-           Cliente clientelogado = (Cliente) ator;
-           umer.motoristaMaisPertoCliente(clientelogado);   
+          Cliente clientelogado = (Cliente) ator;
+          motoristaMaisPerto = umer.motoristaMaisPertoCliente(clientelogado);   
        }
-       System.out.println();
+       
+       Coordenadas localizacaoCliente = ((Cliente) umer.getAtorLoggado()).getLoc();
+       Coordenadas localizacaoMotorista = motoristaMaisPerto.getVeiculo().getLoc(); 
+       double distanciaAteCliente = localizacaoCliente.getDistancia(localizacaoMotorista); 
+       double distanciaTotal = distanciaAteCliente + localizacaoCliente.getDistancia(destino); 
+       
+       double duracaoEstimadaViagem = umer.duracaoEstimadaViagem (distanciaTotal, motoristaMaisPerto.getVeiculo().getVm());
+       double custoEstimado = umer.custoEstimadoViagem(distanciaTotal,  motoristaMaisPerto.getVeiculo().getPrecoPorKm()); 
+       
+       System.out.println("Motorista mais perto: " +motoristaMaisPerto.getNome()+ " | Veiculo: " +motoristaMaisPerto.getVeiculo().getMatricula()); 
+       System.out.println("Duração Estimada da Viagem (minutos): " +duracaoEstimadaViagem); 
+       System.out.println("Custo Estimado da Viagem (euros): " +custoEstimado); 
+    
+       propostaViagemMenu(destino, motoristaMaisPerto);   
+    }
+    
+    static private void propostaViagemMenu(Coordenadas destino, Motorista m){
+        menu_proposta_viagem.executa(); 
+        switch (menu_proposta_viagem.getOpcao()) {
+            case 1 : {
+                iniciaViagem(m, destino);
+                break;
+            }
+            case 2 : {
+                solicitarViagem(destino); 
+                break;
+            }
+            
+            case 0:{
+                solicitarViagem(destino);
+                break; 
+            }
+            default : {
+                propostaViagemMenu(destino, m);
+                break;
+            }
+        }
+        
+        
+    }
+    /**
+     * TODO : apresentar ao cliente o tempo que demorará o veiculo a chegar onde o cliente está 
+     * trocar estado de motorista para ocupado 
+     */
+    static private void iniciaViagem(Motorista m, Coordenadas destino){
+            
+         Coordenadas localizacaoCliente = ((Cliente) umer.getAtorLoggado()).getLoc();
+         Coordenadas localizacaoMotorista = m.getVeiculo().getLoc(); 
+         double distanciaAteCliente = localizacaoCliente.getDistancia(localizacaoMotorista);
+         double duracaoEstimadaViagem = umer.duracaoEstimadaViagem (distanciaAteCliente, m.getVeiculo().getVm());
+ 
+         System.out.println("O táxi deverá demorar cerca de "+duracaoEstimadaViagem+" minutos até à sua localização");
+         umer.alteraDisponibilidade(m, false); 
+         
     }
 
     /**
@@ -507,6 +579,17 @@ public class UMeRApp
             }
     
             case 0 : {
+                
+               if(ator instanceof Cliente){
+                    menuCliente(); 
+                }
+                else if(ator instanceof Motorista){
+                    menuMotorista(); 
+                }
+                else {
+                    menuAdmin();    
+                }
+                
                 fecharSessao();
                 break;
             }
@@ -521,7 +604,7 @@ public class UMeRApp
 
    
     
-    static private void requisitarTaxiEspecifico(){
+    static private void requisitarTaxiEspecifico(Coordenadas destino){
     
     }
     
@@ -588,24 +671,29 @@ public class UMeRApp
         menu_motorista.executa();
         switch (menu_motorista.getOpcao()) {
             case 1 : {
-                iniciarViagem();
+                gestaoViagem();
                 break;
                 /* TODO: adicionar menus das outras funcionaldiade do admin case 2: verHistoricoViagens(); break; case 3: verDadosPessoais(); break;*/
             }
-            case 2 : {
+            case 2 :{
+                alteraHorarioTrabalho();
+                break; 
+            
+            }
+            case 3 : {
                 visualizarHistorico();
                 break;
             }
-            case 3 : {
+            case 4 : {
                 visualizarMelhoresClientes();
                 break;
             }
-            case 4 : {
+            case 5 : {
                 MenuRegistarVeiculo();
                 break;
             }
             
-            case 5: {
+            case 6 : {
                 verDadosPessoais();
                 break; 
             }
@@ -623,8 +711,93 @@ public class UMeRApp
     }
     
     
-    static private void iniciarViagem(){
+    static private void gestaoViagem(){
+        Motorista motoristaLoggado = (Motorista) umer.getAtorLoggado(); 
+        if(motoristaLoggado.getDisponivel()){
+            System.out.println("Estado: Disponivel!  ");
+            menuMotorista(); 
+        }
+        else {
+            menu_terminar_viagem.executa();
+            switch (menu_terminar_viagem.getOpcao()) {
+                case 1 : {
+                    terminarViagem(); 
+                    break; 
+                }
+                case 0 : {
+                    menuMotorista(); 
+                    break; 
+                }
+            }
+
+        }
+    }
     
+    static private void terminarViagem(){
+       Motorista motoristaLogado = ((Motorista) umer.getAtorLoggado()); 
+       motoristaLogado.setDisponivel(true);  
+       umer.setAtorLoggado(motoristaLogado); 
+       umer.alteraDisponibilidade(motoristaLogado,true); 
+       System.out.println("Viagem terminada :) "); 
+       menuMotorista(); 
+    }
+    
+    static private void alteraHorarioTrabalho(){
+        if(((Motorista) umer.getAtorLoggado()).getHorarioTrabalho()){
+            menu_terminar_horario_trabalho.executa();
+            switch (menu_terminar_horario_trabalho.getOpcao()) {
+                case 1 : {
+                    terminarHorarioTrabalho(); 
+                    break; 
+                }
+                case 0 : {
+                    menuMotorista(); 
+                    break; 
+                }
+                
+                default : 
+                    menuMotorista(); 
+                    break; 
+                
+            }
+        }
+        else{
+            menu_iniciar_horario_trabalho.executa();
+            switch (menu_iniciar_horario_trabalho.getOpcao()) {
+                case 1 : {
+                    iniciarHorarioTrabalho(); 
+                    break; 
+                }
+                case 0 : {
+                    menuMotorista(); 
+                    break; 
+                }
+                default : 
+                    menuMotorista();  
+                    break;
+            }
+        }
+        
+    }
+    
+    static private void terminarHorarioTrabalho(){
+       Motorista motoristaLogado = ((Motorista) umer.getAtorLoggado()); 
+       motoristaLogado.setHorarioTrabalho(false);  
+       umer.setAtorLoggado(motoristaLogado); 
+       umer.atualizaHorario(false); 
+       System.out.println("Terminou o seu horário de trabalho :) "); 
+       menuMotorista();
+    
+    }
+    
+    static private void iniciarHorarioTrabalho(){
+       Motorista motoristaLogado = ((Motorista) umer.getAtorLoggado()); 
+       motoristaLogado.setHorarioTrabalho(true);  
+       umer.setAtorLoggado(motoristaLogado); 
+       umer.atualizaHorario(true); 
+       System.out.println("Iniciou o seu horário de trabalho :) "); 
+       menuMotorista();
+        
     }
     
     static private void visualizarHistorico(){
@@ -699,34 +872,43 @@ public class UMeRApp
         matricula = is.nextLine();
         System.out.print("Marca: ");
         marca = is.nextLine();
-        System.out.print("Fiabilidade (0,8 a 1,2): ");
-        fiabilidade = is.nextFloat();
+        
+
+    
+ 
         List<Cliente> filaEspera = new ArrayList<>(); 
 
         /* Estes dados sao inseridos depois de fazer loggin e outros sao inseridos com base das viagens feitas if(opcao == 2){ System.out.print("Grau de cumprimento de horário de motorista: "); grauCumprimentoHorario = is.nextInt(); System.out.print("Classificação de motorista: "); classificacao = is.nextInt(); System.out.print("Total de kms percorridos: "); totalKms = is.nextInt(); System.out.print("Disponibilidade: "); disponivel = false; System.out.print("Horário de trabalho: "); horarioTrabalho = false; System.out.print("Destreza: "); destreza = is.nextInt(); }*/
         is.close();
         switch (opcao) {
             case 1 : {
+               fiabilidade = Moto.calcFiabilidade(); 
                 veiculo =  new  Moto(matricula, marca, fiabilidade, new  Coordenadas());
                 break;
             }
             case 2 : {
+                fiabilidade = CarroLig.calcFiabilidade(); 
                 veiculo =  new  CarroLig(matricula, marca,  fiabilidade, new  Coordenadas());
                 break;
             }
-            case 3 : {   
+            case 3 : {  
+                fiabilidade = Carrinha.calcFiabilidade(); 
+                
                 veiculo =  new  Carrinha(matricula, marca,  fiabilidade, new  Coordenadas());
                 break;
             }
             case 4 : {
+                fiabilidade = Moto.calcFiabilidade(); 
                 veiculo =  new  MotoFilaEspera(matricula, marca, fiabilidade, new  Coordenadas(),filaEspera);
                 break;
             }
             case 5 : {
+                fiabilidade = CarroLig.calcFiabilidade(); 
                 veiculo =  new  CarroFilaEspera(matricula, marca,  fiabilidade, new  Coordenadas(), filaEspera);
                 break;
             }
             case 6 : {   
+                fiabilidade = Carrinha.calcFiabilidade(); 
                 veiculo =  new  CarrinhaFilaEspera(matricula, marca,  fiabilidade, new  Coordenadas(), filaEspera);
                 break;
             }
@@ -736,20 +918,23 @@ public class UMeRApp
             }
         }
         try {
-            umer.registarViatura(veiculo);//registei o veiculo
+            umer.registarViatura(veiculo);//registei o veiculo na BD na colecão de veiculos 
             /*
             AtorInterface atorLogadoAtualizado = ((Motorista) umer.getAtorLoggado()).setVeiculo(veiculo);
             umer.setAtorLoggado(atorLogadoAtualizado); 
             */
-            umer.atualizaVeiculoAtorLogado(veiculo); 
-            System.out.print("Veiculo Registado na UMeR!");
-            /* antes de apresentar o menu apresentar mensagem de sucesso.*/
-           if(atorLogado instanceof Admin){
-            menuAdmin(); 
+           
+           if(atorLogado instanceof Motorista){             
+               umer.atualizaVeiculoAtorLogado(veiculo); 
+               umer.adicionaVeiculoAMotorista(veiculo); 
+               menuMotorista();
            }
-            else if(atorLogado instanceof Motorista){
-            menuMotorista();  
+           else if(atorLogado instanceof Admin){
+               menuAdmin();
            }
+           
+           System.out.print("Veiculo Registado na UMeR!");
+     
         }
         catch (ViaturaExistenteException e) {
             System.out.println("Este veiculo já existe!");
@@ -771,7 +956,12 @@ public class UMeRApp
             registarVeiculo(opcao);
         }
         else {
-            apresentarMenu();
+            if(umer.getAtorLoggado() instanceof Admin){
+                menuAdmin(); 
+            }
+            else if(umer.getAtorLoggado() instanceof Motorista){
+                menuMotorista();
+            }
         }
     }
   
@@ -809,7 +999,7 @@ public class UMeRApp
         System.out.println("\n*********** Lista de Veiculos ***************");
         List<VeiculoInterface> veiculos = umer.listaVeiculos();
         for (final VeiculoInterface veiculo : veiculos) {
-            System.out.println("Matricula: " + veiculo.getMatricula() + " | Marca: " + veiculo.getMarca());
+            System.out.println("Matricula: " + veiculo.getMatricula() + " | Marca: " + veiculo.getMarca()+ " | Tipo: " +veiculo.getClass().getName() );
         }
         menuAdmin();
     }

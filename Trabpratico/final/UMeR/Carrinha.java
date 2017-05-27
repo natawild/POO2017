@@ -57,7 +57,7 @@ public class Carrinha extends Veiculo implements VeiculoInterface,Serializable{
      * 
      * @return finalX valor da fiabilidade do veiculo 
      */
-    public float getFiabilidade(){
+    public static float calcFiabilidade(){
         float minX = 0.9f;
         float maxX = 1.8f;
         Random rand = new Random();

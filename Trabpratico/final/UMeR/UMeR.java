@@ -392,19 +392,19 @@ public class UMeR{
         
        for(AtorInterface m : ((BD)this.baseDeDados).getMotoristas().values()){
             if(m instanceof Motorista){
-                Motorista m1 = (Motorista) m; 
-                Coordenadas coordVeic = m1.getVeiculo().getLoc(); //localizacao do motorista 
-                double distancia= coordVeic.getDistancia(cliente.getLoc());
-                if(m1.getDisponivel() && m1.getHorarioTrabalho() && distancia < novaDistancia){
-                    novaDistancia= distancia; 
-                    maisPerto = m1;  
-                }
-            }
+                Motorista m1 = (Motorista) m;
+                if (m1.getVeiculo()!=null){
+                    Coordenadas coordVeic = m1.getVeiculo().getLoc(); //localizacao do motorista 
+                    double distancia= coordVeic.getDistancia(cliente.getLoc());
+                    if(m1.getDisponivel() && m1.getHorarioTrabalho() && distancia < novaDistancia){
+                        novaDistancia= distancia; 
+                        maisPerto = m1;  
+                    }
+               }
+           }
        }
        return maisPerto;
     }
-    
-    
     
     
     
@@ -522,7 +522,7 @@ public class UMeR{
     }
     
     public void adicionaVeiculoAMotorista(VeiculoInterface v){
-        /*
+       /*
        Map <String, AtorInterface> motoristasCopia = ((BD) this.baseDeDados).getMotoristas();
        AtorInterface motoristaCopia = motoristasCopia.get(this.atorLoggado.getEmail()); 
        ((Motorista) motoristaCopia).setVeiculo(v); 
@@ -530,9 +530,22 @@ public class UMeR{
        ((BD) this.baseDeDados).setMotoristas(motoristasCopia); 
        */
       this.baseDeDados.adicionaVeiculoAMotorista(this.atorLoggado, v);
-        
-        
+
+    }
     
+    public void alteraDisponibilidade(AtorInterface ator,boolean estado){
+       /*
+       Map<String, AtorInterface> motoristasCopia = ((BD) this.baseDeDados).getMotoristas(); 
+       AtorInterface motoristaCopia = motoristasCopia.get(this.atorLoggado.getEmail()); 
+       ((Motorista) motoristaCopia).setDisponivel(true);
+      ((BD)this.baseDeDados).setMotoristas(motoristasCopia);
+      */
+     
+     this.baseDeDados.alteraDisponibilidade(ator, estado);
+    }
+    
+    public void atualizaHorario(boolean estado){
+       this.baseDeDados.atualizaHorario(atorLoggado, estado); 
     }
 
 }

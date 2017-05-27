@@ -16,32 +16,75 @@ public class Main
         BDInterface baseDados = new BD (); 
         
         Cliente cliente1 = new Cliente(); 
-        cliente1.setNome("Batata"); 
-        cliente1.setEmail("ola@ola.com"); 
-        cliente1.setPassword("tolinhoooooooooooooo"); 
+        cliente1.setNome("Rui"); 
+        cliente1.setEmail("rui@rui.com"); 
+        cliente1.setPassword(Utils.encriptar("rui")); 
         cliente1.setMorada("Rua da costa ");
         LocalDate dataNas1 = LocalDate.of (1993,12,24); 
         cliente1.setDataNascimento(dataNas1); 
-        Coordenadas localizacao1 = new Coordenadas(2.5d, 4d); 
-        cliente1.setLoc(localizacao1); 
         baseDados.addCliente(cliente1);
         //System.out.println(cliente1.toString());
         
-        Coordenadas localizacao2 = new Coordenadas(2.7d, 4.2d);
+        Coordenadas localizacao2 = new Coordenadas();
         LocalDate dataNas2 = LocalDate.of (1993,12,24); 
-        Cliente cliente2 = new Cliente("celia@gmail.com","Celia", "batatas", "Rua do cão", dataNas2, localizacao2);
+        Cliente cliente2 = new Cliente("celia@gmail.com","Celia", Utils.encriptar("celia"), "Rua do cão", dataNas2, localizacao2);
         //System.out.println(cliente2.toString());
+        baseDados.addCliente(cliente2);
         
-         
+        localizacao2 = new Coordenadas();
+        dataNas1 = LocalDate.of (1993,12,24); 
+        Cliente cliente3 = new Cliente("luis@luis.com","Luis", Utils.encriptar("luis"), "Rua da cinderela", dataNas2, localizacao2);
+        //System.out.println(cliente2.toString());
+        baseDados.addCliente(cliente3);
+        
+        VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 0.8f, new Coordenadas()); 
+        VeiculoInterface v2 = new Carrinha("qt-34-22","Renault", 1.2f, new Coordenadas()); 
+        VeiculoInterface v3 = new Moto("25-76-22","Fiat", 0.8f, new Coordenadas()); 
+        
+        baseDados.addVeiculo(v1); 
+        baseDados.addVeiculo(v2); 
+        baseDados.addVeiculo(v3); 
+        
+        LocalDate dataNasM2 = LocalDate.of (1989,12,24);
+        Motorista motorista2 = new Motorista("acores@acores.com","João César", Utils.encriptar("acores"), "Rua Fábrica do pelo", 
+        dataNasM2);
+        motorista2.setVeiculo(v1);
+        baseDados.addMotorista(motorista2); 
+        
+        dataNasM2 = LocalDate.of (1989,10,24);
+        Motorista motorista3 = new Motorista("manuel@manuel.com","Manuel César", Utils.encriptar("manuel"), "Rua Conego do pelo", 
+        dataNasM2);
+        motorista3.setVeiculo(v2);
+        baseDados.addMotorista(motorista3); 
+        
+        dataNasM2 = LocalDate.of (1989,11,24);
+        Motorista motorista4 = new Motorista("rita@rita.com","Rita César", Utils.encriptar("rita"), "Rua Fábrica do sabão", 
+        dataNasM2);
+        motorista4.setVeiculo(v3);
+        baseDados.addMotorista(motorista4); 
+       
+       Admin admin =  new  Admin("admin@admin.com", "admin", Utils.encriptar("admin"), null, null,  new  Coordenadas());
+       baseDados.addAdmin(admin); 
+        
+        UMeR umer = new UMeR(baseDados); 
+        
+        try{
+        umer.gravaObj("bdInicial.obj");
+      }
+      catch (IOException e ){
+        System.out.println("Erro: "+e ); 
+    
+      }
+        
+         /*
         Map<String, AtorInterface> list = ((BD)baseDados).getClientes();
         list.put(cliente2.getEmail(),cliente2.clone()); 
         ((BD)baseDados).setClientes(list);
+       
         
         Coordenadas localizacaoCarr1 = new Coordenadas(10d, 4d); 
         VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 3f, localizacaoCarr1); 
-       
-        
-        
+
         Motorista motorista1= new Motorista(); 
         motorista1.setNome("luis"); 
         motorista1.setEmail("olaluis@ola.com"); 
@@ -62,8 +105,8 @@ public class Main
         baseDados.addVeiculo(v1);
         Coordenadas localizacaoCarr2 = new Coordenadas(20d, 45d); 
         VeiculoInterface v2 = new CarroLig("25-99-PZ","Renault", 4f, localizacaoCarr2); 
-        LocalDate dataNasM2 = LocalDate.of (1989,12,24);
-        Motorista motorista2 = new Motorista("acores@gmail.com","João César", "Gostarias?", "Rua Fábrica do pelo", 
+        LocalDate dataNasM3 = LocalDate.of (1989,12,24);
+        Motorista motorista4 = new Motorista("acores@gmail.com","João César", "Gostarias?", "Rua Fábrica do pelo", 
         dataNasM2, 2, 76, 320d, true,true, 1.3f,v2); 
         baseDados.addMotorista(motorista2); 
         baseDados.addVeiculo(v2);
@@ -87,7 +130,7 @@ public class Main
         List<AtorInterface> listm = ((BD)baseDados).getMotoristas(); 
         listm.remove(motorista1);
         ((BD)baseDados).setMotoristas(listm); 
-        */
+        
         
         System.out.println("333333333333"+baseDados.toString());
 
@@ -113,7 +156,7 @@ public class Main
         }
         System.out.println("Fim das matriculas encontradas \n");
         
-        */
+        
        
      
         
@@ -159,7 +202,7 @@ public class Main
       
       Map<AtorInterface, VeiculoInterface> lista4 = programa.obterMapMotoVei();
       System.out.println("Os motoristas com os veiculos são os seguintes.......:  " +lista4); 
-      */
+      
       
       Utils.Meteorologia.getEstadoTempo(); 
       System.out.println(Utils.Meteorologia.getEstadoTempo()); 
@@ -234,10 +277,11 @@ public class Main
         umer = new UMeR();
         System.out.println("Não consegui ler os dados!\nErro de formato.");
     }
-    */
+    
         
     System.out.println("password: '"+ Utils.encriptar("admin") +"'");
-        
+      
+    */
   }
   
   

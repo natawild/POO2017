@@ -8,9 +8,12 @@ import java.time.LocalDateTime;
 public abstract class HistoricoAtor {
     private LocalDateTime dataDeInicioDeServico;
     private float tempoEstimado; 
-    private float tempoReal; 
+    private float tempoReal;
+    private float valorEstimado; 
     private float valorCobrado; 
-    private String estadoTempo; 
+    private String estadoTempo;
+    private String estadoTransito; 
+    private boolean terminada; 
     
     //private AtorInterface cliente; 
     //private AtorInterface motorista; 
@@ -22,9 +25,12 @@ public abstract class HistoricoAtor {
     public HistoricoAtor(){
         dataDeInicioDeServico= null; 
         tempoEstimado= 0.0f;
+        valorEstimado=0.0f;
         tempoReal= -1.0f;
         valorCobrado=0.0f;
         estadoTempo=""; 
+        estadoTransito=""; 
+        terminada=false; 
     }
     
     /**
@@ -34,12 +40,18 @@ public abstract class HistoricoAtor {
      * @param valorCobrado
      */
     
-    public HistoricoAtor(LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorCobrado, String estadoTempo){
+    public HistoricoAtor(LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal,float valorEstimado, float valorCobrado, 
+    String estadoTempo, String estadoTransito, boolean terminada){
         this.dataDeInicioDeServico= dataDeInicioDeServico; 
+        this.tempoReal= tempoReal; 
         this.tempoEstimado= tempoEstimado;
         this.tempoReal = tempoReal;
+        this.valorEstimado=valorEstimado; 
         this.valorCobrado= valorCobrado;  
         this.estadoTempo= estadoTempo; 
+        this.estadoTransito= estadoTransito; 
+        this.terminada=terminada; 
+        
     }
     
     /**
@@ -50,8 +62,11 @@ public abstract class HistoricoAtor {
        this.dataDeInicioDeServico= h.getDataDeInicioDeServico(); 
        this.tempoEstimado= h.getTempoEstimado();
        this.tempoReal = h.getTempoEstimado();
+       this.valorEstimado=h.getValorEstimado(); 
        this.valorCobrado= h.getValorCobrado();
        this.estadoTempo= h.getEstadoTempo();
+       this.estadoTransito=h.getEstadoTransito(); 
+       this.terminada=h.getTerminada(); 
     }
     
     /**
@@ -74,8 +89,21 @@ public abstract class HistoricoAtor {
         return this.valorCobrado;
     }
     
+    public float getValorEstimado(){
+        return this.valorEstimado;
+    }
+    
     public String getEstadoTempo(){
         return this.estadoTempo; 
+    }
+    
+    public String getEstadoTransito(){
+        return this.estadoTransito; 
+    }
+    
+    
+    public boolean getTerminada(){
+        return this.terminada; 
     }
     
     
@@ -99,10 +127,25 @@ public abstract class HistoricoAtor {
         this.valorCobrado= valorCobrado; 
     }
     
+    public void setValorEstimado( float valorEstimado){
+        this.valorEstimado= valorEstimado; 
+    }
+    
+    
     public void setEstadoTempo(String estadoTempo){
         this.estadoTempo= estadoTempo; 
     
     }
+    
+    public void setEstadoTransito(String estadoTransito){
+        this.estadoTransito= estadoTransito; 
+    
+    }
+    
+    public void setTerminada(boolean terminada){
+        this.terminada= terminada; 
+    }
+    
     
     
     /**
@@ -116,7 +159,8 @@ public abstract class HistoricoAtor {
             
        HistoricoAtor h = (HistoricoAtor) o; 
        return (this.dataDeInicioDeServico.equals(h.getDataDeInicioDeServico()) && this.tempoEstimado==h.getTempoEstimado() &&
-       this.valorCobrado==h.getValorCobrado() && this.tempoReal == h.getTempoReal() && this.estadoTempo.equals(h.getEstadoTempo())); 
+       this.valorCobrado==h.getValorCobrado() &&this.valorEstimado==h.getValorEstimado() && this.tempoReal == h.getTempoReal() && 
+       this.estadoTempo.equals(h.getEstadoTempo()) && this.estadoTransito.equals(h.getEstadoTransito()) && this.terminada==h.getTerminada()); 
 
     }
     
@@ -129,7 +173,9 @@ public abstract class HistoricoAtor {
         sb.append("Tempo da Vigem estimado: " +this.getTempoEstimado() + "\n");
         sb.append("Tempo da Vigem real: " +this.getTempoReal() + "\n");
         sb.append("Valor Cobrado: " +this.getValorCobrado() + "\n");
-         sb.append("Estado do tempo: " +this.getEstadoTempo() + "\n");
+        sb.append("Valor Estimado: " +this.getValorEstimado() + "\n");
+        sb.append("Estado do tempo: " +this.getEstadoTempo() + "\n");
+        sb.append("Estado do transito: " +this.getEstadoTransito() + "\n");
         return sb.toString(); 
     }
     

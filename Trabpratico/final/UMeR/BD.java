@@ -673,6 +673,16 @@ public class BD implements BDInterface, Serializable {
         Motorista novo =  (Motorista)this.motoristas.get(atorLogado.getEmail()); 
         novo.setVeiculo(v); 
     }
+    
+    public void alteraDisponibilidade(AtorInterface ator, boolean estado){
+        Motorista novo =  (Motorista) this.motoristas.get(ator.getEmail()); 
+        novo.setDisponivel(true); 
+    }
+    
+    public void atualizaHorario(AtorInterface atorLogado, boolean estado){
+        Motorista motorista = (Motorista) motoristas.get(atorLogado.getEmail()); 
+        motorista.setHorarioTrabalho(estado); 
+    }
 }
     
  

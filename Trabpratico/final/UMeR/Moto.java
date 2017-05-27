@@ -59,7 +59,7 @@ public class Moto extends Veiculo implements VeiculoInterface,Serializable{
      * Determina a capacidade de a viatura cumprir o tempo acordado com o cliente 
      * varia de 0.9 a 1.2, pois se fizer 1 cumpre o tempo mais do que isso não cumpre e menos é mais rápido 
      */
-    public float getFiabilidade(){
+    public static float calcFiabilidade(){
         float minX = 0.9f;
         float maxX = 1.2f;
         Random rand = new Random();

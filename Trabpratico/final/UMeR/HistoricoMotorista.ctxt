@@ -2,8 +2,8 @@
 comment0.params=
 comment0.target=HistoricoMotorista()
 comment0.text=\n\ Construtor\ vazio\n
-comment1.params=dataDeInicioDeServico\ tempoEstimado\ tempoReal\ valorCobrado\ cliente\ estadoTempo
-comment1.target=HistoricoMotorista(java.time.LocalDateTime,\ float,\ float,\ float,\ Cliente,\ java.lang.String)
+comment1.params=dataDeInicioDeServico\ tempoEstimado\ tempoReal\ valorEstimado\ valorCobrado\ cliente\ estadoTempo\ estadoTransito\ terminada
+comment1.target=HistoricoMotorista(java.time.LocalDateTime,\ float,\ float,\ float,\ float,\ Cliente,\ java.lang.String,\ java.lang.String,\ boolean)
 comment1.text=\n\ Construtor\ parametrizado\ \n\ @param\ dataDeInicioDeServico\ \n\ @param\ tempo\n\ @param\ valorCobrado\n\ @param\ cliente\n
 comment2.params=c
 comment2.target=HistoricoMotorista(HistoricoMotorista)

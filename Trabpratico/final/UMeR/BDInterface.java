@@ -57,4 +57,8 @@ public interface BDInterface{
     public void atualizaAtor(AtorInterface ator);
     
     public void adicionaVeiculoAMotorista(AtorInterface atorLogado,VeiculoInterface v);
+    
+    public void alteraDisponibilidade(AtorInterface atorLogado, boolean estado);
+    
+    public void atualizaHorario(AtorInterface atorLogado, boolean estado); 
 }
