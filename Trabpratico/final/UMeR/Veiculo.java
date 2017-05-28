@@ -113,7 +113,7 @@ public abstract class Veiculo implements Serializable{
         if(veic==this) return true; //se o objeto for igual ao meu objeto retorna verdade
         
         if((veic==null) || (this.getClass()!=veic.getClass()))
-        return false;
+            return false;
         
         Veiculo v = (Veiculo) veic; 
         return this.matricula.equals(v.getMatricula()) && this.marca.equals(v.getMarca()) 
@@ -125,7 +125,6 @@ public abstract class Veiculo implements Serializable{
         StringBuilder sb = new StringBuilder(); 
         sb.append("Matricula: " +this.getMatricula() + "\n"); 
         sb.append("Marca: " +this.getMarca() + "\n"); 
-       
         sb.append("Fiabilidade do veiculo: " +this.getFiabilidade() +"\n");
         sb.append("Localização do veiculo: " +this.getLoc().toString() +"\n"); 
         return sb.toString(); 

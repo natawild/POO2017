@@ -23,7 +23,6 @@ public class Motorista extends Ator implements AtorInterface, Serializable{
     private double destreza; //valor entre 0,5 e 1.9
     private VeiculoInterface veiculo; 
     private Historico viagemEmProcesso;
-    private HistoricoMotorista histMoto;
     private int totalViagens;
     
     
@@ -135,10 +134,6 @@ public class Motorista extends Ator implements AtorInterface, Serializable{
     }
     
     
-    public HistoricoMotorista getHistMoto(){
-         return this.histMoto.clone();  
-    }
-    
     public Historico getViagemEmProcesso(){
         if(this.viagemEmProcesso != null){
             return this.viagemEmProcesso.clone();
@@ -205,13 +200,24 @@ public class Motorista extends Ator implements AtorInterface, Serializable{
        if(this==moto) 
             return true;
        if((moto == null) || (this.getClass()!=moto.getClass()))
-       return false; 
+            return false; 
        
        Motorista m = (Motorista) moto; 
        return super.equals(m) &&  this.grauCumprimentoHorario== m.getGrauCumprimentoHorario() &&
               this.classificacao == m.getClassificacao() && this.totalKms == m.getTotalKms() && 
               this.disponivel == m.getDisponivel() && this.horarioTrabalho == m.getHorarioTrabalho()&& this.destreza == m.getDestreza() &&
-              this.veiculo.equals(m.getVeiculo()) && this.viagemEmProcesso.equals(m.getViagemEmProcesso()) && this.totalViagens == m.getTotalViagens();       
+              this.veiculo.equals(m.getVeiculo()) && equalsViagemEmProcesso(m.getViagemEmProcesso()) && this.totalViagens == m.getTotalViagens();       
+    }
+    
+    private boolean equalsViagemEmProcesso (Historico h){
+        if(this.viagemEmProcesso == null && h == null){
+            return true;
+        }
+        
+        if(this.viagemEmProcesso != null){
+            return this.viagemEmProcesso.equals(h);
+        }
+        return false;
     }
     
     /**

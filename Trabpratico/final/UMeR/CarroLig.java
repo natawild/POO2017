@@ -77,12 +77,13 @@ public class CarroLig extends Veiculo implements VeiculoInterface,Serializable{
         
         if(o==this) return true; //se o objeto for igual ao meu objeto retorna verdade
         
-        if((o==null) || (this.getClass()!=o.getClass()))
-        return false;
+        if((o==null) || (this.getClass()!=o.getClass())){
+            return false;
+        }
         
-        CarroLig carro = (CarroLig) o; 
+        CarroLig carro = (CarroLig) o;         
         return super.equals(carro) && this.lugaresLivres== carro.getLugaresLivres() && this.vm==carro.getVm()
-        && this.vm==carro.getPrecoPorKm();  
+        && this.precoPorKm==carro.getPrecoPorKm();  
     
     }
     

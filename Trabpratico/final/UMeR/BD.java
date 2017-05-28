@@ -735,6 +735,27 @@ public class BD implements BDInterface, Serializable {
         return m.clone();
     }
     
+    public List<Historico> historicoViagensPorAtor (AtorInterface ator){
+        List<Historico> historicoPorAtor = new ArrayList<Historico>();
+        
+        if(ator instanceof Motorista) {
+            for(Historico h: this.historico){
+                if(h.getMotorista().equals(ator)){
+                    historicoPorAtor.add(h.clone());
+                }
+            }
+        } 
+        else if(ator instanceof Cliente){
+             for(Historico h: this.historico){
+                if(h.getCliente().equals(  ator)){
+                    historicoPorAtor.add(h.clone());
+                }
+             }
+        }
+        
+        return historicoPorAtor;
+    }
+    
 }
     
  

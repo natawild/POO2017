@@ -131,7 +131,7 @@ public class UMeRApp
         String[] menu13 = {"Terminar horario de trabalho "};
         String[] menu14 = {"Iniciar horário de trabalho "}; 
         String[] menu15= {"Aceito", "Não Aceito"}; 
-        String[] menu16= {"Visual", "Entre duas datas"}; 
+        String[] menu16= {"Visual todos", "Entre duas datas"}; 
         
         menu_principal =  new  UMeRMenu("Menu Inicial", menu1);
         menu_registar_atores =  new  UMeRMenu("Escolha o tipo de utilizador a registar", menu2);
@@ -567,13 +567,6 @@ public class UMeRApp
          //atualizar estado do cliente (na bd e o clienteLOggado) 
          menuCliente();
     }
-    
-     /**
-     * 
-     */
-    static private void menuHistoricoViagens(){
-        //menu_historico
-    }
 
     /**
      * 
@@ -718,7 +711,7 @@ public class UMeRApp
                 break;   
             }
             case 3 : {
-                visualizarHistorico();
+                menuHistoricoViagens();
                 break;
             }
             case 4 : {
@@ -841,25 +834,29 @@ public class UMeRApp
         
     }
     
-    static private void visualizarHistorico(){
+    static private void menuHistoricoViagens(){
         menu_historico.executa();
         switch (menu_historico.getOpcao()) {
             case 1 : {
-                gestaoViagem();
+                visualizaHistorico();
                 break;
-                /* TODO: adicionar menus das outras funcionaldiade do admin case 2: verHistoricoViagens(); break; case 3: verDadosPessoais(); break;*/
             }
             case 0 : {
-                fecharSessao();
+                menuMotorista();
                 break;
             }
             default : {
                 menuErro();
-                menuMotorista();
+                menuHistoricoViagens();
                 break;
             }
         }
     
+    }
+    
+    static private void visualizaHistorico(){
+        List<Historico> historico = umer.historicoViagens();
+        System.out.println(historico);
     }
     
     static private void visualizarMelhoresClientes(){

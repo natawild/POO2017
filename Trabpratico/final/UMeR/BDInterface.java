@@ -67,4 +67,6 @@ public interface BDInterface{
     public void adicionaViagemEmProcessoAoMotorista(AtorInterface motorista, Historico historico);
     
     public AtorInterface terminarViagem(AtorInterface motorista);
+    
+     public List<Historico> historicoViagensPorAtor (AtorInterface ator);
 }

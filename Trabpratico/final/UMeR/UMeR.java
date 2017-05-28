@@ -559,5 +559,9 @@ public class UMeR{
        atorLoggado = motorista;
    }
    
+   public List<Historico> historicoViagens(){
+       return this.baseDeDados.historicoViagensPorAtor(this.atorLoggado);
+   }
+   
 
 }
