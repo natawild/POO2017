@@ -18,11 +18,10 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
     
     private int grauCumprimentoHorario; //0-100
     private int classificacao; //0-100
-    //Histórico das viagens realizadas
     private double totalKms; 
-    private boolean disponivel;//verifica se está a trabalhar ou não 
-    private boolean horarioTrabalho;
-    private double destreza; //0 e 2 
+    private boolean disponivel;//verifica se está disponivel ou não 
+    private boolean horarioTrabalho; //verificar se está no horário de trabalho
+    private double destreza; //valor entre 0,5 e 1.9
     private VeiculoInterface veiculo; 
     private HistoricoMotorista histMoto; 
     

@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.io.Serializable;
 /**
  * A classe Cliente terá todas as informações do utilizador da UMeR, tais como todas as presentes na classe 
- * Ator, a localização. 
+ * Ator, a localização e um histórico 
  * 
  * @celia
  * @version 1.0
