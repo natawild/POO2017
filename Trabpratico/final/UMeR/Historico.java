@@ -94,5 +94,13 @@ public class Historico extends HistoricoAtor implements HistoricoInterface, Seri
         return 0;
   
     }
+    
+    
+    public String apresentaHistoricoMototistaMenu(){
+        StringBuilder sb = new StringBuilder(); 
+        sb.append("Cliente: " + this.cliente.getNome() +" | " + this.cliente.getEmail());
+        sb.append("Histórico: " + super.toString());
+        return sb.toString();  
+    }
    
 }

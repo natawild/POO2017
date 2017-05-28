@@ -14,8 +14,7 @@ import java.util.Random;
  * @celia  
  * @version 1.0
  */
-public class Motorista extends Ator implements AtorInterface,Serializable{ 
-    
+public class Motorista extends Ator implements AtorInterface, Serializable{ 
     private int grauCumprimentoHorario; //0-100
     private int classificacao; //0-100
     private double totalKms; 
@@ -23,9 +22,9 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
     private boolean horarioTrabalho; //verificar se está no horário de trabalho
     private double destreza; //valor entre 0,5 e 1.9
     private VeiculoInterface veiculo; 
-    private HistoricoMotorista viagemEmProcesso;
-    private HistoricoMotorista histMoto; 
-    
+    private Historico viagemEmProcesso;
+    private HistoricoMotorista histMoto;
+    private int totalViagens;
     
     
     /**
@@ -41,6 +40,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.destreza = Utils.generateRandom(0.5f, 1.9f); 
         this.veiculo = null;
         this.viagemEmProcesso = null;
+        this.totalViagens = 0;
     }
     
     /**
@@ -48,7 +48,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
      */
     public Motorista(String email,String nome, String password, String morada, LocalDate dataNascimento
     , int grauCumprimentoHorario, int classificacao, double totalKms, boolean disponivel,boolean horarioTrabalho,
-    double destreza, VeiculoInterface veiculo, HistoricoMotorista viagemEmProcesso){
+    double destreza, VeiculoInterface veiculo, Historico viagemEmProcesso, int totalViagens){
         super(email, nome, password, morada, dataNascimento);
         this.grauCumprimentoHorario = grauCumprimentoHorario;
         this.classificacao = classificacao; 
@@ -58,6 +58,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.destreza = destreza; 
         this.veiculo = veiculo; 
         this.viagemEmProcesso = viagemEmProcesso;
+        this.totalViagens = totalViagens;
     }
     
         /**
@@ -73,6 +74,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.destreza = Utils.generateRandom(0.5f, 1.9f); 
         this.veiculo = null; 
         this.viagemEmProcesso = null;
+        this.totalViagens = 0;
     }
     
     
@@ -91,6 +93,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.destreza=mt.getDestreza();
         this.veiculo= mt.getVeiculo(); 
         this.viagemEmProcesso = mt.getViagemEmProcesso();
+        this.totalViagens = mt.getTotalViagens();
     }
 
     //getters
@@ -136,11 +139,15 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
          return this.histMoto.clone();  
     }
     
-    public HistoricoMotorista getViagemEmProcesso(){
+    public Historico getViagemEmProcesso(){
         if(this.viagemEmProcesso != null){
             return this.viagemEmProcesso.clone();
         }
         return null;
+    }
+    
+    public int getTotalViagens(){
+        return totalViagens;
     }
     
     //setters
@@ -176,8 +183,17 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         
     }
     
-    public void setViagemEmProcesso(HistoricoMotorista historico){
-        this.viagemEmProcesso = historico.clone();  
+    public void setViagemEmProcesso(Historico historico){
+        if(historico != null) {
+            this.viagemEmProcesso = historico.clone();  
+        }
+        else {
+            this.viagemEmProcesso = null;
+        }
+    }
+    
+    public void setTotalViagens(int totalViagens){
+        this.totalViagens = totalViagens;
     }
     
     
@@ -195,7 +211,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
        return super.equals(m) &&  this.grauCumprimentoHorario== m.getGrauCumprimentoHorario() &&
               this.classificacao == m.getClassificacao() && this.totalKms == m.getTotalKms() && 
               this.disponivel == m.getDisponivel() && this.horarioTrabalho == m.getHorarioTrabalho()&& this.destreza == m.getDestreza() &&
-              this.veiculo.equals(m.getVeiculo()) && this.viagemEmProcesso.equals(m.getViagemEmProcesso());       
+              this.veiculo.equals(m.getVeiculo()) && this.viagemEmProcesso.equals(m.getViagemEmProcesso()) && this.totalViagens == m.getTotalViagens();       
     }
     
     /**
@@ -210,14 +226,46 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         sb.append("Disponibilidade: " +this.getDisponivel() + "\n");
         sb.append("Horário de Trabalho: " +this.getHorarioTrabalho() + "\n"); 
         sb.append("Destreza: " +this.getDestreza() + "\n"); 
+        sb.append("Total de viagens: " +this.getTotalViagens()+ "\n"); 
         sb.append("Veiculo conduzido: " +this.getVeiculo() + "\n"); 
-        sb.append("Viagem em processo: \n: " +this.getViagemEmProcesso() + "\n"); 
+        sb.append("Viagem em processo \n: " +this.getViagemEmProcesso() + "\n"); 
+        return sb.toString(); 
+    }
+    
+    public String apresentaDadosPessoais(){ 
+        StringBuilder sb = new StringBuilder(); 
+        sb.append(super.toString());
+        sb.append("Classificação: " +this.getClassificacao() + "\n"); 
+        sb.append("Total Kms efetuados: " +this.getTotalKms() + "\n"); 
+        sb.append("Disponibilidade: " +this.getDisponivel() + "\n");
+        sb.append("Horário de Trabalho: " +this.getHorarioTrabalho() + "\n"); 
+        sb.append("Destreza: " +this.getDestreza() + "\n"); 
+        sb.append("Total de viagens: " +this.getTotalViagens()+ "\n"); 
+        sb.append("Veiculo conduzido: " +this.getVeiculo() + "\n"); 
+        if(viagemEmProcesso != null){
+            sb.append("Viagem em processo \n: " + this.viagemEmProcesso.apresentaHistoricoMototistaMenu() + "\n"); 
+        }
         return sb.toString(); 
     }
     
     
     public Motorista clone (){
         return new Motorista(this);    
+    }
+    
+    public void addicionaViagem(){
+        this.totalViagens = this.totalViagens +1;
+    }
+    
+    
+    public void adicionaKms(double kms){
+        this.totalKms = this.totalKms + kms;
+    }
+    
+    public void atualizaPosicaoVeiculo(Coordenadas loc){
+        if(veiculo != null) {
+            this.veiculo.setLoc(loc.clone());
+        }
     }
     
     

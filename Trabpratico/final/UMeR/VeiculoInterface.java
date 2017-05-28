@@ -24,4 +24,6 @@ public interface VeiculoInterface {
     public boolean equals(Object o); 
     
     public Coordenadas getLoc(); 
+    
+    public void setLoc(Coordenadas loc); 
 }

@@ -126,7 +126,7 @@ public class UMeRApp
         String[] menu9 = {"Escolher táxi mais Próximo", "Escolher táxi especifico com fila de Espera"};
         String[] menu10 = {"Editar Dados"};
         String[] menu11 = {"Inserir Coordenadas"}; 
-        String[] menu12 = {"Alterar para livre"}; 
+        String[] menu12 = {"Termina"}; 
         String[] menu13 = {"Terminar horario de trabalho "};
         String[] menu14 = {"Iniciar horário de trabalho "}; 
         String[] menu15= {"Aceito", "Não Aceito"}; 
@@ -542,6 +542,7 @@ public class UMeRApp
        
          //criar historico
          Historico historicoViagem = new Historico(umer.getAtorLoggado(), m);
+         historicoViagem.setDistancia(distanciaTotal);
          historicoViagem.setTempoEstimado(duracaoEstimadaViagem);
          historicoViagem.setTempoReal(duracaoRealViagem);
          historicoViagem.setValorEstimado(custoEstimado);
@@ -549,22 +550,26 @@ public class UMeRApp
          historicoViagem.setEstadoTempo(estadoTempo);
          historicoViagem.setEstadoTransito(estadoTransito);
          historicoViagem.setTerminado(false);
+         historicoViagem.setOrigem(localizacaoCliente);
+         historicoViagem.setDestino(destino);
          
          umer.clienteEmViagem(true);
-         
          //Adicionar historico a BD
          umer.adicionarHistorico(historicoViagem);
-         HistoricoMotorista historicoMotorista = new HistoricoMotorista(historicoViagem.getDataDeInicioDeServico(), duracaoEstimadaViagem, duracaoRealViagem, custoEstimado,
-            custaReal, (Cliente) umer.getAtorLoggado(), estadoTempo, estadoTransito, false);
-            
          //Alterar disponibilidade do motorista na bd   
          umer.alteraDisponibilidade(m, false);
          //adicionar viagem em processo ao Motorista 
-         m.setViagemEmProcesso(historicoMotorista);
-         umer.adicionaViagemEmProcessoAoMotorista(m, historicoMotorista);
-         //atualizar estado do cliente (na bd e o clienteLOggado)
-         
+         m.setViagemEmProcesso(historicoViagem);
+         umer.adicionaViagemEmProcessoAoMotorista(m, historicoViagem);
+         //atualizar estado do cliente (na bd e o clienteLOggado) 
          menuCliente();
+    }
+    
+     /**
+     * 
+     */
+    static private void menuHistoricoViagens(){
+      
     }
 
     /**
@@ -582,7 +587,7 @@ public class UMeRApp
     static private void verDadosPessoais()
     {
         System.out.print("\n*********** Dados Pessoais ***************\n");
-        System.out.print(umer.getAtorLoggado().toString());
+        System.out.print(umer.getAtorLoggado().apresentaDadosPessoais());
         System.out.print("\n*********** Dados Pessoais ***************\n");
         menuEditarDadosPessoais();
     }
@@ -769,10 +774,7 @@ public class UMeRApp
     }
     
     static private void terminarViagem(){
-       Motorista motoristaLogado = ((Motorista) umer.getAtorLoggado()); 
-       motoristaLogado.setDisponivel(true);  
-       umer.setAtorLoggado(motoristaLogado); 
-       umer.alteraDisponibilidade(motoristaLogado,true); 
+       umer.terminarViagem();
        System.out.println("Viagem terminada :) "); 
        menuMotorista(); 
     }

@@ -30,4 +30,6 @@ public interface AtorInterface{
     
     public AtorInterface clone(); 
     
+    public String apresentaDadosPessoais();
+    
 }

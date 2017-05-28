@@ -60,5 +60,9 @@ public class Admin extends Ator implements AtorInterface, Serializable{
         return new Admin(this);    
     }
     
+    public String apresentaDadosPessoais(){ 
+        return this.toString();
+    }
+    
     
 }

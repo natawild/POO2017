@@ -26,9 +26,9 @@ public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterf
      * @param cliente
      */
     
-    public HistoricoMotorista (LocalDateTime dataDeInicioDeServico, double tempoEstimado, double tempoReal, double valorEstimado,
-        double valorCobrado, Cliente cliente, String estadoTempo, String estadoTransito, boolean terminada){
-        super(dataDeInicioDeServico,tempoEstimado, tempoReal, valorEstimado, valorCobrado, estadoTempo, estadoTransito, terminada); 
+    public HistoricoMotorista (LocalDateTime dataDeInicioDeServico, double distancia, double tempoEstimado, double tempoReal, double valorEstimado,
+        double valorCobrado, Cliente cliente, String estadoTempo, String estadoTransito, boolean terminada, Coordenadas origem, Coordenadas destino, int classificacao){
+        super(dataDeInicioDeServico, distancia, tempoEstimado, tempoReal, valorEstimado, valorCobrado, estadoTempo, estadoTransito, terminada, origem, destino, classificacao); 
         this.cliente= cliente; 
     }
     
@@ -47,7 +47,6 @@ public class HistoricoMotorista extends HistoricoAtor implements HistoricoInterf
     /**
      * getMotorista
      */
-    
     public Cliente getCliente(){
         return this.cliente.clone(); 
     }

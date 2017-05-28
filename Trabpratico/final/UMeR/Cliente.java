@@ -106,4 +106,8 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
         return new Cliente(this);    
     }
     
+    public String apresentaDadosPessoais(){ 
+        return this.toString();
+    }
+    
 }

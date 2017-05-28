@@ -533,6 +533,7 @@ public class UMeR{
        ((Motorista) motoristaCopia).setDisponivel(true);
       ((BD)this.baseDeDados).setMotoristas(motoristasCopia);
       */
+     ((Motorista) ator).setDisponivel(estado);
      this.baseDeDados.alteraDisponibilidade(ator, estado);
     }
     
@@ -549,8 +550,13 @@ public class UMeR{
        this.baseDeDados.clienteEmViagem(this.atorLoggado, estado); 
    }
    
-   public void adicionaViagemEmProcessoAoMotorista(AtorInterface motorista, HistoricoMotorista historico){
+   public void adicionaViagemEmProcessoAoMotorista(AtorInterface motorista, Historico historico){
        this.baseDeDados.adicionaViagemEmProcessoAoMotorista(motorista, historico); 
+   }
+   
+   public void terminarViagem(){  
+       AtorInterface motorista = this.baseDeDados.terminarViagem(atorLoggado);
+       atorLoggado = motorista;
    }
    
 

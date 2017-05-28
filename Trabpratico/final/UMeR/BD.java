@@ -701,10 +701,40 @@ public class BD implements BDInterface, Serializable {
         c.setEmViagem(estado);
     }
     
-    public void adicionaViagemEmProcessoAoMotorista(AtorInterface motorista, HistoricoMotorista historico){
+    public void adicionaViagemEmProcessoAoMotorista(AtorInterface motorista, Historico historico){
         Motorista m = (Motorista) this.motoristas.get(motorista.getEmail());
         m.setViagemEmProcesso(historico.clone());
     }
+    
+    public AtorInterface terminarViagem(AtorInterface motorista){
+        Motorista m = (Motorista) this.motoristas.get(motorista.getEmail());
+        Historico ultimaViagem = m.getViagemEmProcesso();
+        AtorInterface cliente = ultimaViagem.getCliente();
+        
+        //atualizar motorista
+        m.setDisponivel(true);
+        m.setViagemEmProcesso(null);
+        m.adicionaKms(ultimaViagem.getDistancia());
+        m.addicionaViagem();
+        m.atualizaPosicaoVeiculo(ultimaViagem.getDestino());
+        this.motoristas.put(m.getEmail(), m);
+        
+        //atuallizar cliente
+        Cliente c = (Cliente) this.clientes.get(cliente.getEmail());
+        c.setEmViagem(false);
+        c.setLoc(ultimaViagem.getDestino());
+        this.clientes.put(c.getEmail(), c);
+        
+        //atualizar historico
+        this.historico.remove(ultimaViagem);
+        ultimaViagem.setTerminado(true);
+        ultimaViagem.setCliente(c);
+        ultimaViagem.setMotorista(m);
+        this.historico.add(ultimaViagem);
+        
+        return m.clone();
+    }
+    
 }
     
  
