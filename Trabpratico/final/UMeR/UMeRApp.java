@@ -34,6 +34,7 @@ public class UMeRApp
     private static UMeRMenu menu_terminar_horario_trabalho;
     private static UMeRMenu menu_iniciar_horario_trabalho;
     private static UMeRMenu menu_proposta_viagem;
+    private static UMeRMenu menu_historico;
     /**
      * 
      */
@@ -114,7 +115,7 @@ public class UMeRApp
         String[] menu1 = {"Registar Utilizador", "Iniciar sessão"};
         String[] menu2 = {"Cliente", "Motorista"};
         String[] menu3 = {"Solicitar Viagem", "Consultar listagem de viagems efetuadas", "Ver Dados Pessoais"};
-        String[] menu4 = {"Gerir Viagens","Gerir Horário de trabalho", "Visualizar Histórico de viagens (entre datas)", 
+        String[] menu4 = {"Gerir Viagens","Gerir Horário de trabalho", "Visualizar Histórico de viagens", 
                             "Visualizar 10 melhores clientes", "Registar Veiculo", "Ver Dados Pessoais"};
         String[] menu5 = {"Registar Veiculo","Remover Veiculo ", "Ver Lista dos utilizadores registados",
                             "Ver Lista dos Veiculos Registados", "Ver Lista dos clientes que mais gastam", 
@@ -130,6 +131,7 @@ public class UMeRApp
         String[] menu13 = {"Terminar horario de trabalho "};
         String[] menu14 = {"Iniciar horário de trabalho "}; 
         String[] menu15= {"Aceito", "Não Aceito"}; 
+        String[] menu16= {"Visual", "Entre duas datas"}; 
         
         menu_principal =  new  UMeRMenu("Menu Inicial", menu1);
         menu_registar_atores =  new  UMeRMenu("Escolha o tipo de utilizador a registar", menu2);
@@ -145,6 +147,7 @@ public class UMeRApp
         menu_terminar_horario_trabalho = new UMeRMenu ("Horário de trabalho ",menu13);
         menu_iniciar_horario_trabalho = new UMeRMenu ("Horário de trabalho ",menu14);
         menu_proposta_viagem = new UMeRMenu("Dados Estimados da viagem ", menu15); 
+        menu_historico = new UMeRMenu("Historico", menu16);
     }
 
     /**
@@ -569,7 +572,7 @@ public class UMeRApp
      * 
      */
     static private void menuHistoricoViagens(){
-      
+        //menu_historico
     }
 
     /**
@@ -839,6 +842,23 @@ public class UMeRApp
     }
     
     static private void visualizarHistorico(){
+        menu_historico.executa();
+        switch (menu_historico.getOpcao()) {
+            case 1 : {
+                gestaoViagem();
+                break;
+                /* TODO: adicionar menus das outras funcionaldiade do admin case 2: verHistoricoViagens(); break; case 3: verDadosPessoais(); break;*/
+            }
+            case 0 : {
+                fecharSessao();
+                break;
+            }
+            default : {
+                menuErro();
+                menuMotorista();
+                break;
+            }
+        }
     
     }
     
