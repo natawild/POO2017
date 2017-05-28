@@ -61,4 +61,8 @@ public interface BDInterface{
     public void alteraDisponibilidade(AtorInterface atorLogado, boolean estado);
     
     public void atualizaHorario(AtorInterface atorLogado, boolean estado); 
+    
+    public void clienteEmViagem(AtorInterface ator, boolean estado);
+    
+    public void adicionaViagemEmProcessoAoMotorista(AtorInterface motorista, HistoricoMotorista historico);
 }

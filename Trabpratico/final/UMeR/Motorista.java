@@ -23,7 +23,9 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
     private boolean horarioTrabalho; //verificar se está no horário de trabalho
     private double destreza; //valor entre 0,5 e 1.9
     private VeiculoInterface veiculo; 
+    private HistoricoMotorista viagemEmProcesso;
     private HistoricoMotorista histMoto; 
+    
     
     
     /**
@@ -37,7 +39,8 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.disponivel = true; 
         this.horarioTrabalho = false; 
         this.destreza = Utils.generateRandom(0.5f, 1.9f); 
-        this.veiculo = null;   
+        this.veiculo = null;
+        this.viagemEmProcesso = null;
     }
     
     /**
@@ -45,7 +48,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
      */
     public Motorista(String email,String nome, String password, String morada, LocalDate dataNascimento
     , int grauCumprimentoHorario, int classificacao, double totalKms, boolean disponivel,boolean horarioTrabalho,
-    float destreza, VeiculoInterface veiculo){
+    double destreza, VeiculoInterface veiculo, HistoricoMotorista viagemEmProcesso){
         super(email, nome, password, morada, dataNascimento);
         this.grauCumprimentoHorario = grauCumprimentoHorario;
         this.classificacao = classificacao; 
@@ -54,6 +57,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.horarioTrabalho=horarioTrabalho; 
         this.destreza = destreza; 
         this.veiculo = veiculo; 
+        this.viagemEmProcesso = viagemEmProcesso;
     }
     
         /**
@@ -68,6 +72,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.horarioTrabalho=false; 
         this.destreza = Utils.generateRandom(0.5f, 1.9f); 
         this.veiculo = null; 
+        this.viagemEmProcesso = null;
     }
     
     
@@ -85,6 +90,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.horarioTrabalho = mt.getHorarioTrabalho(); 
         this.destreza=mt.getDestreza();
         this.veiculo= mt.getVeiculo(); 
+        this.viagemEmProcesso = mt.getViagemEmProcesso();
     }
 
     //getters
@@ -130,6 +136,13 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
          return this.histMoto.clone();  
     }
     
+    public HistoricoMotorista getViagemEmProcesso(){
+        if(this.viagemEmProcesso != null){
+            return this.viagemEmProcesso.clone();
+        }
+        return null;
+    }
+    
     //setters
     /**
      * 
@@ -154,13 +167,17 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         this.horarioTrabalho = hTrab; 
     }
     
-    public void setDestreza (float destr){
+    public void setDestreza (double destr){
         this.destreza = destr; 
     }
     
     public void setVeiculo (VeiculoInterface v){
         this.veiculo = v.clone(); 
         
+    }
+    
+    public void setViagemEmProcesso(HistoricoMotorista historico){
+        this.viagemEmProcesso = historico.clone();  
     }
     
     
@@ -178,7 +195,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
        return super.equals(m) &&  this.grauCumprimentoHorario== m.getGrauCumprimentoHorario() &&
               this.classificacao == m.getClassificacao() && this.totalKms == m.getTotalKms() && 
               this.disponivel == m.getDisponivel() && this.horarioTrabalho == m.getHorarioTrabalho()&& this.destreza == m.getDestreza() &&
-              this.veiculo.equals(m.getVeiculo());       
+              this.veiculo.equals(m.getVeiculo()) && this.viagemEmProcesso.equals(m.getViagemEmProcesso());       
     }
     
     /**
@@ -194,6 +211,7 @@ public class Motorista extends Ator implements AtorInterface,Serializable{
         sb.append("Horário de Trabalho: " +this.getHorarioTrabalho() + "\n"); 
         sb.append("Destreza: " +this.getDestreza() + "\n"); 
         sb.append("Veiculo conduzido: " +this.getVeiculo() + "\n"); 
+        sb.append("Viagem em processo: \n: " +this.getViagemEmProcesso() + "\n"); 
         return sb.toString(); 
     }
     

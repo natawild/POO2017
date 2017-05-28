@@ -9,11 +9,8 @@ import java.io.Serializable;
 public abstract class Veiculo implements Serializable{
     
     /*implements Comparator<Motorista>*/
-    
     private String matricula; 
     private String marca; //Adicionei a variável de instância marca, para um cliente poder escolher um carro com base na marca do veiculo
-     
-     
     private float fiabilidade;//0 a 2 randon()
     private Coordenadas loc;
     

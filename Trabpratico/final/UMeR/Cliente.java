@@ -9,7 +9,8 @@ import java.io.Serializable;
  */
 public class Cliente extends Ator implements AtorInterface, Serializable{
     private Coordenadas loc;
-    private HistoricoCliente histClie; 
+    private HistoricoCliente histClie;
+    private boolean emViagem;
     /**
      * Construtor vazio
      */
@@ -17,6 +18,7 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
     public Cliente (){
         super(); 
         this.loc= new Coordenadas(); // localização do cliente
+        this.emViagem = false;
     }
     
     /**
@@ -31,9 +33,10 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
      */
     
     public Cliente (String email,String nome, String password, String morada, LocalDate dataNascimento, 
-    Coordenadas loc){
+    Coordenadas loc, boolean emViagem){
        super(email, nome, password, morada, dataNascimento); 
        this.loc = loc; 
+       this.emViagem = emViagem;
     }
     
     /**
@@ -44,7 +47,7 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
     public Cliente (Cliente c){
         super(c); 
         this.loc=c.getLoc(); 
-        
+        this.emViagem  =  c.getEmViagem();
     }
     
     //getters 
@@ -57,10 +60,19 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
          return this.histClie.clone();  
     }
     
+    public boolean getEmViagem(){
+         return this.emViagem;  
+    }
+    
     //setters
     
     public void setLoc(Coordenadas localizacao){
         loc=localizacao.clone();
+    }
+    
+    
+    public void setEmViagem(boolean emViagem){
+        this.emViagem=emViagem;
     }
     
     /**
@@ -74,7 +86,7 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
         return false; 
         
         Cliente c = (Cliente) cli; 
-        return super.equals(c) && this.loc.equals(c.getLoc()); 
+        return super.equals(c) && this.loc.equals(c.getLoc()) && emViagem == c.getEmViagem(); 
     }
     
     /**
@@ -84,10 +96,10 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
         sb.append(super.toString());
-        sb.append("Cliente localização: " + loc.toString());
+        sb.append("Localização: \n " + loc.toString());
+        sb.append("\nEm viagem: " + this.emViagem);
         return sb.toString();  
     }
-    
     
     //clone
     public Cliente clone (){

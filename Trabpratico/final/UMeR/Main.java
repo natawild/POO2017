@@ -27,18 +27,18 @@ public class Main
         
         Coordenadas localizacao2 = new Coordenadas();
         LocalDate dataNas2 = LocalDate.of (1993,12,24); 
-        Cliente cliente2 = new Cliente("celia@gmail.com","Celia", Utils.encriptar("celia"), "Rua do cão", dataNas2, localizacao2);
+        Cliente cliente2 = new Cliente("celia@celia.com","Celia", Utils.encriptar("celia"), "Rua do cão", dataNas2, localizacao2, false);
         //System.out.println(cliente2.toString());
         baseDados.addCliente(cliente2);
         
         localizacao2 = new Coordenadas();
         dataNas1 = LocalDate.of (1993,12,24); 
-        Cliente cliente3 = new Cliente("luis@luis.com","Luis", Utils.encriptar("luis"), "Rua da cinderela", dataNas2, localizacao2);
+        Cliente cliente3 = new Cliente("luis@luis.com","Luis", Utils.encriptar("luis"), "Rua da cinderela", dataNas2, localizacao2, false);
         //System.out.println(cliente2.toString());
         baseDados.addCliente(cliente3);
         
-        VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 0.8f, new Coordenadas()); 
-        VeiculoInterface v2 = new Carrinha("qt-34-22","Renault", 1.2f, new Coordenadas()); 
+        VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 0.8f, new Coordenadas(20, 40)); 
+        VeiculoInterface v2 = new Carrinha("qt-34-22","Renault", 1.2f, new Coordenadas(10, 15)); 
         VeiculoInterface v3 = new Moto("25-76-22","Fiat", 0.8f, new Coordenadas()); 
         
         baseDados.addVeiculo(v1); 
@@ -48,12 +48,16 @@ public class Main
         LocalDate dataNasM2 = LocalDate.of (1989,12,24);
         Motorista motorista2 = new Motorista("acores@acores.com","João César", Utils.encriptar("acores"), "Rua Fábrica do pelo", 
         dataNasM2);
+        motorista2.setDisponivel(true);
+        motorista2.setHorarioTrabalho(true);
         motorista2.setVeiculo(v1);
         baseDados.addMotorista(motorista2); 
         
         dataNasM2 = LocalDate.of (1989,10,24);
         Motorista motorista3 = new Motorista("manuel@manuel.com","Manuel César", Utils.encriptar("manuel"), "Rua Conego do pelo", 
         dataNasM2);
+        motorista3.setDisponivel(true);
+        motorista3.setHorarioTrabalho(true);
         motorista3.setVeiculo(v2);
         baseDados.addMotorista(motorista3); 
         
@@ -69,12 +73,11 @@ public class Main
         UMeR umer = new UMeR(baseDados); 
         
         try{
-        umer.gravaObj("bdInicial.obj");
-      }
-      catch (IOException e ){
-        System.out.println("Erro: "+e ); 
-    
-      }
+            umer.gravaObj("bdInicial.obj");
+        }
+        catch (IOException e ){
+            System.out.println("Erro: " + e); 
+        }
         
          /*
         Map<String, AtorInterface> list = ((BD)baseDados).getClientes();

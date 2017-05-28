@@ -12,17 +12,17 @@ public interface HistoricoInterface
     
     public LocalDateTime getDataDeInicioDeServico();
     
-    public float getTempoReal();
+    public double getTempoReal();
     
-    public float getValorCobrado();
+    public double getValorCobrado();
     
     public void setDataDeInicioDeServico (LocalDateTime dataDeInicioDeServico);
     
-    public void setTempoEstimado(float tempoEstimado);
+    public void setTempoEstimado(double tempoEstimado);
     
-    public void setTempoReal(float tempoReal);
+    public void setTempoReal(double tempoReal);
     
-    public void setValorCobrado( float valorCobrado);
+    public void setValorCobrado( double valorCobrado);
     
     public boolean equals (Object o);
     

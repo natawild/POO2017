@@ -1,19 +1,20 @@
 import java.time.LocalDateTime; 
+import java.io.Serializable;
 /**
  * A classe HistoricoAtor 
  * 
  * @celia 
  * @version 1.0
  */
-public abstract class HistoricoAtor {
+public abstract class HistoricoAtor implements Serializable{
     private LocalDateTime dataDeInicioDeServico;
-    private float tempoEstimado; 
-    private float tempoReal;
-    private float valorEstimado; 
-    private float valorCobrado; 
+    private double tempoEstimado; 
+    private double tempoReal;
+    private double valorEstimado; 
+    private double valorCobrado; 
     private String estadoTempo;
     private String estadoTransito; 
-    private boolean terminada; 
+    private boolean terminado; 
     
     //private AtorInterface cliente; 
     //private AtorInterface motorista; 
@@ -23,14 +24,14 @@ public abstract class HistoricoAtor {
      */
     
     public HistoricoAtor(){
-        dataDeInicioDeServico= null; 
+        dataDeInicioDeServico= LocalDateTime.now(); 
         tempoEstimado= 0.0f;
         valorEstimado=0.0f;
         tempoReal= -1.0f;
         valorCobrado=0.0f;
         estadoTempo=""; 
         estadoTransito=""; 
-        terminada=false; 
+        terminado=false; 
     }
     
     /**
@@ -40,8 +41,8 @@ public abstract class HistoricoAtor {
      * @param valorCobrado
      */
     
-    public HistoricoAtor(LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal,float valorEstimado, float valorCobrado, 
-    String estadoTempo, String estadoTransito, boolean terminada){
+    public HistoricoAtor(LocalDateTime dataDeInicioDeServico, double tempoEstimado, double tempoReal,double valorEstimado, double valorCobrado, 
+    String estadoTempo, String estadoTransito, boolean terminado){
         this.dataDeInicioDeServico= dataDeInicioDeServico; 
         this.tempoReal= tempoReal; 
         this.tempoEstimado= tempoEstimado;
@@ -50,14 +51,12 @@ public abstract class HistoricoAtor {
         this.valorCobrado= valorCobrado;  
         this.estadoTempo= estadoTempo; 
         this.estadoTransito= estadoTransito; 
-        this.terminada=terminada; 
-        
+        this.terminado=terminado; 
     }
     
     /**
      * construtor de cópia
      */
-    
     public HistoricoAtor(HistoricoAtor h){
        this.dataDeInicioDeServico= h.getDataDeInicioDeServico(); 
        this.tempoEstimado= h.getTempoEstimado();
@@ -66,7 +65,7 @@ public abstract class HistoricoAtor {
        this.valorCobrado= h.getValorCobrado();
        this.estadoTempo= h.getEstadoTempo();
        this.estadoTransito=h.getEstadoTransito(); 
-       this.terminada=h.getTerminada(); 
+       this.terminado=h.getTerminado(); 
     }
     
     /**
@@ -77,19 +76,19 @@ public abstract class HistoricoAtor {
         return this.dataDeInicioDeServico; 
     }
     
-    public float getTempoEstimado(){
+    public double getTempoEstimado(){
         return this.tempoEstimado; 
     }
     
-    public float getTempoReal(){
+    public double getTempoReal(){
         return this.tempoReal; 
     }
     
-    public float getValorCobrado(){
+    public double getValorCobrado(){
         return this.valorCobrado;
     }
     
-    public float getValorEstimado(){
+    public double getValorEstimado(){
         return this.valorEstimado;
     }
     
@@ -102,8 +101,8 @@ public abstract class HistoricoAtor {
     }
     
     
-    public boolean getTerminada(){
-        return this.terminada; 
+    public boolean getTerminado(){
+        return this.terminado; 
     }
     
     
@@ -115,19 +114,19 @@ public abstract class HistoricoAtor {
        this.dataDeInicioDeServico= dataDeInicioDeServico; 
     }
     
-    public void setTempoEstimado(float tempoEstimado){
+    public void setTempoEstimado(double tempoEstimado){
        this.tempoEstimado=tempoEstimado; 
     }
     
-    public void setTempoReal(float tempoReal){
+    public void setTempoReal(double tempoReal){
        this.tempoReal=tempoReal; 
     }
     
-    public void setValorCobrado( float valorCobrado){
+    public void setValorCobrado( double valorCobrado){
         this.valorCobrado= valorCobrado; 
     }
     
-    public void setValorEstimado( float valorEstimado){
+    public void setValorEstimado( double valorEstimado){
         this.valorEstimado= valorEstimado; 
     }
     
@@ -142,8 +141,8 @@ public abstract class HistoricoAtor {
     
     }
     
-    public void setTerminada(boolean terminada){
-        this.terminada= terminada; 
+    public void setTerminado(boolean terminado){
+        this.terminado= terminado; 
     }
     
     
@@ -160,8 +159,7 @@ public abstract class HistoricoAtor {
        HistoricoAtor h = (HistoricoAtor) o; 
        return (this.dataDeInicioDeServico.equals(h.getDataDeInicioDeServico()) && this.tempoEstimado==h.getTempoEstimado() &&
        this.valorCobrado==h.getValorCobrado() &&this.valorEstimado==h.getValorEstimado() && this.tempoReal == h.getTempoReal() && 
-       this.estadoTempo.equals(h.getEstadoTempo()) && this.estadoTransito.equals(h.getEstadoTransito()) && this.terminada==h.getTerminada()); 
-
+       this.estadoTempo.equals(h.getEstadoTempo()) && this.estadoTransito.equals(h.getEstadoTransito()) && this.terminado==h.getTerminado()); 
     }
     
     /**

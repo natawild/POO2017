@@ -196,14 +196,10 @@ public class UMeR{
      * pelo transito(0.9, 1.0, 1.1) e pela meteorologia(0.9 a 1.3)
      */
     
-    public double duracaoRealViagem(double duracaoEstimadoDaViagem,float fiabilidade, float destreza,float transito, float meteorologia ){
-
-        double tempoRealViagem= 0; 
-        
+    public double duracaoRealViagem(double duracaoEstimadoDaViagem,double fiabilidade, double destreza,double transito, double meteorologia ){
+        double tempoRealViagem= 0;  
         tempoRealViagem = duracaoEstimadoDaViagem*fiabilidade*destreza*transito*meteorologia; 
-        
         return tempoRealViagem; 
-    
     }
     
     /**
@@ -211,15 +207,12 @@ public class UMeR{
      */
     
     public double custoRealViagem(double duracaoRealDaViagem, double distancia, double precoUnitario, double duracaoEstimaDaViagem){
-
         if((duracaoEstimaDaViagem/duracaoRealDaViagem) >= 1 && duracaoRealDaViagem < duracaoEstimaDaViagem * 0.75){
              return (custoEstimadoViagem(distancia, precoUnitario) * duracaoRealDaViagem / duracaoEstimaDaViagem);
         }
-
         else {
             return custoEstimadoViagem(distancia, precoUnitario) ;
-        }
-        
+        }  
     }
     
     
@@ -503,25 +496,25 @@ public class UMeR{
      * @param f
      * @param ap
      */
-    public void log(String f, boolean ap) throws IOException {
+   public void log(String f, boolean ap) throws IOException {
         FileWriter fw = new FileWriter(f, ap);
         fw.write("\n-------------------------- LOG --------------------------\n");
         fw.write(this.toString());
         fw.write("\n-------------------------- LOG --------------------------\n");
         fw.flush();
         fw.close();
-    }
+   }
     
     
-    public boolean temAdminsRegistados(){
+   public boolean temAdminsRegistados(){
         return this.baseDeDados.temAdminsRegistados();
-    }
+   }
     
-    public void atualizaVeiculoAtorLogado (VeiculoInterface veiculo){
+   public void atualizaVeiculoAtorLogado (VeiculoInterface veiculo){
         ((Motorista) this.atorLoggado).setVeiculo(veiculo); 
-    }
+   }
     
-    public void adicionaVeiculoAMotorista(VeiculoInterface v){
+   public void adicionaVeiculoAMotorista(VeiculoInterface v){
        /*
        Map <String, AtorInterface> motoristasCopia = ((BD) this.baseDeDados).getMotoristas();
        AtorInterface motoristaCopia = motoristasCopia.get(this.atorLoggado.getEmail()); 
@@ -533,19 +526,32 @@ public class UMeR{
 
     }
     
-    public void alteraDisponibilidade(AtorInterface ator,boolean estado){
+   public void alteraDisponibilidade(AtorInterface ator, boolean estado){
        /*
        Map<String, AtorInterface> motoristasCopia = ((BD) this.baseDeDados).getMotoristas(); 
        AtorInterface motoristaCopia = motoristasCopia.get(this.atorLoggado.getEmail()); 
        ((Motorista) motoristaCopia).setDisponivel(true);
       ((BD)this.baseDeDados).setMotoristas(motoristasCopia);
       */
-     
      this.baseDeDados.alteraDisponibilidade(ator, estado);
     }
     
-    public void atualizaHorario(boolean estado){
+   public void atualizaHorario(boolean estado){
        this.baseDeDados.atualizaHorario(atorLoggado, estado); 
     }
+    
+   public void adicionarHistorico(Historico historico){
+       this.baseDeDados.addHistorico(historico); 
+   }
+    
+   public void clienteEmViagem(boolean estado){
+       ((Cliente) this.atorLoggado).setEmViagem(estado);
+       this.baseDeDados.clienteEmViagem(this.atorLoggado, estado); 
+   }
+   
+   public void adicionaViagemEmProcessoAoMotorista(AtorInterface motorista, HistoricoMotorista historico){
+       this.baseDeDados.adicionaViagemEmProcessoAoMotorista(motorista, historico); 
+   }
+   
 
 }

@@ -261,7 +261,7 @@ public class BD implements BDInterface, Serializable {
         BD c = (BD) obj;
         
         return equalsClientes(c.getClientes()) && equalsMotoristas(c.getMotoristas()) && equalsAdmins(c.getAdmins()) && 
-        equalsVeiculos(c.getVeiculos()); 
+        equalsVeiculos(c.getVeiculos()) && equalsHistorico(c.getHistorico()); 
         // return(this.equalsCLientes(c.getClientes()) fazer o mesmo para motoristas e veiculos);
     }
     
@@ -314,6 +314,18 @@ public class BD implements BDInterface, Serializable {
                 return false;
             }
             
+        }
+        return true;
+    }
+    
+    private boolean equalsHistorico(Set<Historico> historico){
+        if(this.historico.size() != historico.size() ){
+            return false;
+        }
+        for(Historico h: this.historico){
+            if(!historico.contains(h)){
+                return false;
+            }
         }
         return true;
     }
@@ -676,12 +688,22 @@ public class BD implements BDInterface, Serializable {
     
     public void alteraDisponibilidade(AtorInterface ator, boolean estado){
         Motorista novo =  (Motorista) this.motoristas.get(ator.getEmail()); 
-        novo.setDisponivel(true); 
+        novo.setDisponivel(estado); 
     }
     
     public void atualizaHorario(AtorInterface atorLogado, boolean estado){
         Motorista motorista = (Motorista) motoristas.get(atorLogado.getEmail()); 
         motorista.setHorarioTrabalho(estado); 
+    }
+    
+    public void clienteEmViagem(AtorInterface ator, boolean estado){
+        Cliente c = (Cliente) this.clientes.get(ator.getEmail());
+        c.setEmViagem(estado);
+    }
+    
+    public void adicionaViagemEmProcessoAoMotorista(AtorInterface motorista, HistoricoMotorista historico){
+        Motorista m = (Motorista) this.motoristas.get(motorista.getEmail());
+        m.setViagemEmProcesso(historico.clone());
     }
 }
     

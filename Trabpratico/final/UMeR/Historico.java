@@ -5,22 +5,25 @@ import java.io.Serializable;
  * @author (seu nome) 
  * @version (número de versão ou data)
  */
-public class Historico extends HistoricoAtor implements HistoricoInterface,Serializable{
+public class Historico extends HistoricoAtor implements HistoricoInterface, Serializable, Comparable<Historico>{
     private AtorInterface cliente; 
     private AtorInterface motorista; 
     
     public Historico(){
+        super();
         this.cliente = null;
         this.motorista = null;
     }
     
     public Historico(AtorInterface cliente, AtorInterface motorista){
+        super();
         this.cliente = cliente;
         this.motorista = motorista;
     }
     
     
      public Historico(Historico h){
+        super(h);
         this.cliente = h.getCliente();
         this.motorista = h.getMotorista();
     }
@@ -41,7 +44,7 @@ public class Historico extends HistoricoAtor implements HistoricoInterface,Seria
         this.motorista = motorista.clone();
     }
     
-        /**
+    /**
      * Métdo equals 
      */
     public boolean equals (Object hist){
@@ -78,6 +81,18 @@ public class Historico extends HistoricoAtor implements HistoricoInterface,Seria
     //clone
     public Historico clone (){
         return new Historico(this);    
+    }
+    
+    
+    public int compareTo(Historico h){
+        if(this.getDataDeInicioDeServico().isBefore(h.getDataDeInicioDeServico())){
+            return -1;
+        }
+        else if (this.getDataDeInicioDeServico().isAfter(h.getDataDeInicioDeServico())){
+            return 1;
+        }
+        return 0;
+  
     }
    
 }

@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @carlos
  * @version 1.0
  */
-public class HistoricoCliente extends HistoricoAtor implements HistoricoInterface,Serializable{
+public class HistoricoCliente extends HistoricoAtor implements HistoricoInterface, Serializable{
     // variáveis de instância 
     private Motorista motorista; 
     /**
@@ -27,9 +27,8 @@ public class HistoricoCliente extends HistoricoAtor implements HistoricoInterfac
      * @param motorista
      */
     
-    public HistoricoCliente (LocalDateTime dataDeInicioDeServico, float tempoEstimado, float tempoReal, float valorEstimado,
-    float valorCobrado, Cliente cliente, String estadoTempo, String estadoTransito, boolean terminada){
-
+    public HistoricoCliente (LocalDateTime dataDeInicioDeServico, double tempoEstimado, double tempoReal, double valorEstimado,
+    double valorCobrado, Cliente cliente, String estadoTempo, String estadoTransito, boolean terminada){
         super(dataDeInicioDeServico,tempoEstimado, tempoReal,valorEstimado, valorCobrado, estadoTempo, estadoTransito, terminada);
         this.motorista=motorista; 
     }
