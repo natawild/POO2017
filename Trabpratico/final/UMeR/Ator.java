@@ -136,6 +136,16 @@ public abstract class Ator implements Serializable{
                 }      
     }
     
+    public int hashCode() {
+        int hash = 3;
+        hash = 79 * hash + this.email.hashCode();
+        hash = 79 * hash + this.nome.hashCode();
+        hash = 79 * hash + this.password.hashCode();
+        hash = 79 * hash + this.morada.hashCode();
+        hash = 79 * hash + this.dataNascimento.hashCode();
+        return hash;
+    }
+    
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
         sb.append("Email: " +this.getEmail() + "\n");

@@ -107,6 +107,16 @@ public class Coordenadas implements Serializable{
     }
     
     /**
+     * hashCode
+     */
+    public int hashCode() {
+        int hash = 5;
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.x) ^ (Double.doubleToLongBits(this.x) >>> 32));
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.y) ^ (Double.doubleToLongBits(this.y) >>> 32));
+        return hash;
+    }
+    
+    /**
      * A função clone faz um clone de uma Coordenada, a partir do construtor por cópia.
      */
     public Coordenadas clone(){

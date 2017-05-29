@@ -127,7 +127,7 @@ public class UMeRApp
         String[] menu9 = {"Escolher táxi mais Próximo", "Escolher táxi especifico com fila de Espera"};
         String[] menu10 = {"Editar Dados"};
         String[] menu11 = {"Inserir Coordenadas"}; 
-        String[] menu12 = {"Termina"}; 
+        String[] menu12 = {"Terminar viagem em processo"}; 
         String[] menu13 = {"Terminar horario de trabalho "};
         String[] menu14 = {"Iniciar horário de trabalho "}; 
         String[] menu15= {"Aceito", "Não Aceito"}; 
@@ -387,7 +387,8 @@ public class UMeRApp
                 break;
             }
             case 2 : {
-                verHistoricoViagensEntreDatas();
+                //verHistoricoViagensEntreDatas();
+                visualizaHistorico();
                 break;
             }
             case 3 : {
@@ -425,21 +426,27 @@ public class UMeRApp
     }
     
     static private void inserirCoordenadas(){
-        menu_inserir_coord_destino.executa(); 
-        switch (menu_inserir_coord_destino.getOpcao()) {
-            case 1 : {
-                menuInserirCoordenadas(); 
-                break; 
-            }   
-            case 0 : {
-                menuCliente(); 
-                break; 
+        Cliente clienteLoggado = (Cliente) umer.getAtorLoggado();
+        if(clienteLoggado.getEmViagem() == false){
+            menu_inserir_coord_destino.executa(); 
+            switch (menu_inserir_coord_destino.getOpcao()) {
+                case 1 : {
+                    menuInserirCoordenadas(); 
+                    break; 
+                }   
+                case 0 : {
+                    menuCliente(); 
+                    break; 
+                }
+                default : {
+                    menuErro();
+                    inserirCoordenadas();
+                    break;
+                }
             }
-            default : {
-                menuErro();
-                inserirCoordenadas();
-                break;
-            }
+        }else {
+            System.out.println("Nao pode requisitar outra viagem porque esta a efetuar uma viagem neste momento");
+            menuCliente();
         }
     }
     
@@ -856,7 +863,21 @@ public class UMeRApp
     
     static private void visualizaHistorico(){
         List<Historico> historico = umer.historicoViagens();
-        System.out.println(historico);
+        System.out.println("Hsitorico de Viagens efeutadas: ");
+        
+        if(umer.getAtorLoggado() instanceof Motorista){
+            for(Historico h: historico){
+                System.out.println(h.imprimeHistoricoMotoristaLinha());
+            }
+            menuMotorista();
+        }
+        else if (umer.getAtorLoggado() instanceof Cliente){
+            for(Historico h: historico){
+                System.out.println(h.imprimeHistoricoClienteLinha());
+            }
+            menuCliente();
+        } 
+        
     }
     
     static private void visualizarMelhoresClientes(){

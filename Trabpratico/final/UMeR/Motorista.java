@@ -221,6 +221,26 @@ public class Motorista extends Ator implements AtorInterface, Serializable{
     }
     
     /**
+     * hashCode
+     */
+    public int hashCode() {
+        int hash = 3;
+        hash = 79 * hash + this.grauCumprimentoHorario;
+        hash = 79 * hash + this.classificacao;
+        hash = 79 * hash + (int) (Double.doubleToLongBits(this.totalKms) ^ (Double.doubleToLongBits(this.totalKms) >>> 32));
+        hash = 79 * hash + (this.disponivel ? 1 : 0);
+        hash = 79 * hash + (this.horarioTrabalho ? 1 : 0);
+        hash = 79 * hash + (int) (Double.doubleToLongBits(this.destreza) ^ (Double.doubleToLongBits(this.destreza) >>> 32));
+        hash = 79 * hash + this.veiculo.hashCode();
+        if(this.viagemEmProcesso != null ){
+            hash = 79 * hash + this.viagemEmProcesso.hashCode();
+        }
+        hash = 79 * hash + this.totalViagens;
+        hash = 79 * hash + super.hashCode();
+        return hash;
+    }
+    
+    /**
      * método toString
      * 
      */

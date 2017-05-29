@@ -92,7 +92,16 @@ public class Historico extends HistoricoAtor implements HistoricoInterface, Seri
             return 1;
         }
         return 0;
-  
+    }
+    /**
+     * 
+     */
+   public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + this.cliente.hashCode();
+        hash = 53 * hash + this.motorista.hashCode();
+        hash = 53 * hash + super.hashCode();
+        return hash;
     }
     
     
@@ -101,6 +110,20 @@ public class Historico extends HistoricoAtor implements HistoricoInterface, Seri
         sb.append("Cliente: " + this.cliente.getNome() +" | " + this.cliente.getEmail());
         sb.append("Histórico: " + super.toString());
         return sb.toString();  
+    }
+    
+    public String imprimeHistoricoMotoristaLinha (){
+        StringBuilder sb = new StringBuilder(); 
+        sb.append("Cliente:  " + this.cliente.getNome() + "(" + this.cliente.getEmail() +")");
+        sb.append(super.imprimeHistoricoLinha() + "\n");
+        return sb.toString(); 
+    }
+    
+    public String imprimeHistoricoClienteLinha (){
+        StringBuilder sb = new StringBuilder(); 
+        sb.append("Motorista:  " + this.motorista.getNome() + "(" + this.motorista.getEmail() +")");
+        sb.append(super.imprimeHistoricoLinha() + "\n");
+        return sb.toString(); 
     }
    
 }

@@ -210,6 +210,25 @@ public abstract class HistoricoAtor implements Serializable{
        this.estadoTempo.equals(h.getEstadoTempo()) && this.estadoTransito.equals(h.getEstadoTransito()) && this.terminado==h.getTerminado() && this.destino.equals(h.getDestino()) 
        && this.origem.equals(h.getOrigem()) && this.classificacao == h.getClassificacao()); 
     }
+    /**
+     * Hashcode
+     */
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + this.dataDeInicioDeServico.hashCode();
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.distancia) ^ (Double.doubleToLongBits(this.distancia) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.tempoEstimado) ^ (Double.doubleToLongBits(this.tempoEstimado) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.tempoReal) ^ (Double.doubleToLongBits(this.tempoReal) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.valorEstimado) ^ (Double.doubleToLongBits(this.valorEstimado) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.valorCobrado) ^ (Double.doubleToLongBits(this.valorCobrado) >>> 32));
+        hash = 97 * hash + this.estadoTempo.hashCode();
+        hash = 97 * hash + this.estadoTransito.hashCode();
+        hash = 97 * hash + (this.terminado ? 1 : 0);
+        hash = 97 * hash + this.origem.hashCode();
+        hash = 97 * hash + this.destino.hashCode();
+        hash = 97 * hash + this.classificacao;
+        return hash;
+    }
      
     /**
      * toString
@@ -230,4 +249,20 @@ public abstract class HistoricoAtor implements Serializable{
         return sb.toString(); 
     }
     
+    
+    public String imprimeHistoricoLinha (){
+        StringBuilder sb = new StringBuilder(); 
+        sb.append(" | Data da viagem:  " +this.dataDeInicioDeServico);
+        sb.append(" | Distancia: " +this.distancia);
+        sb.append(" | Tempo da Vigem estimado: " +this.tempoEstimado);
+        sb.append(" | Tempo da Vigem real: " +this.tempoReal);
+        sb.append(" | Valor Cobrado: " + this.valorCobrado);
+        sb.append(" | Valor Estimado: " + this.valorEstimado);
+        sb.append(" | Estado do tempo: " + this.estadoTempo);
+        sb.append(" | Estado do transito: " + this.estadoTransito);
+        sb.append(" | Classificacao: " + this.classificacao);
+        sb.append(" | Origem: " + this.origem);
+        sb.append(" | Destino: " + this.destino + "\n");
+        return sb.toString(); 
+    }
 }

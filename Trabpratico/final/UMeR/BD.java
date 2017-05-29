@@ -740,14 +740,14 @@ public class BD implements BDInterface, Serializable {
         
         if(ator instanceof Motorista) {
             for(Historico h: this.historico){
-                if(h.getMotorista().equals(ator)){
+                if(h.getMotorista().getEmail().equals(ator.getEmail())){
                     historicoPorAtor.add(h.clone());
                 }
             }
         } 
         else if(ator instanceof Cliente){
              for(Historico h: this.historico){
-                if(h.getCliente().equals(  ator)){
+                if(h.getCliente().getEmail().equals(ator.getEmail())){
                     historicoPorAtor.add(h.clone());
                 }
              }

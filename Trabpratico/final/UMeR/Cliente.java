@@ -90,6 +90,17 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
     }
     
     /**
+     * HashCode
+     */
+    public int hashCode() {
+        int hash = 5;
+        hash = 59 * hash + this.loc.hashCode();
+        hash = 59 * hash + (this.emViagem ? 1 : 0);
+        hash = 59 * hash + super.hashCode();
+        return hash;
+    }
+    
+    /**
      * método toString 
      */
     
