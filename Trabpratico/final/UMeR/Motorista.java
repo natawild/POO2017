@@ -247,29 +247,31 @@ public class Motorista extends Ator implements AtorInterface, Serializable{
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
         sb.append(super.toString());
-        sb.append("Classificação: " +this.getClassificacao() + "\n"); 
-        sb.append("Total Kms efetuados: " +this.getTotalKms() + "\n"); 
-        sb.append("Disponibilidade: " +this.getDisponivel() + "\n");
-        sb.append("Horário de Trabalho: " +this.getHorarioTrabalho() + "\n"); 
-        sb.append("Destreza: " +this.getDestreza() + "\n"); 
-        sb.append("Total de viagens: " +this.getTotalViagens()+ "\n"); 
-        sb.append("Veiculo conduzido: " +this.getVeiculo() + "\n"); 
-        sb.append("Viagem em processo \n: " +this.getViagemEmProcesso() + "\n"); 
+        sb.append("Classificação: " +this.classificacao + "\n"); 
+        sb.append("Grau de cumprimento de Horario: " +this.grauCumprimentoHorario + "\n");
+        sb.append("Total Kms efetuados: " + this.totalKms + "\n"); 
+        sb.append("Disponibilidade: " +this.disponivel + "\n");
+        sb.append("Horário de Trabalho: " +this.horarioTrabalho + "\n"); 
+        sb.append("Destreza: " +this.destreza + "\n"); 
+        sb.append("Total de viagens: " + this.totalViagens + "\n"); 
+        sb.append("Veiculo conduzido: " +this.veiculo + "\n"); 
+        sb.append("Viagem em processo \n: " + this.viagemEmProcesso + "\n"); 
         return sb.toString(); 
     }
     
     public String apresentaDadosPessoais(){ 
         StringBuilder sb = new StringBuilder(); 
         sb.append(super.toString());
-        sb.append("Classificação: " +this.getClassificacao() + "\n"); 
-        sb.append("Total Kms efetuados: " +this.getTotalKms() + "\n"); 
-        sb.append("Disponibilidade: " +this.getDisponivel() + "\n");
-        sb.append("Horário de Trabalho: " +this.getHorarioTrabalho() + "\n"); 
-        sb.append("Destreza: " +this.getDestreza() + "\n"); 
-        sb.append("Total de viagens: " +this.getTotalViagens()+ "\n"); 
-        sb.append("Veiculo conduzido: " +this.getVeiculo() + "\n"); 
+        sb.append("Classificação: " + this.classificacao + "\n"); 
+        sb.append("Grau de cumprimento de Horario: " + this.grauCumprimentoHorario + "\n");
+        sb.append("Total Kms efetuados: " + this.totalKms + "\n"); 
+        sb.append("Disponibilidade: " +this.disponivel + "\n");
+        sb.append("Horário de Trabalho: " + this.horarioTrabalho + "\n"); 
+        sb.append("Destreza: " + this.destreza + "\n"); 
+        sb.append("Total de viagens: " + this.totalViagens + "\n"); 
+        sb.append("Veiculo conduzido: " +this.veiculo + "\n"); 
         if(viagemEmProcesso != null){
-            sb.append("Viagem em processo \n: " + this.viagemEmProcesso.apresentaHistoricoMototistaMenu() + "\n"); 
+            sb.append("Viagem em processo \n: " + this.viagemEmProcesso.apresentaHistoricoMotoristaMenu() + "\n"); 
         }
         return sb.toString(); 
     }

@@ -709,18 +709,9 @@ public class BD implements BDInterface, Serializable {
     public AtorInterface terminarViagem(AtorInterface motorista){
         Motorista m = (Motorista) this.motoristas.get(motorista.getEmail());
         Historico ultimaViagem = m.getViagemEmProcesso();
-        AtorInterface cliente = ultimaViagem.getCliente();
-        
-        //atualizar motorista
-        m.setDisponivel(true);
-        m.setViagemEmProcesso(null);
-        m.adicionaKms(ultimaViagem.getDistancia());
-        m.addicionaViagem();
-        m.atualizaPosicaoVeiculo(ultimaViagem.getDestino());
-        this.motoristas.put(m.getEmail(), m);
         
         //atuallizar cliente
-        Cliente c = (Cliente) this.clientes.get(cliente.getEmail());
+        Cliente c = (Cliente) getClienteComEmail(ultimaViagem.getEmailCliente());
         c.setEmViagem(false);
         c.setLoc(ultimaViagem.getDestino());
         this.clientes.put(c.getEmail(), c);
@@ -728,11 +719,33 @@ public class BD implements BDInterface, Serializable {
         //atualizar historico
         this.historico.remove(ultimaViagem);
         ultimaViagem.setTerminado(true);
-        ultimaViagem.setCliente(c);
-        ultimaViagem.setMotorista(m);
         this.historico.add(ultimaViagem);
         
+        
+        //atualizar motorista
+        m.setDisponivel(true);
+        m.setViagemEmProcesso(null);
+        m.adicionaKms(ultimaViagem.getDistancia());
+        m.addicionaViagem();
+        m.atualizaPosicaoVeiculo(ultimaViagem.getDestino());
+        atualizarGrauCumprimentoHorario(m);
+        this.motoristas.put(m.getEmail(), m);
+        
         return m.clone();
+    }
+    
+    private void atualizarGrauCumprimentoHorario(Motorista m){
+        int totalGrauDeCumprimento = 0;
+        int totalViagens = 0;
+        for(Historico h: this.historico){
+            if(h.getEmailMotorista().equals(m.getEmail())){
+                int grauDeCumprimento = h.calculaGrauDeCumprimento();
+                totalGrauDeCumprimento +=  grauDeCumprimento;
+                totalViagens ++;
+            }  
+        }
+        int grauDeCumprimento =  (int) (totalGrauDeCumprimento / totalViagens);
+        m.setGrauCumprimentoHorario(grauDeCumprimento);
     }
     
     public List<Historico> historicoViagensPorAtor (AtorInterface ator){
@@ -740,20 +753,56 @@ public class BD implements BDInterface, Serializable {
         
         if(ator instanceof Motorista) {
             for(Historico h: this.historico){
-                if(h.getMotorista().getEmail().equals(ator.getEmail())){
+                if(h.getEmailMotorista().equals(ator.getEmail()) && h.getTerminado()){
                     historicoPorAtor.add(h.clone());
                 }
             }
         } 
         else if(ator instanceof Cliente){
              for(Historico h: this.historico){
-                if(h.getCliente().getEmail().equals(ator.getEmail())){
+                if(h.getEmailCliente().equals(ator.getEmail()) && h.getTerminado()){
                     historicoPorAtor.add(h.clone());
                 }
              }
         }
         
         return historicoPorAtor;
+    }
+    
+    public List<Historico> historicoViagensPorClassificarPorAtor(AtorInterface ator){
+        List<Historico> historico = new ArrayList<Historico>();
+
+        for(Historico h: this.historico){
+            if(h.getEmailMotorista().equals(ator.getEmail()) && h.getClassificacao() > 0){
+                historico.add(h.clone());
+            }
+        }  
+        return historico;
+    }
+    
+    public void atualizaClassificacao(Historico h, int classificacao){
+        for(Historico historico: this.historico){
+            if(historico.equals(h)){
+                historico.setClassificacao(classificacao);
+                break;
+            }
+        }
+        
+        atualizarClassificacaoMotorista(h.getEmailMotorista());
+    }
+    
+    private void atualizarClassificacaoMotorista(String emailMotorista){
+        Motorista m = (Motorista) this.motoristas.get(emailMotorista);
+        int totalClassificacao = 0;
+        int totalViagens = 0;
+        for(Historico h: this.historico){
+            if(h.getEmailMotorista().equals(m.getEmail())){
+                totalClassificacao +=  h.getClassificacao();
+                totalViagens ++;
+            }  
+        }
+        int classificacaoMotorista =  (int) (totalClassificacao / totalViagens);
+        m.setClassificacao(classificacaoMotorista);
     }
     
 }

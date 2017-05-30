@@ -341,6 +341,7 @@ public class UMeRApp
         is.close();
         try {
             umer.iniciaSessao(email, password);
+            System.out.println("\f");
             menuOpcoesAtores();
         }
         catch (SemAutorizacaoException e) {
@@ -392,6 +393,11 @@ public class UMeRApp
                 break;
             }
             case 3 : {
+                //verHistoricoViagensEntreDatas();
+                menuClassificarViagens();
+                break;
+            }
+            case 4 : {
                 verDadosPessoais();
                 break;
             }
@@ -407,6 +413,52 @@ public class UMeRApp
         }
     }
 
+    static private void menuClassificarViagens()
+    {
+        Scanner is =  new  Scanner(System.in);
+        System.out.println("****************Lista de Viagens por classificar**********************");
+        List<Historico> porClassificar = umer.historicoViagensPorClassificar();
+        int i = 1;
+        for(Historico h: porClassificar){
+            System.out.println(i + " - " + h.imprimeHistoricoClienteLinha());
+        } 
+        
+        System.out.println("Selecione uma da opçoes acima ou 0 caso pretenda voltar ao menu anterior");
+        int opcao = is.nextInt(); 
+        
+        if(opcao > 0 && opcao < (porClassificar.size() +1)){
+            if(opcao == 0){
+                menuCliente();
+            }
+            else {
+                menuClassificarViagem(porClassificar.get(opcao -1));
+            } 
+        }
+        else {
+            menuErro();
+            menuClassificarViagens();
+        }
+        
+    }
+    
+    static private void menuClassificarViagem(Historico h)
+    {
+        Scanner is =  new  Scanner(System.in);
+        System.out.println("****************Classificar Viagem**********************");
+        System.out.println(h.imprimeHistoricoClienteLinha());
+        System.out.println("\nIntroduza classificacao (0 - 100):"); 
+        int classificacao = is.nextInt();
+        
+        if(classificacao > 0 && classificacao < 101){
+            umer.atualizaClassificacao(h, classificacao);
+            System.out.println("Classificacao atualizada");
+        }
+        else {
+            menuErro();
+            menuClassificarViagem(h);
+        }
+        
+    }
    
     
     static private void menuInserirCoordenadas(){
@@ -547,11 +599,11 @@ public class UMeRApp
          String estadoTempo = Utils.Meteorologia.getEstadoTempo();
          String estadoTransito = Utils.Transito.getEstadoTransito();
          
-         double duracaoRealViagem = umer.duracaoRealViagem(duracaoEstimadaViagem, m.getVeiculo().getFiabilidade(), m.getDestreza(), Utils.Transito.getValorTransito(estadoTransito),  Utils.Meteorologia.getValorTempo(estadoTempo));
+         double duracaoRealViagem = umer.duracaoRealViagem(duracaoEstimadaViagem, m.getVeiculo().getFiabilidade(), m.getDestreza(), Utils.Transito.getValorTransito(estadoTransito),  Utils.Meteorologia.getValorTempo(estadoTempo));    
          double custaReal = umer.custoRealViagem(duracaoRealViagem, distanciaTotal, m.getVeiculo().getPrecoPorKm(), duracaoEstimadaViagem);
        
          //criar historico
-         Historico historicoViagem = new Historico(umer.getAtorLoggado(), m);
+         Historico historicoViagem = new Historico(umer.getAtorLoggado().getEmail(), m.getEmail());
          historicoViagem.setDistancia(distanciaTotal);
          historicoViagem.setTempoEstimado(duracaoEstimadaViagem);
          historicoViagem.setTempoReal(duracaoRealViagem);
@@ -863,20 +915,27 @@ public class UMeRApp
     
     static private void visualizaHistorico(){
         List<Historico> historico = umer.historicoViagens();
-        System.out.println("Hsitorico de Viagens efeutadas: ");
         
-        if(umer.getAtorLoggado() instanceof Motorista){
-            for(Historico h: historico){
-                System.out.println(h.imprimeHistoricoMotoristaLinha());
+        if(historico!= null && historico.size()>0){
+            System.out.println("Hsitorico de Viagens efeutadas: ");
+            
+            if(umer.getAtorLoggado() instanceof Motorista){
+                for(Historico h: historico){
+                    System.out.println(h.imprimeHistoricoMotoristaLinha());
+                }
+                menuMotorista();
             }
-            menuMotorista();
+            else if (umer.getAtorLoggado() instanceof Cliente){
+                for(Historico h: historico){
+                    System.out.println(h.imprimeHistoricoClienteLinha());
+                }
+                menuCliente();
+            } 
         }
-        else if (umer.getAtorLoggado() instanceof Cliente){
-            for(Historico h: historico){
-                System.out.println(h.imprimeHistoricoClienteLinha());
-            }
+        else {
+            System.out.println("Nao tem historico");
             menuCliente();
-        } 
+        }
         
     }
     

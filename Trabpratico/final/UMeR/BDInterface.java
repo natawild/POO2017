@@ -68,5 +68,9 @@ public interface BDInterface{
     
     public AtorInterface terminarViagem(AtorInterface motorista);
     
-     public List<Historico> historicoViagensPorAtor (AtorInterface ator);
+    public List<Historico> historicoViagensPorAtor (AtorInterface ator);
+     
+    public List<Historico> historicoViagensPorClassificarPorAtor(AtorInterface ator);
+    
+    public void atualizaClassificacao(Historico h, int classificacao);
 }

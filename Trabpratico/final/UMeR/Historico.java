@@ -6,42 +6,42 @@ import java.io.Serializable;
  * @version (número de versão ou data)
  */
 public class Historico extends HistoricoAtor implements HistoricoInterface, Serializable, Comparable<Historico>{
-    private AtorInterface cliente; 
-    private AtorInterface motorista; 
+    private String emailCliente; 
+    private String emailMotorista; 
     
     public Historico(){
         super();
-        this.cliente = null;
-        this.motorista = null;
+        this.emailCliente = null;
+        this.emailMotorista = null;
     }
     
-    public Historico(AtorInterface cliente, AtorInterface motorista){
+    public Historico(String emailCliente, String emailMotorista){
         super();
-        this.cliente = cliente;
-        this.motorista = motorista;
+        this.emailCliente = emailCliente;
+        this.emailMotorista = emailMotorista;
     }
     
     
      public Historico(Historico h){
         super(h);
-        this.cliente = h.getCliente();
-        this.motorista = h.getMotorista();
+        this.emailCliente = h.getEmailCliente();
+        this.emailMotorista = h.getEmailMotorista();
     }
     
-    public AtorInterface getCliente(){
-        return this.cliente.clone();
+    public String getEmailCliente(){
+        return this.emailCliente;
     }
     
-    public AtorInterface getMotorista(){
-        return this.motorista.clone();
+    public String getEmailMotorista(){
+        return this.emailMotorista;
     }
     
-    public void setCliente(AtorInterface cliente){
-        this.cliente = cliente.clone();
+    public void setCliente(String cliente){
+        this.emailCliente = cliente;
     }
     
-    public void setMotorista(AtorInterface motorista){
-        this.motorista = motorista.clone();
+    public void setMotorista(String motorista){
+        this.emailMotorista = motorista;
     }
     
     /**
@@ -55,15 +55,7 @@ public class Historico extends HistoricoAtor implements HistoricoInterface, Seri
         return false; 
         
         Historico historico = (Historico) hist; 
-        return  equalsCliente(historico.getCliente()) && equalsMotorista(historico.getMotorista()) && super.equals(historico); 
-    }
-    
-    private boolean equalsCliente (AtorInterface cliente){
-        return this.cliente.equals(cliente);
-    }
-    
-    private boolean equalsMotorista (AtorInterface motorista){
-        return this.motorista.equals(motorista);
+        return  this.emailCliente.equals(historico.getEmailCliente()) && this.emailMotorista.equals(historico.getEmailMotorista()) && super.equals(historico); 
     }
     
     /**
@@ -73,8 +65,8 @@ public class Historico extends HistoricoAtor implements HistoricoInterface, Seri
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
         sb.append("Histórico: " + super.toString());
-        sb.append("Cliente: " + this.cliente);
-        sb.append("Motorista: " + this.motorista);
+        sb.append("Cliente email: " + this.emailCliente);
+        sb.append("Motorista email: " + this.emailMotorista);
         return sb.toString();  
     }
     
@@ -86,10 +78,10 @@ public class Historico extends HistoricoAtor implements HistoricoInterface, Seri
     
     public int compareTo(Historico h){
         if(this.getDataDeInicioDeServico().isBefore(h.getDataDeInicioDeServico())){
-            return -1;
+            return 1;
         }
         else if (this.getDataDeInicioDeServico().isAfter(h.getDataDeInicioDeServico())){
-            return 1;
+            return -1;
         }
         return 0;
     }
@@ -98,31 +90,31 @@ public class Historico extends HistoricoAtor implements HistoricoInterface, Seri
      */
    public int hashCode() {
         int hash = 3;
-        hash = 53 * hash + this.cliente.hashCode();
-        hash = 53 * hash + this.motorista.hashCode();
+        hash = 53 * hash + this.emailCliente.hashCode();
+        hash = 53 * hash + this.emailMotorista.hashCode();
         hash = 53 * hash + super.hashCode();
         return hash;
     }
     
     
-    public String apresentaHistoricoMototistaMenu(){
+    public String apresentaHistoricoMotoristaMenu(){
         StringBuilder sb = new StringBuilder(); 
-        sb.append("Cliente: " + this.cliente.getNome() +" | " + this.cliente.getEmail());
+        sb.append("Cliente email: " + this.emailCliente);
         sb.append("Histórico: " + super.toString());
         return sb.toString();  
     }
     
     public String imprimeHistoricoMotoristaLinha (){
         StringBuilder sb = new StringBuilder(); 
-        sb.append("Cliente:  " + this.cliente.getNome() + "(" + this.cliente.getEmail() +")");
-        sb.append(super.imprimeHistoricoLinha() + "\n");
+        sb.append("Cliente email:  " + this.emailCliente);
+        sb.append(super.imprimeHistoricoLinha());
         return sb.toString(); 
     }
     
     public String imprimeHistoricoClienteLinha (){
         StringBuilder sb = new StringBuilder(); 
-        sb.append("Motorista:  " + this.motorista.getNome() + "(" + this.motorista.getEmail() +")");
-        sb.append(super.imprimeHistoricoLinha() + "\n");
+        sb.append("Motorista:  " + this.emailMotorista);
+        sb.append(super.imprimeHistoricoLinha());
         return sb.toString(); 
     }
    

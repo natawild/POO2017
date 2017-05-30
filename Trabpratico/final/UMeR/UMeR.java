@@ -557,10 +557,19 @@ public class UMeR{
    public void terminarViagem(){  
        AtorInterface motorista = this.baseDeDados.terminarViagem(atorLoggado);
        atorLoggado = motorista;
+       
    }
    
    public List<Historico> historicoViagens(){
        return this.baseDeDados.historicoViagensPorAtor(this.atorLoggado);
+   }
+   
+   public List<Historico> historicoViagensPorClassificar(){
+       return this.baseDeDados.historicoViagensPorClassificarPorAtor(this.atorLoggado);
+   }
+   
+   public void atualizaClassificacao(Historico h, int classificacao){
+       this.baseDeDados.atualizaClassificacao(h, classificacao);
    }
    
 

@@ -74,7 +74,7 @@ public abstract class HistoricoAtor implements Serializable{
        this.dataDeInicioDeServico= h.getDataDeInicioDeServico(); 
        this.distancia = h.getDistancia();
        this.tempoEstimado= h.getTempoEstimado();
-       this.tempoReal = h.getTempoEstimado();
+       this.tempoReal = h.getTempoReal();
        this.valorEstimado=h.getValorEstimado(); 
        this.valorCobrado= h.getValorCobrado();
        this.estadoTempo= h.getEstadoTempo();
@@ -246,6 +246,7 @@ public abstract class HistoricoAtor implements Serializable{
         sb.append("Classificacao: " +this.getClassificacao() + "\n");
         sb.append("Origem: " + this.getOrigem() + "\n");
         sb.append("Destino: " + this.getDestino() + "\n");
+        sb.append("Viagem terminada: " + this.terminado + "\n");
         return sb.toString(); 
     }
     
@@ -262,7 +263,18 @@ public abstract class HistoricoAtor implements Serializable{
         sb.append(" | Estado do transito: " + this.estadoTransito);
         sb.append(" | Classificacao: " + this.classificacao);
         sb.append(" | Origem: " + this.origem);
-        sb.append(" | Destino: " + this.destino + "\n");
+        sb.append(" | Destino: " + this.destino);
         return sb.toString(); 
+    }
+    
+    public int calculaGrauDeCumprimento(){
+        int grauDeCumprimento = 0;
+        if(this.tempoReal < this.tempoEstimado){
+            grauDeCumprimento = 100;
+        }
+        else {
+            grauDeCumprimento = (int) ((this.tempoEstimado / this.tempoReal)*100);
+        }
+        return grauDeCumprimento;
     }
 }
