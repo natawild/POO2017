@@ -575,6 +575,13 @@ public class UMeR{
                 }
              }
         }
+        else {
+             for(Historico h: ((BD) this.baseDeDados).getHistorico()){
+                if(h.getTerminado()){
+                    historicoPorAtor.add(h.clone());
+                }
+             }
+        }
         
         return historicoPorAtor;   
    }
@@ -591,10 +598,18 @@ public class UMeR{
                 }
             }   
         }
-        else {
+        else if(this.atorLoggado instanceof Cliente){
             while(iterator.hasNext()) {
                 Historico h = iterator.next();
                 if(h.getEmailCliente().equals(this.atorLoggado.getEmail()) && h.getTerminado() && h.getDataDeInicioDeServico().isAfter(inicio) && h.getDataDeInicioDeServico().isBefore(fim)){
+                    historico.add(h.clone());
+                }
+            }   
+        }
+        else {
+            while(iterator.hasNext()) {
+                Historico h = iterator.next();
+                if(h.getTerminado() && h.getDataDeInicioDeServico().isAfter(inicio) && h.getDataDeInicioDeServico().isBefore(fim)){
                     historico.add(h.clone());
                 }
             }   

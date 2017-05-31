@@ -115,11 +115,11 @@ public class UMeRApp
     {
         String[] menu1 = {"Registar Utilizador", "Iniciar sessão"};
         String[] menu2 = {"Cliente", "Motorista"};
-        String[] menu3 = {"Solicitar Viagem", "Consultar listagem de viagems efetuadas", "Classificar Viagens" , "Ver Dados Pessoais"};
+        String[] menu3 = {"Solicitar Viagem", "Visualizar Histórico de viagens", "Classificar Viagens" , "Ver Dados Pessoais"};
         String[] menu4 = {"Gerir Viagens","Gerir Horário de trabalho", "Visualizar Histórico de viagens", 
                             "Visualizar 10 melhores clientes", "Registar Veiculo", "Ver Dados Pessoais"};
         String[] menu5 = {"Registar Veiculo","Remover Veiculo ", "Ver Lista dos utilizadores registados",
-                            "Ver Lista dos Veiculos Registados", "Ver Lista dos clientes que mais gastam", 
+                            "Ver Lista dos Veiculos Registados", "Visualizar Histórico de viagens" , "Ver Lista dos clientes que mais gastam", 
                             "Ver Dados Pessoais"};
         String[] menu6 = {"Lista de Carros de um dado tipo" };
         String[] menu7 = {"Viagens Efetuadas (entre datas)", "Ver 10 clientes que mais gastam"};
@@ -983,6 +983,12 @@ public class UMeRApp
                 }
                 menuCliente();
             } 
+            else {
+                for(Historico h: historico){
+                    System.out.println(h.imprimeHistoricoAdminLinha());
+                }
+                menuAdmin();
+            }
         }
         else {
             System.out.println("Nao tem historico");
@@ -1012,9 +1018,15 @@ public class UMeRApp
                 }
                 menuHistoricoViagens();
             }
-            else {
-                 for(Historico h: historicoEntreDatas){
+            else if(umer.getAtorLoggado() instanceof Cliente){
+                for(Historico h: historicoEntreDatas){
                     System.out.println(h.imprimeHistoricoClienteLinha());
+                }
+                menuHistoricoViagens();
+            }
+            else {
+                for(Historico h: historicoEntreDatas){
+                    System.out.println(h.imprimeHistoricoAdminLinha());
                 }
                 menuHistoricoViagens();
             }
@@ -1056,10 +1068,14 @@ public class UMeRApp
                 break;
             }
             case 5: {
+                menuHistoricoViagens(); 
+                break; 
+            }
+            case 6: {
                 listaUtilizadoresMaisGastamNaUMeR(); 
                 break; 
             }
-            case 6 : {
+            case 7 : {
                 verDadosPessoais();
                 break; 
             }

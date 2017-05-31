@@ -17205,3 +17205,425 @@ Destino: x: 45.0 y: 32.0
 Viagem terminada: true
 Cliente email: celia@celia.comMotorista email: acores@acores.com]
 -------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: Celia
+Password: ********************************
+Morada: Rua do cão
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 45.0 y: 32.0
+Em viagem: false, luis@luis.com=Email: luis@luis.com
+Nome: Luis
+Password: ********************************
+Morada: Rua da cinderela
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 0.0 y: 96.8
+Em viagem: false, rui@rui.com=Email: rui@rui.com
+Nome: Rui
+Password: ********************************
+Morada: Rua da costa 
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 73.8 y: 14.0
+Em viagem: false}Lista de Motoristas: 
+{acores@acores.com=Email: acores@acores.com
+Nome: João César
+Password: ********************************
+Morada: Rua Fábrica do pelo
+Data de Nascimento: 1989-12-24
+Classificação: 90
+Grau de cumprimento de Horario: 100
+Total Kms efetuados: 105.71846699083946
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 0.8
+Total de viagens: 1
+Veiculo conduzido: Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 45.0 y: 32.0
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+
+Viagem em processo 
+: null
+, rita@rita.com=Email: rita@rita.com
+Nome: Rita César
+Password: ********************************
+Morada: Rua Fábrica do sabão
+Data de Nascimento: 1989-11-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: false
+Destreza: 1.8
+Total de viagens: 0
+Veiculo conduzido: Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 21.3 y: 42.1
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 3.1
+
+Viagem em processo 
+: null
+, manuel@manuel.com=Email: manuel@manuel.com
+Nome: Manuel César
+Password: ********************************
+Morada: Rua Conego do pelo
+Data de Nascimento: 1989-10-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 1.6
+Total de viagens: 0
+Veiculo conduzido: Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 10.0 y: 15.0
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+
+Viagem em processo 
+: null
+}Lista de Veiculos: 
+{qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 20.0 y: 40.0
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-34-22=Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 10.0 y: 15.0
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, 25-76-22=Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 21.3 y: 42.1
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 3.1
+}Historico: 
+[Histórico: Data da viagem 2017-05-31T23:19:34.512
+Distancia percorrida: 105.71846699083946
+Tempo da Vigem estimado: 97.58627722231336
+Tempo da Vigem real: 62.455218352935816
+Valor Cobrado: 277.40526151762316
+Valor Estimado: 433.44571466244173
+Estado do tempo: Chuva
+Estado do transito: Transito Normal
+Classificacao: 90
+Origem: x: 5.7 y: 80.7
+Destino: x: 45.0 y: 32.0
+Viagem terminada: true
+Cliente email: celia@celia.comMotorista email: acores@acores.com]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: Celia
+Password: ********************************
+Morada: Rua do cão
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 45.0 y: 32.0
+Em viagem: false, luis@luis.com=Email: luis@luis.com
+Nome: Luis
+Password: ********************************
+Morada: Rua da cinderela
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 0.0 y: 96.8
+Em viagem: false, rui@rui.com=Email: rui@rui.com
+Nome: Rui
+Password: ********************************
+Morada: Rua da costa 
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 73.8 y: 14.0
+Em viagem: false}Lista de Motoristas: 
+{acores@acores.com=Email: acores@acores.com
+Nome: João César
+Password: ********************************
+Morada: Rua Fábrica do pelo
+Data de Nascimento: 1989-12-24
+Classificação: 90
+Grau de cumprimento de Horario: 100
+Total Kms efetuados: 105.71846699083946
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 0.8
+Total de viagens: 1
+Veiculo conduzido: Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 45.0 y: 32.0
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+
+Viagem em processo 
+: null
+, rita@rita.com=Email: rita@rita.com
+Nome: Rita César
+Password: ********************************
+Morada: Rua Fábrica do sabão
+Data de Nascimento: 1989-11-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: false
+Destreza: 1.8
+Total de viagens: 0
+Veiculo conduzido: Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 21.3 y: 42.1
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 3.1
+
+Viagem em processo 
+: null
+, manuel@manuel.com=Email: manuel@manuel.com
+Nome: Manuel César
+Password: ********************************
+Morada: Rua Conego do pelo
+Data de Nascimento: 1989-10-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 1.6
+Total de viagens: 0
+Veiculo conduzido: Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 10.0 y: 15.0
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+
+Viagem em processo 
+: null
+}Lista de Veiculos: 
+{qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 20.0 y: 40.0
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-34-22=Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 10.0 y: 15.0
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, 25-76-22=Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 21.3 y: 42.1
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 3.1
+}Historico: 
+[Histórico: Data da viagem 2017-05-31T23:19:34.512
+Distancia percorrida: 105.71846699083946
+Tempo da Vigem estimado: 97.58627722231336
+Tempo da Vigem real: 62.455218352935816
+Valor Cobrado: 277.40526151762316
+Valor Estimado: 433.44571466244173
+Estado do tempo: Chuva
+Estado do transito: Transito Normal
+Classificacao: 90
+Origem: x: 5.7 y: 80.7
+Destino: x: 45.0 y: 32.0
+Viagem terminada: true
+Cliente email: celia@celia.comMotorista email: acores@acores.com]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{celia@celia.com=Email: celia@celia.com
+Nome: Celia
+Password: ********************************
+Morada: Rua do cão
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 40.0 y: 50.0
+Em viagem: false, luis@luis.com=Email: luis@luis.com
+Nome: Luis
+Password: ********************************
+Morada: Rua da cinderela
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 6.0 y: 58.2
+Em viagem: false, rui@rui.com=Email: rui@rui.com
+Nome: Rui
+Password: ********************************
+Morada: Rua da costa 
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 1.7 y: 86.9
+Em viagem: false}Lista de Motoristas: 
+{acores@acores.com=Email: acores@acores.com
+Nome: João César
+Password: ********************************
+Morada: Rua Fábrica do pelo
+Data de Nascimento: 1989-12-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 0.7
+Total de viagens: 0
+Veiculo conduzido: Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 20.0 y: 40.0
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+
+Viagem em processo 
+: null
+, rita@rita.com=Email: rita@rita.com
+Nome: Rita César
+Password: ********************************
+Morada: Rua Fábrica do sabão
+Data de Nascimento: 1989-11-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: false
+Destreza: 0.9
+Total de viagens: 0
+Veiculo conduzido: Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 68.1 y: 100.0
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 3.1
+
+Viagem em processo 
+: null
+, manuel@manuel.com=Email: manuel@manuel.com
+Nome: Manuel César
+Password: ********************************
+Morada: Rua Conego do pelo
+Data de Nascimento: 1989-10-24
+Classificação: 50
+Grau de cumprimento de Horario: 55
+Total Kms efetuados: 56.03194837534485
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 1.3
+Total de viagens: 2
+Veiculo conduzido: Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 40.0 y: 50.0
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+
+Viagem em processo 
+: null
+}Lista de Veiculos: 
+{qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 20.0 y: 40.0
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 4.1
+, qt-34-22=Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 10.0 y: 15.0
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, 25-76-22=Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 68.1 y: 100.0
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 3.1
+}Historico: 
+[Histórico: Data da viagem 2017-05-31T23:55:24.523
+Distancia percorrida: 42.485291572496
+Tempo da Vigem estimado: 46.34759080635927
+Tempo da Vigem real: 79.5324707078686
+Valor Cobrado: 216.6749870197296
+Valor Estimado: 216.6749870197296
+Estado do tempo: Nevoeiro
+Estado do transito: Transito Normal
+Classificacao: 20
+Origem: x: 21.0 y: 12.0
+Destino: x: 40.0 y: 50.0
+Viagem terminada: true
+Cliente email: celia@celia.comMotorista email: manuel@manuel.com, Histórico: Data da viagem 2017-05-31T23:51:04.569
+Distancia percorrida: 13.546656802848844
+Tempo da Vigem estimado: 14.778171057653285
+Tempo da Vigem real: 27.8952780061127
+Valor Cobrado: 69.0879496945291
+Valor Estimado: 69.0879496945291
+Estado do tempo: Nevoeiro
+Estado do transito: Muito Transito
+Classificacao: 80
+Origem: x: 8.9 y: 14.6
+Destino: x: 21.0 y: 12.0
+Viagem terminada: true
+Cliente email: celia@celia.comMotorista email: manuel@manuel.com]
+-------------------------- LOG --------------------------
