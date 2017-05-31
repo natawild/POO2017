@@ -156,6 +156,13 @@ public abstract class Ator implements Serializable{
         return sb.toString(); 
         
     }
+   
+   public String apresenteDadosParaCliente(){ 
+        StringBuilder sb = new StringBuilder(); 
+        sb.append("Email: " +this.email);
+        sb.append(" | Nome: " + this.nome);
+        return sb.toString(); 
+   }
     
     /**
      * método que esconde a password substituindo o nr de caracteres da password pelo mesmo numero de * 

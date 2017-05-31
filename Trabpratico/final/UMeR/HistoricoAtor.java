@@ -255,8 +255,8 @@ public abstract class HistoricoAtor implements Serializable{
         StringBuilder sb = new StringBuilder(); 
         sb.append(" | Data da viagem:  " +this.dataDeInicioDeServico);
         sb.append(" | Distancia: " +this.distancia);
-        sb.append(" | Tempo da Vigem estimado: " +this.tempoEstimado);
-        sb.append(" | Tempo da Vigem real: " +this.tempoReal);
+        sb.append(" | Tempo da Viagem estimado: " +this.tempoEstimado);
+        sb.append(" | Tempo da Viagem real: " +this.tempoReal);
         sb.append(" | Valor Cobrado: " + this.valorCobrado);
         sb.append(" | Valor Estimado: " + this.valorEstimado);
         sb.append(" | Estado do tempo: " + this.estadoTempo);

@@ -26,4 +26,6 @@ public interface VeiculoInterface {
     public Coordenadas getLoc(); 
     
     public void setLoc(Coordenadas loc); 
+    
+    public String apresentaDadosCliente();
 }

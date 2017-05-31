@@ -9,6 +9,7 @@ import java.util.TreeMap;
 import java.util.Set;
 import java.util.HashSet;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import Exceptions.*;
@@ -114,7 +115,7 @@ public class UMeRApp
     {
         String[] menu1 = {"Registar Utilizador", "Iniciar sessão"};
         String[] menu2 = {"Cliente", "Motorista"};
-        String[] menu3 = {"Solicitar Viagem", "Consultar listagem de viagems efetuadas", "Ver Dados Pessoais"};
+        String[] menu3 = {"Solicitar Viagem", "Consultar listagem de viagems efetuadas", "Classificar Viagens" , "Ver Dados Pessoais"};
         String[] menu4 = {"Gerir Viagens","Gerir Horário de trabalho", "Visualizar Histórico de viagens", 
                             "Visualizar 10 melhores clientes", "Registar Veiculo", "Ver Dados Pessoais"};
         String[] menu5 = {"Registar Veiculo","Remover Veiculo ", "Ver Lista dos utilizadores registados",
@@ -147,7 +148,7 @@ public class UMeRApp
         menu_terminar_horario_trabalho = new UMeRMenu ("Horário de trabalho ",menu13);
         menu_iniciar_horario_trabalho = new UMeRMenu ("Horário de trabalho ",menu14);
         menu_proposta_viagem = new UMeRMenu("Dados Estimados da viagem ", menu15); 
-        menu_historico = new UMeRMenu("Historico", menu16);
+        menu_historico = new UMeRMenu("Menu Historico", menu16);
     }
 
     /**
@@ -415,28 +416,37 @@ public class UMeRApp
 
     static private void menuClassificarViagens()
     {
-        Scanner is =  new  Scanner(System.in);
-        System.out.println("****************Lista de Viagens por classificar**********************");
         List<Historico> porClassificar = umer.historicoViagensPorClassificar();
-        int i = 1;
-        for(Historico h: porClassificar){
-            System.out.println(i + " - " + h.imprimeHistoricoClienteLinha());
-        } 
-        
-        System.out.println("Selecione uma da opçoes acima ou 0 caso pretenda voltar ao menu anterior");
-        int opcao = is.nextInt(); 
-        
-        if(opcao > 0 && opcao < (porClassificar.size() +1)){
-            if(opcao == 0){
-                menuCliente();
+        if(porClassificar != null && porClassificar.size()> 0){
+            Scanner is =  new  Scanner(System.in);
+            System.out.println("****************Lista de Viagens por classificar**********************");
+           
+            int i = 1;
+            for(Historico h: porClassificar){
+                System.out.println(i + " - " + h.imprimeHistoricoClienteLinha());
+            } 
+            System.out.println("0 - Sair");
+            System.out.println("\nSelecione uma da opçoes acima ou 0 caso pretenda voltar ao menu anterior");
+            int opcao = is.nextInt(); 
+            is.close();
+            
+            if(opcao >= 0 && opcao < (porClassificar.size() +1)){
+                if(opcao == 0){
+                    menuCliente();
+                }
+                else {
+                    System.out.println("\f");
+                    menuClassificarViagem(porClassificar.get(opcao -1));
+                } 
             }
             else {
-                menuClassificarViagem(porClassificar.get(opcao -1));
-            } 
+                menuErro();
+                menuClassificarViagens();
+            }
         }
         else {
-            menuErro();
-            menuClassificarViagens();
+            System.out.println("Nao tem viagens por classificar");
+            menuCliente();
         }
         
     }
@@ -446,12 +456,14 @@ public class UMeRApp
         Scanner is =  new  Scanner(System.in);
         System.out.println("****************Classificar Viagem**********************");
         System.out.println(h.imprimeHistoricoClienteLinha());
-        System.out.println("\nIntroduza classificacao (0 - 100):"); 
+        System.out.println("\nIntroduza classificacao (1 - 100):"); 
         int classificacao = is.nextInt();
         
-        if(classificacao > 0 && classificacao < 101){
+        is.close();
+        if(classificacao > 0 && classificacao <= 100){
             umer.atualizaClassificacao(h, classificacao);
             System.out.println("Classificacao atualizada");
+            menuCliente();
         }
         else {
             menuErro();
@@ -516,7 +528,6 @@ public class UMeRApp
                 requisitarTaxiEspecifico(destino);
                 break;
             }
-            
             case 0:{
                 inserirCoordenadas();
                 break;
@@ -526,7 +537,6 @@ public class UMeRApp
                 break;
             }
         }
- 
     }
     
     /**
@@ -541,19 +551,23 @@ public class UMeRApp
           motoristaMaisPerto = umer.motoristaMaisPertoCliente(clientelogado);   
        }
        
+       requisitarViagem(destino, motoristaMaisPerto); 
+    }
+    
+     static private void requisitarViagem(Coordenadas destino, Motorista m){
        Coordenadas localizacaoCliente = ((Cliente) umer.getAtorLoggado()).getLoc();
-       Coordenadas localizacaoMotorista = motoristaMaisPerto.getVeiculo().getLoc(); 
+       Coordenadas localizacaoMotorista = m.getVeiculo().getLoc(); 
        double distanciaAteCliente = localizacaoCliente.getDistancia(localizacaoMotorista); 
        double distanciaTotal = distanciaAteCliente + localizacaoCliente.getDistancia(destino); 
        
-       double duracaoEstimadaViagem = umer.duracaoEstimadaViagem (distanciaTotal, motoristaMaisPerto.getVeiculo().getVm());
-       double custoEstimado = umer.custoEstimadoViagem(distanciaTotal,  motoristaMaisPerto.getVeiculo().getPrecoPorKm()); 
+       double duracaoEstimadaViagem = umer.duracaoEstimadaViagem (distanciaTotal, m.getVeiculo().getVm());
+       double custoEstimado = umer.custoEstimadoViagem(distanciaTotal,  m.getVeiculo().getPrecoPorKm()); 
        
-       System.out.println("Motorista mais perto: " +motoristaMaisPerto.getNome()+ " | Veiculo: " +motoristaMaisPerto.getVeiculo().getMatricula()); 
+       System.out.println("Motorista: " +m.getNome()+ " | Veiculo: " +m.getVeiculo().getMatricula()); 
        System.out.println("Duração Estimada da Viagem (minutos): " +duracaoEstimadaViagem); 
        System.out.println("Custo Estimado da Viagem (euros): " +custoEstimado); 
     
-       propostaViagemMenu(destino, motoristaMaisPerto);   
+       propostaViagemMenu(destino, m);   
     }
     
     static private void propostaViagemMenu(Coordenadas destino, Motorista m){
@@ -655,23 +669,11 @@ public class UMeRApp
         AtorInterface ator = umer.getAtorLoggado(); 
         menu_dados_pessoais.executa();
         switch (menu_dados_pessoais.getOpcao()) {
-            case 1 : {
-                if(ator instanceof Cliente){
-                    editarDadosPessoais();
-                    umer.atualizarUtilizador(ator);
-                }
-                else if(ator instanceof Motorista){
-                    editarDadosPessoais();
-                    umer.atualizarUtilizador(ator);
-                }
-                else {
-                    editarDadosPessoais();
-                    umer.atualizarUtilizador(ator);   
-                }
+            case 1 : {            
+                editarDadosPessoais();   
                 break;
             }
             case 0 : {
-                
                if(ator instanceof Cliente){
                     menuCliente(); 
                 }
@@ -692,11 +694,46 @@ public class UMeRApp
         }
    }
 
-   
+   /**
+    * 
+    */
     
-    static private void requisitarTaxiEspecifico(Coordenadas destino){
-    
-    }
+   static private void requisitarTaxiEspecifico(Coordenadas destino){
+        List<AtorInterface> motoristas = umer.listaDeMotoristasLivres((Cliente) umer.getAtorLoggado());
+        if(motoristas != null && motoristas.size() > 0){
+           Scanner is =  new  Scanner(System.in);
+           System.out.println("****************Lista de Motoristas**********************");
+           
+           int i = 1;
+           for(AtorInterface ator: motoristas){
+               System.out.println(i + " - " + ((Motorista) ator).apresenteDadosParaCliente());
+               i++;
+           } 
+           System.out.println("0 - Sair");
+           System.out.println("\nSelecione uma da opçoes acima ou 0 caso pretenda voltar ao menu anterior");
+           int opcao = is.nextInt(); 
+           is.close();
+            
+           if(opcao >= 0 && opcao < (motoristas.size() +1)){
+               if(opcao == 0){
+                   menuCliente();
+               }
+               else {
+                   System.out.println("\f");
+                   requisitarViagem(destino, (Motorista) motoristas.get(opcao -1));
+
+               } 
+           }
+           else {
+               menuErro();
+               requisitarTaxiEspecifico(destino);
+           } 
+        }
+        else {
+            System.out.println("Nao existem motoristas livres neste momento. Tente mais tarde");
+            menuCliente();
+        }
+   }
     
 
     /**
@@ -740,7 +777,7 @@ public class UMeRApp
             ator =  new  Admin(atorLogado.getEmail(), nome, password, morada, dataNascimento,  new  Coordenadas());
         }
         umer.atualizarUtilizador(ator);
-        System.out.print ('\f');
+        System.out.print ("\f");
         System.out.print("Parabéns atualizou os seus dados pessoais\n");
         //Tem de voltar ao menus anterior/ meno do tipo de ator
         if(atorLogado instanceof Cliente){
@@ -749,7 +786,8 @@ public class UMeRApp
         else if(atorLogado instanceof Motorista){
             menuMotorista();  
         }
-        else{ menuAdmin();       
+        else{ 
+            menuAdmin();       
         }
         
         
@@ -766,7 +804,7 @@ public class UMeRApp
                 /* TODO: adicionar menus das outras funcionaldiade do admin case 2: verHistoricoViagens(); break; case 3: verDadosPessoais(); break;*/
             }
             case 2 :{
-                alteraHorarioTrabalho();
+                menuAlteraHorarioTrabalho();
                 break;   
             }
             case 3 : {
@@ -778,7 +816,7 @@ public class UMeRApp
                 break;
             }
             case 5 : {
-                MenuRegistarVeiculo();
+                menuRegistarVeiculo();
                 break;
             }
             
@@ -800,7 +838,9 @@ public class UMeRApp
         
     }
     
-    
+    /**
+     * 
+     */
     static private void gestaoViagem(){
         Motorista motoristaLoggado = (Motorista) umer.getAtorLoggado(); 
         if(motoristaLoggado.getDisponivel()){
@@ -834,8 +874,10 @@ public class UMeRApp
        menuMotorista(); 
     }
     
-    static private void alteraHorarioTrabalho(){
-        if(((Motorista) umer.getAtorLoggado()).getHorarioTrabalho()){
+    static private void menuAlteraHorarioTrabalho(){
+        Motorista m = (Motorista) umer.getAtorLoggado();
+        
+        if(m.getHorarioTrabalho()){
             menu_terminar_horario_trabalho.executa();
             switch (menu_terminar_horario_trabalho.getOpcao()) {
                 case 1 : {
@@ -848,7 +890,7 @@ public class UMeRApp
                 }
                 default : {
                     menuErro();
-                    alteraHorarioTrabalho(); 
+                    menuAlteraHorarioTrabalho(); 
                     break;      
                 }
             }
@@ -866,7 +908,7 @@ public class UMeRApp
                 }
                 default : 
                     menuErro();
-                    alteraHorarioTrabalho();  
+                    menuAlteraHorarioTrabalho();  
                     break;
             }
         }
@@ -880,7 +922,6 @@ public class UMeRApp
        umer.atualizaHorario(false); 
        System.out.println("Terminou o seu horário de trabalho :) "); 
        menuMotorista();
-    
     }
     
     static private void iniciarHorarioTrabalho(){
@@ -890,7 +931,6 @@ public class UMeRApp
        umer.atualizaHorario(true); 
        System.out.println("Iniciou o seu horário de trabalho :) "); 
        menuMotorista();
-        
     }
     
     static private void menuHistoricoViagens(){
@@ -900,8 +940,20 @@ public class UMeRApp
                 visualizaHistorico();
                 break;
             }
+            case 2: {
+                visualizaHistoricoEntreDatas();
+                break;
+            }
             case 0 : {
-                menuMotorista();
+                if(umer.getAtorLoggado() instanceof Motorista) {
+                    menuMotorista();
+                }
+                else if (umer.getAtorLoggado() instanceof Cliente) {
+                    menuCliente();
+                }
+                else {
+                    menuAdmin();
+                }
                 break;
             }
             default : {
@@ -939,6 +991,41 @@ public class UMeRApp
         
     }
     
+    static private void visualizaHistoricoEntreDatas(){
+        Scanner is =  new  Scanner(System.in);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
+        System.out.println("Insira a data inicial (yyyy-mm-dd): ");
+        LocalDate inicio = LocalDate.parse(is.nextLine(), formatter);
+        LocalDateTime inicioTime = LocalDateTime.of(inicio, LocalDateTime.MIN.toLocalTime());
+        System.out.println("Insira a data final (yyyy-mm-dd): ");
+        LocalDate fim = LocalDate.parse(is.nextLine(), formatter);
+        LocalDateTime fimTime = LocalDateTime.of(fim, LocalDateTime.MIN.toLocalTime());
+        is.close();
+        
+        List<Historico> historicoEntreDatas = umer.historicoEntreDatas(inicioTime, fimTime);
+        
+        if(historicoEntreDatas != null && historicoEntreDatas.size() > 0){
+            
+            if(umer.getAtorLoggado() instanceof Motorista){        
+                for(Historico h: historicoEntreDatas){
+                    System.out.println(h.imprimeHistoricoMotoristaLinha());
+                }
+                menuHistoricoViagens();
+            }
+            else {
+                 for(Historico h: historicoEntreDatas){
+                    System.out.println(h.imprimeHistoricoClienteLinha());
+                }
+                menuHistoricoViagens();
+            }
+        }
+        else {
+            System.out.println("Nao tem historico entre as duas datas inseridas");
+            menuHistoricoViagens();   
+        }
+        
+    }
+    
     static private void visualizarMelhoresClientes(){
     
     }
@@ -952,7 +1039,7 @@ public class UMeRApp
         menu_admin.executa();
         switch (menu_admin.getOpcao()) {
             case 1 : {
-                MenuRegistarVeiculo(); 
+                menuRegistarVeiculo(); 
                 break; 
             }            
             case 2 : {
@@ -1060,7 +1147,7 @@ public class UMeRApp
         catch (ViaturaExistenteException e) {
             System.out.println("Este veiculo já existe!");
             /* TODO: Apresentar mensagem de erro e depois esperar por um entrar e voltar para o menu principal (inicial);*/
-            MenuRegistarVeiculo(); 
+            menuRegistarVeiculo(); 
         }
 
      }
@@ -1068,12 +1155,19 @@ public class UMeRApp
      /**
      * 
      */
-    static private void MenuRegistarVeiculo()
+    static private void menuRegistarVeiculo()
     {
+        boolean jaTemCarro = false;
+        if(umer.getAtorLoggado() instanceof Motorista){
+            Motorista m = (Motorista) umer.getAtorLoggado();
+            if(m.getVeiculo() != null){
+                jaTemCarro = true;
+            }
+        }
         menu_registar_veiculos.executa();
         int opcao = menu_registar_veiculos.getOpcao();
    
-        if (opcao != 0) {
+        if (opcao != 0 && jaTemCarro == false) {
             registarVeiculo(opcao);
         }
         else {
@@ -1081,7 +1175,13 @@ public class UMeRApp
                 menuAdmin(); 
             }
             else if(umer.getAtorLoggado() instanceof Motorista){
-                menuMotorista();
+                if(jaTemCarro){
+                    System.out.println("Ja tem carro associado. Por favor remova o veiculo primeiro e so depois adicione o veiculo novo");
+                    menuMotorista();
+                }
+                else {
+                    menuMotorista();
+                }
             }
         }
     }

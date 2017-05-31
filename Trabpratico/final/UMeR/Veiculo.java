@@ -129,6 +129,16 @@ public abstract class Veiculo implements Serializable{
         sb.append("Localização do veiculo: " +this.getLoc().toString() +"\n"); 
         return sb.toString(); 
     }
+    
+    public String apresentaDadosCliente (){
+        StringBuilder sb = new StringBuilder(); 
+        sb.append(" | Matricula: " +this.matricula); 
+        sb.append(" | Marca: " +this.marca); 
+        sb.append(" | Fiabilidade do veiculo: " + this.fiabilidade);
+        sb.append(this.loc.apresentaDadosCliente()); 
+        return sb.toString(); 
+    }
+    
 
     /*
      * metodo que permite ordenar collections de veiculos

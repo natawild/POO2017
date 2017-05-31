@@ -92,6 +92,13 @@ public class Coordenadas implements Serializable{
        str.append(" y: " + this.y);         
        return str.toString();
     }
+    
+    public String apresentaDadosCliente(){
+       StringBuilder str = new StringBuilder(" | Coordenadas (x | y): ");
+       str.append(this.x);
+       str.append(" | " + this.y);         
+       return str.toString();
+    }
         
     /**
      * A função equals recebe um Objeto genérico e verifica se é exatamente igual a uma Coordenada.

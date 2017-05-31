@@ -748,32 +748,11 @@ public class BD implements BDInterface, Serializable {
         m.setGrauCumprimentoHorario(grauDeCumprimento);
     }
     
-    public List<Historico> historicoViagensPorAtor (AtorInterface ator){
-        List<Historico> historicoPorAtor = new ArrayList<Historico>();
-        
-        if(ator instanceof Motorista) {
-            for(Historico h: this.historico){
-                if(h.getEmailMotorista().equals(ator.getEmail()) && h.getTerminado()){
-                    historicoPorAtor.add(h.clone());
-                }
-            }
-        } 
-        else if(ator instanceof Cliente){
-             for(Historico h: this.historico){
-                if(h.getEmailCliente().equals(ator.getEmail()) && h.getTerminado()){
-                    historicoPorAtor.add(h.clone());
-                }
-             }
-        }
-        
-        return historicoPorAtor;
-    }
-    
     public List<Historico> historicoViagensPorClassificarPorAtor(AtorInterface ator){
         List<Historico> historico = new ArrayList<Historico>();
 
         for(Historico h: this.historico){
-            if(h.getEmailMotorista().equals(ator.getEmail()) && h.getClassificacao() > 0){
+            if(h.getEmailCliente().equals(ator.getEmail()) && h.getClassificacao() == 0 &&  h.getTerminado()){
                 historico.add(h.clone());
             }
         }  

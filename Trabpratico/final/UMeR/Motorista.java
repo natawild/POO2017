@@ -276,6 +276,18 @@ public class Motorista extends Ator implements AtorInterface, Serializable{
         return sb.toString(); 
     }
     
+    public String apresenteDadosParaCliente(){ 
+        StringBuilder sb = new StringBuilder(); 
+        sb.append(super.apresenteDadosParaCliente());
+        sb.append(" | Classificação: " + this.classificacao); 
+        sb.append(" | Grau de cumprimento de Horario: " + this.grauCumprimentoHorario);
+        sb.append(" | Total Kms efetuados: " + this.totalKms); 
+        sb.append(" | Destreza: " + this.destreza); 
+        sb.append(" | Total de viagens: " + this.totalViagens); 
+        sb.append(this.veiculo.apresentaDadosCliente()); 
+        return sb.toString(); 
+    }
+    
     
     public Motorista clone (){
         return new Motorista(this);    

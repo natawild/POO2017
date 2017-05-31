@@ -1,4 +1,5 @@
 import java.util.List; 
+import java.util.Iterator;
 import java.util.ArrayList; 
 import java.util.Set; 
 import java.util.TreeSet; 
@@ -381,7 +382,7 @@ public class UMeR{
     
     public Motorista motoristaMaisPertoCliente (Cliente cliente){
        double novaDistancia = Double.MAX_VALUE; 
-        Motorista maisPerto = null; 
+       Motorista maisPerto = null; 
         
        for(AtorInterface m : ((BD)this.baseDeDados).getMotoristas().values()){
             if(m instanceof Motorista){
@@ -399,6 +400,37 @@ public class UMeR{
        return maisPerto;
     }
     
+    public List<AtorInterface> listaDeMotoristasLivres(Cliente cliente){
+        List<AtorInterface> motoristas = new ArrayList<AtorInterface>();
+        
+        for(AtorInterface m : ((BD)this.baseDeDados).getMotoristas().values()){
+            Motorista m1 = (Motorista) m;
+
+            if (m1.getVeiculo() != null){
+                Coordenadas coordVeic = m1.getVeiculo().getLoc(); //localizacao do motorista 
+                double distancia= coordVeic.getDistancia(cliente.getLoc());
+                if(m1.getDisponivel() && m1.getHorarioTrabalho()){
+                   inserirOrdenadoLista(motoristas, cliente, m1);
+                }
+           }
+       }
+       return motoristas;   
+    }
+    
+   private void inserirOrdenadoLista(List<AtorInterface> motoristas, Cliente c, Motorista m){
+        int i= 0;
+        for(AtorInterface ator: motoristas){
+            Motorista m1 = (Motorista) m;
+            if (m1.getVeiculo() != null){
+                Coordenadas coordVeic = m1.getVeiculo().getLoc();
+                if(coordVeic.getDistancia(c.getLoc()) < c.getLoc().getDistancia(m.getVeiculo().getLoc())){
+                    i++;
+                    System.out.println("i++");
+                }
+            }
+        }
+        motoristas.add(i, m.clone());
+    }
     
     
     /**
@@ -432,41 +464,7 @@ public class UMeR{
         return map;
     }
     */
-    
-    
-    /**
-     * motoristas ordenados pela menor distancia a um cliente
-     * treset de motoristas 
-     */
-    
-    /*
-    public Set<AtorInterface> procuraMotoristaMaisPerto (Cliente c){
-        Set<Veiculo> conjVeiculos= new TreeSet<>(//new ComparatorMotoristas()); 
-
-        for(Veiculo v: conjVeiculos){
-            double distancia = c.getLoc().getDistancia(v.getLoc());
-            
-            if(conjVeiculos.isEmpty()){
-                conjVeiculos.add(v);
-            }
-            
-            else {
-                for(Veiculo v2: conjVeiculos){
-                    if(c.getLoc().getDistancia(v2.getLoc()) > distancia){
-                        int index = conjVeiculos.get(v2);
-                        conjVeiculos.add(index, v);
-                        break;
-                    }
-    
-                }
-            }
-            
-            
-        }
-        
-        return conjVeiculos;
-    }
-    */
+   
     
     /**
      * Gravar o estado da aplicação num determinado ficheiro.
@@ -561,8 +559,49 @@ public class UMeR{
    }
    
    public List<Historico> historicoViagens(){
-       return this.baseDeDados.historicoViagensPorAtor(this.atorLoggado);
+       List<Historico> historicoPorAtor = new ArrayList<Historico>();
+        
+        if(atorLoggado instanceof Motorista) {
+            for(Historico h: ((BD) this.baseDeDados).getHistorico()){
+                if(h.getEmailMotorista().equals(this.atorLoggado.getEmail()) && h.getTerminado()){
+                    historicoPorAtor.add(h.clone());
+                }
+            }
+        } 
+        else if(atorLoggado instanceof Cliente){
+             for(Historico h: ((BD) this.baseDeDados).getHistorico()){
+                if(h.getEmailCliente().equals(this.atorLoggado.getEmail()) && h.getTerminado()){
+                    historicoPorAtor.add(h.clone());
+                }
+             }
+        }
+        
+        return historicoPorAtor;   
    }
+   
+   public List<Historico> historicoEntreDatas(LocalDateTime inicio, LocalDateTime fim) {  
+        List<Historico> historico = new ArrayList<Historico>();
+        Iterator<Historico> iterator = ((BD) this.baseDeDados).getHistorico().iterator();
+        
+        if(this.atorLoggado instanceof Motorista) {
+            while(iterator.hasNext()) {
+                Historico h = iterator.next();
+                if(h.getEmailMotorista().equals(this.atorLoggado.getEmail()) && h.getTerminado() && h.getDataDeInicioDeServico().isAfter(inicio) && h.getDataDeInicioDeServico().isBefore(fim)){
+                    historico.add(h.clone());
+                }
+            }   
+        }
+        else {
+            while(iterator.hasNext()) {
+                Historico h = iterator.next();
+                if(h.getEmailCliente().equals(this.atorLoggado.getEmail()) && h.getTerminado() && h.getDataDeInicioDeServico().isAfter(inicio) && h.getDataDeInicioDeServico().isBefore(fim)){
+                    historico.add(h.clone());
+                }
+            }   
+        }
+        
+        return historico;                
+    }
    
    public List<Historico> historicoViagensPorClassificar(){
        return this.baseDeDados.historicoViagensPorClassificarPorAtor(this.atorLoggado);

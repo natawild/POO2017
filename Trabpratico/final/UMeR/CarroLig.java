@@ -100,7 +100,14 @@ public class CarroLig extends Veiculo implements VeiculoInterface,Serializable{
         return sb.toString(); 
     }
     
-    
+    public String apresentaDadosCliente (){
+        StringBuilder sb = new StringBuilder(); 
+        sb.append(super.apresentaDadosCliente());
+        sb.append(" | Lugares disponiveis: " + this.lugaresLivres);  
+        sb.append(" | Velocidade Média: " + this.vm);
+        sb.append(" | Preço por Km: " +this.precoPorKm); 
+        return sb.toString();
+    }
     
     public CarroLig clone(){
         return new CarroLig (this); 
