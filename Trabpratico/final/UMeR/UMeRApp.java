@@ -117,10 +117,9 @@ public class UMeRApp
         String[] menu2 = {"Cliente", "Motorista"};
         String[] menu3 = {"Solicitar Viagem", "Visualizar Histórico de viagens", "Classificar Viagens" , "Ver Dados Pessoais"};
         String[] menu4 = {"Gerir Viagens","Gerir Horário de trabalho", "Visualizar Histórico de viagens", 
-                            "Visualizar 10 melhores clientes", "Registar Veiculo", "Ver Dados Pessoais"};
-        String[] menu5 = {"Registar Veiculo","Remover Veiculo ", "Ver Lista dos utilizadores registados",
-                            "Ver Lista dos Veiculos Registados", "Visualizar Histórico de viagens" , "Ver Lista dos clientes que mais gastam", 
-                            "Ver Dados Pessoais"};
+                            "Visualizar 10 melhores clientes", "Registar Veiculo", "Remover Veiculo" ,"Ver Dados Pessoais"};
+        String[] menu5 = {"Ver Lista dos utilizadores registados", "Ver Lista dos Veiculos Registados", "Visualizar Histórico de viagens" , 
+                            "Ver Lista dos clientes que mais gastam", "Ver Lista de motoristas com mais desvios de tempo", "Ver Lista de motoristas com mais desvios de custo" ,"Ver Dados Pessoais"};
         String[] menu6 = {"Lista de Carros de um dado tipo" };
         String[] menu7 = {"Viagens Efetuadas (entre datas)", "Ver 10 clientes que mais gastam"};
         String[] menu8 = {"Moto", "Carro Ligeiro", "Carrinha", "Moto Com Fila de Espera", 
@@ -424,6 +423,7 @@ public class UMeRApp
             int i = 1;
             for(Historico h: porClassificar){
                 System.out.println(i + " - " + h.imprimeHistoricoClienteLinha());
+                i++;
             } 
             System.out.println("0 - Sair");
             System.out.println("\nSelecione uma da opçoes acima ou 0 caso pretenda voltar ao menu anterior");
@@ -801,7 +801,6 @@ public class UMeRApp
             case 1 : {
                 gestaoViagem();
                 break;
-                /* TODO: adicionar menus das outras funcionaldiade do admin case 2: verHistoricoViagens(); break; case 3: verDadosPessoais(); break;*/
             }
             case 2 :{
                 menuAlteraHorarioTrabalho();
@@ -812,15 +811,18 @@ public class UMeRApp
                 break;
             }
             case 4 : {
-                visualizarMelhoresClientes();
+                listaClientesMaisGastam();
                 break;
             }
             case 5 : {
                 menuRegistarVeiculo();
                 break;
             }
-            
             case 6 : {
+                menuRemoverVeiculo();
+                break;
+            }
+            case 7 : {
                 verDadosPessoais();
                 break; 
             }
@@ -834,8 +836,7 @@ public class UMeRApp
                 menuMotorista();
                 break;
             }
-        }
-        
+        }   
     }
     
     /**
@@ -969,7 +970,7 @@ public class UMeRApp
         List<Historico> historico = umer.historicoViagens();
         
         if(historico!= null && historico.size()>0){
-            System.out.println("Hsitorico de Viagens efeutadas: ");
+            System.out.println("Hsitorico de Viagens efetuadas: ");
             
             if(umer.getAtorLoggado() instanceof Motorista){
                 for(Historico h: historico){
@@ -992,7 +993,7 @@ public class UMeRApp
         }
         else {
             System.out.println("Nao tem historico");
-            menuCliente();
+            menuHistoricoViagens();
         }
         
     }
@@ -1034,12 +1035,7 @@ public class UMeRApp
         else {
             System.out.println("Nao tem historico entre as duas datas inseridas");
             menuHistoricoViagens();   
-        }
-        
-    }
-    
-    static private void visualizarMelhoresClientes(){
-    
+        }  
     }
     
     
@@ -1050,29 +1046,38 @@ public class UMeRApp
     {
         menu_admin.executa();
         switch (menu_admin.getOpcao()) {
+            /*
             case 1 : {
                 menuRegistarVeiculo(); 
                 break; 
             }            
             case 2 : {
-                removerVeiculo(); 
+                menuRemoverVeiculo(); 
                 break; 
             }
-            case 3 : {
+            */
+            case 1 : {
                 listaUtilizadores();
                 break;
-                /* TODO: adicionar menus das outras funcionaldiade do admin case 2: verHistoricoViagens(); break; case 3: verDadosPessoais(); break;*/
             } 
-            case 4: {
+            case 2: {
                 listaVeiculos(); 
                 break;
             }
-            case 5: {
+            case 3: {
                 menuHistoricoViagens(); 
                 break; 
             }
+            case 4: {
+                listaClientesMaisGastam(); 
+                break; 
+            }
+            case 5: {
+                motoristasComMaisDesviosDeTempo(); 
+                break; 
+            }
             case 6: {
-                listaUtilizadoresMaisGastamNaUMeR(); 
+                motoristasComMaisDesviosDeCusto(); 
                 break; 
             }
             case 7 : {
@@ -1091,7 +1096,49 @@ public class UMeRApp
             }
         }
     }
-
+    
+    /**
+     * 
+     */
+    static private void motoristasComMaisDesviosDeTempo(){
+        List<Motorista> motoristas = umer.motoristasComMaisDesviosDeTempo();
+         
+         if(motoristas != null && motoristas.size() > 0){
+            System.out.println("********* Top 5 Motoristas com mais desvios de tempo ***********");
+            for(Motorista m: motoristas){
+                System.out.println("Nome: " + m.getNome() + " | email: " + m.getEmail() + " | Grau de cumprimento de horario: " + m.getGrauCumprimentoHorario());
+            }
+            menuAdmin();
+        }
+        else {
+            System.out.println("Nao tem historico de viagens");
+            menuAdmin();
+        }
+    }
+    
+    /**
+     * Mostra top 5 e motorista com mais desvios de custos
+     */
+    
+    static private void motoristasComMaisDesviosDeCusto(){
+        List<Motorista> motoristas = umer.motoristasComMaisDesviosDeCusto();
+         
+         if(motoristas != null && motoristas.size() > 0){
+            System.out.println("********* Top 5 Motoristas com mais desvios de custos ***********");
+            for(Motorista m: motoristas){
+                System.out.println("Nome: " + m.getNome() + " | email: " + m.getEmail() + " | Grau de cumprimento de custo: " + umer.grauCumprimentoCusto(m));
+            }
+            menuAdmin();
+        }
+        else {
+            System.out.println("Nao tem historico de viagens");
+            menuAdmin();
+        }
+    }
+    
+    /**
+     * 
+     */
     static private void registarVeiculo(int opcao){
         AtorInterface atorLogado = umer.getAtorLoggado();
    
@@ -1149,20 +1196,20 @@ public class UMeRApp
             AtorInterface atorLogadoAtualizado = ((Motorista) umer.getAtorLoggado()).setVeiculo(veiculo);
             umer.setAtorLoggado(atorLogadoAtualizado); 
             */
+          
            if(atorLogado instanceof Motorista){             
                umer.atualizaVeiculoAtorLogado(veiculo); 
                umer.adicionaVeiculoAMotorista(veiculo); 
+               System.out.print("Veiculo Registado na UMeR!");
                menuMotorista();
            }
            else if(atorLogado instanceof Admin){
+               System.out.print("Veiculo Registado na UMeR!");
                menuAdmin();
-           }
-           
-           System.out.print("Veiculo Registado na UMeR!");
+           } 
         }
         catch (ViaturaExistenteException e) {
             System.out.println("Este veiculo já existe!");
-            /* TODO: Apresentar mensagem de erro e depois esperar por um entrar e voltar para o menu principal (inicial);*/
             menuRegistarVeiculo(); 
         }
 
@@ -1173,18 +1220,31 @@ public class UMeRApp
      */
     static private void menuRegistarVeiculo()
     {
-        boolean jaTemCarro = false;
-        if(umer.getAtorLoggado() instanceof Motorista){
-            Motorista m = (Motorista) umer.getAtorLoggado();
-            if(m.getVeiculo() != null){
-                jaTemCarro = true;
+        boolean jaTemCarro = umer.temVeiculo();
+        
+        if (jaTemCarro == false) {
+            menu_registar_veiculos.executa();
+            int opcao = menu_registar_veiculos.getOpcao();
+            if(opcao > 0 && opcao < 7){
+                registarVeiculo(opcao);
             }
-        }
-        menu_registar_veiculos.executa();
-        int opcao = menu_registar_veiculos.getOpcao();
-   
-        if (opcao != 0 && jaTemCarro == false) {
-            registarVeiculo(opcao);
+            else if(opcao == 0) {
+                 if(umer.getAtorLoggado() instanceof Motorista){
+                     menuMotorista();
+                 }
+                 else if(umer.getAtorLoggado() instanceof Admin){
+                    menuAdmin(); 
+                 }
+            }
+            else {
+                menuErro();
+                if(umer.getAtorLoggado() instanceof Motorista){
+                    menuRegistarVeiculo();
+                }
+                else if(umer.getAtorLoggado() instanceof Admin){
+                    menuRegistarVeiculo(); 
+                }
+            }  
         }
         else {
             if(umer.getAtorLoggado() instanceof Admin){
@@ -1204,13 +1264,26 @@ public class UMeRApp
   
     
     /**
-     * Admin remove veiculo da base de dados 
+
+     * remove veiculo da base de dados 
      */
-    static private void removerVeiculo(){
-        /*
-        Veiculo veiculo; 
-        umer.listaVeiculos().remove(veiculo.getMatricula());
-        */
+    static private void menuRemoverVeiculo(){
+        boolean naoTemVeiculo = true;
+        
+        if( umer.getAtorLoggado() instanceof Motorista) {
+            Motorista motorista = (Motorista) umer.getAtorLoggado();
+            if(motorista.getVeiculo() != null && motorista.getViagemEmProcesso() == null){
+                umer.removeVeiculoDeAtor();
+                menuMotorista();
+            }
+            else {
+                System.out.println("Nao tem veiculo associado ou esta a efetuar uma viagem");
+                menuMotorista();
+            } 
+        } 
+        else {
+          //menuRemoverVeiculo  
+        }
     }
     
     /**
@@ -1241,8 +1314,29 @@ public class UMeRApp
         menuAdmin();
     }
 
-    static private void listaUtilizadoresMaisGastamNaUMeR(){
-    
+    static private void listaClientesMaisGastam(){
+        List<AtorInterface> clientesQueMaisGastam = umer.listaClientesMaisGastam();
+        if(clientesQueMaisGastam != null && clientesQueMaisGastam.size() > 0){
+            System.out.println("*********** Top 10 clientes *****************");
+            for(AtorInterface ator: clientesQueMaisGastam){
+                System.out.println("Nome: " + ator.getNome() + " | email: " + ator.getEmail() + " | total gasto (euros): " + umer.totalGastoPorCliente(ator));
+            }
+            if(umer.getAtorLoggado() instanceof Motorista){
+                menuMotorista();
+            }
+            else if (umer.getAtorLoggado() instanceof Admin) {
+                menuAdmin();
+            }
+        }
+        else {
+            System.out.println("Nao tem historico de viagens");
+            if(umer.getAtorLoggado() instanceof Motorista){
+                menuMotorista();
+            }
+            else if (umer.getAtorLoggado() instanceof Admin) {
+                menuAdmin();
+            }
+        }
     }
     
     /**

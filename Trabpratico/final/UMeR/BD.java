@@ -638,7 +638,14 @@ public class BD implements BDInterface, Serializable {
          return null;
     }
     
-    
+    public AtorInterface getAdminComEmail(String email){
+         for(AtorInterface ator: this.admins.values()){
+             if(ator.getEmail().equals(email)){
+                return ator.clone();
+             }
+         }
+         return null;
+    }
   
     
     public boolean carroEstaRegistado(String matricula){
@@ -784,6 +791,25 @@ public class BD implements BDInterface, Serializable {
         m.setClassificacao(classificacaoMotorista);
     }
     
+    public void removeVeiculoDeAtor(AtorInterface ator){
+        Motorista atorGuardado = (Motorista) this.motoristas.get(ator.getEmail());
+        atorGuardado.setVeiculo(null);
+        this.motoristas.put(atorGuardado.getEmail(), atorGuardado);
+    }
+    
+    public List<Historico> historicoViagensPorAtor(AtorInterface ator){
+        List<Historico> historico = new ArrayList<Historico>();
+        
+        if(ator instanceof Motorista){
+            for(Historico h: this.historico){
+                if(h.getEmailMotorista().equals(ator.getEmail()) && h.getTerminado()){
+                    historico.add(h.clone());
+                }
+            }
+        }
+         
+        return  historico;
+    }
 }
     
  

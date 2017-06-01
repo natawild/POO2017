@@ -1,6 +1,7 @@
 import java.time.LocalDate; 
 import java.io.Serializable;
 import java.util.Random;
+import java.util.Comparator;
 /**
  * A classe Motorista terá todas as informações relativas a um motorista, este que é um colaborador 
  * da UMeR. Tem todos os dados presentes na classe Ator, e ainda a acrescentar os seus próprios dados: 
@@ -14,7 +15,7 @@ import java.util.Random;
  * @celia  
  * @version 1.0
  */
-public class Motorista extends Ator implements AtorInterface, Serializable{ 
+public class Motorista extends Ator implements AtorInterface, Serializable, Comparable<Motorista>{ 
     private int grauCumprimentoHorario; //0-100
     private int classificacao; //0-100
     private double totalKms; 
@@ -174,7 +175,12 @@ public class Motorista extends Ator implements AtorInterface, Serializable{
     }
     
     public void setVeiculo (VeiculoInterface v){
-        this.veiculo = v.clone(); 
+        if(v != null){
+            this.veiculo = v.clone(); 
+        }
+        else {
+            this.veiculo = null;
+        }
         
     }
     
@@ -308,5 +314,19 @@ public class Motorista extends Ator implements AtorInterface, Serializable{
         }
     }
     
+    @Override
+    public int compareTo(Motorista o) {
+        return getNome().compareTo(o.getNome());
+    }
     
+    public static class Comparators {
+        public static Comparator<Motorista> GrauDeCumprimento = new Comparator<Motorista>() {
+            @Override
+            public int compare(Motorista o1, Motorista o2) {
+                return o2.getGrauCumprimentoHorario() - o1.getGrauCumprimentoHorario() ;
+            }
+        };  
+    }
+    
+
 }

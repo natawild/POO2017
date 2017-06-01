@@ -9,7 +9,6 @@ import java.io.Serializable;
  */
 public class Cliente extends Ator implements AtorInterface, Serializable{
     private Coordenadas loc;
-    private HistoricoCliente histClie;
     private boolean emViagem;
     /**
      * Construtor vazio
@@ -54,10 +53,6 @@ public class Cliente extends Ator implements AtorInterface, Serializable{
     public Coordenadas getLoc(){
         return this.loc.clone(); 
     
-    }
-    
-    public HistoricoCliente getHistClie(){
-         return this.histClie.clone();  
     }
     
     public boolean getEmViagem(){

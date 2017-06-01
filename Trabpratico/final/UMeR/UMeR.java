@@ -1,4 +1,7 @@
 import java.util.List; 
+import java.util.Collections;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.ArrayList; 
 import java.util.Set; 
@@ -13,6 +16,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.FileWriter;
 import java.util.Map; 
+import java.util.HashMap;
 import java.util.TreeMap; 
 import java.io.Serializable;
 import Exceptions.*;
@@ -269,37 +273,41 @@ public class UMeR{
      * 
      */
     public void atualizarUtilizador(AtorInterface ator) {
-        if(ator instanceof Cliente){
+       if(ator instanceof Cliente){
             Cliente novo = (Cliente) ator; 
-            
             if (((BD) this.baseDeDados).getClientes().containsKey(novo.getEmail())){
                 novo.setPassword(Utils.encriptar(novo.getPassword()));
                 Map<String, AtorInterface> clientesCopia = ((BD)this.baseDeDados).getClientes();
                 clientesCopia.put(novo.getEmail(), novo);
                 ((BD)this.baseDeDados).setClientes(clientesCopia);
-            }
-            
-        }
-        
-        //TODO: o mototista nao deve poder atualizar os dados da sua classificacao, desteza...
-        if(ator instanceof Motorista){
-            Motorista novo = (Motorista) ator; 
-            
+            }  
+       }
+       else if(ator instanceof Motorista){
+            Motorista novo = (Motorista) ator;          
             if (((BD) this.baseDeDados).getMotoristas().containsKey(novo.getEmail())){
                 novo.setPassword(Utils.encriptar(novo.getPassword()));
                 this.baseDeDados.atualizaAtor(novo);
-            }
-           
-        }
+            } 
+       } 
+       else if(ator instanceof Admin){
+           Admin novo= (Admin) ator; 
+           if (((BD) this.baseDeDados).getAdmins().containsKey(novo.getEmail())){
+               novo.setPassword(Utils.encriptar(novo.getPassword()));
+               this.baseDeDados.atualizaAtor(novo);
+           }
+       }
         
-        if(ator instanceof Admin){
-            Admin novo= (Admin) ator; 
-            
-            if (((BD) this.baseDeDados).getAdmins().containsKey(novo.getEmail())){
-                novo.setPassword(Utils.encriptar(novo.getPassword()));
-                this.baseDeDados.atualizaAtor(novo);
-            }
-        }
+       //atualizar ator loggado
+       if(this.atorLoggado instanceof Cliente){
+           this.atorLoggado = this.baseDeDados.getClienteComEmail(this.atorLoggado.getEmail());
+       }
+       else if(this.atorLoggado instanceof Motorista){
+           this.atorLoggado = this.baseDeDados.getMotoristaComEmail(this.atorLoggado.getEmail());
+       }
+       else if(this.atorLoggado instanceof Cliente){
+           this.atorLoggado = this.baseDeDados.getAdminComEmail(this.atorLoggado.getEmail());
+       }
+        
     }
     
     
@@ -353,10 +361,10 @@ public class UMeR{
             
         if (this.baseDeDados.carroEstaRegistado(veiculo.getMatricula())){
              throw new ViaturaExistenteException("Veiculo "+veiculo.getMatricula() +" já existe");
-         }
+        }
         else {
               this.baseDeDados.addVeiculo(veiculo);
-            } 
+        } 
     }
     
     public void associaMotoristaAVeiculo(Motorista m, VeiculoInterface v){
@@ -626,5 +634,155 @@ public class UMeR{
        this.baseDeDados.atualizaClassificacao(h, classificacao);
    }
    
+   public void removeVeiculoDeAtor(){
+       this.baseDeDados.removeVeiculoDeAtor(atorLoggado);
+   }
+   
+   public boolean temVeiculo(){
+       boolean jaTemCarro = false;
+       if(this.atorLoggado instanceof Motorista){
+           Motorista m = (Motorista) atorLoggado;
+           if(m.getVeiculo() != null){
+                jaTemCarro = true;
+           }
+       }
+       return jaTemCarro;
+   }
 
+   public List<AtorInterface> listaClientesMaisGastam(){
+      List<AtorInterface> listaClientesMaisGastam = new ArrayList<AtorInterface>();
+      Map<String, Double> totalGastoPorCliente = new TreeMap<String, Double>();
+
+      if(atorLoggado instanceof Motorista){
+           for(String emailCliente: ((BD) this.baseDeDados).getClientes().keySet()){  
+               Double totalPorCliente = 0d;
+               for(Historico h: ((BD) this.baseDeDados).getHistorico()){
+                   if(h.getEmailCliente().equals(emailCliente) && h.getEmailMotorista().equals(atorLoggado.getEmail()) && h.getTerminado()){
+                       totalPorCliente += h.getValorCobrado();
+                   }
+               }
+               totalGastoPorCliente.put(emailCliente, totalPorCliente);
+           }
+      }
+      else if(atorLoggado instanceof Admin){
+           for(String emailCliente: ((BD) this.baseDeDados).getClientes().keySet()){  
+               Double totalPorCliente = 0d;
+               for(Historico h: ((BD) this.baseDeDados).getHistorico()){
+                   if(h.getEmailCliente().equals(emailCliente) && h.getTerminado()){
+                       totalPorCliente += h.getValorCobrado();
+                   }
+               }
+               totalGastoPorCliente.put(emailCliente, totalPorCliente);
+           }
+      }
+       
+      TreeMap<String, Double> clintesQueMaisGastamOrdenado = new TreeMap<String, Double>(new ComparatorClientesQueMaisGastam(totalGastoPorCliente));
+      clintesQueMaisGastamOrdenado.putAll(totalGastoPorCliente);
+
+      int i =0;
+      for(String key: clintesQueMaisGastamOrdenado.descendingKeySet()){
+          if(i<9){
+              listaClientesMaisGastam.add(this.baseDeDados.getClienteComEmail(key));
+              i++;
+          }
+          else {
+              break;
+          }
+      } 
+      
+      return listaClientesMaisGastam;
+   }
+   
+   public double totalGastoPorCliente(AtorInterface cliente){
+       Double total = 0d;
+       
+       for(Historico h: ((BD) this.baseDeDados).getHistorico()){
+            if(h.getEmailCliente().equals(cliente.getEmail()) && h.getTerminado()){
+               total += h.getValorCobrado(); 
+            }
+       }
+       return total;
+   }
+   
+   public List<Motorista> motoristasComMaisDesviosDeTempo(){
+       List<Motorista> motoristasComMaisDesviosDeTempo = new ArrayList<Motorista>();
+       
+       for(AtorInterface ator: ((BD) this.baseDeDados).getMotoristas().values()){  
+           motoristasComMaisDesviosDeTempo.add((Motorista) ator);
+       }
+       
+       Collections.sort(motoristasComMaisDesviosDeTempo, Motorista.Comparators.GrauDeCumprimento);
+       
+       if(motoristasComMaisDesviosDeTempo.size() > 0 && motoristasComMaisDesviosDeTempo.size() <= 5)
+            return motoristasComMaisDesviosDeTempo.subList(0, motoristasComMaisDesviosDeTempo.size());
+       else 
+            return motoristasComMaisDesviosDeTempo.subList(0, 5);
+   }
+   
+   public List<Motorista> motoristasComMaisDesviosDeCusto(){
+       List<Motorista> motoristasComMaisDesviosDeTempo =  new ArrayList<Motorista>();
+       Map<String, Double> grauCumprimentoCustoPorMotorista = new TreeMap<>();
+       
+       for(AtorInterface ator: ((BD) this.baseDeDados).getMotoristas().values()){  
+           List<Historico> historicoPorCliente = this.baseDeDados.historicoViagensPorAtor(ator);
+           int i = 0;
+           double totalCusto = 0;
+           for(Historico h: historicoPorCliente){
+               totalCusto += (h.getValorCobrado()/h.getValorEstimado() ) * 100;
+               i++;
+           }
+            if(i == 0) {
+                totalCusto = 0;
+               
+            }
+            else {
+                totalCusto = totalCusto/ i;
+            }
+           grauCumprimentoCustoPorMotorista.put(ator.getEmail(), totalCusto);
+       }
+       System.out.println(grauCumprimentoCustoPorMotorista);
+       System.out.println("#####################");
+       
+       TreeMap<String, Double> motoristasOrdenados = new TreeMap<String, Double>(new ComparatorGrauCumprimentoCusto(grauCumprimentoCustoPorMotorista));
+       motoristasOrdenados.putAll(grauCumprimentoCustoPorMotorista);
+       
+       System.out.println(motoristasOrdenados);
+       System.out.println("#####################");
+      
+       int i = 0;
+       for(String email :motoristasOrdenados.keySet()){
+          if(i<5){
+              motoristasComMaisDesviosDeTempo.add((Motorista) this.baseDeDados.getMotoristaComEmail(email));
+              i++;
+          }  
+          else {
+              break;
+            }
+        }
+        
+        System.out.println(motoristasComMaisDesviosDeTempo);
+
+        return motoristasComMaisDesviosDeTempo;
+   }
+   
+   public int grauCumprimentoCusto(Motorista m){
+       int i = 0;
+       double totalCusto = 0;
+       List<Historico> historicoPorCliente = this.baseDeDados.historicoViagensPorAtor(m);
+       for(Historico h: historicoPorCliente){
+           totalCusto += (h.getValorCobrado()/h.getValorEstimado()) * 100;
+           i++;
+       }
+       if(i == 0) {
+        totalCusto = 0;
+       
+       }
+       else {
+           totalCusto = totalCusto/ i;
+       }
+       
+       return (int) totalCusto;
+   }
 }
+
+

@@ -46,6 +46,8 @@ public interface BDInterface{
     
     public AtorInterface getMotoristaComEmail(String email);
     
+    public AtorInterface getAdminComEmail(String email);
+    
     public List<String> matriculasReg();
     
     public boolean carroEstaRegistado(String matricula); 
@@ -71,4 +73,8 @@ public interface BDInterface{
     public List<Historico> historicoViagensPorClassificarPorAtor(AtorInterface ator);
     
     public void atualizaClassificacao(Historico h, int classificacao);
+    
+    public void removeVeiculoDeAtor(AtorInterface ator);
+    
+    public List<Historico> historicoViagensPorAtor(AtorInterface ator);
 }
