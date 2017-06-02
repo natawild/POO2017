@@ -12,7 +12,7 @@ public class CarroLig extends Veiculo implements VeiculoInterface,Serializable{
     //variável da classe
     private static final int lugaresLivres = 4;
     private static final double vm = 65; 
-    private static final double precoPorKm = 4.1;
+    private static final double precoPorKm = 3.5;
     
      /**
      * Construtor vazio. Como se trata de uma subclasse de Veiculo, utilizamos o construtor super 

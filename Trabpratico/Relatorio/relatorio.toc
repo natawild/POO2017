@@ -30,5 +30,10 @@
 \contentsline {section}{\numberline {3.10}UMeRMenu}{11}
 \contentsline {section}{\numberline {3.11}UMeR}{11}
 \contentsline {section}{\numberline {3.12}UMeRApp}{11}
-\contentsline {chapter}{\numberline {4}Funcionamento da Aplica\IeC {\c c}\IeC {\~a}o UMeR}{12}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{13}
+\contentsline {chapter}{\numberline {4}Funcionamento da Aplica\IeC {\c c}\IeC {\~a}o UMeR}{13}
+\contentsline {section}{\numberline {4.1}Menu Inicial}{13}
+\contentsline {subsection}{\numberline {4.1.1}Registo}{13}
+\contentsline {subsection}{\numberline {4.1.2}Iniciar Sess\IeC {\~a}o }{14}
+\contentsline {subsubsection}{Cliente}{14}
+\contentsline {subsubsection}{Motorista}{15}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{18}
