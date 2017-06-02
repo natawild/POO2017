@@ -1,5 +1,6 @@
 import java.util.List; 
 import java.util.Set;
+import java.time.LocalDateTime; 
 /**
  * A interface BDInterface serve para especificar quais métodos que as classes terão que implementar. 
  * Quando uma classe implementa BDInterface, esta classe também precisa de implementar todos os métodos 
@@ -40,8 +41,6 @@ public interface BDInterface{
     
     public List<AtorInterface> findClientePeloNome (String nome);
     
-    /*public boolean loginValido(String email, String password);*/
-    
     public AtorInterface getClienteComEmail(String email);
     
     public AtorInterface getMotoristaComEmail(String email);
@@ -77,4 +76,8 @@ public interface BDInterface{
     public void removeVeiculoDeAtor(AtorInterface ator);
     
     public List<Historico> historicoViagensPorAtor(AtorInterface ator);
+    
+    public List<Historico> historicoViagensPorAtor(AtorInterface ator, LocalDateTime inicio, LocalDateTime fim);
+    
+    public AtorInterface atualizaLocalizacao(AtorInterface ator, Coordenadas loc);
 }

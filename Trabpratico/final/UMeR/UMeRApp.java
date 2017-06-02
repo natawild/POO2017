@@ -36,6 +36,7 @@ public class UMeRApp
     private static UMeRMenu menu_iniciar_horario_trabalho;
     private static UMeRMenu menu_proposta_viagem;
     private static UMeRMenu menu_historico;
+    private static UMeRMenu menu_faturas_motoristas;
     /**
      * 
      */
@@ -117,9 +118,10 @@ public class UMeRApp
         String[] menu2 = {"Cliente", "Motorista"};
         String[] menu3 = {"Solicitar Viagem", "Visualizar Histórico de viagens", "Classificar Viagens" , "Ver Dados Pessoais"};
         String[] menu4 = {"Gerir Viagens","Gerir Horário de trabalho", "Visualizar Histórico de viagens", 
-                            "Visualizar 10 melhores clientes", "Registar Veiculo", "Remover Veiculo" ,"Ver Dados Pessoais"};
+                            "Visualizar 10 melhores clientes", "Registar Veiculo", "Remover Veiculo" , "Atualizar Localizacao" ,"Ver Dados Pessoais"};
         String[] menu5 = {"Ver Lista dos utilizadores registados", "Ver Lista dos Veiculos Registados", "Visualizar Histórico de viagens" , 
-                            "Ver Lista dos clientes que mais gastam", "Ver Lista de motoristas com mais desvios de tempo", "Ver Lista de motoristas com mais desvios de custo" ,"Ver Dados Pessoais"};
+                            "Ver Lista dos clientes que mais gastam", "Ver Lista de motoristas com mais desvios de tempo", "Ver Lista de motoristas com mais desvios de custo" 
+                            , "Faturacao por Motorista", "Ver Dados Pessoais"};
         String[] menu6 = {"Lista de Carros de um dado tipo" };
         String[] menu7 = {"Viagens Efetuadas (entre datas)", "Ver 10 clientes que mais gastam"};
         String[] menu8 = {"Moto", "Carro Ligeiro", "Carrinha", "Moto Com Fila de Espera", 
@@ -148,6 +150,7 @@ public class UMeRApp
         menu_iniciar_horario_trabalho = new UMeRMenu ("Horário de trabalho ",menu14);
         menu_proposta_viagem = new UMeRMenu("Dados Estimados da viagem ", menu15); 
         menu_historico = new UMeRMenu("Menu Historico", menu16);
+        menu_faturas_motoristas = new UMeRMenu("Faturacao por Motoristas", menu16);
     }
 
     /**
@@ -311,17 +314,19 @@ public class UMeRApp
         else{       
             ator =  new  Admin(atorLogado.getEmail(), nome, password, morada, dataNascimento,  new  Coordenadas());
         }
+        
         umer.atualizarUtilizador(ator);
         System.out.print ('\f');
         System.out.print("Parabéns atualizou os seus dados pessoais\n");
-        //Tem de voltar ao menus anterior/ meno do tipo de ator
+
         if(atorLogado instanceof Cliente){
             menuCliente();  
         }
         else if(atorLogado instanceof Motorista){
             menuMotorista();  
         }
-        else{ menuAdmin();       
+        else { 
+            menuAdmin();       
         }
     }
 
@@ -339,6 +344,7 @@ public class UMeRApp
         System.out.print("Password: ");
         password = is.nextLine();
         is.close();
+        
         try {
             umer.iniciaSessao(email, password);
             System.out.println("\f");
@@ -353,8 +359,8 @@ public class UMeRApp
             }
             else {
                 System.out.println("Falhou o login 3 vezes. Por favor tente mais tarde");
-                apresentarMenu();
                 umer.setTentativasDeLoginFalhadas(0);
+                apresentarMenu();
             }
         }
     }
@@ -794,7 +800,7 @@ public class UMeRApp
     }
 
     
-    static private void menuMotorista()
+   static private void menuMotorista()
     {
         menu_motorista.executa();
         switch (menu_motorista.getOpcao()) {
@@ -826,7 +832,10 @@ public class UMeRApp
                 verDadosPessoais();
                 break; 
             }
-            
+            case 8 : {
+                atualizarLocalizacao();
+                break; 
+            }
             case 0 : {
                 fecharSessao();
                 break;
@@ -837,12 +846,47 @@ public class UMeRApp
                 break;
             }
         }   
-    }
+   }
     
-    /**
+    
+   static private void atualizarLocalizacao(){
+       AtorInterface atorLoggado = umer.getAtorLoggado();
+       if(atorLoggado instanceof Motorista){
+           Motorista m = (Motorista) atorLoggado;
+           VeiculoInterface v = m.getVeiculo();
+           if(m.getViagemEmProcesso() != null){
+               System.out.println();
+           }
+           else {
+               if(v != null){
+                   System.out.println();
+               }
+           }
+       }
+       else if (atorLoggado instanceof Cliente){
+        
+       }
+       Scanner is =  new  Scanner(System.in);
+       //Coordenadas localizacao = new Coordenadas(); 
+       double x; 
+       double y; 
+       System.out.println("Introduza a coordenada x:"); 
+       x = is.nextDouble();
+       System.out.println("Introduza a coordenada y:"); 
+       y = is.nextDouble();
+       is.close();
+       Coordenadas localizacao = new Coordenadas(x,y);
+       System.out.println("Introduziu as coordenadas " +localizacao+ " com sucesso! ");
+       
+       umer.atualizaLocalizacao(localizacao);            
+   }
+   
+   
+   
+   /**
      * 
      */
-    static private void gestaoViagem(){
+   static private void gestaoViagem(){
         Motorista motoristaLoggado = (Motorista) umer.getAtorLoggado(); 
         if(motoristaLoggado.getDisponivel()){
             System.out.println("Estado: Disponivel!  ");
@@ -867,7 +911,7 @@ public class UMeRApp
             }
 
         }
-    }
+   }
     
     static private void terminarViagem(){
        umer.terminarViagem();
@@ -1080,7 +1124,11 @@ public class UMeRApp
                 motoristasComMaisDesviosDeCusto(); 
                 break; 
             }
-            case 7 : {
+            case 7: {
+                menuFaturasPorMotorista(); 
+                break; 
+            }
+            case 8 : {
                 verDadosPessoais();
                 break; 
             }
@@ -1097,13 +1145,86 @@ public class UMeRApp
         }
     }
     
+   /**
+    * menu de faturas
+    */
+   static private void menuFaturasPorMotorista(){
+        menu_faturas_motoristas.executa();
+        switch (menu_faturas_motoristas.getOpcao()) {
+            case 1 : {
+                faturacaoPorMotorista();
+                break;
+            } 
+            case 2: {
+                faturacaoPorMotoristaEntreDatas(); 
+                break;
+            }
+            case 0 : {
+                menuAdmin();
+                break;
+            }
+            default : {
+                menuErro();
+                menuFaturasPorMotorista();
+                break;
+            }
+        }
+   }
+    
+   /**
+    * Devolve a lista de todos motorista e as sua faturacaoentre duas datas . Ordenado ordem decrescente de faturacao
+    */
+   static private void faturacaoPorMotoristaEntreDatas(){
+        Scanner is =  new  Scanner(System.in);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
+        System.out.println("Insira a data inicial (yyyy-mm-dd): ");
+        LocalDate inicio = LocalDate.parse(is.nextLine(), formatter);
+        LocalDateTime inicioTime = LocalDateTime.of(inicio, LocalDateTime.MIN.toLocalTime());
+        System.out.println("Insira a data final (yyyy-mm-dd): ");
+        LocalDate fim = LocalDate.parse(is.nextLine(), formatter);
+        LocalDateTime fimTime = LocalDateTime.of(fim, LocalDateTime.MIN.toLocalTime());
+        is.close();
+        
+        List<AtorInterface> motoristas = umer.faturacaoMotoristas(inicioTime, fimTime); 
+        if(motoristas != null && motoristas.size() > 0){
+            System.out.println("********* Faturacao por Motorista ***********");
+            for(AtorInterface motorista: motoristas){
+                System.out.println("Nome: " + motorista.getNome() + " | email: " + motorista.getEmail() + " | Faturacao: " + umer.faturacaoPorMotorista(motorista, inicioTime, fimTime));
+            }
+            menuAdmin();
+        }
+        else {
+            System.out.println("Nao tem faturas entre as duuas datas inseridas");
+            menuAdmin();
+        }
+   } 
+    
+   /**
+    * Devolve a lista de todos motorista e as sua faturacao. Ordenado ordem decrescente de faturacao
+    */
+   static private void faturacaoPorMotorista(){
+        List<AtorInterface> motoristas = umer.faturacaoMotoristas();
+         
+        if(motoristas != null && motoristas.size() > 0){
+            System.out.println("********* Faturacao por Motorista ***********");
+            for(AtorInterface motorista: motoristas){
+                System.out.println("Nome: " + motorista.getNome() + " | email: " + motorista.getEmail() + " | Faturacao: " + umer.faturacaoPorMotorista(motorista));
+            }
+            menuAdmin();
+        }
+        else {
+            System.out.println("Nao tem historico de viagens");
+            menuAdmin();
+        }
+   }
+    
     /**
      * 
      */
     static private void motoristasComMaisDesviosDeTempo(){
         List<Motorista> motoristas = umer.motoristasComMaisDesviosDeTempo();
          
-         if(motoristas != null && motoristas.size() > 0){
+        if(motoristas != null && motoristas.size() > 0){
             System.out.println("********* Top 5 Motoristas com mais desvios de tempo ***********");
             for(Motorista m: motoristas){
                 System.out.println("Nome: " + m.getNome() + " | email: " + m.getEmail() + " | Grau de cumprimento de horario: " + m.getGrauCumprimentoHorario());

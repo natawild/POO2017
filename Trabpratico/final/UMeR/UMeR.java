@@ -661,7 +661,9 @@ public class UMeR{
                        totalPorCliente += h.getValorCobrado();
                    }
                }
-               totalGastoPorCliente.put(emailCliente, totalPorCliente);
+               if(totalPorCliente > 0){
+                   totalGastoPorCliente.put(emailCliente, totalPorCliente);
+               }
            }
       }
       else if(atorLoggado instanceof Admin){
@@ -672,7 +674,9 @@ public class UMeR{
                        totalPorCliente += h.getValorCobrado();
                    }
                }
-               totalGastoPorCliente.put(emailCliente, totalPorCliente);
+               if(totalPorCliente > 0){
+                   totalGastoPorCliente.put(emailCliente, totalPorCliente);
+               }
            }
       }
        
@@ -731,23 +735,18 @@ public class UMeR{
                totalCusto += (h.getValorCobrado()/h.getValorEstimado() ) * 100;
                i++;
            }
-            if(i == 0) {
-                totalCusto = 0;
-               
-            }
-            else {
-                totalCusto = totalCusto/ i;
-            }
+           
+           if(i == 0) {
+               totalCusto = 0;
+           }
+           else {
+               totalCusto = totalCusto/ i;
+           }
            grauCumprimentoCustoPorMotorista.put(ator.getEmail(), totalCusto);
        }
-       System.out.println(grauCumprimentoCustoPorMotorista);
-       System.out.println("#####################");
        
        TreeMap<String, Double> motoristasOrdenados = new TreeMap<String, Double>(new ComparatorGrauCumprimentoCusto(grauCumprimentoCustoPorMotorista));
        motoristasOrdenados.putAll(grauCumprimentoCustoPorMotorista);
-       
-       System.out.println(motoristasOrdenados);
-       System.out.println("#####################");
       
        int i = 0;
        for(String email :motoristasOrdenados.keySet()){
@@ -758,11 +757,9 @@ public class UMeR{
           else {
               break;
             }
-        }
-        
-        System.out.println(motoristasComMaisDesviosDeTempo);
+       }
 
-        return motoristasComMaisDesviosDeTempo;
+       return motoristasComMaisDesviosDeTempo;
    }
    
    public int grauCumprimentoCusto(Motorista m){
@@ -773,15 +770,86 @@ public class UMeR{
            totalCusto += (h.getValorCobrado()/h.getValorEstimado()) * 100;
            i++;
        }
-       if(i == 0) {
-        totalCusto = 0;
        
+       if(i == 0) {
+           totalCusto = 0;
        }
        else {
            totalCusto = totalCusto/ i;
        }
        
        return (int) totalCusto;
+   }
+   
+   public List<AtorInterface> faturacaoMotoristas(){
+       List<AtorInterface> motoristas =  new ArrayList<AtorInterface>();
+       Map<String, Double> faturacaoPorMotorista = new TreeMap<>();
+       
+       for(AtorInterface ator: ((BD) this.baseDeDados).getMotoristas().values()){  
+           List<Historico> historicoPorCliente = this.baseDeDados.historicoViagensPorAtor(ator);
+           double totalFaturado = 0;
+           for(Historico h: historicoPorCliente){
+               totalFaturado += h.getValorCobrado();
+           }
+           
+           faturacaoPorMotorista.put(ator.getEmail(), totalFaturado);
+       }
+       
+       TreeMap<String, Double> motoristasOrdenados = new TreeMap<String, Double>(new ComparatorFaturacao(faturacaoPorMotorista));
+       motoristasOrdenados.putAll(faturacaoPorMotorista); 
+       
+       for(String email :motoristasOrdenados.keySet()){
+           motoristas.add(this.baseDeDados.getMotoristaComEmail(email));
+       }
+       
+       return motoristas;
+   }
+   
+   public double faturacaoPorMotorista(AtorInterface m){ 
+      List<Historico> historicoPorCliente = this.baseDeDados.historicoViagensPorAtor(m);
+      double totalFaturado = 0;
+      for(Historico h: historicoPorCliente){
+          totalFaturado += h.getValorCobrado();
+      }
+       
+      return totalFaturado;
+   }
+   
+   public double faturacaoPorMotorista(AtorInterface m, LocalDateTime inicio, LocalDateTime fim) { 
+      List<Historico> historicoPorCliente = this.baseDeDados.historicoViagensPorAtor(m, inicio, fim);
+      double totalFaturado = 0;
+      for(Historico h: historicoPorCliente){
+          totalFaturado += h.getValorCobrado();
+      }
+       
+      return totalFaturado;
+   }
+   
+   public List<AtorInterface> faturacaoMotoristas(LocalDateTime inicio, LocalDateTime fim){
+       List<AtorInterface> motoristas =  new ArrayList<AtorInterface>();
+       Map<String, Double> faturacaoPorMotorista = new TreeMap<>();
+       
+       for(AtorInterface ator: ((BD) this.baseDeDados).getMotoristas().values()){  
+           List<Historico> historicoPorAtor = this.baseDeDados.historicoViagensPorAtor(ator, inicio, fim);
+           double totalFaturado = 0;
+           for(Historico h: historicoPorAtor){
+               totalFaturado += h.getValorCobrado();
+           }
+           faturacaoPorMotorista.put(ator.getEmail(), totalFaturado);
+       }
+       
+       TreeMap<String, Double> motoristasOrdenados = new TreeMap<String, Double>(new ComparatorFaturacao(faturacaoPorMotorista));
+       motoristasOrdenados.putAll(faturacaoPorMotorista); 
+       
+       for(String email :motoristasOrdenados.keySet()){
+           motoristas.add(this.baseDeDados.getMotoristaComEmail(email));
+       }
+       
+       return motoristas;
+   }
+   
+   public void atualizaLocalizacao(Coordenadas loc){
+       this.atorLoggado = this.baseDeDados.atualizaLocalizacao(this.atorLoggado, loc);
    }
 }
 

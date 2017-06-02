@@ -14,6 +14,7 @@ import java.security.MessageDigest;
 import java.util.Map;  
 import java.util.HashMap; 
 import java.io.Serializable;
+import java.time.LocalDateTime; 
 /**
  * A classe BD tem a lista de clientes, motoristas,  veiculos, historico  existentes na empresa
  * 
@@ -809,6 +810,47 @@ public class BD implements BDInterface, Serializable {
         }
          
         return  historico;
+    }
+    
+    public List<Historico> historicoViagensPorAtor(AtorInterface ator, LocalDateTime inicio, LocalDateTime fim){
+        List<Historico> historico = new ArrayList<Historico>();
+        
+        if(ator instanceof Motorista){
+            for(Historico h: this.historico){
+                if(h.getEmailMotorista().equals(ator.getEmail()) && h.getTerminado() && h.getDataDeInicioDeServico().isAfter(inicio) && h.getDataDeInicioDeServico().isBefore(fim)){
+                    historico.add(h.clone());
+                }
+            }
+        }
+
+        else if(ator instanceof Cliente){
+            for(Historico h: this.historico){
+                if(h.getEmailCliente().equals(ator.getEmail()) && h.getTerminado() && h.getDataDeInicioDeServico().isAfter(inicio) && h.getDataDeInicioDeServico().isBefore(fim)){
+                    historico.add(h.clone());
+                }
+            }
+        }
+        
+        return  historico;
+    }
+    
+    public AtorInterface atualizaLocalizacao(AtorInterface ator, Coordenadas loc){
+        if(ator instanceof Motorista){
+            Motorista m = (Motorista) this.motoristas.get(ator.getEmail());
+            VeiculoInterface v = m.getVeiculo();
+            if(m.getViagemEmProcesso() == null && v != null){
+               v.setLoc(loc);  
+            }
+            return m;
+        }
+        else if(ator instanceof Cliente){
+            Cliente c = (Cliente) this.clientes.get(ator.getEmail());
+            if(c.getEmViagem() == false) {
+                c.setLoc(loc);
+            }
+            return c;
+        }
+        return ator;
     }
 }
     

@@ -130,6 +130,10 @@ comment53.params=ator
 comment53.target=void\ removeVeiculoDeAtor(AtorInterface)
 comment54.params=ator
 comment54.target=java.util.List\ historicoViagensPorAtor(AtorInterface)
+comment55.params=ator\ inicio\ fim
+comment55.target=java.util.List\ historicoViagensPorAtor(AtorInterface,\ java.time.LocalDateTime,\ java.time.LocalDateTime)
+comment56.params=ator\ loc
+comment56.target=AtorInterface\ atualizaLocalizacao(AtorInterface,\ Coordenadas)
 comment6.params=
 comment6.target=java.util.Map\ getAdmins()
 comment6.text=\n\ getAdmins()\ -\ Devolve\ um\ Map\ contendo\ todos\ os\ admins\ da\ aplica\u00E7\u00E3o\ \n
@@ -141,4 +145,4 @@ comment8.target=java.util.Set\ getHistorico()
 comment9.params=c
 comment9.target=void\ setClientes(java.util.Map)
 comment9.text=\n\ iterador\ externo\ \n\ \ \ \ \ \n\ \ \ \ public\ Map<String,\ Lugar>\ getLugares(){\n\ \ \ \ \ \ \ \ Map<String,\ Lugar>\ copia\ \=\ new\ HashMap<>();\ \n\ \ \ \ \ \ \ \ for(Map.Entry<String,Lugar>\ e\ \:\ lugares.entrySet()){\n\ \ \ \ \ \ \ \ \ \ \ \ copia.put(e.getKey(),\ e.getValue().clone());\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ return\ copia;\ \n\ \ \ \ \ \ \ \ //return\ lugares.entrySet().stream().collect(Collectors.toMap(e->egetValue().clone()));\n\ \ \ \ \n\ \ \ \ }\n
-numComments=55
+numComments=57
