@@ -73,7 +73,7 @@ public interface BDInterface{
     
     public void atualizaClassificacao(Historico h, int classificacao);
     
-    public void removeVeiculoDeAtor(AtorInterface ator);
+    public AtorInterface removeVeiculoDeAtor(AtorInterface ator);
     
     public List<Historico> historicoViagensPorAtor(AtorInterface ator);
     

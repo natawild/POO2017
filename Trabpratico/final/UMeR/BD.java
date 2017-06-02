@@ -792,10 +792,11 @@ public class BD implements BDInterface, Serializable {
         m.setClassificacao(classificacaoMotorista);
     }
     
-    public void removeVeiculoDeAtor(AtorInterface ator){
+    public AtorInterface removeVeiculoDeAtor(AtorInterface ator){
         Motorista atorGuardado = (Motorista) this.motoristas.get(ator.getEmail());
         atorGuardado.setVeiculo(null);
         this.motoristas.put(atorGuardado.getEmail(), atorGuardado);
+        return atorGuardado.clone();
     }
     
     public List<Historico> historicoViagensPorAtor(AtorInterface ator){
@@ -809,7 +810,7 @@ public class BD implements BDInterface, Serializable {
             }
         }
          
-        return  historico;
+        return historico;
     }
     
     public List<Historico> historicoViagensPorAtor(AtorInterface ator, LocalDateTime inicio, LocalDateTime fim){
@@ -831,7 +832,7 @@ public class BD implements BDInterface, Serializable {
             }
         }
         
-        return  historico;
+        return historico;
     }
     
     public AtorInterface atualizaLocalizacao(AtorInterface ator, Coordenadas loc){
@@ -850,7 +851,7 @@ public class BD implements BDInterface, Serializable {
             }
             return c;
         }
-        return ator;
+        return ator.clone();
     }
 }
     

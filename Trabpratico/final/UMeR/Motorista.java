@@ -260,7 +260,12 @@ public class Motorista extends Ator implements AtorInterface, Serializable, Comp
         sb.append("Horário de Trabalho: " +this.horarioTrabalho + "\n"); 
         sb.append("Destreza: " +this.destreza + "\n"); 
         sb.append("Total de viagens: " + this.totalViagens + "\n"); 
-        sb.append("Veiculo conduzido: " +this.veiculo + "\n"); 
+        if(this.veiculo != null){
+            sb.append("Veiculo conduzido: " +this.veiculo + "\n"); 
+        }
+        else {
+            sb.append("Nao tem veiculo \n"); 
+        }
         sb.append("Viagem em processo \n: " + this.viagemEmProcesso + "\n"); 
         return sb.toString(); 
     }

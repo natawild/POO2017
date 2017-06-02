@@ -110,14 +110,6 @@ public class UMeRApp
     }
 
     /**
-     * Apresenta o Menu consoante o tipo de utilizador com sessão iniciada.
-     */
-    static private void menu()
-    {
-        /* if(umer.getBaseDeDados() == null) running_menu_cliente();*/
-    }
-
-    /**
      * Carrega todos os menus para apresentar.
      */
     static private void carregarMenus()
@@ -1464,6 +1456,7 @@ public class UMeRApp
             Motorista motorista = (Motorista) umer.getAtorLoggado();
             if(motorista.getVeiculo() != null && motorista.getViagemEmProcesso() == null){
                 umer.removeVeiculoDeAtor();
+                System.out.println("Veiculo removido");
                 menuMotorista();
             }
             else {

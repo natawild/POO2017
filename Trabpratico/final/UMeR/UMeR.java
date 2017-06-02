@@ -633,7 +633,7 @@ public class UMeR{
    }
    
    public void removeVeiculoDeAtor(){
-       this.baseDeDados.removeVeiculoDeAtor(atorLoggado);
+      this.atorLoggado = this.baseDeDados.removeVeiculoDeAtor(atorLoggado);
    }
    
    public boolean temVeiculo(){
