@@ -10,7 +10,7 @@ public class Moto extends Veiculo implements VeiculoInterface,Serializable{
     //variável da classe
     private static final int lugaresLivres = 1;
     private static final double vm = 40.5; 
-    private static final double precoPorKm = 3.1;
+    private static final double precoPorKm = 2.1;
     
      /**
      * Construtor vazio. Como se trata de uma subclasse de Veiculo, utilizamos o construtor super 
@@ -64,12 +64,10 @@ public class Moto extends Veiculo implements VeiculoInterface,Serializable{
         float maxX = 1.2f;
         Random rand = new Random();
         float finalX = rand.nextFloat() * (maxX - minX) + minX;
-
         return finalX;  
     }
     
-    
-    
+   
     /**
      * equals recebe um Object m e verifica se é igual a uma Moto
      */

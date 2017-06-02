@@ -12,6 +12,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+import java.time.format.DateTimeParseException; 
+import java.util.regex.Pattern; 
+import java.util.regex.Matcher; 
+import java.math.RoundingMode; 
+import java.text.DecimalFormat; 
 import Exceptions.*;
 
 /**
@@ -63,7 +68,7 @@ public class UMeRApp
     static private void apresentarMenu()
     {
         int running = 1;
-        System.out.println("\f");
+        //System.out.println("\f");
         menu_principal.executa();
         switch (menu_principal.getOpcao()) {
             case 1 : {
@@ -79,6 +84,7 @@ public class UMeRApp
                 break;
             }
             default : {
+                System.out.println("\f"); 
                 menuErro();
                 apresentarMenu();
                 break;
@@ -97,6 +103,7 @@ public class UMeRApp
             menuRegistar(opcao);
         }
         else {
+            System.out.println("\f"); 
             apresentarMenu();
         }
     }
@@ -135,7 +142,7 @@ public class UMeRApp
         String[] menu15= {"Aceito", "Não Aceito"}; 
         String[] menu16= {"Visual todos", "Entre duas datas"}; 
         
-        menu_principal =  new  UMeRMenu("Menu Inicial", menu1);
+        menu_principal =  new  UMeRMenu("--Bem vindo à UMeR--", menu1);
         menu_registar_atores =  new  UMeRMenu("Escolha o tipo de utilizador a registar", menu2);
         menu_cliente =  new  UMeRMenu("Menu - Cliente", menu3);
         menu_motorista =  new  UMeRMenu("Menu - Motoristas", menu4);
@@ -178,7 +185,7 @@ public class UMeRApp
     }
 
     /**
-     * 
+     * adicionarAdminPorDefeito()
      */
     static private void adicionarAdminPorDefeito()
     {
@@ -220,7 +227,7 @@ public class UMeRApp
         String email;
         String password;
         String morada;
-        LocalDate dataNascimento;
+        LocalDate dataNascimento=null;
         int grauCumprimentoHorario;
         int classificacao;
         double totalKms;
@@ -236,8 +243,10 @@ public class UMeRApp
         password = is.nextLine();
         System.out.print("Morada: ");
         morada = is.nextLine();
-        System.out.print("Data de nascimento (YYYY-MM-DD): ");
-        dataNascimento = LocalDate.parse(is.nextLine(), formatter);
+        //System.out.print("Data de nascimento (YYYY-MM-DD): ");
+        dataNascimento = lerData("Data de nascimento (YYYY-MM-DD): "); 
+       
+        
         
         /* Estes dados sao inseridos depois de fazer loggin e outros sao inseridos com base das viagens feitas if(opcao == 2){ System.out.print("Grau de cumprimento de horário de motorista: "); grauCumprimentoHorario = is.nextInt(); System.out.print("Classificação de motorista: "); classificacao = is.nextInt(); System.out.print("Total de kms percorridos: "); totalKms = is.nextInt(); System.out.print("Disponibilidade: "); disponivel = false; System.out.print("Horário de trabalho: "); horarioTrabalho = false; System.out.print("Destreza: "); destreza = is.nextInt(); }*/
         is.close();
@@ -261,17 +270,43 @@ public class UMeRApp
         }
         try {
             umer.registarUtilizador(ator);
-            System.out.print ('\f');
-            System.out.print("Parabéns está registado na UMeR!");
+            System.out.println("\f"); 
+            System.out.print("Parabéns está registado na UMeR!");  
             apresentarMenu();
         }
         catch (AtorExistenteException e) {
+            System.out.println("\f"); 
             System.out.println("Este utizador já existe!");
             /* TODO: Apresentar mensagem de erro e depois esperar por um entrar e voltar para o menu principal (inicial);*/
             apresentarMenu();
         }
     }
     
+    
+    private static LocalDate lerData(String msg) {
+        Scanner input = new Scanner(System.in);
+        String aux;
+        LocalDate data;
+
+        System.out.print(msg);
+        aux = input.nextLine();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        try {
+            data = LocalDate.parse(aux, formatter);
+        }
+        catch (DateTimeParseException e) {
+            System.out.println("Formato da data incorreto\n");
+            data = lerData(msg);
+        }
+
+        finally {
+            input.close();
+        }
+
+        return data;
+    }
+
     
     /**
      * Registo na UMeRApp.
@@ -300,7 +335,7 @@ public class UMeRApp
         System.out.print("Morada: ");
         morada = is.nextLine();
         System.out.print("Data de nascimento (YYYY-MM-DD): ");
-        dataNascimento = LocalDate.parse(is.nextLine(), formatter);
+        dataNascimento = lerData("Data de nascimento (YYYY-MM-DD): "); 
         is.close();
         
         AtorInterface atorLogado = umer.getAtorLoggado();
@@ -561,6 +596,7 @@ public class UMeRApp
     }
     
      static private void requisitarViagem(Coordenadas destino, Motorista m){
+       DecimalFormat dec = new DecimalFormat("#0.00");
        Coordenadas localizacaoCliente = ((Cliente) umer.getAtorLoggado()).getLoc();
        Coordenadas localizacaoMotorista = m.getVeiculo().getLoc(); 
        double distanciaAteCliente = localizacaoCliente.getDistancia(localizacaoMotorista); 
@@ -570,8 +606,8 @@ public class UMeRApp
        double custoEstimado = umer.custoEstimadoViagem(distanciaTotal,  m.getVeiculo().getPrecoPorKm()); 
        
        System.out.println("Motorista: " +m.getNome()+ " | Veiculo: " +m.getVeiculo().getMatricula()); 
-       System.out.println("Duração Estimada da Viagem (minutos): " +duracaoEstimadaViagem); 
-       System.out.println("Custo Estimado da Viagem (euros): " +custoEstimado); 
+       System.out.println("Duração Estimada da Viagem (minutos): " +dec.format(duracaoEstimadaViagem)); 
+       System.out.println("Custo Estimado da Viagem (euros): " +dec.format(custoEstimado)); 
     
        propostaViagemMenu(destino, m);   
     }
@@ -600,17 +636,21 @@ public class UMeRApp
         
         
     }
+    
+    
+    
     /**
      * TODO : apresentar ao cliente o tempo que demorará o veiculo a chegar onde o cliente está 
      * trocar estado de motorista para ocupado 
      */
-    static private void iniciaViagem(Motorista m, Coordenadas destino){      
+    static private void iniciaViagem(Motorista m, Coordenadas destino){ 
+         DecimalFormat dec = new DecimalFormat("#0.00");
          Coordenadas localizacaoCliente = ((Cliente) umer.getAtorLoggado()).getLoc();
          Coordenadas localizacaoMotorista = m.getVeiculo().getLoc(); 
          double distanciaAteCliente = localizacaoCliente.getDistancia(localizacaoMotorista);
          double duracaoEstimadaAteCliente = umer.duracaoEstimadaViagem (distanciaAteCliente, m.getVeiculo().getVm());
- 
-         System.out.println("O táxi deverá demorar cerca de "+duracaoEstimadaAteCliente+" minutos até à sua localização");
+        
+         System.out.println("O táxi deverá demorar cerca de "+dec.format(duracaoEstimadaAteCliente)+" minutos até à sua localização");
 
          double distanciaTotal = distanciaAteCliente + localizacaoCliente.getDistancia(destino); 
          double duracaoEstimadaViagem = umer.duracaoEstimadaViagem (distanciaTotal, m.getVeiculo().getVm());
@@ -768,7 +808,7 @@ public class UMeRApp
         System.out.print("Morada: ");
         morada = is.nextLine();
         System.out.print("Data de nascimento (YYYY-MM-DD): ");
-        dataNascimento = LocalDate.parse(is.nextLine(), formatter);
+        dataNascimento = lerData("Data de nascimento (YYYY-MM-DD): "); 
         is.close();
         
         AtorInterface atorLogado = umer.getAtorLoggado();
@@ -1045,11 +1085,11 @@ public class UMeRApp
     static private void visualizaHistoricoEntreDatas(){
         Scanner is =  new  Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
-        System.out.println("Insira a data inicial (yyyy-mm-dd): ");
-        LocalDate inicio = LocalDate.parse(is.nextLine(), formatter);
+        //System.out.println("Insira a data inicial (yyyy-mm-dd): ");
+        LocalDate inicio = lerData("Insira a data inicial (yyyy-mm-dd): "); 
         LocalDateTime inicioTime = LocalDateTime.of(inicio, LocalDateTime.MIN.toLocalTime());
-        System.out.println("Insira a data final (yyyy-mm-dd): ");
-        LocalDate fim = LocalDate.parse(is.nextLine(), formatter);
+        //System.out.println("Insira a data final (yyyy-mm-dd): ");
+        LocalDate fim = lerData("Insira a data final (yyyy-mm-dd): "); 
         LocalDateTime fimTime = LocalDateTime.of(fim, LocalDateTime.MIN.toLocalTime());
         is.close();
         
@@ -1335,6 +1375,9 @@ public class UMeRApp
         }
 
      }
+        
+
+
      
      /**
      * 
@@ -1467,6 +1510,7 @@ public class UMeRApp
     {
         umer.fechaSessao();
         umer.setTentativasDeLoginFalhadas(0);
+        System.out.println("\f"); 
         apresentarMenu();
     }
 

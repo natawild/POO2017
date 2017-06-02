@@ -31,19 +31,63 @@ public class Main
         //System.out.println(cliente2.toString());
         baseDados.addCliente(cliente2);
         
-        localizacao2 = new Coordenadas();
         dataNas1 = LocalDate.of (1993,12,24); 
         Cliente cliente3 = new Cliente("luis@luis.com","Luis", Utils.encriptar("luis"), "Rua da cinderela", dataNas2, localizacao2, false);
         //System.out.println(cliente2.toString());
         baseDados.addCliente(cliente3);
         
-        VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 0.8f, new Coordenadas(20, 40)); 
-        VeiculoInterface v2 = new Carrinha("qt-34-22","Renault", 1.2f, new Coordenadas(10, 15)); 
+        dataNas1 = LocalDate.of (1993,01,24); 
+        Cliente cliente4 = new Cliente("marcia@marcia.com","Márcia", Utils.encriptar("marcia"), "Rua da Televisão", dataNas2, localizacao2, false);
+        //System.out.println(cliente2.toString());
+        baseDados.addCliente(cliente4);
+        
+        dataNas1 = LocalDate.of (1993,01,26); 
+        Cliente cliente5 = new Cliente("celia@gmail.com","Célia", Utils.encriptar("celia"), "Rua das margaridas", dataNas2, localizacao2, false);
+        //System.out.println(cliente2.toString());
+        baseDados.addCliente(cliente5);
+        
+        dataNas1 = LocalDate.of (1993,01,26); 
+        Cliente cliente6 = new Cliente("carlosfaria@gmail.com","Carlos Faria", Utils.encriptar("carlosfaria"), "Rua dos cravos", dataNas2, localizacao2, false);
+        //System.out.println(cliente2.toString());
+        baseDados.addCliente(cliente6);
+        
+        dataNas1 = LocalDate.of (1993,01,26); 
+        Cliente cliente7 = new Cliente("adriana@adriana.com","Adriana Pereira", Utils.encriptar("adriana"), "Rua de Boticas", dataNas2, localizacao2, false);
+        //System.out.println(cliente2.toString());
+        baseDados.addCliente(cliente7);
+        
+        dataNas1 = LocalDate.of (1993,01,25); 
+        Cliente cliente8 = new Cliente("xavier@xavier.com","Xavier Francisco", Utils.encriptar("xavier"), "Rua dos pastorinhos", dataNas2, localizacao2, false);
+        //System.out.println(cliente2.toString());
+        baseDados.addCliente(cliente8);
+        
+        dataNas1 = LocalDate.of (1993,01,01); 
+        Cliente cliente9 = new Cliente("daniel@daniel.com","Daniel Faria", Utils.encriptar("daniel"), "Rua do Ouro", dataNas2, localizacao2, false);
+        //System.out.println(cliente2.toString());
+        baseDados.addCliente(cliente9);
+        
+        
+        VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 0.8f, new Coordenadas()); 
+        VeiculoInterface v2 = new Carrinha("qt-34-22","Renault", 1.2f, new Coordenadas()); 
         VeiculoInterface v3 = new Moto("25-76-22","Fiat", 0.8f, new Coordenadas()); 
+        VeiculoInterface v4 = new CarroLig("23-az-24","Toyota", 0.9f, new Coordenadas()); 
+        VeiculoInterface v5 = new Moto("10-az-24","Toyota", 0.9f, new Coordenadas()); 
+        VeiculoInterface v6 = new Moto("23-az-20","Honda", 0.9f, new Coordenadas()); 
+        VeiculoInterface v7 = new Carrinha("24-az-28","Honda", 0.8f, new Coordenadas()); 
+        VeiculoInterface v8 = new Carrinha("25-fb-20","Volvo", 0.9f, new Coordenadas()); 
+        VeiculoInterface v9 = new CarroLig("25-tr-19","BMW", 1.1f, new Coordenadas()); 
+        VeiculoInterface v10 = new CarroLig("09-bm-09","Audi", 1.0f, new Coordenadas()); 
         
         baseDados.addVeiculo(v1); 
         baseDados.addVeiculo(v2); 
         baseDados.addVeiculo(v3); 
+        baseDados.addVeiculo(v4); 
+        baseDados.addVeiculo(v4);
+        baseDados.addVeiculo(v6); 
+        baseDados.addVeiculo(v7); 
+        baseDados.addVeiculo(v8); 
+        baseDados.addVeiculo(v9);
+        baseDados.addVeiculo(v10);
         
         LocalDate dataNasM2 = LocalDate.of (1989,12,24);
         Motorista motorista2 = new Motorista("acores@acores.com","João César", Utils.encriptar("acores"), "Rua Fábrica do pelo", 
@@ -66,6 +110,13 @@ public class Main
         dataNasM2);
         motorista4.setVeiculo(v3);
         baseDados.addMotorista(motorista4); 
+        
+        dataNasM2 = LocalDate.of (1979,12,23);
+        Motorista motorista5 = new Motorista("carlos@carlos.com","Carlos César", Utils.encriptar("carlos"), "Rua das Laranjas", 
+        dataNasM2);
+        motorista4.setVeiculo(v4);
+        baseDados.addMotorista(motorista5); 
+       
        
        Admin admin =  new  Admin("admin@admin.com", "admin", Utils.encriptar("admin"), null, null,  new  Coordenadas());
        baseDados.addAdmin(admin); 

@@ -1,15 +1,15 @@
 \chapter{Arquitetura das Classes}
-Neste capítulo falaremos do esqueleto da  aplicação UMeR, serão abordadas as classes presentes na aplicação, assim como os atributos e funcionamento de cada uma.
+Neste capítulo falaremos do esqueleto da  aplicação UMeR, serão abordadas as classes presentes na aplicação assim como os atributos e funcionamento de cada uma e também as decisões tomadas.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[scale=0.45]{imagem/esquemaClasses}
-	\caption{Classes }
+	\caption{Esquema de Classes do BlueJ }
 	\label{p2:fig:p2_classes}
 \end{figure}
 
 \newpage
 \section{Ator}
-A classe  \textit{Ator} é uma classe abstrata e sevirá  como “modelo” para outras classes que dela herdem, não podendo ser instanciada por si só. Para ter um objeto de uma classe abstrata é necessário criar uma classe mais especializada que herda dela e então instanciar essa nova classe. Neste caso foram criadas as classes \textit{Admin}, \textit{Cliente} e  \textit{Motorista}. 
+A classe  \textit{Ator} é uma classe abstrata e sevirá  como “modelo” para outras classes que dela herdem, não podendo ser instanciada por si só. Para ter um objeto de uma classe abstrata é necessário criar uma classe mais especializada que herda dela e então instanciar essa nova classe. Neste caso foram criadas as classes \textit{Admin}, \textit{Cliente} e  \textit{Motorista} que herdam a informação que está na classe superior (Ator). 
 
 
 \begin{figure}[htpb]
@@ -39,7 +39,7 @@ Na classe \textit{Cliente} estarão todos os dados herdados da classe \textit{At
 
 \begin{verbatim}
 private Coordenadas loc; //localização atual do cliente
-private HistoricoCliente histClie; 
+private boolean emViagem;
 \end{verbatim}
 \subsection{Motorista}
 Na classe \textit{Motorista} estarão todos os dados herdados da classe \textit{Ator}. 
@@ -50,9 +50,10 @@ private int classificacao; //0-100
 private double totalKms; 
 private boolean disponivel;//verifica se está disponivel ou não 
 private boolean horarioTrabalho; //verificar se está no horário de trabalho
-private double destreza; //valor entre 0,5 e 1.9
+private double destreza; //valor entre 0.5 e 1.9
 private VeiculoInterface veiculo; 
-private HistoricoMotorista histMoto; 
+private Historico viagemEmProcesso;
+private int totalViagens;
 \end{verbatim}
 
 Decidimos que a destreza do motorista seria atribuida através da invocação de um random() que gera valores entre 0,5  e 1,9 afim de gerar alguma aleatoriedade nos tempos obtidos das viagens efetuadas. 
@@ -83,7 +84,7 @@ private Coordenadas loc;
 \begin{verbatim}
 private static final int lugaresLivres = 1;
 private static final double vm = 40.5; 
-private static final double precoPorKm = 3.1;
+private static final double precoPorKm = 2.1;
 \end{verbatim}
 
 \subsection{MotoFilaEspera}
@@ -94,9 +95,9 @@ private List<Cliente> filaClientes;
 \section{CarroLig}
 
 \begin{verbatim}
-private static final int lugaresLivres = 4;
+ private static final int lugaresLivres = 4;
 private static final double vm = 65; 
-private static final double precoPorKm = 4.1;
+private static final double precoPorKm = 3.5;
 \end{verbatim}
 
 \subsection{CarroFilaEspera}
@@ -125,6 +126,10 @@ private List<Cliente> filaClientes;
 	\caption{Classes }
 	\label{p2:fig:p2_historico}
 \end{figure}
+\begin{verbatim}
+private String emailCliente; 
+private String emailMotorista; 
+\end{verbatim}
 
 \section{Utils}
 Adicionalmente a classe \textit{Utils} tem implementado um método que encripta a password. E um método que gera números random com intervalos de 0.1. 
@@ -161,9 +166,9 @@ O método getDistancia() calcula a distancia euclidiana, este será um método i
 \begin{verbatim}
 public double getDistancia (Coordenadas c){
     double distancia=0; 
-    distancia = Math.sqrt( Math.pow( (this.x - c.getX()),2 ) +
-                                       Math.pow( (this.y - c.getY()),2 ) );
-return distancia; 
+    distancia = Math.sqrt( Math.pow((this.x - c.getX()),2 ) +
+                           Math.pow((this.y - c.getY()),2 ));
+    return distancia; 
 }
 \end{verbatim}
 
@@ -208,6 +213,7 @@ private static UMeRMenu menu_terminar_viagem;
 private static UMeRMenu menu_terminar_horario_trabalho;
 private static UMeRMenu menu_iniciar_horario_trabalho;
 private static UMeRMenu menu_proposta_viagem;
+private static UMeRMenu menu_historico;
 \end{verbatim}
 
 
