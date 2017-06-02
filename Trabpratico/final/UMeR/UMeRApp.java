@@ -133,7 +133,7 @@ public class UMeRApp
         String[] menu13 = {"Terminar horario de trabalho "};
         String[] menu14 = {"Iniciar horário de trabalho "}; 
         String[] menu15= {"Aceito", "Não Aceito"}; 
-        String[] menu16= {"Visual todos", "Entre duas datas"}; 
+        String[] menu16= {"Visualizar todos", "Entre duas datas"}; 
         
         menu_principal =  new  UMeRMenu("--Bem vindo à UMeR--", menu1);
         menu_registar_atores =  new  UMeRMenu("Escolha o tipo de utilizador a registar", menu2);
