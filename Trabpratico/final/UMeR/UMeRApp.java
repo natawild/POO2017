@@ -134,7 +134,7 @@ public class UMeRApp
         String[] menu7 = {"Viagens Efetuadas (entre datas)", "Ver 10 clientes que mais gastam"};
         String[] menu8 = {"Moto", "Carro Ligeiro", "Carrinha", "Moto Com Fila de Espera", 
                         "Carro Ligeiro Com Fila de Espera", "Carrinha Com Fila de Espera","Voltar para trás"};
-        String[] menu9 = {"Escolher táxi mais Próximo", "Escolher táxi especifico com fila de Espera"};
+        String[] menu9 = {"Escolher táxi mais Próximo", "Escolher táxi especifico"};
         String[] menu10 = {"Editar Dados"};
         String[] menu11 = {"Inserir Coordenadas"}; 
         String[] menu12 = {"Terminar viagem em processo"}; 
@@ -821,13 +821,13 @@ public class UMeRApp
         AtorInterface atorLogado = umer.getAtorLoggado();
         
         if(atorLogado instanceof Cliente){
-            ator =  new  Cliente(atorLogado.getEmail(), nome, password, morada, dataNascimento,  new  Coordenadas(), false);
+            ator =  new  Cliente(atorLogado.getEmail(), nome, password, morada, dataNascimento, ((Cliente) atorLogado).getLoc() , false);
         }
         else if(atorLogado instanceof Motorista){
             ator =  new  Motorista(atorLogado.getEmail(), nome, password, morada, dataNascimento);
         }
         else{       
-            ator =  new  Admin(atorLogado.getEmail(), nome, password, morada, dataNascimento,  new  Coordenadas());
+            ator =  new  Admin(atorLogado.getEmail(), nome, password, morada, dataNascimento,   ((Cliente) atorLogado).getLoc());
         }
         umer.atualizarUtilizador(ator);
         System.out.print ("\f");
