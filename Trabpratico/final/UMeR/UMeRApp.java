@@ -17,6 +17,8 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher; 
 import java.math.RoundingMode; 
 import java.text.DecimalFormat; 
+import java.io.Console;
+import java.util.Arrays;
 import Exceptions.*;
 
 /**
@@ -905,7 +907,7 @@ public class UMeRApp
            
            umer.atualizaLocalizacao(localizacao); 
            
-           System.out.println("Localizaçao atulizada");
+           System.out.println("Localizaçao atualizada");
            if(atorLoggado instanceof Motorista){
                menuMotorista();
            }
