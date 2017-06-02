@@ -595,7 +595,12 @@ public class UMeRApp
           motoristaMaisPerto = umer.motoristaMaisPertoCliente(clientelogado);   
        }
        
-       requisitarViagem(destino, motoristaMaisPerto); 
+       if(motoristaMaisPerto != null ){
+           requisitarViagem(destino, motoristaMaisPerto); 
+       }
+       else {
+           System.out.println("Nao ha motoristas disponiveis"); 
+       }
     }
     
    static private void requisitarViagem(Coordenadas destino, Motorista m){
@@ -871,11 +876,11 @@ public class UMeRApp
                 break;
             }
             case 7 : {
-                verDadosPessoais();
+                atualizarLocalizacao();
                 break; 
             }
             case 8 : {
-                atualizarLocalizacao();
+                verDadosPessoais();
                 break; 
             }
             case 0 : {

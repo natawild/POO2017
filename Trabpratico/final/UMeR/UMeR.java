@@ -277,9 +277,7 @@ public class UMeR{
             Cliente novo = (Cliente) ator; 
             if (((BD) this.baseDeDados).getClientes().containsKey(novo.getEmail())){
                 novo.setPassword(Utils.encriptar(novo.getPassword()));
-                Map<String, AtorInterface> clientesCopia = ((BD)this.baseDeDados).getClientes();
-                clientesCopia.put(novo.getEmail(), novo);
-                ((BD)this.baseDeDados).setClientes(clientesCopia);
+                this.baseDeDados.atualizaAtor(novo);
             }  
        }
        else if(ator instanceof Motorista){
