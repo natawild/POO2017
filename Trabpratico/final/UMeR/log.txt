@@ -24817,3 +24817,692 @@ Viagem terminada: true
 Cliente email: marcia@marcia.comMotorista email: acores@acores.com]
 -------------------------- LOG --------------------------
 >>>>>>> 210c2c13a784b14c641cff0a554095b239486808
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{}Lista de Motoristas: 
+{}Lista de Veiculos: 
+{}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{xavier@xavier.com=Email: xavier@xavier.com
+Nome: Xavier Francisco
+Password: ********************************
+Morada: Rua dos pastorinhos
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, adriana@adriana.com=Email: adriana@adriana.com
+Nome: Adriana Pereira
+Password: ********************************
+Morada: Rua de Boticas
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, marcia@marcia.com=Email: marcia@marcia.com
+Nome: Márcia
+Password: ********************************
+Morada: Rua da Televisão
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, celia@celia.com=Email: celia@celia.com
+Nome: Celia
+Password: ********************************
+Morada: Rua do cão
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, luis@luis.com=Email: luis@luis.com
+Nome: Luis
+Password: ********************************
+Morada: Rua da cinderela
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, daniel@daniel.com=Email: daniel@daniel.com
+Nome: Daniel Faria
+Password: ********************************
+Morada: Rua do Ouro
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, rui@rui.com=Email: rui@rui.com
+Nome: Rui
+Password: ********************************
+Morada: Rua da costa 
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 76.0 y: 90.1
+Em viagem: false, celia@gmail.com=Email: celia@gmail.com
+Nome: Célia
+Password: ********************************
+Morada: Rua das margaridas
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, carlosfaria@gmail.com=Email: carlosfaria@gmail.com
+Nome: Carlos Faria
+Password: ********************************
+Morada: Rua dos cravos
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false}Lista de Motoristas: 
+{acores@acores.com=Email: acores@acores.com
+Nome: João César
+Password: ********************************
+Morada: Rua Fábrica do pelo
+Data de Nascimento: 1989-12-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 0.5
+Total de viagens: 0
+Veiculo conduzido: Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 53.5 y: 73.8
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+
+Viagem em processo 
+: null
+, carlos@carlos.com=Email: carlos@carlos.com
+Nome: Carlos César
+Password: ********************************
+Morada: Rua das Laranjas
+Data de Nascimento: 1979-12-23
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: false
+Destreza: 0.7
+Total de viagens: 0
+Veiculo conduzido: null
+Viagem em processo 
+: null
+, rita@rita.com=Email: rita@rita.com
+Nome: Rita César
+Password: ********************************
+Morada: Rua Fábrica do sabão
+Data de Nascimento: 1989-11-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: false
+Destreza: 0.5
+Total de viagens: 0
+Veiculo conduzido: Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 22.3 y: 61.4
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 2.1
+
+Viagem em processo 
+: null
+, manuel@manuel.com=Email: manuel@manuel.com
+Nome: Manuel César
+Password: ********************************
+Morada: Rua Conego do pelo
+Data de Nascimento: 1989-10-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 1.2
+Total de viagens: 0
+Veiculo conduzido: Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 83.5 y: 1.6
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+
+Viagem em processo 
+: null
+}Lista de Veiculos: 
+{qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 53.5 y: 73.8
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 23-az-20=Motociclo: 
+Matricula: 23-az-20
+Marca: Honda
+Fiabilidade do veiculo: 0.9
+Localização do veiculo: x: 19.4 y: 4.2
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 2.1
+, 24-az-28=Carrinha: 
+Matricula: 24-az-28
+Marca: Honda
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 80.3 y: 83.2
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, qt-34-22=Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 83.5 y: 1.6
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, 25-76-22=Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 22.3 y: 61.4
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 2.1
+, 23-az-24=Carro Ligeiro: 
+Matricula: 23-az-24
+Marca: Toyota
+Fiabilidade do veiculo: 0.9
+Localização do veiculo: x: 35.8 y: 83.4
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 25-tr-19=Carro Ligeiro: 
+Matricula: 25-tr-19
+Marca: BMW
+Fiabilidade do veiculo: 1.1
+Localização do veiculo: x: 86.5 y: 75.1
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 09-bm-09=Carro Ligeiro: 
+Matricula: 09-bm-09
+Marca: Audi
+Fiabilidade do veiculo: 1.0
+Localização do veiculo: x: 5.4 y: 15.0
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 25-fb-20=Carrinha: 
+Matricula: 25-fb-20
+Marca: Volvo
+Fiabilidade do veiculo: 0.9
+Localização do veiculo: x: 93.7 y: 4.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{xavier@xavier.com=Email: xavier@xavier.com
+Nome: Xavier Francisco
+Password: ********************************
+Morada: Rua dos pastorinhos
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, adriana@adriana.com=Email: adriana@adriana.com
+Nome: Adriana Pereira
+Password: ********************************
+Morada: Rua de Boticas
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, marcia@marcia.com=Email: marcia@marcia.com
+Nome: Márcia
+Password: ********************************
+Morada: Rua da Televisão
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, celia@celia.com=Email: celia@celia.com
+Nome: Celia
+Password: ********************************
+Morada: Rua do cão
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, luis@luis.com=Email: luis@luis.com
+Nome: Luis
+Password: ********************************
+Morada: Rua da cinderela
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, daniel@daniel.com=Email: daniel@daniel.com
+Nome: Daniel Faria
+Password: ********************************
+Morada: Rua do Ouro
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, rui@rui.com=Email: rui@rui.com
+Nome: Rui
+Password: ********************************
+Morada: Rua da costa 
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 76.0 y: 90.1
+Em viagem: false, celia@gmail.com=Email: celia@gmail.com
+Nome: Célia
+Password: ********************************
+Morada: Rua das margaridas
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, carlosfaria@gmail.com=Email: carlosfaria@gmail.com
+Nome: Carlos Faria
+Password: ********************************
+Morada: Rua dos cravos
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false}Lista de Motoristas: 
+{acores@acores.com=Email: acores@acores.com
+Nome: João César
+Password: ********************************
+Morada: Rua Fábrica do pelo
+Data de Nascimento: 1989-12-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 0.5
+Total de viagens: 0
+Veiculo conduzido: Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 53.5 y: 73.8
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+
+Viagem em processo 
+: null
+, carlos@carlos.com=Email: carlos@carlos.com
+Nome: Carlos César
+Password: ********************************
+Morada: Rua das Laranjas
+Data de Nascimento: 1979-12-23
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: false
+Destreza: 0.7
+Total de viagens: 0
+Veiculo conduzido: null
+Viagem em processo 
+: null
+, rita@rita.com=Email: rita@rita.com
+Nome: Rita César
+Password: ********************************
+Morada: Rua Fábrica do sabão
+Data de Nascimento: 1989-11-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: false
+Destreza: 0.5
+Total de viagens: 0
+Veiculo conduzido: Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 22.3 y: 61.4
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 2.1
+
+Viagem em processo 
+: null
+, manuel@manuel.com=Email: manuel@manuel.com
+Nome: Manuel César
+Password: ********************************
+Morada: Rua Conego do pelo
+Data de Nascimento: 1989-10-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 1.2
+Total de viagens: 0
+Veiculo conduzido: Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 83.5 y: 1.6
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+
+Viagem em processo 
+: null
+}Lista de Veiculos: 
+{qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 53.5 y: 73.8
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 23-az-20=Motociclo: 
+Matricula: 23-az-20
+Marca: Honda
+Fiabilidade do veiculo: 0.9
+Localização do veiculo: x: 19.4 y: 4.2
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 2.1
+, 24-az-28=Carrinha: 
+Matricula: 24-az-28
+Marca: Honda
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 80.3 y: 83.2
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, qt-34-22=Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 83.5 y: 1.6
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, 25-76-22=Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 22.3 y: 61.4
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 2.1
+, 23-az-24=Carro Ligeiro: 
+Matricula: 23-az-24
+Marca: Toyota
+Fiabilidade do veiculo: 0.9
+Localização do veiculo: x: 35.8 y: 83.4
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 25-tr-19=Carro Ligeiro: 
+Matricula: 25-tr-19
+Marca: BMW
+Fiabilidade do veiculo: 1.1
+Localização do veiculo: x: 86.5 y: 75.1
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 09-bm-09=Carro Ligeiro: 
+Matricula: 09-bm-09
+Marca: Audi
+Fiabilidade do veiculo: 1.0
+Localização do veiculo: x: 5.4 y: 15.0
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 25-fb-20=Carrinha: 
+Matricula: 25-fb-20
+Marca: Volvo
+Fiabilidade do veiculo: 0.9
+Localização do veiculo: x: 93.7 y: 4.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------
+
+-------------------------- LOG --------------------------
+Base de dados: Lista de Clientes: 
+{xavier@xavier.com=Email: xavier@xavier.com
+Nome: Xavier Francisco
+Password: ********************************
+Morada: Rua dos pastorinhos
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, adriana@adriana.com=Email: adriana@adriana.com
+Nome: Adriana Pereira
+Password: ********************************
+Morada: Rua de Boticas
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, marcia@marcia.com=Email: marcia@marcia.com
+Nome: Márcia
+Password: ********************************
+Morada: Rua da Televisão
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, celia@celia.com=Email: celia@celia.com
+Nome: Celia
+Password: ********************************
+Morada: Rua do cão
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 10.0 y: 4.0
+Em viagem: false, luis@luis.com=Email: luis@luis.com
+Nome: Luis
+Password: ********************************
+Morada: Rua da cinderela
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, daniel@daniel.com=Email: daniel@daniel.com
+Nome: Daniel Faria
+Password: ********************************
+Morada: Rua do Ouro
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, rui@rui.com=Email: rui@rui.com
+Nome: Rui
+Password: ********************************
+Morada: Rua da costa 
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 76.0 y: 90.1
+Em viagem: false, celia@gmail.com=Email: celia@gmail.com
+Nome: Célia
+Password: ********************************
+Morada: Rua das margaridas
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false, carlosfaria@gmail.com=Email: carlosfaria@gmail.com
+Nome: Carlos Faria
+Password: ********************************
+Morada: Rua dos cravos
+Data de Nascimento: 1993-12-24
+Localização: 
+ x: 82.3 y: 22.4
+Em viagem: false}Lista de Motoristas: 
+{acores@acores.com=Email: acores@acores.com
+Nome: João César
+Password: ********************************
+Morada: Rua Fábrica do pelo
+Data de Nascimento: 1989-12-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 0.5
+Total de viagens: 0
+Veiculo conduzido: Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 53.5 y: 73.8
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+
+Viagem em processo 
+: null
+, carlos@carlos.com=Email: carlos@carlos.com
+Nome: Carlos César
+Password: ********************************
+Morada: Rua das Laranjas
+Data de Nascimento: 1979-12-23
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: false
+Destreza: 0.7
+Total de viagens: 0
+Veiculo conduzido: null
+Viagem em processo 
+: null
+, rita@rita.com=Email: rita@rita.com
+Nome: Rita César
+Password: ********************************
+Morada: Rua Fábrica do sabão
+Data de Nascimento: 1989-11-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: false
+Destreza: 0.5
+Total de viagens: 0
+Veiculo conduzido: Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 22.3 y: 61.4
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 2.1
+
+Viagem em processo 
+: null
+, manuel@manuel.com=Email: manuel@manuel.com
+Nome: Manuel César
+Password: ********************************
+Morada: Rua Conego do pelo
+Data de Nascimento: 1989-10-24
+Classificação: 0
+Grau de cumprimento de Horario: 0
+Total Kms efetuados: 0.0
+Disponibilidade: true
+Horário de Trabalho: true
+Destreza: 1.2
+Total de viagens: 0
+Veiculo conduzido: Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 83.5 y: 1.6
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+
+Viagem em processo 
+: null
+}Lista de Veiculos: 
+{qt-76-22=Carro Ligeiro: 
+Matricula: qt-76-22
+Marca: Mercedes
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 53.5 y: 73.8
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 23-az-20=Motociclo: 
+Matricula: 23-az-20
+Marca: Honda
+Fiabilidade do veiculo: 0.9
+Localização do veiculo: x: 19.4 y: 4.2
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 2.1
+, 24-az-28=Carrinha: 
+Matricula: 24-az-28
+Marca: Honda
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 80.3 y: 83.2
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, qt-34-22=Carrinha: 
+Matricula: qt-34-22
+Marca: Renault
+Fiabilidade do veiculo: 1.2
+Localização do veiculo: x: 83.5 y: 1.6
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+, 25-76-22=Motociclo: 
+Matricula: 25-76-22
+Marca: Fiat
+Fiabilidade do veiculo: 0.8
+Localização do veiculo: x: 22.3 y: 61.4
+Lugares disponiveis: 1
+Velocidade Média: 40.5
+Preço por Km: 2.1
+, 23-az-24=Carro Ligeiro: 
+Matricula: 23-az-24
+Marca: Toyota
+Fiabilidade do veiculo: 0.9
+Localização do veiculo: x: 35.8 y: 83.4
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 25-tr-19=Carro Ligeiro: 
+Matricula: 25-tr-19
+Marca: BMW
+Fiabilidade do veiculo: 1.1
+Localização do veiculo: x: 86.5 y: 75.1
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 09-bm-09=Carro Ligeiro: 
+Matricula: 09-bm-09
+Marca: Audi
+Fiabilidade do veiculo: 1.0
+Localização do veiculo: x: 5.4 y: 15.0
+Lugares disponiveis: 4
+Velocidade média:65.0
+Preço por Km: 3.5
+, 25-fb-20=Carrinha: 
+Matricula: 25-fb-20
+Marca: Volvo
+Fiabilidade do veiculo: 0.9
+Localização do veiculo: x: 93.7 y: 4.3
+Lugares disponiveis: 8
+Velocidade Média: 55.0
+Preço por Km: 5.1
+}Historico: 
+[]
+-------------------------- LOG --------------------------

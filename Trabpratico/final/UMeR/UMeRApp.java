@@ -42,6 +42,7 @@ public class UMeRApp
     private static UMeRMenu menu_proposta_viagem;
     private static UMeRMenu menu_historico;
     private static UMeRMenu menu_faturas_motoristas;
+    private static DecimalFormat dec = new DecimalFormat("#0.00");
     /**
      * 
      */
@@ -123,7 +124,7 @@ public class UMeRApp
     {
         String[] menu1 = {"Registar Utilizador", "Iniciar sessão"};
         String[] menu2 = {"Cliente", "Motorista"};
-        String[] menu3 = {"Solicitar Viagem", "Visualizar Histórico de viagens", "Classificar Viagens" , "Ver Dados Pessoais"};
+        String[] menu3 = {"Solicitar Viagem", "Visualizar Histórico de viagens", "Classificar Viagens", "Atualizar Localizacao", "Ver Dados Pessoais"};
         String[] menu4 = {"Gerir Viagens","Gerir Horário de trabalho", "Visualizar Histórico de viagens", 
                             "Visualizar 10 melhores clientes", "Registar Veiculo", "Remover Veiculo" , "Atualizar Localizacao" ,"Ver Dados Pessoais"};
         String[] menu5 = {"Ver Lista dos utilizadores registados", "Ver Lista dos Veiculos Registados", "Visualizar Histórico de viagens" , 
@@ -288,7 +289,7 @@ public class UMeRApp
         String aux;
         LocalDate data;
 
-        System.out.print(msg);
+        System.out.println(msg);
         aux = input.nextLine();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -299,7 +300,6 @@ public class UMeRApp
             System.out.println("Formato da data incorreto\n");
             data = lerData(msg);
         }
-
         finally {
             input.close();
         }
@@ -429,16 +429,19 @@ public class UMeRApp
                 break;
             }
             case 2 : {
-                //verHistoricoViagensEntreDatas();
+
                 visualizaHistorico();
                 break;
             }
             case 3 : {
-                //verHistoricoViagensEntreDatas();
                 menuClassificarViagens();
                 break;
             }
             case 4 : {
+                atualizarLocalizacao();
+                break;
+            }
+            case 5 : {
                 verDadosPessoais();
                 break;
             }
@@ -450,7 +453,7 @@ public class UMeRApp
                 menuErro();
                 menuCliente();
                 break;
-            }
+            }   
         }
     }
 
@@ -595,7 +598,7 @@ public class UMeRApp
        requisitarViagem(destino, motoristaMaisPerto); 
     }
     
-     static private void requisitarViagem(Coordenadas destino, Motorista m){
+   static private void requisitarViagem(Coordenadas destino, Motorista m){
        DecimalFormat dec = new DecimalFormat("#0.00");
        Coordenadas localizacaoCliente = ((Cliente) umer.getAtorLoggado()).getLoc();
        Coordenadas localizacaoMotorista = m.getVeiculo().getLoc(); 
@@ -609,8 +612,8 @@ public class UMeRApp
        System.out.println("Duração Estimada da Viagem (minutos): " +dec.format(duracaoEstimadaViagem)); 
        System.out.println("Custo Estimado da Viagem (euros): " +dec.format(custoEstimado)); 
     
-       propostaViagemMenu(destino, m);   
-    }
+       propostaViagemMenu(destino, m);    
+   }
     
     static private void propostaViagemMenu(Coordenadas destino, Motorista m){
         menu_proposta_viagem.executa(); 
@@ -807,7 +810,6 @@ public class UMeRApp
         password = is.nextLine();
         System.out.print("Morada: ");
         morada = is.nextLine();
-        System.out.print("Data de nascimento (YYYY-MM-DD): ");
         dataNascimento = lerData("Data de nascimento (YYYY-MM-DD): "); 
         is.close();
         
@@ -891,36 +893,65 @@ public class UMeRApp
     
    static private void atualizarLocalizacao(){
        AtorInterface atorLoggado = umer.getAtorLoggado();
+       if(podeAtualizarLocalicacao()){
+           Scanner is =  new  Scanner(System.in);
+           //Coordenadas localizacao = new Coordenadas(); 
+           double x; 
+           double y; 
+           System.out.println("Introduza a coordenada x:"); 
+           x = is.nextDouble();
+           System.out.println("Introduza a coordenada y:"); 
+           y = is.nextDouble();
+           is.close();
+           Coordenadas localizacao = new Coordenadas(x,y);
+           System.out.println("Introduziu as coordenadas " +localizacao+ " com sucesso! ");
+           
+           umer.atualizaLocalizacao(localizacao); 
+           
+           System.out.println("Localizaçao atulizada");
+           if(atorLoggado instanceof Motorista){
+               menuMotorista();
+           }
+           else if (atorLoggado instanceof Cliente){
+               menuCliente();
+           }
+       }
+       else {
+           System.out.println("Nao pode atualizar a sua localizacao");
+           if(atorLoggado instanceof Motorista){
+               System.out.println("Para atualizar a sua localizaçao tem de ter uma veiculo associado e nao pode estar a efetuar uma viagem");
+               menuMotorista();
+           }
+           else if (atorLoggado instanceof Cliente){
+               System.out.println("Para atualizar a sua localizaçao nao pode estar a efetuar uma viagem");
+               menuCliente();
+           }
+       }
+              
+   }
+   
+   /**
+    * O metodo devolve true se o utilizador logado pode atualiazar a sua localizaçao
+    */
+   static private boolean podeAtualizarLocalicacao () {
+       AtorInterface atorLoggado = umer.getAtorLoggado();
+       boolean podeAtualizar = false;
+       
        if(atorLoggado instanceof Motorista){
            Motorista m = (Motorista) atorLoggado;
            VeiculoInterface v = m.getVeiculo();
-           if(m.getViagemEmProcesso() != null){
-               System.out.println();
-           }
-           else {
-               if(v != null){
-                   System.out.println();
-               }
+           if(v !=null && m.getViagemEmProcesso() == null ){
+               podeAtualizar = true;
            }
        }
        else if (atorLoggado instanceof Cliente){
-        
+           Cliente c = (Cliente) atorLoggado;
+           if(c.getEmViagem() == false) {
+              podeAtualizar = true;
+           }
        }
-       Scanner is =  new  Scanner(System.in);
-       //Coordenadas localizacao = new Coordenadas(); 
-       double x; 
-       double y; 
-       System.out.println("Introduza a coordenada x:"); 
-       x = is.nextDouble();
-       System.out.println("Introduza a coordenada y:"); 
-       y = is.nextDouble();
-       is.close();
-       Coordenadas localizacao = new Coordenadas(x,y);
-       System.out.println("Introduziu as coordenadas " +localizacao+ " com sucesso! ");
-       
-       umer.atualizaLocalizacao(localizacao);            
+       return podeAtualizar;
    }
-   
    
    
    /**
@@ -1083,15 +1114,10 @@ public class UMeRApp
     }
     
     static private void visualizaHistoricoEntreDatas(){
-        Scanner is =  new  Scanner(System.in);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
-        //System.out.println("Insira a data inicial (yyyy-mm-dd): ");
         LocalDate inicio = lerData("Insira a data inicial (yyyy-mm-dd): "); 
         LocalDateTime inicioTime = LocalDateTime.of(inicio, LocalDateTime.MIN.toLocalTime());
-        //System.out.println("Insira a data final (yyyy-mm-dd): ");
         LocalDate fim = lerData("Insira a data final (yyyy-mm-dd): "); 
         LocalDateTime fimTime = LocalDateTime.of(fim, LocalDateTime.MIN.toLocalTime());
-        is.close();
         
         List<Historico> historicoEntreDatas = umer.historicoEntreDatas(inicioTime, fimTime);
         
@@ -1215,21 +1241,16 @@ public class UMeRApp
     * Devolve a lista de todos motorista e as sua faturacaoentre duas datas . Ordenado ordem decrescente de faturacao
     */
    static private void faturacaoPorMotoristaEntreDatas(){
-        Scanner is =  new  Scanner(System.in);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
-        System.out.println("Insira a data inicial (yyyy-mm-dd): ");
-        LocalDate inicio = LocalDate.parse(is.nextLine(), formatter);
+        LocalDate inicio = lerData("Insira a data inicial (yyyy-mm-dd): ");
         LocalDateTime inicioTime = LocalDateTime.of(inicio, LocalDateTime.MIN.toLocalTime());
-        System.out.println("Insira a data final (yyyy-mm-dd): ");
-        LocalDate fim = LocalDate.parse(is.nextLine(), formatter);
+        LocalDate fim =  lerData("Insira a data final (yyyy-mm-dd): ");
         LocalDateTime fimTime = LocalDateTime.of(fim, LocalDateTime.MIN.toLocalTime());
-        is.close();
         
         List<AtorInterface> motoristas = umer.faturacaoMotoristas(inicioTime, fimTime); 
         if(motoristas != null && motoristas.size() > 0){
             System.out.println("********* Faturacao por Motorista ***********");
             for(AtorInterface motorista: motoristas){
-                System.out.println("Nome: " + motorista.getNome() + " | email: " + motorista.getEmail() + " | Faturacao: " + umer.faturacaoPorMotorista(motorista, inicioTime, fimTime));
+                System.out.println("Nome: " + motorista.getNome() + " | email: " + motorista.getEmail() + " | Faturacao: " + dec.format(umer.faturacaoPorMotorista(motorista, inicioTime, fimTime)));
             }
             menuAdmin();
         }
@@ -1248,7 +1269,7 @@ public class UMeRApp
         if(motoristas != null && motoristas.size() > 0){
             System.out.println("********* Faturacao por Motorista ***********");
             for(AtorInterface motorista: motoristas){
-                System.out.println("Nome: " + motorista.getNome() + " | email: " + motorista.getEmail() + " | Faturacao: " + umer.faturacaoPorMotorista(motorista));
+                System.out.println("Nome: " + motorista.getNome() + " | email: " + motorista.getEmail() + " | Faturacao: " + dec.format(umer.faturacaoPorMotorista(motorista)));
             }
             menuAdmin();
         }
