@@ -10,10 +10,11 @@
 \contentsline {subsection}{\numberline {2.1.4}Motoristas individuais vs Empresas de T\IeC {\'a}xi}{4}
 \contentsline {subsection}{\numberline {2.1.5}Viaturas com Fila de Espera}{4}
 \contentsline {chapter}{\numberline {3}Arquitetura das Classes}{5}
-\contentsline {section}{\numberline {3.1}Ator}{6}
-\contentsline {subsection}{\numberline {3.1.1}Admin}{6}
-\contentsline {subsection}{\numberline {3.1.2}Cliente}{6}
-\contentsline {subsection}{\numberline {3.1.3}Motorista}{6}
+\contentsline {section}{\numberline {3.1}AtorInterface}{6}
+\contentsline {subsection}{\numberline {3.1.1} Ator}{6}
+\contentsline {subsection}{\numberline {3.1.2}Admin}{6}
+\contentsline {subsection}{\numberline {3.1.3}Cliente}{6}
+\contentsline {subsection}{\numberline {3.1.4}Motorista}{6}
 \contentsline {section}{\numberline {3.2}Veiculo}{8}
 \contentsline {section}{\numberline {3.3}Moto}{8}
 \contentsline {subsection}{\numberline {3.3.1}MotoFilaEspera}{8}
@@ -35,5 +36,6 @@
 \contentsline {subsection}{\numberline {4.1.1}Registo}{13}
 \contentsline {subsection}{\numberline {4.1.2}Iniciar Sess\IeC {\~a}o }{14}
 \contentsline {subsubsection}{Cliente}{14}
-\contentsline {subsubsection}{Motorista}{15}
+\contentsline {subsubsection}{Motorista}{16}
+\contentsline {subsubsection}{Admin}{17}
 \contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{18}
