@@ -423,8 +423,7 @@ public class UMeRApp
                 break;
             }
             case 2 : {
-
-                visualizaHistorico();
+                menuHistoricoViagens();
                 break;
             }
             case 3 : {

@@ -106,7 +106,7 @@ public class Historico extends HistoricoAtor implements HistoricoInterface, Seri
     
     public String imprimeHistoricoAdminLinha (){
         StringBuilder sb = new StringBuilder(); 
-        sb.append("Cliente email:  " + this.emailCliente);
+        sb.append("Cliente email:  " + this.emailCliente+" | ");
         sb.append("Motorista email:  " + this.emailMotorista);
         sb.append(super.imprimeHistoricoLinha());
         return sb.toString(); 
@@ -114,14 +114,14 @@ public class Historico extends HistoricoAtor implements HistoricoInterface, Seri
     
     public String imprimeHistoricoMotoristaLinha (){
         StringBuilder sb = new StringBuilder(); 
-        sb.append("Cliente email:  " + this.emailCliente+" | ");
+        sb.append("Cliente email:  " + this.emailCliente);
         sb.append(super.imprimeHistoricoLinha());
         return sb.toString(); 
     }
     
     public String imprimeHistoricoClienteLinha (){
         StringBuilder sb = new StringBuilder(); 
-        sb.append("Motorista:  " + this.emailMotorista+" | ");
+        sb.append("Motorista:  " + this.emailMotorista);
         sb.append(super.imprimeHistoricoLinha());
         return sb.toString(); 
     }

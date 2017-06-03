@@ -1,8 +1,6 @@
 #BlueJ class context
-comment0.target=Utils
-comment0.text=\n\ A\ classe\ Utils\ dever\u00E1\ simular\ as\ condi\u00E7\u00F5es\ atmosf\u00E9ricas\ e\ as\ condicionantes\ de\ tr\u00E2nsito\ para\ cada\ viagem\ efetuada.\n\ A\ classe\ Meteorolgia\ receber\u00E1\ os\ possiveis\ estados\ de\ tempo\ \n\ \n\ A\ classe\ Transito\ receber\u00E1\ os\ possiveis\ estados\ de\ transito\ \n\ @celia\n\ @version\ (n\u00FAmero\ de\ vers\u00E3o\ ou\ data)\n
-comment1.params=min\ max
-comment1.target=double\ generateRandom(float,\ float)
-comment2.params=mensagem
-comment2.target=java.lang.String\ encriptar(java.lang.String)
-numComments=3
+comment0.params=min\ max
+comment0.target=double\ generateRandom(float,\ float)
+comment1.params=mensagem
+comment1.target=java.lang.String\ encriptar(java.lang.String)
+numComments=2
