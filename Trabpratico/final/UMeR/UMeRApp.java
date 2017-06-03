@@ -70,7 +70,6 @@ public class UMeRApp
      */
     static private void apresentarMenu()
     {
-        int running = 1;
         //System.out.println("\f");
         menu_principal.executa();
         switch (menu_principal.getOpcao()) {
@@ -592,12 +591,12 @@ public class UMeRApp
            requisitarViagem(destino, motoristaMaisPerto); 
        }
        else {
-           System.out.println("Nao ha motoristas disponiveis"); 
+           System.out.println("Nao ha motoristas disponiveis");
+           menuCliente(); 
        }
     }
     
    static private void requisitarViagem(Coordenadas destino, Motorista m){
-       DecimalFormat dec = new DecimalFormat("#0.00");
        Coordenadas localizacaoCliente = ((Cliente) umer.getAtorLoggado()).getLoc();
        Coordenadas localizacaoMotorista = m.getVeiculo().getLoc(); 
        double distanciaAteCliente = localizacaoCliente.getDistancia(localizacaoMotorista); 
@@ -688,15 +687,7 @@ public class UMeRApp
          menuCliente();
     }
 
-    /**
-     * 
-     */
-    static private void verHistoricoViagensEntreDatas(){
-      
-    }
-    
-    
-
+   
     /**
      * 
      */
@@ -730,7 +721,6 @@ public class UMeRApp
                 else {
                     menuAdmin();    
                 }  
-                fecharSessao();
                 break;
             }
              default : {
@@ -891,7 +881,7 @@ public class UMeRApp
     
    static private void atualizarLocalizacao(){
        AtorInterface atorLoggado = umer.getAtorLoggado();
-       if(podeAtualizarLocalicacao()){
+       if(umer.podeAtualizarLocalicacao()){
            Scanner is =  new  Scanner(System.in);
            //Coordenadas localizacao = new Coordenadas(); 
            double x; 
@@ -926,29 +916,6 @@ public class UMeRApp
            }
        }
               
-   }
-   
-   /**
-    * O metodo devolve true se o utilizador logado pode atualiazar a sua localizaçao
-    */
-   static private boolean podeAtualizarLocalicacao () {
-       AtorInterface atorLoggado = umer.getAtorLoggado();
-       boolean podeAtualizar = false;
-       
-       if(atorLoggado instanceof Motorista){
-           Motorista m = (Motorista) atorLoggado;
-           VeiculoInterface v = m.getVeiculo();
-           if(v !=null && m.getViagemEmProcesso() == null ){
-               podeAtualizar = true;
-           }
-       }
-       else if (atorLoggado instanceof Cliente){
-           Cliente c = (Cliente) atorLoggado;
-           if(c.getEmViagem() == false) {
-              podeAtualizar = true;
-           }
-       }
-       return podeAtualizar;
    }
    
    
@@ -1368,6 +1335,7 @@ public class UMeRApp
             }
             default : {
                 veiculo =  new  CarroLig();
+                break; 
             }
         }
         try {
@@ -1461,13 +1429,10 @@ public class UMeRApp
                 menuMotorista();
             }
             else {
-                System.out.println("Nao tem veiculo associado ou esta a efetuar uma viagem");
+                System.out.println("No tem veiculo associado ou esta a efetuar uma viagem");
                 menuMotorista();
             } 
         } 
-        else {
-          //menuRemoverVeiculo  
-        }
     }
     
     /**
@@ -1503,7 +1468,7 @@ public class UMeRApp
         if(clientesQueMaisGastam != null && clientesQueMaisGastam.size() > 0){
             System.out.println("*********** Top 10 clientes *****************");
             for(AtorInterface ator: clientesQueMaisGastam){
-                System.out.println("Nome: " + ator.getNome() + " | email: " + ator.getEmail() + " | total gasto (euros): " + umer.totalGastoPorCliente(ator));
+                System.out.println("Nome: " + ator.getNome() + " | email: " + ator.getEmail() + " | total gasto (euros): " + dec.format(umer.totalGastoPorCliente(ator)));
             }
             if(umer.getAtorLoggado() instanceof Motorista){
                 menuMotorista();
@@ -1532,26 +1497,6 @@ public class UMeRApp
         umer.setTentativasDeLoginFalhadas(0);
         System.out.println("\f"); 
         apresentarMenu();
-    }
-
-    /**
-     * Executar menu para administradores.
-     */
-    static private void running_menu_admin()
-    {
-        menu_admin.executa();
-        switch (menu_admin.getOpcao()) {
-            case 1 : {
-                System.out.println("Adiciona Veiculo");
-                /* adicionaVeiculo();*/
-                break;
-            }
-            case 2 : {
-                System.out.println("Adiciona Motorista");
-                /* adicionaMotorista();*/
-                break;
-            }
-        }
     }
 
     /**

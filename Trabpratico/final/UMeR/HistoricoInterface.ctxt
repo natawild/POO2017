@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=HistoricoAtor\ clone()
+comment0.target=Historico\ clone()
 comment1.params=
 comment1.target=java.time.LocalDateTime\ getDataDeInicioDeServico()
 comment2.params=

@@ -10,7 +10,8 @@ Neste capítulo falaremos do esqueleto da  aplicação UMeR, serão abordadas as
 \newpage
 
 \section{AtorInterface}
-A interface AtorInterface servirá
+A interface AtorInterface define todos os métodos que os utilizadores da aplicação deverão ter definidos. 
+Se no futuro for pretendido adicionar novos tipos de atores ao sistema, essas classes deverão também elas implementar esta interface.  Desta forma poder-se-á inserir novos tipos de utilizadores à base de dados sem dificuldades. Como se pode visualizar na base de dados os utilizadores (motoristas, clientes e admins ) são coleções do tipo AtorInterface. Pode-se portanto adicionar os novos tipos de atores a cada uma destas coleções. 
  
 
 \subsection{ Ator}
@@ -66,7 +67,11 @@ this.destreza = Utils.generateRandom(0.5f, 1.9f);
 \end{verbatim}
 
 \newpage
-\section{Veiculo}
+\section{VeiculoInterface}
+
+A interface VeiculoInterface define todos os métodos que os veiculos da aplicação deverão ter definidos. 
+Se no futuro for pretendido adicionar novos tipos de veiculos ao sistema, essas classes deverão também elas implementar esta interface.  Desta forma poder-se-á inserir novos tipos de veiculosd à base de dados sem dificuldades. Como se pode visualizar na base de dados os veiculos (carros, motos, carrinhas, etc ) são coleções do tipo VeiculoInterface. Pode-se portanto adicionar os novos tipos de veiculos à coleção. 
+
 
 \begin{figure}[htpb]
 	\centering
@@ -74,6 +79,8 @@ this.destreza = Utils.generateRandom(0.5f, 1.9f);
 	\caption{Classes }
 	\label{p2:fig:p2_veiculos}
 \end{figure}
+
+\subsection{Veiculo}
 
 \begin{verbatim}
 private String matricula; 
@@ -123,7 +130,11 @@ private List<Cliente> filaClientes;
 \end{verbatim}
 
 \newpage
-\section{Historico}
+\section{HistoricoInterface}
+A interface HistoricoInterface define todos os métodos que os históricos da aplicação deverão ter definidos. 
+Se no futuro for pretendido adicionar novos tipos de históricos ao sistema, essas classes deverão também elas implementar esta interface.  Desta forma poder-se-á inserir novos tipos de históricos à base de dados sem dificuldades. Como se pode visualizar na base de dados os históricos são coleções do tipo HistoricoInterface. Pode-se portanto adicionar os novos tipos de históricos à coleção. 
+
+\subsection{Historico}
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.6]{imagem/historico}
@@ -133,12 +144,27 @@ private List<Cliente> filaClientes;
 \begin{verbatim}
 private String emailCliente; 
 private String emailMotorista; 
+private LocalDateTime dataDeInicioDeServico;
+private double distancia;
+private double tempoEstimado; 
+private double tempoReal;
+private double valorEstimado; 
+private double valorCobrado; 
+private String estadoTempo;
+private String estadoTransito; 
+private boolean terminado; 
+private Coordenadas origem;
+private Coordenadas destino;
+private int classificacao;
 \end{verbatim}
 
 \section{Utils}
 Adicionalmente a classe \textit{Utils} tem implementado um método que encripta a password. E um método que gera números random com intervalos de 0.1. 
 
 \subsection{Meteorologia}
+
+Esta classe é usada para gerar fatores de aleatoriedade no cálculo real do tempo de viagem.
+
 \begin{verbatim}
 public static final String sol = "Sol"; 
 public static final String nevoeiro  = "Nevoeiro"; 
@@ -148,6 +174,9 @@ public static final String neve = "Neve";
 \end{verbatim}
 
 \subsection{Trânsito}
+
+Esta classe é usada para gerar fatores de aleatoriedade no cálculo real do tempo de viagem.
+
 \begin{verbatim}
 public static final String st = "Sem Transito"; 
 public static final String tn = "Transito Normal"; 
@@ -155,6 +184,9 @@ public static final String mt  = "Muito Transito";
 \end{verbatim}
 
 \section{Coordenadas}
+
+Esta classe guarda a localização de um utilizador. O construtor vazio está a ser usado na aplicação para gerar localizações aleatórias quando se criam os utilizadores. 
+
 \begin{verbatim}
 private double x;
 private double y;
@@ -176,7 +208,19 @@ public double getDistancia (Coordenadas c){
 }
 \end{verbatim}
 
-\section{BD}
+\section{BDInterface}
+A interface BDInterface define todos os métodos que as classes que geram dados da aplicação deverão ter definidos. 
+
+Se no futuro se pretender guardar a informação numa base de dados (Oracle por exemplo), esta classe deverá implementar a BDInterface. Desta forma, a mudança de classes que geram os dados guardados é muito simples uma vez que o resto da aplicação continuará a usar os mesmos métodos(definidos na BDInterface) que usa neste momento independentemente da forma como a classe implementa os métodos definidos pela interface. 
+
+\subsection{BD}
+
+As coleções clientes, motoristas e admins são do tipo Map e estão organizados pela chave que é o respetivo email. Uma vez que se efetuam muitas pesquisas, sobre estes dados com a chave email, a melhor opção seria um HashMap uma vez que a pesquisa pela chave é instântanea. 
+
+Para a coleção de veiculos foi utilizada também um HashMap em que a chave é a matricula e os motivos são os mesmso descritos em cima.  Apesar de neste momento não se efetuar muitas pesquisas pela chave, imagina-se que no futuro tal poderá acontecer. 
+
+A colecção de históricos escolhida foi o Set, pois não devem ser permitidos históricos repetidos. Uma vez que algumas das funcionalidades da aplicação implicavam percorrer os dados por ordem (data), pareceu-nos indicado usar um TreeSet e desta forma ter os dados guardados e ordenados de forma a facilitar as funcionalidade do programa.  
+
 \begin{verbatim}
 private Map<String, AtorInterface> clientes;
 private Map<String, AtorInterface> motoristas; 
@@ -186,6 +230,9 @@ private Set<Historico> historico;
 \end{verbatim}
 
 \section{UMeRMenu}
+
+Esta classe tem como objetivo facilitar a criação de menus e a leitura da opção introduzida. 
+
 \begin{verbatim}
 private String titulo;
 private List<String> opcoes;
@@ -193,14 +240,20 @@ private int op;
 \end{verbatim}
 
 \section{UMeR}
+
+Esta classe é o coração da aplicação, uma vez que é nela que está centralizada a lógica das gestão de viagens. É nesta classe que estão definidos os métodos para o calculo do tempo real, estimado, custo real e estimado, bem como métodos para devolver o motorista mais perto e estatisticas da aplicação. Sempre que necessário a UMeR delega a gestão dos dados(ler, guardar, atualizar, apagar) na classe da base de dados (BDInterface). 
+Após login efetuado com sucesso a variável de instância atorloggado é inicializada com o utilizador que acabou de iniciar sessão. É com base nesta variável que a interface da aplicação(UMeRApp) decide quais os menus a apresentar.  
+
 \begin{verbatim}
 private BDInterface baseDeDados;
 private AtorInterface atorLoggado;
 private int tentativasDeLoginFalhadas;
-private Map<String, AtorInterface> atores;
 \end{verbatim}
 
 \section{UMeRApp}
+
+Esta classe é responsável pela interface da aplicação. 
+
 \begin{verbatim}
 private static UMeR umer;
 private static UMeRMenu menu_principal;

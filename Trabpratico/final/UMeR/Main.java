@@ -75,6 +75,10 @@ public class Main
         Cliente cliente13 = new Cliente("carla@carla.com","Carla Faria", Utils.encriptar("carla"), "Rua do bairro", dataNas2, localizacao2, false);
         baseDados.addCliente(cliente13);
         
+        dataNas1 = LocalDate.of (1993,01,01); 
+        Cliente cliente14 = new Cliente("andreia@andreia.com","Andreia Faria", Utils.encriptar("andreia"), "Rua do bairro", dataNas2, localizacao2, false);
+        baseDados.addCliente(cliente14);
+        
         
         VeiculoInterface v1 = new CarroLig("qt-76-22","Mercedes", 0.8f, new Coordenadas()); 
         VeiculoInterface v2 = new Carrinha("qt-34-22","Renault", 1.2f, new Coordenadas()); 
@@ -118,17 +122,55 @@ public class Main
         motorista3.setClassificacao(70); 
         baseDados.addMotorista(motorista3); 
         
-        dataNasM2 = LocalDate.of (1989,11,24);
+        dataNasM2 = LocalDate.of (1979,01,24);
         Motorista motorista4 = new Motorista("rita@rita.com","Rita César", Utils.encriptar("rita"), "Rua Fábrica do sabão", 
         dataNasM2);
-        motorista4.setVeiculo(v3);
+        motorista4.setDisponivel(true);
+        motorista4.setHorarioTrabalho(true);
+        motorista4.setVeiculo(v4);
+        motorista4.setGrauCumprimentoHorario(63); 
+        motorista4.setClassificacao(50); 
         baseDados.addMotorista(motorista4); 
         
-        dataNasM2 = LocalDate.of (1979,12,23);
+        dataNasM2 = LocalDate.of (1979,02,25);
         Motorista motorista5 = new Motorista("carlos@carlos.com","Carlos César", Utils.encriptar("carlos"), "Rua das Laranjas", 
         dataNasM2);
-        motorista4.setVeiculo(v4);
+        motorista5.setDisponivel(true);
+        motorista5.setHorarioTrabalho(true);
+        motorista5.setVeiculo(v5);
+        motorista5.setGrauCumprimentoHorario(73); 
+        motorista5.setClassificacao(70); 
         baseDados.addMotorista(motorista5); 
+        
+        dataNasM2 = LocalDate.of (1979,02,25);
+        Motorista motorista6 = new Motorista("antonio@antonio.com","António César", Utils.encriptar("antonio"), "Rua das batatas", 
+        dataNasM2);
+        motorista6.setDisponivel(true);
+        motorista6.setHorarioTrabalho(true);
+        motorista6.setVeiculo(v9);
+        motorista6.setGrauCumprimentoHorario(100); 
+        motorista6.setClassificacao(90); 
+        baseDados.addMotorista(motorista6); 
+        
+        dataNasM2 = LocalDate.of (1979,02,25);
+        Motorista motorista7 = new Motorista("maria@maria.com","Maria César", Utils.encriptar("maria"), "Rua das marias", 
+        dataNasM2);
+        motorista7.setDisponivel(true);
+        motorista7.setHorarioTrabalho(true);
+        motorista7.setVeiculo(v10);
+        motorista7.setGrauCumprimentoHorario(67); 
+        motorista7.setClassificacao(80); 
+        baseDados.addMotorista(motorista7);
+        
+        dataNasM2 = LocalDate.of (1988,02,07);
+        Motorista motorista8 = new Motorista("joana@joana.com","Joana César", Utils.encriptar("joana"), "Rua das joanas", 
+        dataNasM2);
+        motorista8.setDisponivel(true);
+        motorista8.setHorarioTrabalho(true);
+        motorista8.setVeiculo(v8);
+        motorista8.setGrauCumprimentoHorario(50); 
+        motorista8.setClassificacao(89); 
+        baseDados.addMotorista(motorista8);
        
        
        Admin admin =  new  Admin("admin@admin.com", "admin", Utils.encriptar("admin"), null, null,  new  Coordenadas());
@@ -147,7 +189,7 @@ public class Main
        h.setValorEstimado(300);
        h.setValorCobrado(300);
        h.setEstadoTempo("Neve"); 
-       h.setEstadoTransito("Normal");
+       h.setEstadoTransito("Transito Normal");
        h.setTerminado(true); 
        Coordenadas origem = new Coordenadas(); 
        Coordenadas destino = new Coordenadas(); 
@@ -168,7 +210,7 @@ public class Main
        h1.setValorEstimado(150);
        h1.setValorCobrado(150);
        h1.setEstadoTempo("Sol"); 
-       h1.setEstadoTransito("Normal");
+       h1.setEstadoTransito("Sem Transito");
        h1.setTerminado(true); 
        Coordenadas origem1 = new Coordenadas(); 
        Coordenadas destino1 = new Coordenadas(); 
@@ -181,7 +223,7 @@ public class Main
        LocalDate data2 = LocalDate.of(2017, 04, 27); 
        LocalDateTime dataTime2 = LocalDateTime.of(data2, LocalDateTime.MIN.toLocalTime());
        h2.setDataDeInicioDeServico(dataTime2); 
-       h2.setEmailCliente("celia@celia.com"); 
+       h2.setEmailCliente("daniel@daniel.com"); 
        h2.setEmailMotorista("acores@acores.com"); 
        h2.setDistancia(20d);
        h2.setTempoEstimado(15d); 
@@ -189,7 +231,7 @@ public class Main
        h2.setValorEstimado(45);
        h2.setValorCobrado(40);
        h2.setEstadoTempo("Sol"); 
-       h2.setEstadoTransito("Normal");
+       h2.setEstadoTransito("Sem Transito");
        h2.setTerminado(true); 
        h2.setOrigem(new Coordenadas()); 
        h2.setDestino(new Coordenadas());
@@ -200,7 +242,7 @@ public class Main
        LocalDate data3 = LocalDate.of(2017, 05, 27); 
        LocalDateTime dataTime3 = LocalDateTime.of(data3, LocalDateTime.MIN.toLocalTime());
        h3.setDataDeInicioDeServico(dataTime3); 
-       h3.setEmailCliente("celia@celia.com"); 
+       h3.setEmailCliente("nuno@nuno.com"); 
        h3.setEmailMotorista("manuel@manuel.com"); 
        h3.setDistancia(50d);
        h3.setTempoEstimado(30d); 
@@ -208,7 +250,7 @@ public class Main
        h3.setValorEstimado(90);
        h3.setValorCobrado(90);
        h3.setEstadoTempo("Chuva"); 
-       h3.setEstadoTransito("Normal");
+       h3.setEstadoTransito("Sem Transito");
        h3.setTerminado(true); 
        h3.setOrigem(new Coordenadas()); 
        h3.setDestino(new Coordenadas());
@@ -219,7 +261,7 @@ public class Main
        LocalDate data4 = LocalDate.of(2017, 05, 29); 
        LocalDateTime dataTime4 = LocalDateTime.of(data4, LocalDateTime.MIN.toLocalTime());
        h4.setDataDeInicioDeServico(dataTime4); 
-       h4.setEmailCliente("celia@celia.com"); 
+       h4.setEmailCliente("nazare@nazare.com"); 
        h4.setEmailMotorista("manuel@manuel.com"); 
        h4.setDistancia(100d);
        h4.setTempoEstimado(30d); 
@@ -227,7 +269,7 @@ public class Main
        h4.setValorEstimado(90);
        h4.setValorCobrado(90);
        h4.setEstadoTempo("Sol"); 
-       h4.setEstadoTransito("Normal");
+       h4.setEstadoTransito("Muito Transito");
        h4.setTerminado(true); 
        h4.setOrigem(new Coordenadas()); 
        h4.setDestino(new Coordenadas());
@@ -246,15 +288,127 @@ public class Main
        h5.setValorEstimado(90);
        h5.setValorCobrado(90);
        h5.setEstadoTempo("Sol"); 
-       h5.setEstadoTransito("Normal");
+       h5.setEstadoTransito("Transito Normal");
        h5.setTerminado(true); 
        h5.setOrigem(new Coordenadas()); 
        h5.setDestino(new Coordenadas());
        h5.setClassificacao(50); 
        baseDados.addHistorico(h5);
        
+       Historico h6 = new Historico();
+       LocalDate data6 = LocalDate.of(2017, 05, 23); 
+       LocalDateTime dataTime6 = LocalDateTime.of(data6, LocalDateTime.MIN.toLocalTime());
+       h6.setDataDeInicioDeServico(dataTime6); 
+       h6.setEmailCliente("carla@carla.com"); 
+       h6.setEmailMotorista("rita@rita.com"); 
+       h6.setDistancia(100d);
+       h6.setTempoEstimado(30d); 
+       h6.setTempoReal(48d); 
+       h6.setValorEstimado(90);
+       h6.setValorCobrado(90);
+       h6.setEstadoTempo("Sol"); 
+       h6.setEstadoTransito("Muito Transito");
+       h6.setTerminado(true); 
+       h6.setOrigem(new Coordenadas()); 
+       h6.setDestino(new Coordenadas());
+       h6.setClassificacao(50); 
+       baseDados.addHistorico(h6);
+       
+       Historico h7 = new Historico();
+       LocalDate data7 = LocalDate.of(2017, 05, 03); 
+       LocalDateTime dataTime7 = LocalDateTime.of(data7, LocalDateTime.MIN.toLocalTime());
+       h7.setDataDeInicioDeServico(dataTime7); 
+       h7.setEmailCliente("xavier@xavier.com"); 
+       h7.setEmailMotorista("carlos@carlos.com"); 
+       h7.setDistancia(100d);
+       h7.setTempoEstimado(30d); 
+       h7.setTempoReal(22d); 
+       h7.setValorEstimado(90);
+       h7.setValorCobrado(70);
+       h7.setEstadoTempo("Nevoeiro"); 
+       h7.setEstadoTransito("Transito Normal");
+       h7.setTerminado(true); 
+       h7.setOrigem(new Coordenadas()); 
+       h7.setDestino(new Coordenadas());
+       h7.setClassificacao(90); 
+       baseDados.addHistorico(h7);
        
        
+       Historico h8 = new Historico();
+       LocalDate data8 = LocalDate.of(2017, 06, 02); 
+       LocalDateTime dataTime8 = LocalDateTime.of(data8, LocalDateTime.MIN.toLocalTime());
+       h8.setDataDeInicioDeServico(dataTime8); 
+       h8.setEmailCliente("andreia@andreia.com"); 
+       h8.setEmailMotorista("antonio@antonio.com"); 
+       h8.setDistancia(130d);
+       h8.setTempoEstimado(50d); 
+       h8.setTempoReal(40d); 
+       h8.setValorEstimado(90);
+       h8.setValorCobrado(90);
+       h8.setEstadoTempo("Nevoeiro"); 
+       h8.setEstadoTransito("Muito Transito");
+       h8.setTerminado(true); 
+       h8.setOrigem(new Coordenadas()); 
+       h8.setDestino(new Coordenadas());
+       h8.setClassificacao(90); 
+       baseDados.addHistorico(h8);
+       
+       Historico h9 = new Historico();
+       LocalDate data9 = LocalDate.of(2017, 06, 12); 
+       LocalDateTime dataTime9 = LocalDateTime.of(data9, LocalDateTime.MIN.toLocalTime());
+       h9.setDataDeInicioDeServico(dataTime9); 
+       h9.setEmailCliente("carlosfaria@gmail.com"); 
+       h9.setEmailMotorista("maria@maria.com"); 
+       h9.setDistancia(20d);
+       h9.setTempoEstimado(10d); 
+       h9.setTempoReal(15d); 
+       h9.setValorEstimado(30);
+       h9.setValorCobrado(37);
+       h9.setEstadoTempo("Nevoeiro"); 
+       h9.setEstadoTransito("Muito Transito");
+       h9.setTerminado(true); 
+       h9.setOrigem(new Coordenadas()); 
+       h9.setDestino(new Coordenadas());
+       h9.setClassificacao(80); 
+       baseDados.addHistorico(h9);
+       
+       Historico h10 = new Historico();
+       LocalDate data10 = LocalDate.of(2017, 06, 03); 
+       LocalDateTime dataTime10 = LocalDateTime.of(data10, LocalDateTime.MIN.toLocalTime());
+       h10.setDataDeInicioDeServico(dataTime10); 
+       h10.setEmailCliente("celia@gmail.com"); 
+       h10.setEmailMotorista("maria@maria.com"); 
+       h10.setDistancia(40d);
+       h10.setTempoEstimado(30d); 
+       h10.setTempoReal(20d); 
+       h10.setValorEstimado(120);
+       h10.setValorCobrado(120);
+       h10.setEstadoTempo("Chuva"); 
+       h10.setEstadoTransito("Sem Transito");
+       h10.setTerminado(true); 
+       h10.setOrigem(new Coordenadas()); 
+       h10.setDestino(new Coordenadas());
+       h10.setClassificacao(80); 
+       baseDados.addHistorico(h10);
+       
+       Historico h11 = new Historico();
+       LocalDate data11 = LocalDate.of(2017, 05, 14); 
+       LocalDateTime dataTime11 = LocalDateTime.of(data11, LocalDateTime.MIN.toLocalTime());
+       h11.setDataDeInicioDeServico(dataTime11); 
+       h11.setEmailCliente("filipa@filipa.com"); 
+       h11.setEmailMotorista("joana@joana.com"); 
+       h11.setDistancia(12d);
+       h11.setTempoEstimado(6d); 
+       h11.setTempoReal(12d); 
+       h11.setValorEstimado(18);
+       h11.setValorCobrado(18);
+       h11.setEstadoTempo("Chuva"); 
+       h11.setEstadoTransito("Muito Transito");
+       h11.setTerminado(true); 
+       h11.setOrigem(new Coordenadas()); 
+       h11.setDestino(new Coordenadas());
+       h11.setClassificacao(89); 
+       baseDados.addHistorico(h11);
         
         UMeR umer = new UMeR(baseDados); 
   

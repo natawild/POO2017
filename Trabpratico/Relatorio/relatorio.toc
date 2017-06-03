@@ -14,28 +14,31 @@
 \contentsline {subsection}{\numberline {3.1.1} Ator}{6}
 \contentsline {subsection}{\numberline {3.1.2}Admin}{6}
 \contentsline {subsection}{\numberline {3.1.3}Cliente}{6}
-\contentsline {subsection}{\numberline {3.1.4}Motorista}{6}
-\contentsline {section}{\numberline {3.2}Veiculo}{8}
+\contentsline {subsection}{\numberline {3.1.4}Motorista}{7}
+\contentsline {section}{\numberline {3.2}VeiculoInterface}{8}
+\contentsline {subsection}{\numberline {3.2.1}Veiculo}{8}
 \contentsline {section}{\numberline {3.3}Moto}{8}
-\contentsline {subsection}{\numberline {3.3.1}MotoFilaEspera}{8}
+\contentsline {subsection}{\numberline {3.3.1}MotoFilaEspera}{9}
 \contentsline {section}{\numberline {3.4}CarroLig}{9}
 \contentsline {subsection}{\numberline {3.4.1}CarroFilaEspera}{9}
 \contentsline {section}{\numberline {3.5}Carrinha}{9}
 \contentsline {subsection}{\numberline {3.5.1}CarrinhaFilaEspera}{9}
-\contentsline {section}{\numberline {3.6}Historico}{10}
+\contentsline {section}{\numberline {3.6}HistoricoInterface}{10}
+\contentsline {subsection}{\numberline {3.6.1}Historico}{10}
 \contentsline {section}{\numberline {3.7}Utils}{10}
 \contentsline {subsection}{\numberline {3.7.1}Meteorologia}{10}
-\contentsline {subsection}{\numberline {3.7.2}Tr\IeC {\^a}nsito}{10}
-\contentsline {section}{\numberline {3.8}Coordenadas}{10}
-\contentsline {section}{\numberline {3.9}BD}{11}
-\contentsline {section}{\numberline {3.10}UMeRMenu}{11}
-\contentsline {section}{\numberline {3.11}UMeR}{11}
-\contentsline {section}{\numberline {3.12}UMeRApp}{11}
-\contentsline {chapter}{\numberline {4}Funcionamento da Aplica\IeC {\c c}\IeC {\~a}o UMeR}{13}
-\contentsline {section}{\numberline {4.1}Menu Inicial}{13}
-\contentsline {subsection}{\numberline {4.1.1}Registo}{13}
-\contentsline {subsection}{\numberline {4.1.2}Iniciar Sess\IeC {\~a}o }{14}
-\contentsline {subsubsection}{Cliente}{14}
-\contentsline {subsubsection}{Motorista}{16}
-\contentsline {subsubsection}{Admin}{17}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{18}
+\contentsline {subsection}{\numberline {3.7.2}Tr\IeC {\^a}nsito}{11}
+\contentsline {section}{\numberline {3.8}Coordenadas}{11}
+\contentsline {section}{\numberline {3.9}BDInterface}{11}
+\contentsline {subsection}{\numberline {3.9.1}BD}{12}
+\contentsline {section}{\numberline {3.10}UMeRMenu}{12}
+\contentsline {section}{\numberline {3.11}UMeR}{12}
+\contentsline {section}{\numberline {3.12}UMeRApp}{12}
+\contentsline {chapter}{\numberline {4}Funcionamento da Aplica\IeC {\c c}\IeC {\~a}o UMeR}{14}
+\contentsline {section}{\numberline {4.1}Menu Inicial}{14}
+\contentsline {section}{\numberline {4.2}Menu Inicial-Registo}{14}
+\contentsline {section}{\numberline {4.3}Menu Inicial - Iniciar Sess\IeC {\~a}o }{15}
+\contentsline {subsection}{\numberline {4.3.1}Funcionalidades de Cliente}{15}
+\contentsline {subsection}{\numberline {4.3.2}Funcionalidades de Motorista}{18}
+\contentsline {subsection}{\numberline {4.3.3}Funcionalidades de Admin}{20}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es e }{24}

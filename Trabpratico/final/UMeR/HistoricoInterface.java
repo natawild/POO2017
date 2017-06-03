@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 public interface HistoricoInterface
 {
-    public HistoricoAtor clone();
+    public Historico clone();
     
     public LocalDateTime getDataDeInicioDeServico();
     

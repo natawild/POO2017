@@ -328,7 +328,10 @@ public class Motorista extends Ator implements AtorInterface, Serializable, Comp
         public static Comparator<Motorista> GrauDeCumprimento = new Comparator<Motorista>() {
             @Override
             public int compare(Motorista o1, Motorista o2) {
-                return o2.getGrauCumprimentoHorario() - o1.getGrauCumprimentoHorario() ;
+                if((o1.getGrauCumprimentoHorario() - o2.getGrauCumprimentoHorario()) == 0 && o1.equals(o2)==false){
+                    return -1; 
+                }
+                return o1.getGrauCumprimentoHorario() - o2.getGrauCumprimentoHorario() ;
             }
         };  
     }

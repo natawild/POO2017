@@ -15,6 +15,9 @@ public class ComparatorClientesQueMaisGastam implements Comparator<String> {
     }
 
     public int compare(String a, String b) {
+        if(map.get(a).compareTo(map.get(b)) == 0 && a.equals(b)==false){
+            return -1;
+        }
         return map.get(a).compareTo(map.get(b));
     }
 }

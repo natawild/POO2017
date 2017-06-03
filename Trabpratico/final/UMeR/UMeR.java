@@ -30,7 +30,6 @@ public class UMeR{
     private BDInterface baseDeDados;
     private AtorInterface atorLoggado;
     private int tentativasDeLoginFalhadas;
-    private Map<String, AtorInterface> atores;
     
     public UMeR(){
         this.baseDeDados= new BD();  
@@ -677,13 +676,14 @@ public class UMeR{
                }
            }
       }
+      
        
       TreeMap<String, Double> clintesQueMaisGastamOrdenado = new TreeMap<String, Double>(new ComparatorClientesQueMaisGastam(totalGastoPorCliente));
       clintesQueMaisGastamOrdenado.putAll(totalGastoPorCliente);
-
+      
       int i =0;
       for(String key: clintesQueMaisGastamOrdenado.descendingKeySet()){
-          if(i<9){
+          if(i<10){
               listaClientesMaisGastam.add(this.baseDeDados.getClienteComEmail(key));
               i++;
           }
@@ -848,6 +848,28 @@ public class UMeR{
    
    public void atualizaLocalizacao(Coordenadas loc){
        this.atorLoggado = this.baseDeDados.atualizaLocalizacao(this.atorLoggado, loc);
+   }
+   
+      /**
+    * O metodo devolve true se o utilizador logado pode atualiazar a sua localizaçao
+    */
+   public boolean podeAtualizarLocalicacao () {
+       boolean podeAtualizar = false;
+       
+       if(atorLoggado instanceof Motorista){
+           Motorista m = (Motorista) atorLoggado;
+           VeiculoInterface v = m.getVeiculo();
+           if(v !=null && m.getViagemEmProcesso() == null ){
+               podeAtualizar = true;
+           }
+       }
+       else if (atorLoggado instanceof Cliente){
+           Cliente c = (Cliente) atorLoggado;
+           if(c.getEmViagem() == false) {
+              podeAtualizar = true;
+           }
+       }
+       return podeAtualizar;
    }
 }
 

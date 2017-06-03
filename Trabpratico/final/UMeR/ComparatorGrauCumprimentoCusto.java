@@ -15,9 +15,9 @@ public class ComparatorGrauCumprimentoCusto implements Comparator<String> {
     }
 
     public int compare(String a, String b) {
-        if(map.get(b).compareTo(map.get(a)) == 0){
+        if(map.get(a).compareTo(map.get(b)) == 0 && a.equals(b)==false){
             return -1;
         }
-        return map.get(b).compareTo(map.get(a));
+        return map.get(a).compareTo(map.get(b));
     }
 }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  2 JUN 2017 23:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  3 JUN 2017 18:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1530,14 +1530,14 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 ] [3])
 (./chapters/parte2.tex [4]
 Cap\'{\i }tulo 3.
-<imagem/esquemaClasses.png, id=42, 1073.00874pt x 575.14874pt>
+<imagem/esquemaClasses.png, id=42, 1095.09125pt x 588.1975pt>
 File: imagem/esquemaClasses.png Graphic file (type png)
 
 <use imagem/esquemaClasses.png>
 Package pdftex.def Info: imagem/esquemaClasses.png used on input line 5.
-(pdftex.def)             Requested size: 482.84947pt x 258.81454pt.
+(pdftex.def)             Requested size: 492.78651pt x 264.68643pt.
 
-Overfull \hbox (27.60536pt too wide) in paragraph at lines 5--6
+Overfull \hbox (37.5424pt too wide) in paragraph at lines 5--6
  [][] 
  []
 
@@ -1549,53 +1549,53 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 <imagem/atores.png, id=47, 338.26375pt x 215.80624pt>
 File: imagem/atores.png Graphic file (type png)
  <use imagem/atores.png>
-Package pdftex.def Info: imagem/atores.png used on input line 21.
+Package pdftex.def Info: imagem/atores.png used on input line 22.
 (pdftex.def)             Requested size: 202.95981pt x 129.48474pt.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 27.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 28.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Overfull \hbox (84.75566pt too wide) in paragraph at lines 61--61
+) [6 <./imagem/atores.png>]
+Overfull \hbox (84.75566pt too wide) in paragraph at lines 62--62
 []\T1/pcr/m/n/12 private boolean horarioTrabalho; //verificar se está no horári
 o de trabalho[] 
  []
 
-[6 <./imagem/atores.png>] [7]
-<imagem/veiculo.png, id=56, 462.72874pt x 556.0775pt>
+[7] <imagem/veiculo.png, id=56, 462.72874pt x 556.0775pt>
 File: imagem/veiculo.png Graphic file (type png)
- <use imagem/veiculo.png>
-Package pdftex.def Info: imagem/veiculo.png used on input line 73.
+
+<use imagem/veiculo.png>
+Package pdftex.def Info: imagem/veiculo.png used on input line 78.
 (pdftex.def)             Requested size: 277.63939pt x 333.64908pt.
 
-Overfull \hbox (41.55568pt too wide) in paragraph at lines 85--85
+Overfull \hbox (41.55568pt too wide) in paragraph at lines 92--92
 []\T1/pcr/m/n/12 private String marca; //Acrescentou-se a variável de instância
  marca,[] 
  []
 
 
-Overfull \hbox (27.15569pt too wide) in paragraph at lines 85--85
+Overfull \hbox (27.15569pt too wide) in paragraph at lines 92--92
 []\T1/pcr/m/n/12 para o cliente poder escolher um carro com base na marca do ve
 iculo[] 
  []
 
 [8 <./imagem/veiculo.png>] [9]
-<imagem/historico.png, id=65, 377.41pt x 244.915pt>
+<imagem/historico.png, id=65, 240.9pt x 200.75pt>
 File: imagem/historico.png Graphic file (type png)
  <use imagem/historico.png>
-Package pdftex.def Info: imagem/historico.png used on input line 129.
-(pdftex.def)             Requested size: 226.44774pt x 146.95012pt.
+Package pdftex.def Info: imagem/historico.png used on input line 140.
+(pdftex.def)             Requested size: 144.5411pt x 120.45091pt.
 
-[10 <./imagem/historico.png>] [11]) (./chapters/parte3.tex [12]
+[10 <./imagem/historico.png>] [11] [12]) (./chapters/parte3.tex [13]
 Cap\'{\i }tulo 4.
-<imagem/menuInicial.png, id=76, 414.54875pt x 136.51pt>
+<imagem/menuInicial.png, id=79, 414.54875pt x 136.51pt>
 File: imagem/menuInicial.png Graphic file (type png)
 
 <use imagem/menuInicial.png>
 Package pdftex.def Info: imagem/menuInicial.png used on input line 10.
 (pdftex.def)             Requested size: 248.73116pt x 81.90662pt.
 
-<imagem/escolhaTipoAtor.png, id=77, 405.515pt x 129.48375pt>
+<imagem/escolhaTipoAtor.png, id=80, 405.515pt x 129.48375pt>
 File: imagem/escolhaTipoAtor.png Graphic file (type png)
 
 <use imagem/escolhaTipoAtor.png>
@@ -1606,7 +1606,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--27
 
  []
 
-<imagem/exemploregistomotorista.png, id=78, 351.3125pt x 94.3525pt>
+<imagem/exemploregistomotorista.png, id=81, 351.3125pt x 94.3525pt>
 File: imagem/exemploregistomotorista.png Graphic file (type png)
 
 <use imagem/exemploregistomotorista.png>
@@ -1618,7 +1618,7 @@ Overfull \hbox (28.69424pt too wide) in paragraph at lines 29--31
 [][]
  []
 
-<imagem/exemploderegistocliente.png, id=79, 348.30125pt x 95.35625pt>
+<imagem/exemploderegistocliente.png, id=82, 348.30125pt x 95.35625pt>
 File: imagem/exemploderegistocliente.png Graphic file (type png)
 
 <use imagem/exemploderegistocliente.png>
@@ -1630,175 +1630,360 @@ Overfull \hbox (26.8875pt too wide) in paragraph at lines 34--36
 [][]
  []
 
-<imagem/menuCliente.png, id=80, 339.2675pt x 177.66376pt>
+<imagem/menuCliente.png, id=83, 339.2675pt x 177.66376pt>
 File: imagem/menuCliente.png Graphic file (type png)
 
 <use imagem/menuCliente.png>
 Package pdftex.def Info: imagem/menuCliente.png used on input line 44.
 (pdftex.def)             Requested size: 237.48563pt x 124.36377pt.
- [13
+ [14
 
  <./imagem/menuInicial.png> <./imagem/escolhaTipoAtor.png> <./imagem/exemploreg
 istomotorista.png> <./imagem/exemploderegistocliente.png>] <imagem/inserirDesti
-no.png, id=88, 393.47pt x 110.4125pt>
+no.png, id=91, 393.47pt x 110.4125pt>
 File: imagem/inserirDestino.png Graphic file (type png)
 
 <use imagem/inserirDestino.png>
-Package pdftex.def Info: imagem/inserirDestino.png used on input line 52.
+Package pdftex.def Info: imagem/inserirDestino.png used on input line 55.
 (pdftex.def)             Requested size: 216.40915pt x 60.72705pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--54
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
 [][]
  []
 
-<imagem/coorInseridas.png, id=89, 360.34625pt x 124.465pt>
+<imagem/coorInseridas.png, id=92, 360.34625pt x 124.465pt>
 File: imagem/coorInseridas.png Graphic file (type png)
 
 <use imagem/coorInseridas.png>
-Package pdftex.def Info: imagem/coorInseridas.png used on input line 57.
+Package pdftex.def Info: imagem/coorInseridas.png used on input line 60.
 (pdftex.def)             Requested size: 198.19104pt x 68.45595pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
 [][]
  []
 
-<imagem/taxiMaisProx.png, id=90, 396.48125pt x 211.79124pt>
+
+Overfull \hbox (8.89113pt too wide) in paragraph at lines 54--64
+[]  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--64
+
+ []
+
+<imagem/taxiMaisProx.png, id=93, 396.48125pt x 211.79124pt>
 File: imagem/taxiMaisProx.png Graphic file (type png)
 
 <use imagem/taxiMaisProx.png>
-Package pdftex.def Info: imagem/taxiMaisProx.png used on input line 66.
-(pdftex.def)             Requested size: 218.06535pt x 116.48553pt.
+Package pdftex.def Info: imagem/taxiMaisProx.png used on input line 68.
+(pdftex.def)             Requested size: 158.58968pt x 84.715pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--68
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
 [][]
  []
 
-<imagem/escolherTaxiEspecifico.png, id=91, 570.13pt x 145.54375pt>
+<imagem/escolherTaxiEspecifico.png, id=94, 794.97pt x 188.705pt>
 File: imagem/escolherTaxiEspecifico.png Graphic file (type png)
 
 <use imagem/escolherTaxiEspecifico.png>
 Package pdftex.def Info: imagem/escolherTaxiEspecifico.png used on input line 7
-1.
-(pdftex.def)             Requested size: 313.57246pt x 80.0493pt.
+3.
+(pdftex.def)             Requested size: 278.24367pt x 66.04773pt.
 
-Overfull \hbox (108.714pt too wide) in paragraph at lines 71--73
+Overfull \hbox (73.38521pt too wide) in paragraph at lines 73--75
 [][]
  []
 
-[14 <./imagem/menuCliente.png> <./imagem/inserirDestino.png> <./imagem/coorInse
+[15 <./imagem/menuCliente.png> <./imagem/inserirDestino.png> <./imagem/coorInse
 ridas.png> <./imagem/taxiMaisProx.png> <./imagem/escolherTaxiEspecifico.png>]
-<imagem/aceitarViagem.png, id=100, 482.80376pt x 193.72375pt>
+<imagem/aceitarViagem.png, id=104, 482.80376pt x 193.72375pt>
 File: imagem/aceitarViagem.png Graphic file (type png)
 
 <use imagem/aceitarViagem.png>
-Package pdftex.def Info: imagem/aceitarViagem.png used on input line 81.
+Package pdftex.def Info: imagem/aceitarViagem.png used on input line 83.
 (pdftex.def)             Requested size: 289.6845pt x 116.23514pt.
 
-<imagem/erroEmViagem.png, id=101, 591.20876pt x 189.70876pt>
+<imagem/erroEmViagem.png, id=105, 591.20876pt x 189.70876pt>
 File: imagem/erroEmViagem.png Graphic file (type png)
 
 <use imagem/erroEmViagem.png>
-Package pdftex.def Info: imagem/erroEmViagem.png used on input line 89.
+Package pdftex.def Info: imagem/erroEmViagem.png used on input line 91.
 (pdftex.def)             Requested size: 354.72798pt x 113.82613pt.
 
-<imagem/verDadosPessoais.png, id=102, 462.72874pt x 282.05376pt>
+<imagem/menuHistorico.png, id=106, 305.14pt x 128.48pt>
+File: imagem/menuHistorico.png Graphic file (type png)
+
+<use imagem/menuHistorico.png>
+Package pdftex.def Info: imagem/menuHistorico.png used on input line 102.
+(pdftex.def)             Requested size: 122.05382pt x 51.39108pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
+\T1/ptm/m/n/10.95 Menu para es-co-lher como
+ []
+
+<imagem/verHistoricoEntreDatas.png, id=107, 834.11626pt x 98.3675pt>
+File: imagem/verHistoricoEntreDatas.png Graphic file (type png)
+
+<use imagem/verHistoricoEntreDatas.png>
+Package pdftex.def Info: imagem/verHistoricoEntreDatas.png used on input line 1
+07.
+(pdftex.def)             Requested size: 333.6406pt x 39.34628pt.
+
+Overfull \hbox (128.78214pt too wide) in paragraph at lines 107--109
+[][]
+ []
+
+[16 <./imagem/aceitarViagem.png> <./imagem/erroEmViagem.png> <./imagem/menuHist
+orico.png> <./imagem/verHistoricoEntreDatas.png>]
+<imagem/listaViagensPorClassificar.png, id=115, 1107.13625pt x 117.43875pt>
+File: imagem/listaViagensPorClassificar.png Graphic file (type png)
+
+<use imagem/listaViagensPorClassificar.png>
+Package pdftex.def Info: imagem/listaViagensPorClassificar.png used on input li
+ne 119.
+(pdftex.def)             Requested size: 332.14343pt x 35.23189pt.
+
+Overfull \hbox (150.04857pt too wide) in paragraph at lines 119--121
+[][]
+ []
+
+<imagem/classificarViagem.png, id=116, 1079.03125pt x 115.43124pt>
+File: imagem/classificarViagem.png Graphic file (type png)
+
+<use imagem/classificarViagem.png>
+Package pdftex.def Info: imagem/classificarViagem.png used on input line 124.
+(pdftex.def)             Requested size: 431.60486pt x 46.17168pt.
+
+Overfull \hbox (249.51pt too wide) in paragraph at lines 124--126
+[][]
+ []
+
+<imagem/atualizarLocalizacao.png, id=117, 407.5225pt x 107.40125pt>
+File: imagem/atualizarLocalizacao.png Graphic file (type png)
+
+<use imagem/atualizarLocalizacao.png>
+Package pdftex.def Info: imagem/atualizarLocalizacao.png used on input line 136
+.
+(pdftex.def)             Requested size: 244.51538pt x 64.44122pt.
+
+<imagem/verDadosPessoais.png, id=118, 462.72874pt x 282.05376pt>
 File: imagem/verDadosPessoais.png Graphic file (type png)
 
 <use imagem/verDadosPessoais.png>
-Package pdftex.def Info: imagem/verDadosPessoais.png used on input line 97.
+Package pdftex.def Info: imagem/verDadosPessoais.png used on input line 148.
 (pdftex.def)             Requested size: 277.63939pt x 169.23355pt.
- [15 <./imagem/aceitarViagem.png> <./imagem/erroEmViagem.png> <./imagem/verDado
-sPessoais.png>]
-<imagem/menuMotorista.png, id=110, 342.27875pt x 209.78375pt>
+ [17 <./imagem/listaViagensPorClassificar.png> <./imagem/classificarViagem.png>
+ <./imagem/atualizarLocalizacao.png> <./imagem/verDadosPessoais.png>]
+<imagem/menuMotorista.png, id=126, 342.27875pt x 209.78375pt>
 File: imagem/menuMotorista.png Graphic file (type png)
 
 <use imagem/menuMotorista.png>
-Package pdftex.def Info: imagem/menuMotorista.png used on input line 107.
+Package pdftex.def Info: imagem/menuMotorista.png used on input line 161.
 (pdftex.def)             Requested size: 205.36882pt x 125.8712pt.
 
-<imagem/gerirViagem.png, id=111, 351.3125pt x 127.47626pt>
+<imagem/gerirViagem.png, id=127, 351.3125pt x 127.47626pt>
 File: imagem/gerirViagem.png Graphic file (type png)
 
 <use imagem/gerirViagem.png>
-Package pdftex.def Info: imagem/gerirViagem.png used on input line 116.
+Package pdftex.def Info: imagem/gerirViagem.png used on input line 173.
 (pdftex.def)             Requested size: 193.22246pt x 70.11215pt.
 
-Overfull \hbox (11.1276pt too wide) in paragraph at lines 116--118
+Overfull \hbox (11.1276pt too wide) in paragraph at lines 173--175
 [][]
  []
 
-<imagem/viagemTerminada.png, id=112, 356.33125pt x 238.8925pt>
+<imagem/viagemTerminada.png, id=128, 356.33125pt x 238.8925pt>
 File: imagem/viagemTerminada.png Graphic file (type png)
 
 <use imagem/viagemTerminada.png>
-Package pdftex.def Info: imagem/viagemTerminada.png used on input line 121.
+Package pdftex.def Info: imagem/viagemTerminada.png used on input line 178.
 (pdftex.def)             Requested size: 178.16518pt x 119.44595pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--123
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
 [][]
  []
 
-<imagem/gerirHorarioTrabalho.png, id=113, 370.38374pt x 121.45375pt>
+<imagem/gerirHorarioTrabalho.png, id=129, 370.38374pt x 121.45375pt>
 File: imagem/gerirHorarioTrabalho.png Graphic file (type png)
 
 <use imagem/gerirHorarioTrabalho.png>
-Package pdftex.def Info: imagem/gerirHorarioTrabalho.png used on input line 129
+Package pdftex.def Info: imagem/gerirHorarioTrabalho.png used on input line 188
 .
 (pdftex.def)             Requested size: 203.71169pt x 66.79974pt.
 
-Overfull \hbox (21.61682pt too wide) in paragraph at lines 129--131
+Overfull \hbox (21.61682pt too wide) in paragraph at lines 188--190
 [][]
  []
 
-<imagem/terminouHorarioTrabalho.png, id=114, 356.33125pt x 227.85126pt>
+<imagem/terminouHorarioTrabalho.png, id=130, 356.33125pt x 227.85126pt>
 File: imagem/terminouHorarioTrabalho.png Graphic file (type png)
 
 <use imagem/terminouHorarioTrabalho.png>
 Package pdftex.def Info: imagem/terminouHorarioTrabalho.png used on input line 
-134.
+193.
 (pdftex.def)             Requested size: 178.16518pt x 113.92534pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--136
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
 [][]
  []
 
-[16 <./imagem/menuMotorista.png> <./imagem/gerirViagem.png> <./imagem/viagemTer
+[18 <./imagem/menuMotorista.png> <./imagem/gerirViagem.png> <./imagem/viagemTer
 minada.png> <./imagem/gerirHorarioTrabalho.png> <./imagem/terminouHorarioTrabal
-ho.png>] <imagem/iniciarHorarioTrabalho.png, id=123, 372.39125pt x 120.45pt>
+ho.png>] <imagem/iniciarHorarioTrabalho.png, id=139, 372.39125pt x 120.45pt>
 File: imagem/iniciarHorarioTrabalho.png Graphic file (type png)
 
 <use imagem/iniciarHorarioTrabalho.png>
-Package pdftex.def Info: imagem/iniciarHorarioTrabalho.png used on input line 1
-44.
+Package pdftex.def Info: imagem/iniciarHorarioTrabalho.png used on input line 2
+03.
 (pdftex.def)             Requested size: 204.81581pt x 66.2477pt.
 
-Overfull \hbox (22.72095pt too wide) in paragraph at lines 144--146
+Overfull \hbox (22.72095pt too wide) in paragraph at lines 203--205
 [][]
  []
 
-<imagem/iniciouHorarioTrabalho.png, id=124, 362.35374pt x 248.93pt>
+<imagem/iniciouHorarioTrabalho.png, id=140, 362.35374pt x 248.93pt>
 File: imagem/iniciouHorarioTrabalho.png Graphic file (type png)
 
 <use imagem/iniciouHorarioTrabalho.png>
-Package pdftex.def Info: imagem/iniciouHorarioTrabalho.png used on input line 1
-49.
+Package pdftex.def Info: imagem/iniciouHorarioTrabalho.png used on input line 2
+08.
 (pdftex.def)             Requested size: 181.17642pt x 124.46469pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--151
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
 [][]
  []
 
-) (./chapters/conclusao.tex [17 <./imagem/iniciarHorarioTrabalho.png> <./imagem
-/iniciouHorarioTrabalho.png>]
+<imagem/verViagensMotorista.png, id=141, 861.2175pt x 96.36pt>
+File: imagem/verViagensMotorista.png Graphic file (type png)
+
+<use imagem/verViagensMotorista.png>
+Package pdftex.def Info: imagem/verViagensMotorista.png used on input line 218.
+
+(pdftex.def)             Requested size: 516.73448pt x 57.81642pt.
+
+Overfull \hbox (61.49037pt too wide) in paragraph at lines 218--219
+ [][] 
+ []
+
+<imagem/topClientesMotorista.png, id=142, 577.15625pt x 93.34875pt>
+File: imagem/topClientesMotorista.png Graphic file (type png)
+
+<use imagem/topClientesMotorista.png>
+Package pdftex.def Info: imagem/topClientesMotorista.png used on input line 230
+.
+(pdftex.def)             Requested size: 346.29642pt x 56.00967pt.
+
+<imagem/escolherTipoVeiculo.png, id=143, 361.35pt x 196.735pt>
+File: imagem/escolherTipoVeiculo.png Graphic file (type png)
+
+<use imagem/escolherTipoVeiculo.png>
+Package pdftex.def Info: imagem/escolherTipoVeiculo.png used on input line 242.
+
+(pdftex.def)             Requested size: 198.74312pt x 108.20456pt.
+
+Overfull \hbox (16.64825pt too wide) in paragraph at lines 242--244
+[][]
+ []
+
+<imagem/insercaoDadosVeiculo.png, id=144, 320.19624pt x 67.25125pt>
+File: imagem/insercaoDadosVeiculo.png Graphic file (type png)
+
+<use imagem/insercaoDadosVeiculo.png>
+Package pdftex.def Info: imagem/insercaoDadosVeiculo.png used on input line 247
+.
+(pdftex.def)             Requested size: 160.09772pt x 33.62553pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+[][]
+ []
+
+
+Underfull \hbox (badness 1616) in paragraph at lines 247--249
+\T1/ptm/m/n/10.95 Menu de in-ser-ção de da-dos no novo
+ []
+
+<imagem/veiculoRemovido.png, id=145, 292.09125pt x 56.21pt>
+File: imagem/veiculoRemovido.png Graphic file (type png)
+
+<use imagem/veiculoRemovido.png>
+Package pdftex.def Info: imagem/veiculoRemovido.png used on input line 258.
+(pdftex.def)             Requested size: 175.25609pt x 33.72624pt.
+ [19 <./imagem/iniciarHorarioTrabalho.png> <./imagem/iniciouHorarioTrabalho.png
+> <./imagem/verViagensMotorista.png> <./imagem/topClientesMotorista.png> <./ima
+gem/escolherTipoVeiculo.png> <./imagem/insercaoDadosVeiculo.png>] <imagem/menuA
+dmin.png, id=155, 426.59375pt x 217.81375pt>
+File: imagem/menuAdmin.png Graphic file (type png)
+
+<use imagem/menuAdmin.png>
+Package pdftex.def Info: imagem/menuAdmin.png used on input line 269.
+(pdftex.def)             Requested size: 255.95822pt x 130.68924pt.
+ [20 <./imagem/veiculoRemovido.png> <./imagem/menuAdmin.png>] <imagem/verListaA
+tores.png, id=161, 453.695pt x 596.2275pt>
+File: imagem/verListaAtores.png Graphic file (type png)
+
+<use imagem/verListaAtores.png>
+Package pdftex.def Info: imagem/verListaAtores.png used on input line 281.
+(pdftex.def)             Requested size: 226.84694pt x 298.11302pt.
+
+<imagem/verListaVeiculos.png, id=162, 424.58624pt x 190.7125pt>
+File: imagem/verListaVeiculos.png Graphic file (type png)
+
+<use imagem/verListaVeiculos.png>
+Package pdftex.def Info: imagem/verListaVeiculos.png used on input line 289.
+(pdftex.def)             Requested size: 212.2926pt x 95.356pt.
+ [21 <./imagem/verListaAtores.png> <./imagem/verListaVeiculos.png>]
+<imagem/verListaHistorico.png, id=169, 925.4575pt x 315.1775pt>
+File: imagem/verListaHistorico.png Graphic file (type png)
+
+<use imagem/verListaHistorico.png>
+Package pdftex.def Info: imagem/verListaHistorico.png used on input line 300.
+(pdftex.def)             Requested size: 462.72762pt x 157.58836pt.
+
+Overfull \hbox (7.4835pt too wide) in paragraph at lines 300--301
+ [][] 
+ []
+
+<imagem/verClientesMaisGastam.png, id=170, 611.28375pt x 203.76125pt>
+File: imagem/verClientesMaisGastam.png Graphic file (type png)
+
+<use imagem/verClientesMaisGastam.png>
+Package pdftex.def Info: imagem/verClientesMaisGastam.png used on input line 31
+2.
+(pdftex.def)             Requested size: 305.64113pt x 101.88037pt.
+
+<imagem/verMotoristasMaisDesvioTempo.png, id=171, 636.3775pt x 129.48375pt>
+File: imagem/verMotoristasMaisDesvioTempo.png Graphic file (type png)
+
+<use imagem/verMotoristasMaisDesvioTempo.png>
+Package pdftex.def Info: imagem/verMotoristasMaisDesvioTempo.png used on input 
+line 327.
+(pdftex.def)             Requested size: 318.18797pt x 64.7417pt.
+ [22 <./imagem/verListaHistorico.png> <./imagem/verClientesMaisGastam.png>]
+<imagem/verMotoristasMaisDesvioCusto.png, id=177, 610.28pt x 137.51375pt>
+File: imagem/verMotoristasMaisDesvioCusto.png Graphic file (type png)
+
+<use imagem/verMotoristasMaisDesvioCusto.png>
+Package pdftex.def Info: imagem/verMotoristasMaisDesvioCusto.png used on input 
+line 346.
+(pdftex.def)             Requested size: 305.13925pt x 68.7567pt.
+) (./chapters/conclusao.tex
+[23 <./imagem/verMotoristasMaisDesvioTempo.png> <./imagem/verMotoristasMaisDesv
+ioCusto.png>]
 Cap\'{\i }tulo 5.
-) [18
+) [24
 
 ] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 33749 strings out of 493014
- 789985 string characters out of 6133352
- 914648 words of memory out of 5000000
- 36712 multiletter control sequences out of 15000+600000
+ 33845 strings out of 493014
+ 793083 string characters out of 6133352
+ 914778 words of memory out of 5000000
+ 36791 multiletter control sequences out of 15000+600000
  51223 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,83p,10415b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1809,10 +1994,10 @@ sr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
 exlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (22 pages, 1378605 bytes).
+Output written on relatorio.pdf (28 pages, 2085011 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 208 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 148 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 words of extra memory for PDF output out of 10000 (max. 10000000)
 

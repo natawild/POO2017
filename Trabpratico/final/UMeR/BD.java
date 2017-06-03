@@ -794,8 +794,10 @@ public class BD implements BDInterface, Serializable {
     
     public AtorInterface removeVeiculoDeAtor(AtorInterface ator){
         Motorista atorGuardado = (Motorista) this.motoristas.get(ator.getEmail());
+        VeiculoInterface v = atorGuardado.getVeiculo();
         atorGuardado.setVeiculo(null);
         this.motoristas.put(atorGuardado.getEmail(), atorGuardado);
+        this.veiculos.remove(v.getMatricula());
         return atorGuardado.clone();
     }
     
@@ -841,6 +843,7 @@ public class BD implements BDInterface, Serializable {
             VeiculoInterface v = m.getVeiculo();
             if(m.getViagemEmProcesso() == null && v != null){
                v.setLoc(loc);  
+               m.setVeiculo(v); 
             }
             return m;
         }
