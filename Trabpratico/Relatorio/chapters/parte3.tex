@@ -47,9 +47,9 @@ O Cliente tem à sua disposição várias funcionalidades tais como: Soliciar um
 \end{figure}
 
 \begin{enumerate}
-	\item Solicitar Viagem
+	\item \textbf{Solicitar Viagem}
 
-Ao escolher "Solicitar Viagem" será pedido ao Cliente para introduzir as Coordenadas de destino. Após a inserção das Coordenadas é pedido ao Cliente para escolher se quer o táxi que se encontra mais próximo dele ou se prefere escolher um táxi que permite fila de espera se estiver ocupado. 
+Ao escolher "Solicitar Viagem" será pedido ao Cliente para introduzir as Coordenadas de destino. Após a inserção das Coordenadas é pedido ao Cliente para escolher se quer o táxi que se encontra mais próximo dele ou se prefere escolher um táxi especifico. 
 
 \noindent\begin{minipage}[b]{.5\textwidth}
 	\includegraphics[scale=0.55]{imagem/inserirDestino}
@@ -262,7 +262,7 @@ Esta opção permite ao motorista remover um veiculo associado a si.
 
 \end{enumerate}
 \subsection{Funcionalidades de Admin}
-O Administrador da aplicação tem a funcionalidade principal de visulaizar estatisticas, tais como ver uma lista de todos os utilizadores atualizados, os veiculos, o histórico, a lista dos 10 clientes que mais gastam, os motoristas com mais desvios de tempo e custo e adinda poderá ver e editar dados pessoais. 
+O Administrador da aplicação tem a funcionalidade principal de visualizar estatísticas, tais como ver uma lista de todos os utilizadores atualizados, os veiculos, o histórico, a lista dos 10 clientes que mais gastam, os motoristas com mais desvios de tempo e custo e ainda poderá ver e editar dados pessoais. 
 
 \begin{figure}[htpb]
 	\centering
@@ -275,7 +275,7 @@ O Administrador da aplicação tem a funcionalidade principal de visulaizar esta
 Mostramos de seguida o exemplo de excecução de cada opção do menu: 
 
 \begin{enumerate}
-	\item Ver lista dos utilizadores Registados
+	\item \textbf{Ver lista dos utilizadores Registados}
 	\begin{figure}[htpb]
 		\centering
 		\includegraphics[scale=0.5]{imagem/verListaAtores}
@@ -283,7 +283,7 @@ Mostramos de seguida o exemplo de excecução de cada opção do menu:
 		\label{p3:fig:p3_verListaAtores}
 	\end{figure}
 
-\item Ver lista dos Veiculos registados 
+\item \textbf{Ver lista dos Veiculos registados }
 	\begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.5]{imagem/verListaVeiculos}
@@ -292,7 +292,7 @@ Mostramos de seguida o exemplo de excecução de cada opção do menu:
 \end{figure}
 
 \newpage
-\item Visualizar histórico de viagens 
+\item \textbf{Visualizar histórico de viagens }
 
 Neste menu o Administrador poderá visualizar todo o histórico ou escolher entre datas, neste caso mostramos como funciona entre datas: 
 \begin{figure}[htpb]
@@ -302,7 +302,7 @@ Neste menu o Administrador poderá visualizar todo o histórico ou escolher entr
 	\label{p3:fig:p3_verListaHistorico}
 \end{figure}
 
-\item Ver lista dos 10 clientes que mais gastam 
+\item \textbf{Ver lista dos 10 clientes que mais gastam }
 
 Esta funcionalidade permite listar o top dos 10 melhores clientes da aplicação. 
 Este top é construido com base nos históricos terminados (viagens em precurso não são contabilizados para este cálculo). 
@@ -314,7 +314,7 @@ Este top é construido com base nos históricos terminados (viagens em precurso 
 	\label{p3:fig:p3_verClientesMaisGastam}
 \end{figure}
 
-\item Ver lista de motoristas com mais desvios de tempo 
+\item \textbf{Ver lista de motoristas com mais desvios de tempo }
 
 A lista apresentada é ordenada por ordem crescente do grau de cumprimento de tempo. Este valor é calculado com base nos históricos (terminados). Para cada histórico se o tempo estimado for maior que o tempo real, o grau será 100, se o tempo estimado for menor que o tempo real o grau é calculado pela divisão entre o tempo real e o tempo estimado. O grau de cumprimento por motorista é a média do grau de cumprimento dos seus históricos.  
 
@@ -330,15 +330,13 @@ Para o administradores da plataforma quanto menor o grau de cumprimento de tempo
 \end{figure}
 
 \newpage
-\item Ver lista de motoristas com mais desvios de custo 
+\item \textbf{Ver lista de motoristas com mais desvios de custo }
 
 A lista apresentada é ordenada por ordem crescente do grau de cumprimento de custo. Este valor é calculado com base nos históricos (terminados). Para cada histórico se o custo real for maior que o custo estimado, o grau será 100, se o custo real for menor que o custo estimado o grau é calculado pela divisão entre o custo real  e o custo estimado. O grau de cumprimento por motorista é a média do grau de cumprimento dos seus históricos.  
 
 Quanto menor o grau de cumprimento de custo, melhor será para o cliente uma vez que este grau indica que o motorista efetua viagens com um custo menor do que aquele que foi estimado. 
 
 Para o administradores da plataforma quanto menor o grau de cumprimento de custo pior uma vez que as receitas serão menores em relação às receitas estimadas. 
-
-
 
 
 \begin{figure}[htpb]
@@ -348,6 +346,16 @@ Para o administradores da plataforma quanto menor o grau de cumprimento de custo
 	\label{p3:fig:p3_verMotoristasMaisDesvioCusto}
 \end{figure}
 
+\item\textbf{ Faturação por Motorista}
+
+Esta funcionalidade permite ver os dados entre datas ou a lista com todos os dados. Decidiu-se que faria mais sentido apresentar a faturação por motorista, visto que o motorista só tem um veiculo então a informação seria a mesma. 
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.5]{imagem/faturacaoPorMotorista}
+	\caption{Ver faturação por motorista}
+	\label{p3:fig:p3_faturacaoPorMotorista}
+\end{figure}
 
 	
 \end{enumerate}

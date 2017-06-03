@@ -84,20 +84,37 @@ Se no futuro for pretendido adicionar novos tipos de veiculos ao sistema, essas 
 
 \subsection{Veiculo}
 
+A classe \textit{Veiculo} é uma classe abstrata e sevirá  como “modelo” para outras classes que dela herdem, não podendo ser instanciada por si só. Para ter um objeto de uma classe abstrata é necessário criar uma classe mais especializada que herda dela e então instanciar essa nova classe. Neste caso foram criadas as classes \textit{Moto}, \textit{CarroLig} e  \textit{Carrinha} que herdam a informação que está na classe superior (Veiculo).
+
+Esta classe terá como variáveis de instância a matricula para identificação do veiculo, a marca, a fiabilidade do veiculo cumprir o tempo de viagem este será também um valor randon dependente do tipo de veiculo e por fim a localização do veiculo. 
+
+
 \begin{verbatim}
 private String matricula; 
 private String marca; //Acrescentou-se a variável de instância marca, 
 para o cliente poder escolher um carro com base na marca do veiculo
-
 private float fiabilidade;//0 a 2 randon()
 private Coordenadas loc;
 \end{verbatim}
 
 \section{Moto}
+Esta classe corresponde a um \textit{Veiculo} do tipo\textit{Moto} onde estarão todos os dados herdados da classe \textit{Veiculo}. A esta classe foram acrescentadas variáveis estáticas e com valor final, pois serão valores iguais para todas as intâncias deste objeto e com valores sempre iguais. 
+
 \begin{verbatim}
 private static final int lugaresLivres = 1;
 private static final double vm = 40.5; 
 private static final double precoPorKm = 2.1;
+\end{verbatim}
+
+Foi acrescentado o método \textit{calcFiabilidade()} para gerar aleatoriedade no cálculo da fiabilidade de um veiculo. Este método é invocado aquando da criação de um novo tipo de veiculo. Este método está implementado em todas as classes que dependem da classe Veiculo.
+\begin{verbatim}
+public static float calcFiabilidade(){
+   float minX = 0.9f;
+   float maxX = 1.2f;
+   Random rand = new Random();
+   float finalX = rand.nextFloat() * (maxX - minX) + minX;
+   return finalX;  
+}
 \end{verbatim}
 
 \subsection{MotoFilaEspera}
@@ -106,6 +123,7 @@ private List<Cliente> filaClientes;
 \end{verbatim}
 
 \section{CarroLig}
+Esta classe corresponde a um \textit{Veiculo} do tipo\textit{CarroLig} onde estarão todos os dados herdados da classe \textit{Veiculo}. A esta classe foram acrescentadas variáveis estáticas e com valor final, pois serão valores iguais para todas as intâncias deste objeto e com valores sempre iguais. 
 
 \begin{verbatim}
  private static final int lugaresLivres = 4;
@@ -119,6 +137,8 @@ private List<Cliente> filaClientes;
 \end{verbatim}
 
 \section{Carrinha}
+
+Esta classe corresponde a um \textit{Veiculo} do tipo \textit{Carrinha} onde estarão todos os dados herdados da classe \textit{Veiculo}. A esta classe foram acrescentadas variáveis estáticas e com valor final, pois serão valores iguais para todas as intâncias deste objeto e com valores sempre iguais. 
 
 \begin{verbatim}
 private static int lugaresLivres = 8;
@@ -134,9 +154,12 @@ private List<Cliente> filaClientes;
 \newpage
 \section{HistoricoInterface}
 A interface HistoricoInterface define todos os métodos que os históricos da aplicação deverão ter definidos. 
-Se no futuro for pretendido adicionar novos tipos de históricos ao sistema, essas classes deverão também elas implementar esta interface.  Desta forma poder-se-á inserir novos tipos de históricos à base de dados sem dificuldades. Como se pode visualizar na base de dados os históricos são coleções do tipo HistoricoInterface. Pode-se portanto adicionar os novos tipos de históricos à coleção. 
+Se no futuro for pretendido adicionar novos tipos de históricos ao sistema, essas classes deverão também elas implementar esta interface.  Desta forma poder-se-á inserir novos tipos de históricos à base de dados sem dificuldades. Como se pode visualizar na base de dados os históricos são coleções do tipo \textit{HistoricoInterface}. Pode-se portanto adicionar os novos tipos de históricos à coleção. 
 
 \subsection{Historico}
+
+Esta classe serve para guardar dados pretinentes relativos a um histórico. Decidiu-se que seria necessário guardar o email do cliente e do motorista. Assim como uma data de inicio de viagem, a distancia da viagem, dados relativos ao custo e tempo: estimados e reais. O estado do tempo e transito assim como as coordenadas de origem e destino, a classificação do motorista. E ainda a indicação se um histórico histórico que está guardado na base de dados está terminado, quando se listam os históricos só apresentamos os que tem essa variável a true. 
+
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.6]{imagem/historico}
@@ -250,6 +273,26 @@ Após login efetuado com sucesso a variável de instância atorloggado é inicia
 private BDInterface baseDeDados;
 private AtorInterface atorLoggado;
 private int tentativasDeLoginFalhadas;
+\end{verbatim}
+
+
+Para o calculo do tempo real de uma viagem decidimos que este seria a multiplicação dos factores de fiabilidade, destreza, transito e meteorologia com a duração estimada da viagem. 
+
+
+Para o cálculo do custo real da viagem, decidimos que se a diferença entre o tempo estimado e o real fosse superior a 25\% então o cliente pagaria o custo estimado, se o tempo real fosse inferior 25\% do estimado o valor da viagem seria recalculado. 
+
+Este método apenas está a benefeciar o cliente, pois se o motorista demorar mais do que o esperado, o cliente pagará o custo estimado, por outro lado se o motorista demorar menos 25\% do tempo estimado o valor é ajustado, sendo que pagará menos do que o previsto. 
+
+\begin{verbatim}
+public double custoRealViagem(){
+   if((duracaoEstimada/DuracaoReal) >= 1 && Real < estimada * 0.75){
+      return (custoEstimado(distancia, precoUnitario) * 
+      duracaoRealDaViagem / duracaoEstimada);
+   }
+   else {
+      return custoEstimado(distancia, precoUnitario) ;
+   }  
+}
 \end{verbatim}
 
 \section{UMeRApp}

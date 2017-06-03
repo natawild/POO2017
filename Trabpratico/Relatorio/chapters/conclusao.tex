@@ -1,30 +1,28 @@
-\chapter{Conclusões e }
+\chapter{Conclusões }
 
-Aspetos a melhorar seriam a apresentação dos menus, poder-se-ia ter melhorado a organização, assim como o 
+Com a realização deste trabalho pode-se concluir que ainda há aspetos a melhorar, tais como a apresentação dos menus, poder-se-ia ter melhorado a organização, por exemplo as estatisticas que são acedidas pelo administrador deviam ter um menu de introdução de estatisticas. 
 
-listar as funcionalidades ..... 
-. as funcionalidade básicas da aplicação que foram implementadas 
-existem fatores de aleatoriedade implemnetados para calcular o tempo real 
-as filas de espera dos veiculos não podem ser utilizadas, 
-não é possivel registar empresas. 
-os menus poderiam ter uma melhor organização por exemplos as estaticias que são acedidas pelo admin devia ter um menu de introdução de estatisticas 
+Pode-se concluir que as funcionalidades de registar um utilizador quer cliente quer motorista, assim como a validação das suas credenciais está a funcionar. É possivel a um motorista inserir uma nova viatura, ficando assim esta associada a esse motorista. 
 
-os motoristas deveriam poder criar vários veiculos e fazer a gestão do veiculo que estão a utilizar no momento. neste momento o motorista para reutilizar o veículo tem de o voltar a registar 
+O cliente poderá solicitar uma viagem, bastando para tal inserir as coordenadas de destino, depois poderá escolher uma viatura especifica ou então a mais próxima. Poderá ainda classificar uma viagem, mas só depois de esta ser terminada pelo motorista. No perfil de cliente é possivel ver a listagem das viagens efetuadas, quer entre datas ou ver tudo. 
 
-+/-não podem existir atores de tipos diferentes com o memso email, 
+No perfil de motorista também poderão ser visualizadas as listagens das viagens efetuadas quer por data quer ou a lista inteira, esta lista está ordenada de forma descendente. O cliente tem a opção de terminar uma viagem e atualizar se está em horário de trabalho. 
 
-o admin deveria poder gerir clientes motoristas e veiculos 
-neste momento só existe um admin e não tem a possibilidade de inserir outros admins 
+No perfil de administrador é possivel consultar o total faturado por motorista num determinado período ou a apresentação da lista completa. É possivel visualizar a listagem do 10 clientes que mais gastam, e ainda a listagem dos 5 motoristas que apresentam mais desvios entre os valores previstos para as viagens e o valor final faturado. 
 
-não foi possivel u
+O estado da aplicação é gravado num ficheiro para que seja possivel retomar mais tarde a execução do programa. 
 
-Trabalho Futuro
+Adicionalmente foram implementados os fatores de aleatoriedade  para calcular o tempo real de uma viagem. 
+Infelizmente não conseguimos utilizar as filas de espera dos veiculos, assim como a criação de novas empresas. Percebemos também que os motoristas deveriam poder criar vários veiculos e fazer a gestão do veiculo que estão a utilizar no momento. Neste momento o motorista para reutilizar o veículo tem de o voltar a registar.  O administrador deveria poder gerir clientes motoristas e veiculos, neste momento só existe um administrador e não tem a possibilidade de inserir outros administradores. Tivemos um problema de interpretação que só foi percebido no fim e já não tivemos tempo para alterar que foi a indicação do total faturado por viatura e nós fizemos por motorista. Essa implementação seria possivel, mas teriamos de não remover os veículos da colecção veículos  quando o motorista faz remover veículo e seria necessário adicionar ao histórico a matrícula do veículo para poder buscar esses dados. 
 
-Permitir registo de empresas e a utilização das filas de espera dos veiculos, para o primeiro ter-se-ia de adicionar um novo tipo de utilizador e dar-lhe permissão para conseguir gerir os seus motoristas e veiculos 
+Para concluir, consideramos que as funcionalidades mais importantes foram implementadas com sucesso, embora ainda possam ser melhoradas. 
 
-para o segundo seria necessário alterar a requisição de um motorista e  se ele permitisse fila de espera adicionar o cliente a essa fila e alterar o estado do cliente para em fila de espera. 
+\section{Trabalho Futuro}
 
-o admin deveria poder gerir clientes motoristas e veiculos
+Como trabalho futuro a aplicação poderá vir a permitir registo de empresas e a utilização das filas de espera dos veiculos, para o primeiro ponto ter-se-ia de adicionar um novo tipo de utilizador e dar-lhe permissão para conseguir gerir os seus motoristas e veiculos.  Para o segundo seria necessário alterar a requisição de um veiculo e  se ele permitisse fila de espera adicionar o cliente a essa fila e alterar o estado do cliente para em fila de espera, caso o veiculo estivesse ocupado. 
+
+O administrador poderá gerir clientes, motoristas e veiculos. Poder-se-à fazer alterações de modo a que seja possivel indicar o total faturado por veiculo. 
+
 
 
 
