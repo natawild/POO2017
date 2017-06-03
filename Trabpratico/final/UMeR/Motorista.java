@@ -252,7 +252,6 @@ public class Motorista extends Ator implements AtorInterface, Serializable, Comp
      */
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
-        sb.append(super.toString());
         sb.append("Classificação: " +this.classificacao + "\n"); 
         sb.append("Grau de cumprimento de Horario: " +this.grauCumprimentoHorario + "\n");
         sb.append("Total Kms efetuados: " + this.totalKms + "\n"); 
@@ -272,7 +271,6 @@ public class Motorista extends Ator implements AtorInterface, Serializable, Comp
     
     public String apresentaDadosPessoais(){ 
         StringBuilder sb = new StringBuilder(); 
-        sb.append(super.toString());
         sb.append("Classificação: " + this.classificacao + "\n"); 
         sb.append("Grau de cumprimento de Horario: " + this.grauCumprimentoHorario + "\n");
         sb.append("Total Kms efetuados: " + this.totalKms + "\n"); 
@@ -289,7 +287,6 @@ public class Motorista extends Ator implements AtorInterface, Serializable, Comp
     
     public String apresenteDadosParaCliente(){ 
         StringBuilder sb = new StringBuilder(); 
-        sb.append(super.apresenteDadosParaCliente());
         sb.append(" | Classificação: " + this.classificacao); 
         sb.append(" | Grau de cumprimento de Horario: " + this.grauCumprimentoHorario);
         sb.append(" | Total Kms efetuados: " + this.totalKms); 

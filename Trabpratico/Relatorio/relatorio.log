@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  3 JUN 2017 18:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  3 JUN 2017 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1556,7 +1556,7 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 28.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [6 <./imagem/atores.png>]
-Overfull \hbox (84.75566pt too wide) in paragraph at lines 62--62
+Overfull \hbox (84.75566pt too wide) in paragraph at lines 64--64
 []\T1/pcr/m/n/12 private boolean horarioTrabalho; //verificar se está no horári
 o de trabalho[] 
  []
@@ -1565,16 +1565,16 @@ o de trabalho[]
 File: imagem/veiculo.png Graphic file (type png)
 
 <use imagem/veiculo.png>
-Package pdftex.def Info: imagem/veiculo.png used on input line 78.
+Package pdftex.def Info: imagem/veiculo.png used on input line 80.
 (pdftex.def)             Requested size: 277.63939pt x 333.64908pt.
 
-Overfull \hbox (41.55568pt too wide) in paragraph at lines 92--92
+Overfull \hbox (41.55568pt too wide) in paragraph at lines 94--94
 []\T1/pcr/m/n/12 private String marca; //Acrescentou-se a variável de instância
  marca,[] 
  []
 
 
-Overfull \hbox (27.15569pt too wide) in paragraph at lines 92--92
+Overfull \hbox (27.15569pt too wide) in paragraph at lines 94--94
 []\T1/pcr/m/n/12 para o cliente poder escolher um carro com base na marca do ve
 iculo[] 
  []
@@ -1583,7 +1583,7 @@ iculo[]
 <imagem/historico.png, id=65, 240.9pt x 200.75pt>
 File: imagem/historico.png Graphic file (type png)
  <use imagem/historico.png>
-Package pdftex.def Info: imagem/historico.png used on input line 140.
+Package pdftex.def Info: imagem/historico.png used on input line 142.
 (pdftex.def)             Requested size: 144.5411pt x 120.45091pt.
 
 [10 <./imagem/historico.png>] [11] [12]) (./chapters/parte3.tex [13]
@@ -1994,7 +1994,7 @@ sr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
 exlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (28 pages, 2085011 bytes).
+Output written on relatorio.pdf (28 pages, 2087220 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  86 compressed objects within 1 object stream

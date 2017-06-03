@@ -40,14 +40,16 @@ Na classe \textit{Admin} estarão todos os dados herdados da classe \textit{Ator
 
 
 \subsection{Cliente}
-Na classe \textit{Cliente} estarão todos os dados herdados da classe \textit{Ator}. 
-
+Esta classe corresponde a um \textit{Ator} do tipo \textit{Cliente} onde estarão todos os dados herdados da classe \textit{Ator}, à qual se acrescenta uma variável de instância para guardar a localização e outra para indicar se o cliente está ou não em viagem. 
 \begin{verbatim}
 private Coordenadas loc; //localização atual do cliente
 private boolean emViagem;
 \end{verbatim}
 \subsection{Motorista}
-Na classe \textit{Motorista} estarão todos os dados herdados da classe \textit{Ator}. 
+Esta classe corresponde a um \textit{Ator} do tipo\textit{Motorista} onde estarão todos os dados herdados da classe \textit{Ator}. A esta classe foram acrescentadas diversas variáveis de instância para poderem ser guardadas informações acerca de grau de cumprimento de horário, a classificação do motorista esta que será uma média de todas as classificações efetuadas por um Cliente em determinada viagem. 
+Decidimos acrescentar uma variável para diferenciar se um motorista estaria em horário de trabalho, isto é se está no local de trabalho para efetuar uma viagem. Por outro lado existe a variável de disponibilidade, esta que informa se o motorista está ocupado noutra viagem e portanto não poderá efetuar outra. 
+
+Foi também acrescentada a variável do tipo VeiculoInterface para guardar informações relativas ao veiculo que cada motorista poderá ter. A variável do tipo Historico serve para saber se o motorista está a fazer uma viagem neste momento ou não, se for null é porque está livre, senão cria um histórico. Quando a viagem é terminada a variável disponível passa a true e viagemEmProcesso passa a null. 
 
 \begin{verbatim}
 private int grauCumprimentoHorario; //0-100
@@ -231,8 +233,8 @@ private Set<Historico> historico;
 
 \section{UMeRMenu}
 
-Esta classe tem como objetivo facilitar a criação de menus e a leitura da opção introduzida. 
-
+Esta classe tem como objetivo facilitar a criação de menus e a leitura da opção introduzida pelo utilizador. 
+Facilitando em muito o trabalho da classe principal \textit{UMeRApp}. 
 \begin{verbatim}
 private String titulo;
 private List<String> opcoes;
@@ -252,7 +254,7 @@ private int tentativasDeLoginFalhadas;
 
 \section{UMeRApp}
 
-Esta classe é responsável pela interface da aplicação. 
+Esta é a classe responsável pela interface apresentada a um utilizador, para que possa desfrutar ao máximo da aplicação, como veremos no capítulo seguinte. É também a classe responsável por gravar o estado da aplicação e ler esse mesmo a cada vez que a aplicação é fechada e reiniciada, respectivamente.
 
 \begin{verbatim}
 private static UMeR umer;
