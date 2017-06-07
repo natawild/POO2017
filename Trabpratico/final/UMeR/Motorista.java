@@ -253,7 +253,7 @@ public class Motorista extends Ator implements AtorInterface, Serializable, Comp
     public String toString (){
         StringBuilder sb = new StringBuilder(); 
         sb.append("Classificação: " +this.classificacao + "\n"); 
-        sb.append("Grau de cumprimento de Horario: " +this.grauCumprimentoHorario + "\n");
+        sb.append("Grau de cumprimento de Horário: " +this.grauCumprimentoHorario + "\n");
         sb.append("Total Kms efetuados: " + this.totalKms + "\n"); 
         sb.append("Disponibilidade: " +this.disponivel + "\n");
         sb.append("Horário de Trabalho: " +this.horarioTrabalho + "\n"); 
@@ -263,7 +263,7 @@ public class Motorista extends Ator implements AtorInterface, Serializable, Comp
             sb.append("Veiculo conduzido: " +this.veiculo + "\n"); 
         }
         else {
-            sb.append("Nao tem veiculo \n"); 
+            sb.append("Não tem veiculo\n"); 
         }
         sb.append("Viagem em processo \n: " + this.viagemEmProcesso + "\n"); 
         return sb.toString(); 

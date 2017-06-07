@@ -24,7 +24,7 @@ import Exceptions.*;
 /**
  * Classe UMeR terá a implementação das funções necessárias ao funcionamento da aplicaçao 
  * @celia
- * @version 1.1
+ * @version 2.1
  */
 public class UMeR{
     private BDInterface baseDeDados;
@@ -733,7 +733,7 @@ public class UMeR{
                totalCusto += (h.getValorCobrado()/h.getValorEstimado() ) * 100;
                i++;
            }
-           
+           //se não tem histórico o custo é zero, se tem o custo é o custo total/nr de históricos
            if(i == 0) {
                totalCusto = 0;
            }
@@ -822,6 +822,7 @@ public class UMeR{
        
       return totalFaturado;
    }
+   
    
    public List<AtorInterface> faturacaoMotoristas(LocalDateTime inicio, LocalDateTime fim){
        List<AtorInterface> motoristas =  new ArrayList<AtorInterface>();

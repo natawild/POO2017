@@ -110,6 +110,7 @@ public class Main
         motorista2.setVeiculo(v1);
         motorista2.setGrauCumprimentoHorario(50); 
         motorista2.setClassificacao(37); 
+        motorista2.setTotalKms(120); 
         baseDados.addMotorista(motorista2); 
         
         dataNasM2 = LocalDate.of (1989,10,24);
@@ -120,6 +121,7 @@ public class Main
         motorista3.setVeiculo(v2);
         motorista3.setGrauCumprimentoHorario(98); 
         motorista3.setClassificacao(70); 
+        motorista3.setTotalKms(250); 
         baseDados.addMotorista(motorista3); 
         
         dataNasM2 = LocalDate.of (1979,01,24);
@@ -130,6 +132,7 @@ public class Main
         motorista4.setVeiculo(v4);
         motorista4.setGrauCumprimentoHorario(63); 
         motorista4.setClassificacao(50); 
+        motorista4.setTotalKms(100);
         baseDados.addMotorista(motorista4); 
         
         dataNasM2 = LocalDate.of (1979,02,25);
@@ -140,6 +143,7 @@ public class Main
         motorista5.setVeiculo(v5);
         motorista5.setGrauCumprimentoHorario(73); 
         motorista5.setClassificacao(70); 
+        motorista5.setTotalKms(100);
         baseDados.addMotorista(motorista5); 
         
         dataNasM2 = LocalDate.of (1979,02,25);
@@ -149,7 +153,8 @@ public class Main
         motorista6.setHorarioTrabalho(true);
         motorista6.setVeiculo(v9);
         motorista6.setGrauCumprimentoHorario(100); 
-        motorista6.setClassificacao(90); 
+        motorista6.setClassificacao(90);
+        motorista3.setTotalKms(130);
         baseDados.addMotorista(motorista6); 
         
         dataNasM2 = LocalDate.of (1979,02,25);
